@@ -1,12 +1,23 @@
 @charset "utf-8";
 
-*{
+@font-face {
+    font-family: 'Nanum Gothic';
+    src: url("font/NanumGothic.otf");
+}
+
+* {
     margin: 0; padding: 0;
+    font-family: 'Nanum Gothic';
 }
 li {
     list-style: none;
 }
 a {
     text-decoration: none;
-    color: #444;
+    color: #666;
+}
+
+body {
+    width: 100%;
+    font-size: 16px;
 }
