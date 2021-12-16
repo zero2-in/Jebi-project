@@ -31,22 +31,22 @@
     width: 1200px;
     height: 105px;
     text-align: center;
-    margin: 10px auto 25px auto;
+    margin: 10px auto 35px auto;
 }
 
 /* 메인메뉴 */
 #header .btn-menu {
     width: 100%;
-    height: 70px;
+    height: 60px;
 
     text-align: center;
     background: #612C87;
 }
 #header .btn-menu .menu-main {
     width: 1200px;
-    height: 47px;
+    height: 40px;
 
-    padding-top: 23px;
+    padding-top: 20px;
     margin: 0 auto;
 }
 #header .btn-menu .menu-main li {
@@ -59,6 +59,11 @@
     border-right: none;
 }
 #header .btn-menu .menu-main li a {
+    transition: color 0.3s;
     font-size: 20px;
     color: #fff;
+}
+#header .btn-menu .menu-main li a:hover {
+    transition: color 0.3s;
+    color: #bbb;
 }
