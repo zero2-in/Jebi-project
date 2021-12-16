@@ -4,7 +4,6 @@
 #header {
     height: 280px;
     margin: 0 auto;
-    border: 3px solid #000;
 }
 
 /* 로그인 메뉴 */
@@ -13,17 +12,53 @@
     height: 46px;
     padding-top: 24px;
     margin: 0 auto;
-
-    border: 1px solid #000;
 }
 #header .btn-login .menu-login {
     float: right;
 }
 #header .btn-login .menu-login li {
-    float: left;
-    padding: 0 20px 0 20px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px;
     border-right: 1px solid #444;
 }
 #header .btn-login .menu-login li:last-child {
     border-right: none;
+}
+
+/* 로고 이미지 */
+#header .img-logo {
+    width: 1200px;
+    height: 105px;
+    text-align: center;
+    margin: 10px auto 25px auto;
+}
+
+/* 메인메뉴 */
+#header .btn-menu {
+    width: 100%;
+    height: 70px;
+
+    text-align: center;
+    background: #612C87;
+}
+#header .btn-menu .menu-main {
+    width: 1200px;
+    height: 47px;
+
+    padding-top: 23px;
+    margin: 0 auto;
+}
+#header .btn-menu .menu-main li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 30px;
+    border-right: 1.2px solid #fff;
+}
+#header .btn-menu .menu-main li:last-child {
+    border-right: none;
+}
+#header .btn-menu .menu-main li a {
+    font-size: 20px;
+    color: #fff;
 }
