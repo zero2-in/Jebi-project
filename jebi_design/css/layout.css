@@ -62,3 +62,20 @@
     font-size: 20px;
     color: #fff;
 }
+/* 메인 이미지 */
+#header .menu-img {
+	margin-top:115;
+	height:200px;
+	background:url("menu_img01.jpg");
+	background-size:1000px 200px;
+	animation:myfirst 6s infinite;
+	-moz-animation:myfirst 6s infinite;
+	-webkit-animation:myfirst 6s infinite;
+}
+@keyframes myfirst
+{
+0% { background:url("menu_img01.jpg"); #00c;   }
+33% { background:url("menu_img02.jpg"); #808;  }
+66% { background:url("menu_img03.jpg"); #c00; }
+100% { background:url("menu_img01.jpg"); #c00; }
+}
