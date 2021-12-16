@@ -59,11 +59,32 @@
     border-right: none;
 }
 #header .btn-menu .menu-main li a {
-    transition: color 0.3s;
+    transition: color 0.2s;
     font-size: 20px;
     color: #fff;
 }
 #header .btn-menu .menu-main li a:hover {
-    transition: color 0.3s;
+    transition: color 0.2s;
     color: #bbb;
+}
+
+/* Index 메인 */
+#container {
+    margin: 0 auto;
+}
+
+/* 메인 이미지 */
+#container .menu-img {
+    padding-top: calc(300 / 1000 * 100%);
+	background:url("../images/menu_img01.jpg") no-repeat;
+	animation:myfirst 10s infinite;
+	-moz-animation:myfirst 10s infinite;
+	-webkit-animation:myfirst 10s infinite;
+}
+@keyframes myfirst
+{
+0%   { background:url("../images/menu_img01.jpg") no-repeat;  background-size: cover;}
+33%  { background:url("../images/menu_img02.jpg") no-repeat;  background-size: cover;}
+66%  { background:url("../images/menu_img03.jpg") no-repeat;  background-size: cover;}
+100% { background:url("../images/menu_img01.jpg") no-repeat;  background-size: cover;}
 }
