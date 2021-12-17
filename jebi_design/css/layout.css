@@ -141,7 +141,7 @@
     color: #000;
 }
 
-.board-join .form-join {
+.board-join .form-join, .field-submit {
     text-align: left;
     width: 500px;
     margin: 0 auto;
@@ -197,4 +197,35 @@
     display: block;
     border-radius: 4px 0 0 4px;
     box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+}
+
+.board-join .field-submit .checkbox input[type=checkbox] {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+.board-join .field-submit .checkbox label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 28px;
+    line-height: 25px;
+}
+.board-join .field-submit .checkbox .icon-checkbox {
+    content: '';
+    background-color: transparent;
+    border: 2px solid #b4b4b4;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: absolute;
+    top: 3px;
+    left: 0px;
 }
