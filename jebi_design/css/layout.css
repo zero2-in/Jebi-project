@@ -36,6 +36,7 @@
 
 /* 메인메뉴 */
 #header .btn-menu {
+    min-width: 1200px;
     width: 100%;
     height: 60px;
     
@@ -70,6 +71,7 @@
 
 /* Index 메인 */
 #container {
+    min-width: 1200px;
     margin: 0 auto;
 }
 
