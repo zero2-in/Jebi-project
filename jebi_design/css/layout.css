@@ -38,7 +38,7 @@
 #header .btn-menu {
     width: 100%;
     height: 60px;
-
+    
     text-align: center;
     background: #612C87;
 }
@@ -89,11 +89,48 @@
 100% { background:url("../images/menu_img01.jpg") no-repeat;  background-size: cover;}
 }
 
-
-
-
-
-
+/* 공지사항 */
+#container .content {
+    width: 1200px;
+    height: 300px;
+    margin: 100px auto 35px auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .notice {
+	width:1200px;
+    height: 70px;
+	border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .notice-title{
+	width:1090px;
+	height:40px;
+    float:left;
+    text-align: center;
+	padding-top: 20px;
+	font-size:20px;	 
+}
+#container .btn-notice{
+	float:right;
+	width:86px;
+	height:40px;
+	padding: 20px 0 0 20px;
+	font-size:25px;
+	color:gray;
+}
+#container .notice-content{
+	padding : 10px 0 0 30px;
+}
+#container .notice-content li{
+	padding : 9px 0;
+}
+#container .notice-content li a{
+	font-size:15px;
+}
+#container .notice-content li a span{
+	float:right;
+	font-size:15px;
+    padding-right: 30px;
+}
 
 
 
