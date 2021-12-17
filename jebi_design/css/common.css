@@ -4,6 +4,18 @@
     font-family: 'Nanum Gothic';
     src: url("font/NanumGothic.otf");
 }
+@font-face {
+    font-family: 'Nanum Gothic Light';
+    src: url(font/NanumGothicLight.otf);
+}
+@font-face {
+    font-family: 'Nanum Gothic Bold';
+    src: url(font/NanumGothicBold.otf);
+}
+@font-face {
+    font-family: 'Nanum Gothic Extra Bold';
+    src: url(font/NanumGothicExtraBold.otf);
+}
 
 * {
     margin: 0; padding: 0;
