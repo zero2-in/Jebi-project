@@ -95,7 +95,7 @@
 #container .content {
     width: 1200px;
     height: 300px;
-    margin: 100px auto 35px auto;
+    margin: 80px auto 35px auto;
     border: 1px solid rgb(205, 205, 205);
 }
 #container .notice {
@@ -267,4 +267,85 @@
     position: absolute;
     top: 3px;
     left: 0px;
+}
+#container .content {
+    width: 1200px;
+    height: 300px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+/* 로그인 */
+#container .login-box {
+    width: 588px;
+    height: 300px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .id{
+    width: 400px;
+    height: 70px;
+    margin: 30px 0 0 30px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .btn-log {
+    width: 100px;
+    height: 152px;
+    float: right;
+    margin: 30px 30px 0 10px;
+    font-size: 20px ;
+    color: white;
+    border: 1px solid #612C87;
+    border-radius: 5px 5px 5px 5px ; 
+    background-color: #612C87 ;
+}
+#container .password{
+    width: 400px;
+    height: 70px;
+    margin: 10px 10px 0 30px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .checksave{
+    
+    margin: 20px 0 10px 30px ;
+    
+}
+
+#container .btn-id-password{
+    float: right;
+}
+#container .btn-id-password li{   
+    display: inline-block;
+    text-align: center;
+    padding: 0 5px;
+    border-right: 2px solid rgb(119, 119, 119);
+}
+#container .btn-id-password li:last-child {
+    border-right: none;
+    
+}
+
+
+/* 중국센터주소 */
+#container .china-address-box {
+    width: 588px;
+    height: 300px;
+    
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .china-address {
+	width: 588px;
+    height: 70px;
+	border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .address-title{
+    width: 588px;
+    height: 40px;
+    text-align: center;
+	font-size: 20px;
+    padding-top: 28px; 
+}
+#container .china-address-content{
+    width: 568px;
+    height: 198px;
+	padding: 20px 0 10px 20px;
+	font-size:15px;	
 }
