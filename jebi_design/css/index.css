@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+/* 헤더 */
+#header {
+    height: 280px;
+    margin: 0 auto;
+}
+
+/* 로그인 메뉴 */
+#header .btn-login {
+    width: 1200px;
+    height: 46px;
+    padding-top: 24px;
+    margin: 0 auto;
+}
+#header .btn-login .menu-login {
+    float: right;
+}
+#header .btn-login .menu-login li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1px solid #444;
+}
+#header .btn-login .menu-login li:last-child {
+    border-right: none;
+}
+
+/* 로고 이미지 */
+#header .img-logo {
+    width: 1200px;
+    height: 105px;
+    text-align: center;
+    margin: 10px auto 35px auto;
+}
+
+/* 메인메뉴 */
+#header .btn-menu {
+    min-width: 1200px;
+    width: 100%;
+    height: 60px;
+    
+    text-align: center;
+    background: #612C87;
+}
+#header .btn-menu .menu-main {
+    width: 1200px;
+    height: 40px;
+
+    padding-top: 20px;
+    margin: 0 auto;
+}
+#header .btn-menu .menu-main li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 30px;
+    border-right: 1.2px solid #fff;
+}
+#header .btn-menu .menu-main li:last-child {
+    border-right: none;
+}
+#header .btn-menu .menu-main li a {
+    transition: color 0.2s;
+    font-size: 20px;
+    color: #fff;
+}
+#header .btn-menu .menu-main li a:hover {
+    transition: color 0.2s;
+    color: #bbb;
+}
+
+/* Index 메인 */
+#container {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 메인 이미지 */
+#container .menu-img {
+    padding-top: calc(300 / 1000 * 100%);
+	background:url("../images/menu_img01.jpg") no-repeat;
+	animation:myfirst 10s infinite;
+	-moz-animation:myfirst 10s infinite;
+	-webkit-animation:myfirst 10s infinite;
+}
+@keyframes myfirst
+{
+0%   { background:url("../images/menu_img01.jpg") no-repeat;  background-size: cover;}
+33%  { background:url("../images/menu_img02.jpg") no-repeat;  background-size: cover;}
+66%  { background:url("../images/menu_img03.jpg") no-repeat;  background-size: cover;}
+100% { background:url("../images/menu_img01.jpg") no-repeat;  background-size: cover;}
+}
+
+/* 공지사항 */
+#container .content {
+    width: 1200px;
+    height: 300px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .notice {
+	width:1200px;
+    height: 70px;
+	border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .notice-title{
+	width:1090px;
+	height:40px;
+    float:left;
+    text-align: center;
+	padding-top: 20px;
+	font-size:20px;	 
+}
+#container .btn-notice{
+	float:right;
+	width:86px;
+	height:40px;
+	padding: 20px 0 0 20px;
+	font-size:25px;
+	color:gray;
+}
+#container .notice-content{
+	padding : 10px 0 0 30px;
+}
+#container .notice-content li{
+	padding : 9px 0;
+}
+#container .notice-content li a{
+	font-size:15px;
+}
+#container .notice-content li a span{
+	float:right;
+	font-size:15px;
+    padding-right: 30px;
+}
+
+/* 로그인 */
+#container .login-box {
+    width: 588px;
+    height: 300px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .id{
+    width: 400px;
+    height: 70px;
+    margin: 30px 0 0 30px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .btn-log {
+    width: 100px;
+    height: 152px;
+    float: right;
+    margin: 30px 30px 0 10px;
+    font-size: 20px ;
+    color: white;
+    border: 1px solid #612C87;
+    border-radius: 5px 5px 5px 5px ; 
+    background-color: #612C87 ;
+}
+#container .password{
+    width: 400px;
+    height: 70px;
+    margin: 10px 10px 0 30px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .checksave{
+    
+    margin: 20px 0 10px 30px ;
+    
+}
+
+#container .btn-id-password{
+    float: right;
+    margin-right:25px;
+}
+#container .btn-id-password li{   
+    display: inline-block;
+    text-align: center;
+    padding: 0 5px;
+    border-right: 2px solid rgb(119, 119, 119);
+}
+#container .btn-id-password li:last-child {
+    border-right: none;
+    
+}
+#container .btn-jebi-naver-talk {
+    width: 528px;
+    height: 40px;
+    margin-top: 20px;
+    font-size:13px;	
+    text-align: center;
+}
+#container .btn-jebi-naver-talk .jebi{
+    width: 165px;
+    height: 27px;
+    float: left;
+    padding-top: 13px;
+    margin-right: 11px;
+    border: 1px solid #612C87;
+    background:url("../images/login_jebi.png") no-repeat;
+    background-position: left center;
+    background-color: #612C87 ;
+
+}
+#container .btn-jebi-naver-talk .naver{
+    width: 165px;
+    height: 27px;
+    float: right;
+    padding: 13px 0 0 5px;
+    margin-right: 11px;
+    border: 1px solid #00fd15;  
+    background:url("../images/login_naver.png") no-repeat;
+    background-position: left center;
+    background-color: rgb(2, 231, 2) ;
+   
+}
+#container .btn-jebi-naver-talk .talk{
+    width: 165px;
+    height: 27px;
+    float: right;
+    padding-top: 13px;
+    text-align: right;
+    border: 1px solid #fbff01;
+    background:url("../images/login_kko.png") no-repeat;
+    background-position: left center;
+    background-color: rgb(230, 230, 1) ;
+}
+
+
+/* 중국센터주소 */
+#container .china-address-box {
+    width: 588px;
+    height: 300px;
+    float: right;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .china-address {
+	width: 588px;
+    height: 70px;
+	border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .address-title{
+    width: 588px;
+    height: 40px;
+    text-align: center;
+	font-size: 20px;
+    padding-top: 28px; 
+}
+#container .china-address-content{
+    width: 568px;
+    height: 198px;
+	padding: 20px 0 10px 20px;
+	font-size:15px;	
+}
+
+/* 배송/구매대행 신청 */
+#container .dlivery-purchase-box {
+    width: 588px;
+    height: 300px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .dlivery {
+	width: 292px;
+    height: 300px;
+    float: left;
+	border: 1px solid rgb(205, 205, 205);	
+}
+#container .purchase {
+	width: 292px;
+    height: 300px;
+    float: right;
+	border: 1px solid rgb(205, 205, 205);	
+}
+
+
+/* 이용후기 */
+#container .review-box {
+    width: 588px;
+    height: 300px;
+    float: right;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .review {
+	width: 588px;
+    height: 70px;
+	border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .review-title{
+    width: 588px;
+    height: 40px;
+    text-align: center;
+	font-size: 20px;
+    padding-top: 28px; 
+}
+#container .review-content{
+    height: 198px;
+	font-size:15px;
+    background:url("../images/review_img.png") no-repeat;	
+    background-position: 80px center;
+    background-size: 140px 100px ;
+}
+#container .review-content a span{
+	float:right;
+	font-size:15px;
+    padding: 70px 70px 0 0;
+}
+
