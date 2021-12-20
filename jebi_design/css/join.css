@@ -44,7 +44,7 @@
     color: #000;
 }
 
-.board-join .form-join, .field-submit {
+.board-join .form-join, .field-submit, .field-agree {
     text-align: left;
     width: 500px;
     margin: 0 auto;
@@ -102,7 +102,17 @@
     box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
 }
 
-.board-join .field-submit .checkbox input[type=checkbox] {
+.board-join .field-submit {
+    width: 500px;
+    margin: 10px auto;
+    display: block;
+    position: relative;
+}
+.board-join .checkbox {
+    display: inline-block;
+    margin-right: 20px;
+}
+.board-join .checkbox input[type=checkbox] {
     padding: 0;
     height: initial;
     width: initial;
@@ -110,18 +120,23 @@
     display: none;
     cursor: pointer;
 }
-.board-join .field-submit .checkbox label {
+.board-join .checkbox label {
+    display: block;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
     position: relative;
     cursor: pointer;
     padding-left: 28px;
     line-height: 25px;
 }
-.board-join .field-submit .checkbox .icon-checkbox {
+.board-join .checkbox .icon-checkbox {
     content: '';
     background-color: transparent;
     border: 2px solid #b4b4b4;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -129,6 +144,63 @@
     border-radius: 4px;
     transition: all 0.3s;
     position: absolute;
-    top: 3px;
+    top: 0px;
+    left: 0px;
+}
+
+.board-join .field-agree {
+    width: 500px;
+    margin: 30px auto;
+    display: block;
+    position: relative;
+}
+.board-join .field-agree .require {
+    font-size: 14px;
+    color: red;
+}
+
+.board-join .field-agree .terms {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #d5d5d5;
+}
+
+.board-join .btn-wrap {
+    margin: 0 auto;
+    width: 500px;
+}
+.board-join .btn-wrap .btn-submit {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #78148c;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 50px;
+    letter-spacing: 0.8px;
+}
+.board-join .btn-wrap .btn-submit .text {
+    position: relative;
+    left: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.board-join .btn-wrap .btn-submit .arrow-animate {
+    opacity: 0;
+    position: relative;
+    left: -10px;
+    transition: all 0.2s ease-in-out;
+}
+.board-join .btn-wrap .btn-submit:hover .arrow-animate {
+    position: relative;
+    left: 0px;
+    opacity: 1;
+}
+.board-join .btn-wrap .btn-submit:hover .text {
+    position: relative;
     left: 0px;
 }

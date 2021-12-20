@@ -92,14 +92,55 @@
             </div>
 
             <div class="field-submit">
+
                 <div class="checkbox">
                     <input type="checkbox" id="SMS_RCV_YN" name="SMS_RCV_YN">
                     <label for="SMS_RCV_YN">
-                        <span class="icon-checkbox">SMS 수신동의</span>
+                        <span class="icon-checkbox"></span> SMS 수신동의
                     </label>
                 </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="EMAIL_RCV_YN" id="EMAIL_RCV_YN">
+                    <label for="EMAIL_RCV_YN">
+                        <span class="icon-checkbox"></span> 이메일 수신동의
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="field-agree">
+                <div class="checkbox">
+                    <input type="checkbox" name="AGREE_1" id="AGREE_1">
+                    <label for="AGREE_1">
+                        <span class="icon-checkbox"></span> * 서비스 이용약관 <span class="require">(필수)</span>
+                    </label>
+                </div>
+                <div class="terms">
+
+                </div>
+            </div>
+            <div class="field-agree">
+                <div class="checkbox">
+                    <input type="checkbox" name="AGREE_2" id="AGREE_2">
+                    <label for="AGREE_2">
+                        <span class="icon-checkbox"></span> * 개인정보 수집 및 이용에 대한 안내 <span class="require">(필수)</span>
+                    </label>
+                </div>
+                <div class="terms"></div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="submit" class="btn-submit">
+                    <span class="text">가입하기</span>
+                    <span class="arrow-animate"><i class="fas fa-long-arrow-alt-right"></i></span>
+                </button>
             </div>
         </div>
+    </div>
+
+    <div id="footer">
+        
     </div>
 </body>
 </html>
