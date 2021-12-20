@@ -142,10 +142,16 @@
     cursor: pointer;
     margin-right: 5px;
     border-radius: 4px;
-    transition: all 0.3s;
+    transition: all 0.2s;
     position: absolute;
     top: 0px;
     left: 0px;
+    background-size: 0%;
+}
+.board-join input[type=checkbox]:checked + label .icon-checkbox {
+    background:url(../images/check_icon.png) no-repeat center;
+    background-size: cover;
+    background-size: 100%;
 }
 
 .board-join .field-agree {
