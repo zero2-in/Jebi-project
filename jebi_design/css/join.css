@@ -121,6 +121,7 @@
     cursor: pointer;
 }
 .board-join .checkbox label {
+    user-select: none;
     display: block;
     color: #666;
     font-size: 16px;
@@ -146,6 +147,8 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    
+    background:url(../images/check_icon.png) no-repeat center;
     background-size: 0%;
 }
 .board-join input[type=checkbox]:checked + label .icon-checkbox {
