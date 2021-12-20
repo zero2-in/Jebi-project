@@ -278,6 +278,7 @@
 #container .login-box {
     width: 588px;
     height: 300px;
+    float: left;
     border: 1px solid rgb(205, 205, 205);
 }
 #container .id{
@@ -322,13 +323,30 @@
     border-right: none;
     
 }
+#container .btn-jebi-naver-talk li a{
+    width: 150px;
+    height: 30px;
+    border: 1px solid rgb(119, 119, 119);
+}
+#container .btn-jebi-naver-talk .jebi{
+    border: 1px solid #612C87;
+    background-color: #612C87 ;
+}
+#container .btn-jebi-naver-talk .naver{
+    border: 1px solid #00fd15;
+    background-color: #00fd15 ;
+}
+#container .btn-jebi-naver-talk .talk{
+    border: 1px solid #fbff01;
+    background-color: #fbff01 ;
+}
 
 
 /* 중국센터주소 */
 #container .china-address-box {
     width: 588px;
     height: 300px;
-    
+    float: right;
     border: 1px solid rgb(205, 205, 205);
 }
 #container .china-address {
