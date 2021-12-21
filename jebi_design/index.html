@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>제비 - 배송대행</title>
 </head>
 <body>
@@ -38,10 +38,13 @@
     </div>
     <!-- Header End -->
     
-    <!-- Menu img Start -->
+    
     <div id="container">
+        <!-- Menu img Start -->
         <div class="menu-img"></div>
+        <!-- Menu img End -->
 
+        <!-- Menu notice Start -->
         <div class="content">
             <div class="notice">
                 <p class="notice-title">공지사항</p>
@@ -56,6 +59,93 @@
                     <li><a href="">8월9일~16일 항공 출고 관련 안내<span>2021-08-09</span></a></li>	
                 </ul>	
         </div>
+        <!-- Menu notice End -->
+
+        <!-- Menu login Start -->
+        <div class="content">    
+            <div class="login-box">
+                <div class="id-password-box">
+                    <input type="text"  class="id"  placeholder="&nbsp;&nbsp;아이디">
+                    <input type="button" onClick="" value="로그인" class="btn-log" > 
+                    <input type="password"  class="password"  placeholder="&nbsp;&nbsp;비밀번호">         
+                </div>
+                    <div class="checksave">
+                        <input type="checkbox" value="1" id="idsave" name="idsave"><label for="idsave">&nbsp;&nbsp;&nbsp;아이디 저장</label>
+                        
+                        <ul class="btn-id-password">
+                            <li><a href="">ID</a></li>
+                            <li><a href="">비밀번호 찾기</a></li>
+                        </ul>
+                        <ul class="btn-jebi-naver-talk">
+                            <li><a href="" class="jebi">제비 회원가입</a></li>                    
+                            <li><a href="" class="talk">카카오톡 계정으로 로그인</a></li>
+                            <li><a href="" class="naver">네이버 아이디로 로그인</a></li>
+                        </ul>
+                    </div>                
+            </div>
+            <!-- Menu login End -->
+
+            <!-- Menu china-address Start -->
+            <div class="china-address-box">
+                <div class="china-address">
+                    <p class="address-title">중국센터 주소안내</p>
+                </div>
+                <p class="china-address-content"> 주소 : 山东省 威海市 环翠区 凤林街道<br><br>
+                    상세주소 : 经区宋家洼凤鸣路燕喜堂东 黄色建筑物（仓库）6号, 나의 사서함번호<br><br>
+                    우편번호 : 264205<br><br>
+                    연 락 처 : 15066314676
+                </p>                   
+            </div> 
+        </div>   
+        <!-- Menu china-address End -->
+        
+        <!-- Menu dlivery/purchase Start -->
+        <div class="content">     
+             <div class="dlivery-purchase-box">   
+                <div class="dlivery">
+                    <p class="dlivery-content">
+                        <a href=""><span>배송대행 신청</span></a>	
+                    </p>   
+                </div>
+                <div class="purchase">
+                    <p class="purchase-content">
+                        <a href=""><span>구매대행 신청</span></a>	
+                    </p> 
+                </div>                   
+            </div>   
+            <!-- Menu review End -->
+
+            <!-- Menu review Start -->
+            <div class="review-box">
+                <div class="review">
+                    <p class="review-title">이용후기</p>
+                </div>
+                <p class="review-content">
+                    <a href=""><span>김***님<br>2021.12.19<br>첫 후기ㅎㅎㅎ</span></a>	
+                </p>                   
+            </div>   
+        </div>
+        <!-- Menu review End -->
+
+        <!-- Menu departure_schedule Start -->
+        
+        <div class="departure-schedule">
+            <div class="content"> 
+                <div class="schedule">
+                    <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
+                    <p class="btn-departure-schedule"><a href ="">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
+                </div>
+                <div class="oneweek-schedule">
+                    <div class="sun">
+                        <a href="">12-19(일)<br><p>항공 스케줄 없음<br><p>해운 스케줄 없음</p></p></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Menu departure_schedule End -->
+
+
     </div>
     
 </body>

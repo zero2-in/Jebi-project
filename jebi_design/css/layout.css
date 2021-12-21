@@ -95,7 +95,7 @@
 #container .content {
     width: 1200px;
     height: 300px;
-    margin: 100px auto 35px auto;
+    margin: 80px auto 35px auto;
     border: 1px solid rgb(205, 205, 205);
 }
 #container .notice {
@@ -131,5 +131,5 @@
 #container .notice-content li a span{
 	float:right;
 	font-size:15px;
-    padding-right: 30px;
+  padding-right: 30px;
 }
