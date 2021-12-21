@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+/* 회원가입 css */
+.container-join {
+    width: 1200px;
+    margin: 0 auto;
+}
+.container-join .bar-title {
+    width: 100%;
+    height: 50px;
+    padding: 80px 0 30px 0;
+}
+.bar-title .title {
+    font-weight: normal;
+    color: #333;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 1px 0 3px;
+}
+
+.container-join .board-join {
+    text-align: center;
+    width: 100%;
+}
+/* div.container-join .board-join */
+.board-join .text-welcome {
+    height: 70px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+.board-join .text-welcome .title {
+    font-size: 26px;
+}
+.board-join .text-welcome .info {
+    font-size: 17px;
+    color: #666;
+}
+.board-join .text-welcome .info a {
+    transition: color 0.2s;
+    color: #2A41E8;
+}
+.board-join .text-welcome .info a:hover {
+    transition: color 0.2s;
+    color: #000;
+}
+
+.board-join .form-join, .field-submit, .field-agree {
+    text-align: left;
+    width: 500px;
+    margin: 0 auto;
+}
+.board-join .form-join span {
+    font-size: 15px;
+}
+.board-join .form-join .info {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+.board-join .form-join .indicator-check {
+    position: relative;
+    left: 370px;
+    color: red;
+}
+.board-join .form-join .box-text {
+    width: 100%;
+    height: 40px;
+    padding: 6px 0;
+    transition: all 0.3s;
+}
+.board-join .form-join .box-text .input {
+    float: right;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 16px;
+    color: gray;
+    margin: 0;
+    max-width: 100%;
+    width: 460px;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 1;
+}
+.board-join .form-join .box-text i {
+    float: left;
+    color: #a0a0a0;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    background-color: #f8f8f8;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 4px 0 0 4px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+}
+/* 마우스 오버 말풍선 효과 */
+.board-join .arrow-box {
+    display: none;
+    position: relative;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 300px;
+    padding: 8px;
+    left: 50%;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+    background: #333;
+    color: rgb(223, 223, 223);
+    font-size: 14px;
+    animation: fade-in 0.6s;
+}
+.board-join .arrow-box:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 5px;
+    pointer-events: none;
+    content: " ";
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.board-join .field-submit {
+    width: 500px;
+    margin: 10px auto;
+    display: block;
+    position: relative;
+}
+.board-join .checkbox {
+    display: inline-block;
+    margin-right: 20px;
+}
+.board-join .checkbox input[type=checkbox] {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+.board-join .checkbox label {
+    user-select: none;
+    display: block;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+    padding-left: 28px;
+    line-height: 25px;
+}
+.board-join .checkbox .icon-checkbox {
+    content: '';
+    background-color: transparent;
+    border: 2px solid #b4b4b4;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    background:url(../images/check_icon.png) no-repeat center;
+    background-size: 0%;
+}
+.board-join input[type=checkbox]:checked + label .icon-checkbox {
+    background:url(../images/check_icon.png) no-repeat center;
+    background-size: cover;
+    background-size: 100%;
+}
+
+.board-join .field-agree {
+    width: 500px;
+    margin: 30px auto;
+    display: block;
+    position: relative;
+}
+.board-join .field-agree .require {
+    font-size: 14px;
+    color: red;
+}
+
+.board-join .field-agree .terms {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #d5d5d5;
+}
+
+.board-join .btn-wrap {
+    margin: 0 auto;
+    width: 500px;
+}
+.board-join .btn-wrap .btn-submit {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #78148c;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 50px;
+    letter-spacing: 0.8px;
+}
+.board-join .btn-wrap .btn-submit .text {
+    position: relative;
+    left: 13px;
+    transition: all 0.2s ease-in-out;
+}
+.board-join .btn-wrap .btn-submit .arrow-animate {
+    opacity: 0;
+    position: relative;
+    left: -10px;
+    transition: all 0.2s ease-in-out;
+}
+.board-join .btn-wrap .btn-submit:hover .arrow-animate {
+    position: relative;
+    left: 0px;
+    opacity: 1;
+}
+.board-join .btn-wrap .btn-submit:hover .text {
+    position: relative;
+    left: 0px;
+}
