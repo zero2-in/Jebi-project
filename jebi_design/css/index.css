@@ -185,18 +185,17 @@
     
 }
 #container .btn-jebi-naver-talk {
-    width: 528px;
+    width: 540px;
     height: 40px;
     margin-top: 20px;
-    font-size:13px;	
+    font-size:12px;	
     text-align: center;
 }
 #container .btn-jebi-naver-talk .jebi{
-    width: 165px;
+    width: 160px;
     height: 27px;
     float: left;
     padding-top: 13px;
-    margin-right: 11px;
     border: 1px solid #612C87;
     background:url("../images/login_jebi.png") no-repeat;
     background-position: left center;
@@ -204,11 +203,11 @@
 
 }
 #container .btn-jebi-naver-talk .naver{
-    width: 165px;
+    width: 160px;
     height: 27px;
     float: right;
     padding: 13px 0 0 5px;
-    margin-right: 11px;
+    margin-right: 30px;
     border: 1px solid #00fd15;  
     background:url("../images/login_naver.png") no-repeat;
     background-position: left center;
@@ -216,7 +215,7 @@
    
 }
 #container .btn-jebi-naver-talk .talk{
-    width: 165px;
+    width: 160px;
     height: 27px;
     float: right;
     padding-top: 13px;
@@ -258,23 +257,38 @@
 #container .dlivery-purchase-box {
     width: 588px;
     height: 300px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);
+    float: left;  
 }
 #container .dlivery {
 	width: 292px;
     height: 300px;
     float: left;
-	border: 1px solid rgb(205, 205, 205);	
+	border: 1px solid rgb(205, 205, 205);
+    background:url("../images/dlivery_img.png") no-repeat;
+    background-position: center 50px;	
 }
 #container .purchase {
 	width: 292px;
     height: 300px;
     float: right;
 	border: 1px solid rgb(205, 205, 205);	
+    background:url("../images/purchase_img.png") no-repeat;
+    background-position: center 50px;	
 }
-
-
+#container .dlivery .dlivery-content {
+    width: 290px;
+    height: 50px;
+    padding-top: 220px;
+    text-align: center;
+	font-size: 25px;
+}
+#container .purchase-content  {
+    width: 290px;
+    height: 50px;
+    padding-top: 220px;
+    text-align: center;
+	font-size: 25px;
+}
 /* 이용후기 */
 #container .review-box {
     width: 588px;
@@ -306,4 +320,70 @@
 	font-size:15px;
     padding: 70px 70px 0 0;
 }
+/* 출항한주스케줄 */
+#container .departure-schedule {
+	background-color: rgb(240, 240, 240) ;	
+}
+#container .schedule {
 
+}
+#container .departure-schedule-title{
+	width:800px;
+	height:40px;
+    float:left;
+	padding-top: 30px;
+	font-size:22px;
+     
+}
+#container .departure-schedule-title span{
+	padding-top: 20px;
+	font-size:15px;
+     
+}
+#container .departure-schedule-title span b{
+	font-size:15px;
+    color: red;
+     
+} 
+#container .btn-departure-schedule{
+	float:right;
+	width:200px;
+	height:40px;
+	padding: 30px 0 0 20px;
+	font-size:17px;
+}
+#container .btn-departure-schedule a{
+    font-size:17px;
+	color:rgb(7, 7, 7);
+}
+#container .oneweek-schedule{
+    width:180px;
+	height:180px;
+    margin: 80px 10px 0 0;
+    background-color: rgb(255, 255, 255) ;	
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .sun{
+    width:178px;
+	height:148px;
+    padding-top: 0px;
+    text-align: center;
+    background-color: rgb(255, 255, 255) ;	
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .sun a{
+    color: #000;  
+}
+#container .sun p{
+    width:178px;
+	height:30px;
+    margin-top: 40px;
+    color: rgb(150, 150, 150); 
+}
+#container .sun p p{
+    width:178px;
+	height:70px;
+    margin-top: 20px;
+    color: rgb(150, 150, 150); 
+    border: 1px solid rgb(205, 205, 205);
+}
