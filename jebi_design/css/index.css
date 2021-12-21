@@ -185,14 +185,14 @@
     
 }
 #container .btn-jebi-naver-talk {
-    width: 540px;
+    width: 530px;
     height: 40px;
     margin-top: 20px;
     font-size:12px;	
     text-align: center;
 }
 #container .btn-jebi-naver-talk .jebi{
-    width: 160px;
+    width: 155px;
     height: 27px;
     float: left;
     padding-top: 13px;
@@ -203,11 +203,11 @@
 
 }
 #container .btn-jebi-naver-talk .naver{
-    width: 160px;
+    width: 155px;
     height: 27px;
     float: right;
     padding: 13px 0 0 5px;
-    margin-right: 30px;
+    margin-right: 26px;
     border: 1px solid #00fd15;  
     background:url("../images/login_naver.png") no-repeat;
     background-position: left center;
@@ -215,7 +215,7 @@
    
 }
 #container .btn-jebi-naver-talk .talk{
-    width: 160px;
+    width: 155px;
     height: 27px;
     float: right;
     padding-top: 13px;
@@ -257,13 +257,13 @@
 #container .dlivery-purchase-box {
     width: 588px;
     height: 300px;
-    float: left;  
+    float: left; 
+    border: 1px solid rgb(205, 205, 205); 
 }
 #container .dlivery {
 	width: 292px;
     height: 300px;
     float: left;
-	border: 1px solid rgb(205, 205, 205);
     background:url("../images/dlivery_img.png") no-repeat;
     background-position: center 50px;	
 }
@@ -271,7 +271,7 @@
 	width: 292px;
     height: 300px;
     float: right;
-	border: 1px solid rgb(205, 205, 205);	
+	border-left: 1px solid rgb(205, 205, 205);	
     background:url("../images/purchase_img.png") no-repeat;
     background-position: center 50px;	
 }
@@ -356,34 +356,123 @@
     font-size:17px;
 	color:rgb(7, 7, 7);
 }
-#container .oneweek-schedule{
-    width:180px;
+#container .oneweek-schedule {
+    width:1200px;
 	height:180px;
-    margin: 80px 10px 0 0;
-    background-color: rgb(255, 255, 255) ;	
-    border: 1px solid rgb(205, 205, 205);
+    margin-top: 80px;
+    border: 1px solid rgb(252, 3, 3);
 }
 #container .sun{
-    width:178px;
-	height:148px;
-    padding-top: 0px;
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
     text-align: center;
-    background-color: rgb(255, 255, 255) ;	
-    border: 1px solid rgb(205, 205, 205);
+    background-color: rgb(255, 255, 255);	
 }
 #container .sun a{
     color: #000;  
 }
 #container .sun p{
-    width:178px;
-	height:30px;
-    margin-top: 40px;
-    color: rgb(150, 150, 150); 
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
 }
-#container .sun p p{
-    width:178px;
-	height:70px;
-    margin-top: 20px;
-    color: rgb(150, 150, 150); 
-    border: 1px solid rgb(205, 205, 205);
+#container .mon{
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    background:url("../images/air_img.png") no-repeat;	
+    background-position: center 65px;
+    
+    background-color: rgb(255, 255, 255);
+}
+#container .mon a{
+    color: #000;  
+}
+#container .mon p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
+}
+#container .tues{
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#container .tues a{
+    color: #000;  
+}
+#container .tues p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
+}
+#container .wednes{
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#container .wednes a{
+    color: #000;  
+}
+#container .wednes p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
+}
+#container .thurs{
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#container .thurs a{
+    color: #000;  
+}
+#container .thurs p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
+}
+#container .fri{
+    width:163px;
+	height:160px;
+    float:left;
+    margin-right: 10px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#container .fri a{
+    color: #000;  
+}
+#container .fri p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
+}
+#container .satur{
+    width:162px;
+	height:160px;
+    float:right;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#container .satur a{
+    color: #000;  
+}
+#container .satur p{
+    margin-top: 30px;
+    color: rgb(150, 150, 150);  
 }
