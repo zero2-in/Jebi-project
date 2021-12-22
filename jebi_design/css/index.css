@@ -135,6 +135,11 @@
 }
 
 /* 로그인 */
+#container .content01 {
+    width: 1200px;
+    height: 300px;
+    margin: 80px auto 35px auto;
+}
 #container .login-box {
     width: 588px;
     height: 300px;
@@ -155,8 +160,8 @@
     font-size: 20px ;
     color: white;
     border: 1px solid #612C87;
-    border-radius: 5px 5px 5px 5px ; 
-    background-color: #612C87 ;
+    border-radius: 5px 5px 5px 5px; 
+    background-color: #612C87;
 }
 #container .password{
     width: 400px;
@@ -185,44 +190,43 @@
     
 }
 #container .btn-jebi-naver-talk {
-    width: 530px;
+    width: 535px;
     height: 40px;
     margin-top: 20px;
     font-size:12px;	
     text-align: center;
 }
 #container .btn-jebi-naver-talk .jebi{
-    width: 155px;
+    width: 163px;
     height: 27px;
     float: left;
+    margin-right: 20px;
     padding-top: 13px;
-    border: 1px solid #612C87;
+    color: #fff;
     background:url("../images/login_jebi.png") no-repeat;
-    background-position: left center;
+    background-position: 5px center;
     background-color: #612C87 ;
-
 }
 #container .btn-jebi-naver-talk .naver{
-    width: 155px;
+    width: 163px;
     height: 27px;
-    float: right;
+    float: left;
     padding: 13px 0 0 5px;
-    margin-right: 26px;
-    border: 1px solid #00fd15;  
+    margin-right: 20px;
+    color: #fff;
     background:url("../images/login_naver.png") no-repeat;
-    background-position: left center;
-    background-color: rgb(2, 231, 2) ;
+    background-position: 5px center;
+    background-color: rgb(0, 180, 0) ;
    
 }
 #container .btn-jebi-naver-talk .talk{
-    width: 155px;
+    width: 158px;
     height: 27px;
-    float: right;
-    padding-top: 13px;
+    float: left;
+    padding: 13px 6px 0 0;
     text-align: right;
-    border: 1px solid #fbff01;
     background:url("../images/login_kko.png") no-repeat;
-    background-position: left center;
+    background-position: 5px center;
     background-color: rgb(230, 230, 1) ;
 }
 
@@ -321,6 +325,12 @@
     padding: 70px 70px 0 0;
 }
 /* 출항한주스케줄 */
+#container .content02 {
+    width: 1200px;
+    height: 300px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(240, 240, 240) ;
+}
 #container .departure-schedule {
 	background-color: rgb(240, 240, 240) ;	
 }
@@ -332,18 +342,15 @@
 	height:40px;
     float:left;
 	padding-top: 30px;
-	font-size:22px;
-     
+	font-size:22px;     
 }
 #container .departure-schedule-title span{
 	padding-top: 20px;
-	font-size:15px;
-     
+	font-size:15px;   
 }
 #container .departure-schedule-title span b{
 	font-size:15px;
-    color: red;
-     
+    color: red;    
 } 
 #container .btn-departure-schedule{
 	float:right;
@@ -356,11 +363,14 @@
     font-size:17px;
 	color:rgb(7, 7, 7);
 }
+#container .btn-departure-schedule a i{
+    font-size:17px;
+    padding-left: 10px;
+}
 #container .oneweek-schedule {
     width:1200px;
 	height:180px;
     margin-top: 80px;
-    border: 1px solid rgb(252, 3, 3);
 }
 #container .sun{
     width:163px;
@@ -385,17 +395,14 @@
     margin-right: 10px;
     padding-top: 20px;
     text-align: center;
-    background:url("../images/air_img.png") no-repeat;	
-    background-position: center 65px;
-    
     background-color: rgb(255, 255, 255);
 }
 #container .mon a{
-    color: #000;  
+    color: #000;
 }
-#container .mon p{
-    margin-top: 30px;
-    color: rgb(150, 150, 150);  
+#container .mon img{
+    margin-top: 20px;
+    color: rgb(150, 150, 150); 
 }
 #container .tues{
     width:163px;
@@ -409,8 +416,8 @@
 #container .tues a{
     color: #000;  
 }
-#container .tues p{
-    margin-top: 30px;
+#container .tues img{
+    margin-top: 20px;
     color: rgb(150, 150, 150);  
 }
 #container .wednes{
@@ -425,8 +432,8 @@
 #container .wednes a{
     color: #000;  
 }
-#container .wednes p{
-    margin-top: 30px;
+#container .wednes img{
+    margin-top: 20px;
     color: rgb(150, 150, 150);  
 }
 #container .thurs{
@@ -441,8 +448,8 @@
 #container .thurs a{
     color: #000;  
 }
-#container .thurs p{
-    margin-top: 30px;
+#container .thurs img{
+    margin-top: 20px;
     color: rgb(150, 150, 150);  
 }
 #container .fri{
@@ -457,8 +464,8 @@
 #container .fri a{
     color: #000;  
 }
-#container .fri p{
-    margin-top: 30px;
+#container .fri img{
+    margin-top: 20px;
     color: rgb(150, 150, 150);  
 }
 #container .satur{
@@ -475,4 +482,151 @@
 #container .satur p{
     margin-top: 30px;
     color: rgb(150, 150, 150);  
+}
+/* 구매대행 신청방법 */
+#container .content03 {
+    width: 1200px;
+    height: 550px;
+    margin: 80px auto 35px auto;
+}
+#container .ararand-title{
+    width: 1200px;
+    height: 30px;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center; 
+}
+#container .ararand-video{
+    width: 1200px;
+    height: 498px;
+    font-size: 17px;
+    text-align: center;
+}
+/* 타오바오/알리바바 사이트 */
+#container .content04 {
+    width: 1200px;
+    height: 100px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .taobao-alibaba{
+    
+}
+#container .taobao {
+	width: 265px;
+    height: 79px;
+    float: left;
+    padding: 20px 0 0 30px;	 
+}
+#container .taobao-site{
+    width: 200px;
+    height: 60px;
+    float: left;
+    padding: 40px 0 0 100px;
+    font-size: 20px;
+    border-right: 1px solid rgb(205, 205, 205);	 
+}
+#container .alibaba {
+	width: 260px;
+    height: 79px;
+    float: left;
+    padding: 20px 0 0 30px;   
+}
+#container .alibaba-site{
+    width: 200px;
+    height: 60px;
+    float: right;
+    padding: 40px 1px 0 100px;
+    font-size: 20px;
+}
+/* 타오바오 베스트 */
+#container .content05 {
+    width: 1200px;
+    height: 931px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-title{
+    width: 1198px;
+    height: 30px;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center; 
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-box{
+    width: 1198px;
+    height: 877px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .women-pet-men-toy-box{
+    width: 1196px;
+    height: 416px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-women{
+    width: 364px;
+    height: 416px;
+    float: left;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-pet{
+    width: 460px;
+    height: 416px;
+    float: left;
+    margin: 0 auto 0 25px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-men{
+    width: 316px;
+    height: 200px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-toy{
+    width: 316px;
+    height: 193px;
+    float: right;
+    margin-top: 20px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .camping-sports-box{
+    width: 1196px;
+    height: 437px;
+    margin-top: 20px;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-camping{
+    width: 772px;
+    height: 435px;
+    float: left;
+    border: 1px solid rgb(255, 255, 255);
+}
+#container .taobao-sports{
+    width: 388px;
+    height: 435px;
+    float: right;
+    border: 1px solid rgb(255, 255, 255);
+}
+/* 배송대행/구매대행 절차 */
+#container .dlivery-purchase-title{
+    width: 1198px;
+    height: 30px;
+    font-size: 17px;
+    padding-top: 20px;
+    border: 1px solid rgb(190, 190, 190);
+}
+#container .dlivery-procedure{
+    width: 592px;
+    height: 200px;
+    padding-top: 46px;
+    float: left;
+    border: 1px solid rgb(207, 206, 206);
+}
+#container .purchase-procedure{
+    width: 592px;
+    height: 200px;
+    padding-top: 46px;
+    float: right;
+    border: 1px solid rgb(206, 206, 206);
 }
