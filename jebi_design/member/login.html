@@ -57,11 +57,11 @@
                     <!-- 로그인 텍스트 상자 -->
                     <p class="box-text">
                         <i class="fas fa-user-circle"></i>
-                        <input type="text" class="input" name="id" placeholder="ID" autofocus>
+                        <input type="text" class="input" name="id" placeholder="ID" autofocus onkeypress="if(event.keyCode == '13') login.password.focus();">
                     </p>
                     <p class="box-text">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password" class="input">
+                        <input type="password" name="password" placeholder="Password" class="input" onkeypress="if(event.keyCode == '13') check();">
                     </p>
 
                     <div class="checkbox">
@@ -72,7 +72,7 @@
                     </div>
                     
                     <!-- 로그인 버튼 -->
-                    <button type="button" class="btn-submit ripple-effect" data-animation="ripple" onclick="return check();">
+                    <button type="submit" class="btn-submit ripple-effect" data-animation="ripple">
                         <span class="text">로그인</span>
                         <span class="arrow-animate"><i class="fas fa-long-arrow-alt-right"></i></span>
                     </button>
@@ -114,6 +114,8 @@
             function check() {
                 if(checkValue(login.id, "아이디를 입력하세요")) return false;
                 if(checkValue(login.password, "비밀번호를 입력하세요")) return false;
+
+                return true;
             }
         </script>
     </div>
