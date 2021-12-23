@@ -33,3 +33,113 @@ body {
     width: 100%;
     font-size: 16px;
 }
+
+/* 거의 모든 페이지 공통! 이동경로 css 이다! */
+#breadcrumbs.dark {
+    color: rgb(102, 102, 102);
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(238, 238, 238);
+}
+#breadcrumbs {
+    float: right;
+    border-radius: 4px;
+    font-size: 14.7px;
+    width: auto;
+    padding: 12px 22px;
+    user-select: none;
+}
+#breadcrumbs .nav-list li {
+    float: left;
+    list-style: none;
+    margin-left: 7px;
+    line-height: 23px;
+    height: 23px;
+    position: relative;
+}
+#breadcrumbs .nav-list li:first-child {
+    margin-left: 0px;
+}
+#breadcrumbs .nav-list li:first-child::before {
+    margin: 0;
+    border: none;
+}
+#breadcrumbs .nav-list li::before {
+    content: "";
+    float: left;
+    height: 0px;
+    width: 0px;
+    border-left: 4px solid rgba(0, 0, 0, 0.15);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    font-size: 14px;
+    margin-right: 12px;
+    margin-top: 8px;
+}
+#breadcrumbs .nav-list .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: -21px;
+    background-color: #fff;
+    border-radius: 6px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+#breadcrumbs .dropdown-content a {
+    border-radius: 8px;
+    padding: 5px 16px;
+    margin: 10px 5px;
+    display: block;
+    transition: all 0.3s;
+}
+#breadcrumbs .dropdown-content a:hover {
+    background-color: rgba(0, 20, 220, 0.12);
+}
+#breadcrumbs .dropdown-content .check {
+    float: right;
+    color: #2a41e8;
+}
+#breadcrumbs .select-area span {
+    font-size: 14px;
+}
+#breadcrumbs .select-area .caret {
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid #aaa;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+#breadcrumbs .select-area .active {
+    transform: rotate(180deg);
+}
+
+#breadcrumbs .clearfix::before {
+    content: " ";
+    display: flex;
+}
+#breadcrumbs .clearfix::after {
+    content: " ";
+    display: flex;
+    clear: both;
+}
+#breadcrumbs button {
+    border: none;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    background: 0px 0px;
+    color: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    cursor: pointer;
+}
