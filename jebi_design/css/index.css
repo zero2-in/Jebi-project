@@ -95,29 +95,34 @@
 #container .content {
     width: 1200px;
     height: 300px;
-    margin: 80px auto 35px auto;
-    border: 1px solid rgb(205, 205, 205);
+    margin: 80px auto 35px auto;	
+}
+#container .notice-question {
+	width:588px;
+    height: 298px;
+    float:left;
+	border: 1px solid rgb(205, 205, 205);	
 }
 #container .notice {
-	width:1200px;
+	width:588px;
     height: 70px;
 	border-bottom: 1px solid rgb(205, 205, 205);	
 }
 #container .notice-title{
-	width:1090px;
-	height:40px;
+	width:488px;
+	height:48px;
     float:left;
     text-align: center;
 	padding-top: 20px;
-	font-size:20px;	 
+	font-size:20px;	
 }
 #container .btn-notice{
 	float:right;
-	width:86px;
-	height:40px;
+	width:76px;
+	height:48px;
 	padding: 20px 0 0 20px;
 	font-size:25px;
-	color:gray;
+	color:gray;	
 }
 #container .notice-content{
 	padding : 10px 0 0 30px;
@@ -132,6 +137,58 @@
 	float:right;
 	font-size:15px;
     padding-right: 30px;
+}
+/* 고객센터 */
+#container .customer-service-center{
+	width:588px;
+	height:298px;
+    float:right;
+    text-align: center;
+    border: 1px solid rgb(205, 205, 205);	
+}
+#container .customer-service-center-title{
+	width:586px;
+	height:50px;
+	padding-top: 20px;
+	font-size:20px;	
+    border-bottom: 1px solid rgb(205, 205, 205);	
+}
+#container .customer-service-center-Tel-time-inquiry-answer{
+	width:586px;
+	height:226px;
+	font-size:12px;   	
+}
+#container .tel{
+	width:584px;
+	height:50px;
+    padding-top: 10px;
+	font-size:40px; 
+    color: #612C87;  	
+}
+#container .time{
+	width:584px;
+	height:50px; 
+    padding-top: 10px;
+}
+#container .inquiry{
+	width:584px;
+	height:50px; 
+}
+#container .inquiry p{
+	width:200px;
+	height:30px; 
+    padding-top: 15px;
+    margin-left: 192px;
+    font-size:18px; 
+    text-align: center;
+    color: #ffffff;  
+    border: 1px solid rgb(205, 205, 205);
+    background-color: #612C87;	
+}
+#container .answer{
+	width:584px;
+	height:48px; 
+    padding-top: 5px;
 }
 
 /* 로그인 */
@@ -708,71 +765,24 @@
     padding-top: 15px;
     color: #000;  
 }
-/* 고객센터 */
-#container .content06 {
+
+#footer {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+/* 이용안내 */
+#footer .favorites-service {
+	background-color: rgb(240, 240, 240) ;	
+}
+#footer .content {
     width: 1200px;
-    height: 157px;
+    height: 80px;
     margin: 80px auto 35px auto;
-    border: 1px solid rgb(253, 3, 3) ;	
+    border: 1px solid rgb(205, 205, 205);		
 }
-#container .customer-service-center{
-	width:1198px;
-	height:233px;
-    float:left;
-    border: 1px solid rgb(240, 240, 240) ;	
-}
-#container .customer-service-center-title{
-	width:1196px;
-	height:30px;
-	font-size:20px;   
-    border: 1px solid rgb(240, 240, 240) ;	
-}
-#container .customer-service-center-Tel-time-inquiry-answer{
-	width:820px;
-	height:122px;
-	font-size:20px;   
-    border: 1px solid rgb(2, 252, 64) ;	
-}
-#container .customer-service-center-Tel-time{
-	width:398px;
-	height:120px;
-	font-size:20px; 
-    float:left;  
-    border: 1px solid rgb(98, 2, 252) ;	
-}
-#container .tel{
-	width:396px;
-	height:48px;
-	font-size:40px; 
-    color: #612C87;  
-    border: 1px solid rgb(252, 2, 156) ;	
-}
-#container .time{
-	width:396px;
-	height:58px; 
-    font-size:14px; 
-    padding-top: 10px;
-    border: 1px solid rgb(252, 2, 2) ;	
-}
-#container .customer-service-center-inquiry-answer{
-	width:398px;
-	height:120px;
-    float:right; 
-    font-size:12px;
-    border: 1px solid rgb(214, 252, 2) ;	
-}
-#container .inquiry{
-	width:396px;
-	height:50px; 
-    border: 1px solid rgb(98, 2, 252) ;
-}
-#container .inquiry p{
-	width:300px;
-	height:40px; 
-    border: 1px solid rgb(240, 240, 240) ;	
-}
-#container .answer{
-	width:396px;
-	height:50px; 
-    border: 1px solid rgb(252, 2, 2) ;	
+#footer .Information-use {
+    width: 100px;
+    height: 20px;
+    float: left;
+    border: 1px solid rgb(250, 2, 2);		
 }
