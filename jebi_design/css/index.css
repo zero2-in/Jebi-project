@@ -483,7 +483,7 @@
     margin-top: 30px;
     color: rgb(150, 150, 150);  
 }
-/* 구매대행 신청방법 */
+/* 배송/구매대행 신청방법 */
 #container .content03 {
     width: 1200px;
     height: 550px;
@@ -614,19 +614,165 @@
     height: 30px;
     font-size: 17px;
     padding-top: 20px;
-    border: 1px solid rgb(190, 190, 190);
 }
 #container .dlivery-procedure{
     width: 592px;
     height: 200px;
     padding-top: 46px;
     float: left;
-    border: 1px solid rgb(207, 206, 206);
 }
 #container .purchase-procedure{
     width: 592px;
     height: 200px;
     padding-top: 46px;
-    float: right;
-    border: 1px solid rgb(206, 206, 206);
+    float: right;  
+}
+/* 즐겨찾는 서비스 */
+#container .favorites-service {
+	background-color: rgb(240, 240, 240) ;	
+}
+#container .favorites-service-title{
+	width:1198px;
+	height:35px;
+    float:left;
+	padding-top: 45px;
+	font-size:22px;   
+    border: 1px solid rgb(240, 240, 240) ;	
+}
+#container .sverice-Information {
+    width:1198px;
+	height:298px;
+    border: 1px solid rgb(240, 240, 240) ;	
+}
+#container .guide{
+    width:223px;
+	height:160px;
+    float:left;
+    margin-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);	
+}
+#container .guide a p{
+    padding-top: 15px;
+    color: #000;  
+}
+#container .questions{
+    width:223px;
+	height:160px;
+    float:left;
+    margin-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);	
+}
+#container .questions a p{
+    padding-top: 15px;
+    color: #000;  
+}
+#container .Fee-information{
+    width:223px;
+	height:160px;
+    float:left;
+    margin-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);	
+}
+#container .Fee-information a p{
+    padding-top: 15px;
+    color: #000;  
+}
+#container .transportation-information{
+    width:223px;
+	height:160px;
+    float:left;
+    margin-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);	
+}
+#container .transportation-information a p{
+    padding-top: 15px;
+    color: #000;  
+}
+#container .taobao-insert{
+    width:223px;
+	height:160px;
+    float:left;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);	
+}
+#container .taobao-insert a p{
+    padding-top: 15px;
+    color: #000;  
+}
+/* 고객센터 */
+#container .content06 {
+    width: 1200px;
+    height: 157px;
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(253, 3, 3) ;	
+}
+#container .customer-service-center{
+	width:1198px;
+	height:233px;
+    float:left;
+    border: 1px solid rgb(240, 240, 240) ;	
+}
+#container .customer-service-center-title{
+	width:1196px;
+	height:30px;
+	font-size:20px;   
+    border: 1px solid rgb(240, 240, 240) ;	
+}
+#container .customer-service-center-Tel-time-inquiry-answer{
+	width:820px;
+	height:122px;
+	font-size:20px;   
+    border: 1px solid rgb(2, 252, 64) ;	
+}
+#container .customer-service-center-Tel-time{
+	width:398px;
+	height:120px;
+	font-size:20px; 
+    float:left;  
+    border: 1px solid rgb(98, 2, 252) ;	
+}
+#container .tel{
+	width:396px;
+	height:48px;
+	font-size:40px; 
+    color: #612C87;  
+    border: 1px solid rgb(252, 2, 156) ;	
+}
+#container .time{
+	width:396px;
+	height:58px; 
+    font-size:14px; 
+    padding-top: 10px;
+    border: 1px solid rgb(252, 2, 2) ;	
+}
+#container .customer-service-center-inquiry-answer{
+	width:398px;
+	height:120px;
+    float:right; 
+    font-size:12px;
+    border: 1px solid rgb(214, 252, 2) ;	
+}
+#container .inquiry{
+	width:396px;
+	height:50px; 
+    border: 1px solid rgb(98, 2, 252) ;
+}
+#container .inquiry p{
+	width:300px;
+	height:40px; 
+    border: 1px solid rgb(240, 240, 240) ;	
+}
+#container .answer{
+	width:396px;
+	height:50px; 
+    border: 1px solid rgb(252, 2, 2) ;	
 }
