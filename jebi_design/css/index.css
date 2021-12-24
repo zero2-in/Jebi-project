@@ -674,7 +674,7 @@
 #container .dlivery-procedure{
     width: 592px;
     height: 200px;
-    padding-top: 46px;
+    padding: 46px 0 0 16px;
     float: left;
 }
 #container .purchase-procedure{
