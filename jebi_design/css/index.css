@@ -260,7 +260,8 @@
     padding-top: 13px;
     float: left;
     color: #fff;
-    background:url("../images/login_jebi1.png") no-repeat;
+    background:url("../images/jebi-box.png") no-repeat;
+    background-size: contain;
     background-position: 5px center;
     background-color: #612C87 ;
 }
