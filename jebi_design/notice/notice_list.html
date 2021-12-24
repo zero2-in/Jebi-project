@@ -41,5 +41,49 @@
     </div>
     <!-- Header End -->
     
+    <!-- nav Script -->
+    <script>
+        $(document).ready(function () {
+            $("#breadcrumbs .dropbtn").click(function () { 
+                $("#breadcrumbs .dropdown-content").toggle(200);
+                $("#breadcrumbs .select-area .caret").toggleClass("active");
+            });
+        });
+    </script>
+
+    <div class="container-notice">
+        <div class="bar-title">
+            <h2 class="title">공지사항</h2>
+
+            <!-- 사이트 이동경로를 만들어라! -->
+            <nav id="breadcrumbs" class="dark">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li>고객센터</li>
+                    <li class="select-area">
+                        <button class="dropbtn">공지사항 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <div class="dropdown-content">
+                            <a href="notice_list.html">공지사항<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="#">자주하는질문</a>
+                            <a href="#">1:1문의</a>
+                            <a href="#">이용후기</a>
+                            <a href="#">이벤트</a>
+                            <a href="#">노데이터</a>
+                            <a href="#">통관조회</a>
+                        </div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dashboard">
+            <div class="search-con">
+
+            </div>
+
+            <div class="content"></div>
+        </div>
+    </div>
 </body>
 </html>
