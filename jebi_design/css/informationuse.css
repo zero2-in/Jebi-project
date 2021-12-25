@@ -1,0 +1,383 @@
+@charset "utf-8";
+
+/* 헤더 */
+#header {
+    height: 280px;
+    margin: 0 auto;
+}
+
+/* 로그인 메뉴 */
+#header .btn-login {
+    width: 1200px;
+    height: 46px;
+    padding-top: 24px;
+    margin: 0 auto;
+}
+#header .btn-login .menu-login {
+    float: right;
+}
+#header .btn-login .menu-login li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1px solid #444;
+}
+#header .btn-login .menu-login li:last-child {
+    border-right: none;
+}
+
+/* 로고 이미지 */
+#header .img-logo {
+    width: 1200px;
+    height: 105px;
+    text-align: center;
+    margin: 10px auto 35px auto;
+}
+
+/* 메인메뉴 */
+#header .btn-menu {
+    min-width: 1200px;
+    width: 100%;
+    height: 60px;  
+    text-align: center;
+    background: #612C87;
+}
+#header .btn-menu .menu-main {
+    width: 1200px;
+    height: 40px;
+
+    padding-top: 20px;
+    margin: 0 auto;
+}
+#header .btn-menu .menu-main li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 30px;
+    border-right: 1.2px solid #fff;
+}
+#header .btn-menu .menu-main li:last-child {
+    border-right: none;
+}
+#header .btn-menu .menu-main li a {
+    transition: color 0.2s;
+    font-size: 20px;
+    color: #fff;
+}
+#header .btn-menu .menu-main li a:hover {
+    transition: color 0.2s;
+    color: #bbb;
+}
+/* 배송대행 서비스 안내 */
+#container .informationuse {
+    width: 1200px;
+    height: 2400px; 
+    margin: 80px auto 35px auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .informationuse-title {
+    width: 1198px;
+    height: 48px; 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .informationuse-title p{
+    width: 300px;
+    height: 35px;
+    font-size: 30px;
+    padding-top: 11px; 
+    float: left;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .btn-manual{
+    width: 350px;
+    height: 32px;
+    padding-top: 14px; 
+    float: right;
+    border-radius: 5px 5px 5px 5px; 
+    background-color: rgb(220, 220, 220);	
+    border: 1px solid rgb(220, 220, 220);	
+}
+/* 홈/이용안내/배송대행 이용방법 */
+#container .home{
+    width: 155px;
+    height: 30px;
+    padding-left: 24px;
+    font-size: 15px;
+    float: left;	
+}
+#container .toggle{
+    width: 155px;
+    height: 30px;
+    font-size: 15px;
+    float: right;
+}
+#container .box1{
+    width: 152px;
+    height: 230px;
+    margin-top: 18px;
+    padding-left: 10px;
+    font-size: 15px;
+    float: right;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid rgb(205, 205, 205);	
+}
+#container .box1 i{
+    color: #612C87;	
+}
+/* 서브 메인 */
+#container .informationuse-sub-title{
+    width: 300px;
+    height: 2348px; 
+    float: left;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .delivery-agent{
+    width: 230px;
+    height: 120px;
+    margin-top: 50px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+#container .delivery-agent-manual{
+    width: 220px;
+    height: 25px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+    
+}
+#container .delivery-agent-service{
+    width: 180px;
+    height: 25px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    border-radius: 5px 5px 5px 5px; 
+    background-color: #612C87; 
+}
+#container .delivery-agent-service a{
+    color: rgb(255, 255, 255);
+}
+#container .delivery-agent-manual-application{
+    width: 178px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .delivery-agent-manual-application a{
+   color: #612C87;
+} 
+#container .purchasingagent-agent{
+    width: 230px;
+    height: 120px;
+    margin-top: 7px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+#container .purchasingagent-agent-manual{
+    width: 220px;
+    height: 25px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+    
+}
+#container .purchasingagent-agent-service{
+    width: 178px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .purchasingagent-agent-service a{
+    color: #612C87;
+}
+#container .purchasingagent-agent-manual-application{
+    width: 178px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .purchasingagent-agent-manual-application a{
+   color: #612C87;
+} 
+#container .informationuse-content {
+    width: 896px;
+    height: 2348px;
+    float: right; 
+    border: 1px solid rgb(205, 205, 205);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer{
+
+} 
+/* 이용안내 */
+#footer .informationuse {
+	background-color: rgb(220, 220, 220);	
+}
+#footer .content {
+    width: 1200px;
+    height: 80px;
+    margin: 80px auto 35px auto;			
+}
+#footer .information-use {
+    width: 100px;
+    height: 48px;
+    padding-top:30px ;
+    text-align: center;
+    float: left;		
+}
+#footer .terms-of-use {
+    width: 100px;
+    height: 48px;
+    padding-top:30px ;
+    text-align: center;
+    float: left;		
+}
+#footer .privacy {
+    width: 150px;
+    height: 48px;
+    padding-top:30px ;
+    text-align: center;
+    float: left;		
+}
+#footer .service-center {
+    width: 100px;
+    height: 48px;
+    padding-top:30px ;
+    text-align: center;
+    float: left;    	
+}
+/* 입금계좌 안내 */
+#footer .content01 {
+    width: 1200px;
+    height: 80px;
+    margin: 30px auto 35px auto;
+    border-top: 1px solid rgb(205, 205, 205);	 
+    border-bottom: 1px solid rgb(205, 205, 205);		
+}
+#footer .deposit-account {
+    width: 1198px;
+    height: 78px;
+    text-align: center;	
+    border: 1px solid rgb(255, 255, 255);	
+}
+#footer .deposit{
+    width: 150px;
+    height: 48px;
+    padding-top:30px ;
+    font-size: 20px;
+    text-align: center;
+    float: left;		
+}
+#footer .wooribank{
+    width: 140px;
+    height: 63px;
+    padding-top:25px ;
+    text-align: center;
+    float: left;		
+}
+#footer .account-number{
+    width: 300px;
+    height: 63px;
+    padding-top: 25px;
+    font-size: 30px;
+    color: #612C87; 
+    text-align: center;
+    float: left;		
+}
+#footer .corporation-jsh{
+    width: 300px;
+    height: 45px;
+    padding-top:33px ;
+    font-size: 15px;
+    text-align: center;
+    float: left;		
+}
+#footer .applicable-exchange-rate{
+    width: 300px;
+    height: 45px;
+    padding-top:33px ;
+    font-size: 15px;
+    text-align: center;
+    float: right;		
+}
+/* 협력업체 */
+#footer .content02 {
+    width: 1200px;
+    height: 56px;
+    margin: 30px auto 35px auto;
+}   
+#footer .lg{
+    width: 178px;
+    height: 52px;
+    margin: 0 10px 0 27px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}
+#footer .unipass{
+    width: 179px;
+    height: 52px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}  
+#footer .kcs{
+    width: 179px;
+    height: 52px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}  
+#footer .kcssa{
+    width: 179px;
+    height: 52px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}  
+#footer .kcsa{
+    width: 179px;
+    height: 52px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}  
+#footer .ksci{
+    width: 179px;
+    height: 52px;
+    float: left;
+    border: 1px solid rgb(205, 205, 205);		
+}   
+/* 협력업체 */
+#footer .content03 {
+    width: 1200px;
+    height: 212px;
+    margin: 30px auto 35px auto;	
+}  
+#footer .mutual{
+    width: 1198px;
+    height: 90px;
+    padding-top: 20px;
+    font-size: 16px;
+    	
+}
+#footer .jebi-logo{
+    width: 250px;
+    height: 98px;
+    float: right;
+    	
+}    
