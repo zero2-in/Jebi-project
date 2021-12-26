@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 공지사항 css */
 .container-notice {
     width: 1200px;
     margin: 0 auto;
@@ -200,4 +201,181 @@
     background-color: #eaeaea;
     color: #333;
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+/* 공지사항 view 관련 css */
+.container-notice .blog-post-content {
+    flex: 1;
+    padding: 25px;
+}
+.container-notice .blog-post-content h3 {
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 33px;
+    color: #333;
+    display: block;
+}
+.container-notice .blog-post-info-list {
+    display: block;
+}
+.container-notice .blog-post-info-list .blog-post-info {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 4px 10px;
+    margin-right: 3px;
+    transition: all 0.3s;
+}
+.container-notice .blog-post-info i {
+    position: relative;
+    top: 1px;
+}
+
+.container-notice .margin-bottom-10 {
+    margin-bottom: 10px!important;
+}
+.container-notice .margin-bottom-20 {
+    margin-bottom: 20px!important;
+}
+.container-notice .margin-bottom-40 {
+    margin-bottom: 40px!important;
+}
+
+.container-notice .button-field {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+}
+.container-notice .button-field .blue-line {
+    background-color: #fff;
+    color: #78148c;
+    box-shadow: none;
+    border: 1px solid #78148c;
+}
+.container-notice .button-field .blue-line:hover {
+    background-color: #78148c;
+    color: #fff;
+}
+.container-notice .button-field .button {
+    top: 0;
+    padding: 0px 13px;
+    line-height: 42px;
+    height: 40px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.container-notice .prev-next-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.container-notice .prev-next-box::after {
+    content: " ";
+    display: flex;
+    clear: both;
+}
+.container-notice .prev-next-box::before {
+    content: " ";
+    display: flex;
+}
+.container-notice .prev-next-box .box-wrap {
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.container-notice .prev-next-box .post-nav {
+    padding: 0;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    display: inline-block;
+}
+.container-notice .prev-next-box .post-nav li {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 500;
+    width: 50%;
+}
+.container-notice .prev-next-box .post-nav li a {
+    transition: transform 0.3s, color 0.3s 0s;
+    color: #333;
+    display: inline-block;
+    line-height: 28px;
+}
+.container-notice .prev-next-box .post-nav li a:hover {
+    color: #2a41e8;
+}
+.container-notice .prev-next-box .post-nav li a:hover span {
+    background-color: #78148c;
+    color: #fff;
+}
+.container-notice .prev-next-box .post-nav li span {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 4px 10px;
+    margin-right: 3px;
+    transition: 0.3s;
+}
+.container-notice .prev-next-box .post-nav li strong {
+    display: block;
+    font-weight: 500;
+}
+.container-notice .prev-next-box .post-nav .next-post {
+    right: 0;
+    text-align: right;
+}
+.container-notice .prev-next-box .post-nav .next-post a {
+    padding-right: 50px;
+}
+.container-notice .prev-next-box .post-nav .next-post a:hover::before {
+    transform: translate3d(5px, -50%, 0);
+}
+.container-notice .prev-next-box .post-nav .next-post a::before {
+    right: 0;
+    content: "\f054";
+}
+.container-notice .prev-next-box .post-nav .prev-post {
+    left: 0;
+}
+.container-notice .prev-next-box .post-nav .prev-post a {
+    padding-left: 50px;
+}
+.container-notice .prev-next-box .post-nav .prev-post a:hover::before {
+    transform: translate3d(-5px, -50%, 0);
+}
+.container-notice .prev-next-box .post-nav .prev-post a::before {
+    left: 0;
+    content: "\f053";
+}
+.container-notice .prev-next-box .post-nav .next-post a::before, 
+.container-notice .prev-next-box .post-nav .prev-post a::before {
+    font-family: "Font Awesome 6 Free";
+    font-size: 22px;
+    font-weight: 800;
+    position: absolute;
+    color: inherit;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    transition: transform 0.3s;
 }
