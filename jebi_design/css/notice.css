@@ -379,3 +379,12 @@
     transform: translate3d(0, -50%, 0);
     transition: transform 0.3s;
 }
+
+/* 공지사항 글쓰기 css */
+.container-notice .write-table {
+    width: 1150px;
+    padding: 25px;
+}
+.container-notice .write-table table {
+    width: 100%;
+}
