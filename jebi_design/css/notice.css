@@ -388,3 +388,28 @@
 .container-notice .write-table table {
     width: 100%;
 }
+
+/* 자주하는질문 css */
+.container-notice .category-tab-area {
+    border-bottom: 1px solid #e4e4e4;
+}
+.container-notice .category-tab {
+    display: flex;
+}
+.container-notice .category-tab .category-tab-link {
+    flex: 1;
+    border-right: 1px solid #e4e4e4;
+}
+.container-notice .category-tab .category-tab-link:last-child {
+    border-right: none;
+}
+.container-notice .category-tab .category-tab-link a {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    color: #333;
+}
+.container-notice .category-tab .category-tab-link.active a {
+    color: #fff;
+    background: #6f6f6f;
+}
