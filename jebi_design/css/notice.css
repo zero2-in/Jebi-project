@@ -253,6 +253,9 @@
 .container-notice .margin-bottom-40 {
     margin-bottom: 40px!important;
 }
+.container-notice .padding-bottom-0 {
+    padding-bottom: 0px!important;
+}
 
 .container-notice .button-field {
     position: relative;
@@ -600,4 +603,121 @@
     border: none;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgb(102 103 107 / 15%);
+}
+
+/* 이용후기 css */
+.container-notice .dashboard .content.with-padding {
+    padding: 25px;
+}
+.container-notice .content-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.container-notice .content-row::before, 
+.container-notice .content-row::after {
+    content: " ";
+    display: flex;
+    box-sizing: border-box;
+}
+.container-notice .review-content {
+    -webkit-box-flex: 0;
+    flex: 0 0 23.2%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.container-notice .photo-box.small {
+    height: 160px;
+    margin-bottom: 30px;
+}
+.container-notice .photo-box.small:hover {
+    transform: translateY(-5px);
+}
+.container-notice .photo-box.small .photo-box-content {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-49%);
+}
+.container-notice .photo-box.small .photo-box-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+.container-notice .photo-box.small .photo-box-content span {
+    color: #fff;
+    background: #2a41e8;
+    font-family: 'verdana';
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+.container-notice .photo-box {
+    border-radius: 4px;
+    height: 360px;
+    display: block;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    transition: 0.4s;
+    margin: 0 0 25px;
+}
+.container-notice .photo-box:hover {
+    box-shadow: 0 4px 12px rgb(42 65 232 / 25%);
+}
+.container-notice .photo-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #333;
+    opacity: 0.5;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.container-notice .photo-box:hover::before {
+    background: #2a41e8;
+    opacity: 0.95;
+}
+.container-notice .photo-box-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.container-notice .photo-box-content h3 {
+    color: #fff;
+    font-size: 16px;
+    line-height: 28px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.container-notice .photo-box-content p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 27px;
+}
+.container-notice .photo-box-content span {
+    color: #333;
+    background: #2a41e8;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 10px;
+    line-height: 20px;
+    margin-top: 8px;
+    display: inline-block;
 }
