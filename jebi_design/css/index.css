@@ -106,7 +106,8 @@
 #container .notice {
 	width:588px;
     height: 70px;
-	border-bottom: 1px solid rgb(205, 205, 205);	
+	border-bottom: 1px solid rgb(205, 205, 205);
+    background-color: rgb(208, 174, 240);	
 }
 #container .notice-title{
 	width:488px;
@@ -147,10 +148,11 @@
     border: 1px solid rgb(205, 205, 205);	
 }
 #container .customer-service-center-title{
-	width:586px;
+	width:588px;
 	height:43px;
 	padding-top: 27px;
 	font-size:20px;	
+    background-color: rgb(208, 174, 240);
     border-bottom: 1px solid rgb(205, 205, 205);	
 }
 #container .customer-service-center-Tel-time-inquiry-answer{
@@ -299,7 +301,8 @@
 #container .china-address {
 	width: 588px;
     height: 70px;
-	border-bottom: 1px solid rgb(205, 205, 205);	
+	border-bottom: 1px solid rgb(205, 205, 205);
+    background-color: rgb(208, 174, 240);	
 }
 #container .address-title{
     width: 588px;
@@ -361,6 +364,7 @@
 #container .review {
 	width: 588px;
     height: 70px;
+    background-color: rgb(208, 174, 240);
 	border-bottom: 1px solid rgb(205, 205, 205);	
 }
 #container .review-title{
@@ -385,10 +389,10 @@
     width: 1200px;
     height: 300px;
     margin: 80px auto 35px auto;
-    border: 1px solid rgb(240, 240, 240) ;
+    border: 1px solid rgb(220, 220, 220);
 }
 #container .departure-schedule {
-	background-color: rgb(240, 240, 240) ;	
+	background-color: rgb(220, 220, 220);	
 }
 #container .schedule {
 
@@ -685,7 +689,7 @@
 }
 /* 즐겨찾는 서비스 */
 #container .favorites-service {
-	background-color: rgb(240, 240, 240) ;	
+	background-color: rgb(220, 220, 220);	
 }
 #container .favorites-service-title{
 	width:1198px;
@@ -693,12 +697,12 @@
     float:left;
 	padding-top: 45px;
 	font-size:22px;   
-    border: 1px solid rgb(240, 240, 240) ;	
+    border: 1px solid rgb(220, 220, 220);	
 }
 #container .sverice-Information {
     width:1198px;
 	height:298px;
-    border: 1px solid rgb(240, 240, 240) ;	
+    border: 1px solid rgb(220, 220, 220);	
 }
 #container .guide{
     width:223px;
@@ -769,8 +773,8 @@
     
 }
 /* 이용안내 */
-#footer .favorites-service {
-	background-color: rgb(240, 240, 240) ;	
+#footer .informationuse {
+	background-color: rgb(220, 220, 220);	
 }
 #footer .content {
     width: 1200px;
