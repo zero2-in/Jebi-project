@@ -773,7 +773,8 @@
     
 }
 /* 이용안내 */
-#footer .informationuse {
+#footer .informationuse,
+#footer .favorites-service {
 	background-color: rgb(220, 220, 220);	
 }
 #footer .content {
