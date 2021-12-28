@@ -110,6 +110,9 @@
     transition: all 0.3s;
     position: relative;
 }
+.container-notice .content .gray {
+    color: gray;
+}
 .container-notice .content .important {
     color: red;
 }
@@ -253,21 +256,22 @@
     padding-left: 10px;
     text-align: center;
 }
-.container-notice .button-field .blue-line {
+.container-notice .blue-line {
     background-color: #fff;
     color: #78148c;
     box-shadow: none;
     border: 1px solid #78148c;
 }
-.container-notice .button-field .blue-line:hover {
+.container-notice .blue-line:hover {
     background-color: #78148c;
     color: #fff;
 }
-.container-notice .button-field .button {
+.container-notice .button {
     top: 0;
     padding: 0px 13px;
     line-height: 42px;
     height: 40px;
+    vertical-align: middle;
     position: relative;
     font-size: 16px;
     font-weight: 500;
