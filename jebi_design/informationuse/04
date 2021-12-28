@@ -156,15 +156,12 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: #612C87;
+    color: white;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
-    border: 1px solid #612C87; 
+    background-color: #612C87; 
+    border: 1px solid #612C87;
 }
-#container .delivery-agent-application-manual:hover{
-    color: white;
-    background-color: #612C87;
-} 
 #container .purchasingagent-agent{
     width: 230px;
     height: 112px;
@@ -415,74 +412,14 @@
     color: white;
     background-color: #612C87;
 }  
-/* 콘텐츠 */
-#container .informationuse-content{
-    width: 896px;
-    height: 1843px;
-    float: right; 
-}
-#container .overseas-shipping{
-    width: 896px;
-    height: 188px;
-    margin-top: 35px;
-    z-index: 1;
-    text-align: center;
-    
-}
-#container .delivery-agent-process{
-    width: 896px;
-    height: 215px;
-    margin-top: 35px;
-    text-align: center;
-    
-}#container .delivery-agent-step01{
-    width: 896px;
-    height: 200px;
-    margin-top: 35px;
-    text-align: center;
-   
-}
-#container .delivery-agent-step02{
-    width: 896px;
-    height: 202px;
-    margin-top: 35px;
-    text-align: center;
-    
-}
-#container .delivery-agent-step03{
-    width: 896px;
-    height: 231px;
-    margin-top: 35px;
-    text-align: center;
-   
-}
-#container .delivery-agent-step04{
-    width: 896px;
-    height: 201px;
-    margin-top: 35px;
-    text-align: center;
-    
-}
-#container .delivery-agent-step05{
-    width: 896px;
-    height: 170px;
-    margin-top: 35px;
-    text-align: center;
-    
-}
-#container .delivery-agent-step06{
-    width: 896px;
-    height: 140px;
-    margin-top: 35px;
-    text-align: center;
-   
-}
+
 
 #footer{
 
 } 
 /* 이용안내 */
 #footer .informationuse {
+    height: 80px;
 	background-color: rgb(220, 220, 220);	
 }
 #footer .content {

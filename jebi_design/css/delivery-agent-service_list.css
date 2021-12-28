@@ -142,14 +142,11 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: #612C87;
+    color: white;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
+    background-color: #612C87; 
     border: 1px solid #612C87; 
-}
-#container .delivery-agent-service:hover{
-    color: white;
-    background-color: #612C87;
 }
 #container .delivery-agent-application-manual{
     width: 178px;
@@ -311,14 +308,14 @@
 #container .automatic-order-registration-manual:hover{
     color: white;
     background-color: #612C87;
-} 
+}
 #container .taobao-agent{
     width: 230px;
     height: 253px;
     margin-top: 7px; 
     border-bottom: 1px solid rgb(205, 205, 205);
-} 
-/* 서브 메인/이용팁 */
+}
+/* 서브 메인/이용팁 */  
 #container .use-tip{
     width: 220px;
     height: 23px;
