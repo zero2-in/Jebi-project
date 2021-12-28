@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/notice.css">
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/common.js"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
@@ -16,8 +16,8 @@
     <div id="header">
         <div class="btn-login">
             <ul class="menu-login">
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
                 <li><a href="">고객센터</a></li>
             </ul>
         </div>
@@ -52,101 +52,95 @@
         });
     </script>
 
-    <div class="container-login">
+    <div class="container-notice">
         <div class="bar-title">
-            <h2 class="title">로그인</h2>
+            <h2 class="title">자주하는질문</h2>
 
             <!-- 사이트 이동경로를 만들어라! -->
             <nav id="breadcrumbs" class="dark">
                 <ul class="nav-list">
                     <li><a href="../index.html">Home</a></li>
-                    <li>회원관리</li>
+                    <li>고객센터</li>
                     <li class="select-area">
-                        <button class="dropbtn">로그인 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <button class="dropbtn">자주하는질문 <span class="bs-caret"><span class="caret"></span></span></button>
                         <div class="dropdown-content">
-                            <a href="join.html">회원가입</a>
-                            <a href="login.html">로그인<span class="check"><i class="fas fa-check"></i></span></a>
-                            <a href="#">아이디/비번찾기</a>
+                            <a href="../notice/notice_list.html">공지사항</a>
+                            <a href="javascript:void(0)">자주하는질문<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="../qna/qna_list.html">1:1문의</a>
+                            <a href="../review/review_list.html">이용후기</a>
+                            <a href="../event/event_list.html">이벤트</a>
+                            <a href="../nodata/nodata_list.html">노데이터</a>
+                            <a href="../clearance/clearance.html">통관조회</a>
                         </div>
                     </li>
                     <div class="clearfix"></div>
                 </ul>
             </nav>
         </div>
-
-        <form action="" method="post" onsubmit="return check();" name="login">
-            <div class="board-login">
-                <div class="text-welcome">
-                    <h3 class="title">Login is welcome.</h3>
-                    <span class="info">서비스를 이용하기 위해서 로그인을 해주세요.</span>
+        
+        <div class="dashboard margin-bottom-40">
+            <div class="blog-post-content">
+                <!-- 제목 입력! -->
+                <h3 class="margin-bottom-10">
+                    [통관] 중국 직구시 미화 기준 150달러 이상은 관부가세가 부과됩니다.
+                </h3>
+                <!-- 입력자 정보! -->
+                <div class="blog-post-info-list margin-bottom-20">
+                    <span class="blog-post-info">
+                        <i class="far fa-edit"></i> 관리자
+                    </span>
+                    <span class="blog-post-info">
+                        <i class="far fa-calendar"></i> 2021-12-27 17:32
+                    </span>
+                    <span class="blog-post-info">
+                        <i class="far fa-eye"></i> 2,041
+                    </span>
                 </div>
 
-                <div class="form-login">
-                    <!-- 로그인 텍스트 상자 -->
-                    <p class="box-text">
-                        <i class="fas fa-user-circle"></i>
-                        <input type="text" class="input" name="id" placeholder="ID" autofocus onkeypress="if(event.keyCode == '13') login.password.focus();">
-                    </p>
-                    <p class="box-text">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password" class="input" onkeypress="if(event.keyCode == '13') check();">
-                    </p>
+                <!-- 썸머노트 내용 필드 -->
+                <div>
+                    안녕하세요. 제비 입니다. <br>
 
-                    <div class="checkbox">
-                        <input type="checkbox" name="saveId" id="saveId" value="y">
-                        <label for="saveId">
-                            <span class="icon-checkbox"></span> 아이디 저장
-                        </label>
-                    </div>
-                    
-                    <!-- 로그인 버튼 -->
-                    <button type="button" class="btn-submit ripple-effect" data-animation="ripple" onclick="setTimeout(function() {check();}, 100);">
-                        <span class="text">로그인</span>
-                        <span class="arrow-animate"><i class="fas fa-long-arrow-alt-right"></i></span>
-                    </button>
+                    중국 직구는 미화기준 150달러 이상 관부가세가 부과됩니다. <br>
 
-                    <!-- 버튼 회원가입, 찾기 그룹! -->
-                    <div class="btn-group-login">
+                    중국 위안화 가격에 US 달러 환율을 적용해주시면 됩니다. <br>
 
-                        <button type="button" class="join-login ripple-effect" data-animation="ripple" onclick="setTimeout(function() {location.href='join.html';}, 150);">
-                            <i class="fas fa-user-plus"></i>&nbsp;&nbsp;회원가입
-                        </button>
 
-                        <button type="button" class="idpw-find ripple-effect" data-animation="ripple">
-                            <i class="fas fa-search"></i>&nbsp;&nbsp;ID/PW 찾기
-                        </button>
-
-                    </div>
-                    <!-- 소셜 로그인 -->
-                    <div class="social-login-separator">
-                        <span>or</span>
-                    </div>
-                    
-                    <div class="social-login-btn">
-
-                        <button type="button" class="naver-login ripple-effect" data-animation="ripple">
-                            네이버
-                        </button>
-                        <button type="button" class="kakao-login ripple-effect" data-animation="ripple">
-                            카카오
-                        </button>
-
-                    </div>
+                    감사합니다.
                 </div>
             </div>
-        </form>
+        </div>
 
-        <!-- Scripts -->
-        <script src="../js/btn_ripple_effect.js"></script>
-        <script>
-            function check() {
-                if(checkValue(login.id, "아이디를 입력하세요")) return;
-                if(checkValue(login.password, "비밀번호를 입력하세요")) return;
+        <!-- 목록 버튼 필드 -->
+        <div class="button-field">
+            <a href="javascript:void(0)" onclick="setTimeout(function() {location.href='faq_list.html';}, 200)" class="button ripple-effect blue-line" data-animation="ripple">
+                목록
+            </a>
+        </div>
 
-                login.submit();
-            }
-        </script>
+        <div class="prev-next-box">
+            <div class="box-wrap">
+                <ul class="post-nav margin-bottom-40">
+                    <!-- 다음 글 -->
+                    <li class="next-post">
+                        <a href="javascript:void(0)">
+                            <span>다음글</span>
+                            <strong>네이버 간편로그인 오류</strong>
+                        </a>
+                    </li>
+                    <!-- 이전 글 -->
+                    <li class="prev-post">
+                        <a href="javascript:void(0)">
+                            <span>이전글</span>
+                            <strong>배터리 단일 상품은 통관이 불가합니다.</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <script src="../js/btn_ripple_effect.js"></script>
 
     <!-- Menu footer Start -->
     <div id="footer">
