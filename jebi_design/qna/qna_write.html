@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/notice.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/summernote-lite.css">
     <script src="../js/common.js"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/summernote-lite.js"></script>
+    <script src="../lang/summernote-ko-KR.min.js"></script>
     <title>제비 - 배송대행</title>
 </head>
 <body>
@@ -78,144 +81,103 @@
             </nav>
         </div>
 
-        <div class="dashboard">
-            <div class="search-con">
-                <div class="row">
-                    <!-- 검색 폼! -->
-                    <form action="notice_list.html" method="post" name="search">
-                        <div class="search">
-                            <input type="text" name="s" class="search-text" placeholder="제목">
-                            <button type="button" class="search-btn ripple-effect" data-animation="ripple">
-                                검색 <i class="fas fa-search"></i>
-                            </button>
-                            <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() { location.href='qna_write.html'}, 150)" data-animation="ripple">
-                                글쓰기
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div class="category-tab-area">
-                <div class="category-tab">
-                    <div class="category-tab-link active">
-                        <a href="javascript:void(0)">
-                            전체
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            입출고
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            결제
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            구매대행
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            반품,교환
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            통관
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            누락
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            노데이터
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            기타
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <form action="" name="board" method="post">
+        <div class="dashboard margin-bottom-40">
 
             <div class="content">
-                <ul class="board">
-                    <!-- List Block -->
-                    <li class="row">
-                        <div class="board-listing">
-                            <!-- No -->
-                            <div class="list-no">
-                                <strong class="important">공지</strong>
-                            </div>
-                            <!-- Title -->
-                            <h3 class="board-title">
-                                <a href="qna_view.html"><span class="gray">[기타]</span> <b class="important">★문의글 등록 전 꼭 확인해주세요★</b></a>
-                                <span class="status-button">new</span>
-                            </h3>
-                            <!-- Writter, Reg Date, Hit -->
-                            <div class="board-footer">
-                                <ul class="fl">
-                                    <li><i class="far fa-edit"></i> 관리자</li>
-                                    <li><i class="far fa-calendar"></i> 2021-12-28 16:53</li>
-                                    <li><i class="far fa-eye"></i> 1,516</li>
-                                </ul>
+                <ul class="dashboard-box-list">
+                    <li>
+                        <div class="submit-field margin-bottom-0">
+                            <input type="text" name="t_title" class="with-border" placeholder="제목">
+                        </div>
+                        <div class="submit-field margin-bottom-0 margin-top-15">
+                            <select class="with-border" name="t_category">
+                                <option value=""> = 선택</option>
+                                <option value="">입출고</option>
+                                <option value="">결제</option>
+                                <option value="">구매대행</option>
+                                <option value="">반품,교환</option>
+                                <option value="">통관</option>
+                                <option value="">누락</option>
+                                <option value="">노데이터</option>
+                                <option value="">기타</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="submit-field">
+                            <div class="upload-button">
+                                <input type="text" name="t_order_no" style="width: 30%" class="with-border" placeholder="주문번호" readonly>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0)" data-animation="ripple" class="button blue-line ripple-effect">
+                                    <i class="fas fa-home"></i> 주문정보 불러오기
+                                </a>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect">
+                                    리셋
+                                </a>
                             </div>
                         </div>
                     </li>
 
-                    <li class="row">
-                        <div class="board-listing">
-                            <!-- No -->
-                            <div class="list-no">
-                                <strong class="important">공지</strong>
-                            </div>
-                            <!-- Title -->
-                            <h3 class="board-title">
-                                <a href="qna_view.html"><span class="gray">[기타]</span> <b style="color: #78148c">문의사항은 작성자만 볼 수 있습니다.</b></a>
-                                <span class="status-button">new</span>
-                            </h3>
-                            <!-- Writter, Reg Date, Hit -->
-                            <div class="board-footer">
-                                <ul class="fl">
-                                    <li><i class="far fa-edit"></i> 관리자</li>
-                                    <li><i class="far fa-calendar"></i> 2021-12-28 10:39</li>
-                                    <li><i class="far fa-eye"></i> 7,071</li>
-                                </ul>
-                            </div>
+                    <li>
+                        <div class="submit-field">
+                            <div id="summernote"></div>
                         </div>
                     </li>
 
-                    <li class="row">
-                        <div class="board-listing">
-                            <h3 class="board-title">
-                                데이터가 없습니다.
-                            </h3>
+                    <li>
+                        <div class="submit-field margin-bottom-0">
+                            <div class="upload-button">
+                                <input type="file" accept="image/*, application/pdf" name="t_attach" id="upload" class="upload-button-input" multiple>
+                                <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
+                                <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                            </div>
                         </div>
                     </li>
 
                 </ul>
             </div>
+
         </div>
 
-        <div class="paging">
-            <ul>
-                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple"><i class="fas fa-chevron-left"></i></a></li>
-                <li><a href="javascript:void(0)" class="current-page ripple-effect" data-animation="ripple">1</a></li>
-                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple"><i class="fas fa-chevron-right"></i></a></li>
-            </ul>
+        <div class="button-field">
+            <a href="javascript:void(0)" class="button ripple-effect" data-animation="ripple">
+                등록
+            </a>
+            <a href="javascript:void(0)" onclick="setTimeout(function(){location.href='qna_list.html'}, 150)" 
+            class="button ripple-effect blue-line" data-animation="ripple">
+                목록
+            </a>
         </div>
+
+        </form>
     </div>
 
     <script src="../js/btn_ripple_effect.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#summernote").summernote({
+                height: 300, 
+                lang: 'ko-KR', 
+                toolbar : [
+                    [ 'fontname', [ 'fontname' ] ],
+                    [ 'fontsize', [ 'fontsize' ] ],
+                    ['style', [ 'bold', 'italic', 'underline', 'strikethrough', 'clear' ] ],
+                    [ 'color', [ 'forecolor', 'color' ] ],
+                    [ 'para', [ 'ul', 'ol', 'paragraph' ] ],
+                    [ 'insert', [ 'picture','link','video' ] ],
+                    [ 'height', [ 'height' ] ], 
+                    ['view', ['codeview', 'help']],
+                ],
+                fontNames : [ '돋움', '돋움체', '굴림', '굴림체', '바탕', '바탕체', '궁서',
+                'Arial', 'Tahoma', 'Times New Roman', 'Verdana', '나눔고딕'],
+                fontSizes : [ '7', '8', '9', '10', '11', '12', '14', '18',
+				'24', '36' ]
+            });
+        });
+    </script>
 
     <!-- Menu footer Start -->
     <div id="footer">
