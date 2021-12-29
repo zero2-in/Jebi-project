@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/notice.css">
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <title>제비 - 배송대행</title>
+</head>
+<body>
+    <!-- Header Start -->
+    <div id="header">
+        <div class="btn-login">
+            <ul class="menu-login">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">고객센터</a></li>
+            </ul>
+        </div>
+
+        <div class="img-logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" height="100px">
+            </a>
+        </div>
+
+        <div class="btn-menu">
+            <ul class="menu-main">
+                <li><a href="">이용안내</a></li>
+                <li><a href="">비용안내</a></li>
+                <li><a href="">배송대행</a></li>
+                <li><a href="">구매대행</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">마이페이지</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- Header End -->
+    
+    <!-- nav Script -->
+    <script>
+        $(document).ready(function () {
+            $("#breadcrumbs .dropbtn").click(function () { 
+                $("#breadcrumbs .dropdown-content").toggle(200);
+                $("#breadcrumbs .select-area .caret").toggleClass("active");
+            });
+        });
+    </script>
+
+    <div class="container-notice">
+        <div class="bar-title">
+            <h2 class="title">통관조회</h2>
+
+            <!-- 사이트 이동경로를 만들어라! -->
+            <nav id="breadcrumbs" class="dark">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li>고객센터</li>
+                    <li class="select-area">
+                        <button class="dropbtn">통관조회 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <div class="dropdown-content">
+                            <a href="../notice/notice_list.html">공지사항</a>
+                            <a href="../faq/faq_list.html">자주하는질문</a>
+                            <a href="../qna/qna_list.html">1:1문의</a>
+                            <a href="../review/review_list.html">이용후기</a>
+                            <a href="../event/event_list.html">이벤트</a>
+                            <a href="../nodata/nodata_list.html">노데이터</a>
+                            <a href="javascript:void(0)">통관조회<span class="check"><i class="fas fa-check"></i></span></a>
+                        </div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dashboard margin-bottom-20">
+            <div class="search-con">
+                <div class="row">
+                    <!-- 검색 폼! -->
+                    <form action="notice_list.html" method="post" name="search">
+                        <div class="search">
+                            <input type="text" name="s" class="search-text" placeholder="운송장번호">
+                            <button type="button" class="search-btn ripple-effect" data-animation="ripple">
+                                검색 <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--div class="clearance-content">
+            데이터가 없다면 이렇게 처리하라!
+            
+            <div class="clearance-col">
+                <div class="accordion">
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <div class="order-info">
+                                <div class="tc">검색된 운송장번호가 없습니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div-->
+
+        <div class="clearance-content">
+            <div class="clearance-col">
+                <div class="accordion">
+                    <!-- Accordion Head -->
+                    <div class="accordion-header">
+                        주문정보
+                    </div>
+
+                    <!-- Accordion Body -->
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <!-- 상품의 이미지 -->
+                            <div class="order-img">
+                                <a href="#" target="_blank">
+                                    <img src="../images/test_img.jpg" alt="주문정보 상세보기">
+                                </a>
+                            </div>
+                            <!-- 상품의 정보 -->
+                            <div class="order-info">
+                                <div class="order-name">
+                                    배송대행
+                                    <a href="#" target="_blank" class="num">211001040</a>
+                                </div>
+
+                                <div class="order-condition">
+                                    <span class="company-not-rated margin-bottom-5">항공 / 수동결제 / 김영인</span>
+                                </div>
+
+                                <div class="order-price">
+                                    <strong>1 개 / ￥89.00 / $12.90</strong>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Accordion Body End -->
+                </div>
+            </div>
+        </div>
+
+        <div class="margin-top-20"></div>
+
+        <div class="clearance-content">
+            <div class="clearance-col">
+                <div class="accordion">
+                    <div class="accordion-header">
+                        통관정보
+                    </div>
+                </div>
+            </div>
+
+            <!-- 절차 한 블록! -->
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">1</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                입항보고 제출
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 1:02
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 1:02</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class> &nbsp; </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">2</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                입항적하목록 제출
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 3:10
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 3:10</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>스위스포트코리아(주)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">3</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                입항적하목록 심사완료
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 3:23
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 3:23</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>스위스포트코리아(주)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">4</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                입항보고 수리
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 3:52
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 3:52</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class> &nbsp; </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">5</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                입항적하목록 운항정보 정정
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 3:52
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 3:52</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>스위스포트코리아(주)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">6</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                하기신고 수리
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 4:01
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 4:01</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>지정장치장(특송물류센터)_(주)레드프로그</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">7</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                통관목록접수
+                            </p>
+                            <p class="step-time">
+                                2021.10.14 PM 4:26
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.14 PM 4:26</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>지정장치장(특송물류센터)_(주)레드프로그</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">8</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                반입신고
+                            </p>
+                            <p class="step-time">
+                                2021.10.15 AM 11:36
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.15 AM 11:36</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>[부가사항] 지정장치장(특송물류센터)의 장치기간은 최대 2 개월 입니다.<br>
+                                            입항 반입<br>
+                                            지정장치장(특송물류센터)_(주)레드프로그</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">9</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                반출신고
+                            </p>
+                            <p class="step-time">
+                                2021.10.15 AM 11:36
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.15 AM 11:36</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>&nbsp;목록통관특송물품 반출<br>
+                                            지정장치장(특송물류센터)_(주)레드프로그</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="accordion_02">
+
+                    <div class="accordion-header js_accordion_item">
+                        <div class="step-num">10</div>
+
+                        <div class="step-txt">
+                            <p class="step-title">
+                                통관목록심사완료
+                            </p>
+                            <p class="step-time">
+                                2021.10.15 AM 11:36
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table>
+                                <!--tr>
+
+                                <th>포장개수</th>
+
+                                <td data-label="포장개수" class="td-50">1</td>
+
+                                <th>중 량</th>
+
+                                <td data-label="중량" class="td-50">3</td>
+
+                                </tr-->
+                                <tbody>
+                                    <tr>
+                                        <th>반출입(처리)일시</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)일시" class>2021.10.15 AM 11:36</td>
+                                    </tr>
+                                    <tr>
+                                        <th>반출입(처리)내용</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="반출입(처리)내용" class>
+                                            지정장치장(특송물류센터)_(주)레드프로그
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Accordion body End -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="margin-top-20"></div>
+
+    </div>
+
+    <script src="../js/btn_ripple_effect.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".accordion_02 .js_accordion_item").click(function () { 
+                $(this).next(".accordion-body").slideToggle(200);
+                $(this).toggleClass("active");
+            });
+        });
+    </script>
+
+    <!-- Menu footer Start -->
+    <div id="footer">
+        <!-- Menu information-use Start -->
+        <div class="favorites-service">
+            <div class="content">           
+                <ul>
+                    <li><div class="information-use"><a href="">이용안내</a></div></li>
+                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
+                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
+                    <li><div class="service-center"><a href="">고객센터</a></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use Start --> 
+        <div class="content01">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
+                    <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
+                    <li><div class="account-number">268-069109-02-001</div></li>
+                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
+                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use End --> 
+
+        <!-- Menu deposit-account Start --> 
+        <div class="content02">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
+                    <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu deposit-account Start --> 
+
+        <!-- Menu Mutual Start --> 
+        <div class="content03">
+            <div class="mutual">
+                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
+                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
+                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
+            </div>
+            <ul>
+                <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
+            </ul>
+        </div>
+        <!-- Menu Mutual Start --> 
+    </div>
+    <!-- Menu footer End --> 
+</body>
+</html>
