@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/return_refund_manual_list.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    
+    <title>제비 - 배송대행</title>
+</head>
+<body>
+    <!-- Header Start -->
+    <div id="header">
+        <div class="btn-login">
+            <ul class="menu-login">
+                <li><a href="../member/login.html">로그인</a></li>
+                <li><a href="../member/join.html">회원가입</a></li>
+                <li><a href="../notice/notice_list.html">고객센터</a></li>
+            </ul>
+        </div>
+
+        <div class="img-logo">
+            <a href="index.html">
+                <img src="../images/logo.png" height="100px">
+            </a>
+        </div>
+
+        <div class="btn-menu">
+            <ul class="menu-main">
+                <li><a href="informationuse_list.html">이용안내</a></li>
+                <li><a href="">비용안내</a></li>
+                <li><a href="">배송대행</a></li>
+                <li><a href="">구매대행</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">마이페이지</a></li>
+            </ul>
+        </div>   
+    </div>
+    <!-- Header End -->
+
+    <!-- nav Script -->
+    <script>
+        $(document).ready(function () {
+            $("#breadcrumbs .dropbtn").click(function () { 
+                $("#breadcrumbs .dropdown-content").toggle(200);
+                $("#breadcrumbs .select-area").toggleClass("active");
+            });
+        });
+    </script>
+
+    <!-- Container Start -->
+    <div id="container">
+         <!-- Informatio Use Start -->
+        <div class="informationuse">
+            <!-- Title / nav-list  Start -->
+            <div class="informationuse-title"><p>배송대행 이용방법</p>
+                <nav id="breadcrumbs" class="dark">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li>이용안내</li>
+                        <li class="select-area">
+                            <button class="dropbtn">배송대행 이용방법<span class="bs-caret"><span class="caret"></span></span></button>
+                            <div class="dropdown-content">
+                                <a href="">배송대행 이용방법&nbsp;&nbsp;&nbsp;<i class="fas fa-check"></i></span></a>
+                                <a href="">구매대행 이용방법</a>
+                                <a href="">사업자 이용안내</a>
+                                <a href="">타오바오 이용방법</a>
+                                <a href="">이용팁</a>
+                                <a href="">노데이터 처리방법</a>
+                            </div>
+                        </li>   
+                    </ul>
+                </nav>
+            </div> 
+            <!-- Title / nav-list  End -->
+
+            <!-- Sub title  Start -->
+            <div class="informationuse-sub-title">
+                <div class="delivery-agent">
+                    <div class="delivery-agent-manual">배송대행 이용방법</div>
+                    <a href="delivery_agent_service_list.html"><div class="delivery-agent-service">배송대행 서비스 안내</div></a>
+                    <a href="delivery_agent_application_manual_list.html"><div class="delivery-agent-application-manual">배송대행 신청서 작성법</div></a>
+                </div>
+                <div class="purchasingagent-agent">
+                    <div class="purchasingagent-agent-manual">구매대행 이용방법</div>
+                    <a href="purchasing_agent_service_list.html"><div class="purchasingagent-agent-service">구매대행 서비스 안내</div></a>
+                    <a href=""><div class="purchasingagent-agent-application-manual">구매대행 신청서 작성법</div></a>
+                </div>
+                <a href=""><div class="business-user-guide">사업자 이용안내</div></a>
+                <div class="taobao-agent">
+                    <div class="taobao-manual">타오바오 이용방법</div>
+                    <a href=""><div class="join-manual">가입방법</div></a>
+                    <a href=""><div class="address-manual">주소 설정하기</div></a>
+                    <a href=""><div class="purchase-payment">구매결제하기</div></a>
+                    <a href="return_refund_manual_list.html"><div class="return-refund-manual">반품/환불방법</div></a>
+                    <a href=""><div class="invoice-number">송장번호 확인하기</div></a>
+                    <a href=""><div class="automatic-order-registration-manual">주문자동등록방법</div></a>
+                </div>
+                <div class="use-tip-agent">
+                    <div class="use-tip">이용팁</div>
+                    <a href=""><div class="chinese-size-manual">중국사이즈 조건표</div></a>
+                    <a href=""><div class="chinese-delivery-tracking">중국내 배송조회</div></a>
+                    <a href=""><div class="issuance-of-unique-number">개인통관고유부호발급 방법</div></a>
+                    <a href=""><div class="customs-duty">관/부가세 안내</div></a>
+                    <a href=""><div class="import-prohibited-items">수입금지품목</div></a>
+                </div>
+                <a href=""><div class="nodata-processing-manual">노데이터 처리방법</div></a>
+            </div>
+            <!-- Sub title  End -->
+            <!-- Content  Start -->
+            <div class="return-refund-manual-content">
+                <div class="return-refund-title01">1.로그인 후 오른쪽 상단 【我的淘宝】클릭</div> 
+                <div class="return-refund-manual01"><img src="../images/return_refund_manual_img.jpg" height="440px"></div>
+                <div class="return-refund-title02">2.【我的淘宝】 -》 【已买到的宝贝】클릭</div>
+                <div class="return-refund-manual02"><img src="../images/return_refund_manual01_img.jpg" height="423px"></div>
+                <div class="return-refund-title03">3.【所有订单】모든 구매내역 보기 클릭<br><br>반품/환불할 제품 주문서에서 退款/退货 클릭</div>
+                <div class="return-refund-manual03"><img src="../images/return_refund_manual02_img.jpg" height="384"></div>
+                <div class="return-refund-title04">4. 退款原因 반품사유 선택 후 提交 클릭<br><br><span>발송전 구매 취소를 하는 경우<br><br><span>첫번째 拍错/多拍/不想要 선택해 주세요</spa></span></div>
+                <div class="return-refund-manual04"><img src="../images/return_refund_manual03_img.jpg" height="751px"></div>
+            </div>
+        <!-- Content  End -->
+        
+    </div>
+    <!-- Informatio Use End-->
+</div>
+<!-- Container End -->
+
+
+
+            
+    <!-- Menu footer Start -->
+    <div id="footer">
+        <!-- Menu information-use Start -->
+        <div class="informationuse">
+            <div class="content">           
+                <ul>
+                    <li><div class="information-use"><a href="">이용안내</a></div></li>
+                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
+                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
+                    <li><div class="service-center"><a href="">고객센터</a></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use Start --> 
+        <div class="content01">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
+                    <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
+                    <li><div class="account-number">268-069109-02-001</div></li>
+                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
+                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use End --> 
+
+        <!-- Menu deposit-account Start --> 
+        <div class="content02">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
+                    <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu deposit-account Start --> 
+
+        <!-- Menu Mutual Start --> 
+        <div class="content03">
+            <div class="mutual">
+                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
+                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
+                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
+            </div>
+            <ul>
+                <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
+            </ul>
+        </div>
+        <!-- Menu Mutual Start --> 
+    </div>
+    <!-- Menu footer End --> 
+</body>
+
+</html>
