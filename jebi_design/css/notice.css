@@ -233,6 +233,10 @@
     margin-right: 3px;
     transition: all 0.3s;
 }
+.container-notice a.blog-post-info:hover {
+    color: #fff;
+    background-color: #78148c;
+}
 .container-notice .blog-post-info i {
     position: relative;
     top: 1px;
@@ -605,7 +609,7 @@
     box-shadow: 0 4px 12px rgb(102 103 107 / 15%);
 }
 
-/* 이용후기 css */
+/* 고객센터 이용후기 css */
 .container-notice .dashboard .content.with-padding {
     padding: 25px;
 }
