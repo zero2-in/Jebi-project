@@ -1,0 +1,55 @@
+/* 배송대행, 구매대행 css */
+.container-agent {
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 27px;
+    color: #666;
+    font-size: 16px;
+    text-transform: none;
+}
+.container-agent *,
+.container-agent *::before,
+.container-agent *::after {
+    box-sizing: border-box;
+}
+.container-agent .bar-title {
+    width: 100%;
+    height: 50px;
+    padding: 80px 0 30px 0;
+}
+.container-agent .bar-title .title {
+    float: left;
+    font-weight: normal;
+    color: #333;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 1px 0 3px;
+}
+.container-agent .ripple-effect { 
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.container-agent .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.container-agent .row::before {
+    content: " ";
+    display: flex;
+}
+
+.container-agent .col-common {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.container-agent .col-xl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
