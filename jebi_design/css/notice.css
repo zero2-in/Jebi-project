@@ -810,3 +810,13 @@
     font-size: 16px;
     line-height: 27px;
 }
+
+/* 노데이터 css */
+.container-notice .dashboard .search input[type=date]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+}
+.container-notice .dashboard .search input[type=date]:focus::before,
+.container-notice .dashboard .search input[type=date]:valid::before {
+    display: none;
+}
