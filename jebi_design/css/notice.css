@@ -243,28 +243,6 @@
     top: 1px;
 }
 
-.container-notice .margin-top-0 {
-    margin-top: 0px!important;
-}
-.container-notice .margin-top-15 {
-    margin-top: 15px!important;
-}
-.container-notice .margin-bottom-0 {
-    margin-bottom: 0px!important;
-}
-.container-notice .margin-bottom-10 {
-    margin-bottom: 10px!important;
-}
-.container-notice .margin-bottom-20 {
-    margin-bottom: 20px!important;
-}
-.container-notice .margin-bottom-40 {
-    margin-bottom: 40px!important;
-}
-.container-notice .padding-bottom-0 {
-    padding-bottom: 0px!important;
-}
-
 .container-notice .button-field {
     position: relative;
     width: 100%;
@@ -633,8 +611,9 @@
     clear: both;
 }
 .container-notice .review-content {
+    box-sizing: border-box;
     -webkit-box-flex: 0;
-    flex: 0 0 23.2%;
+    flex: 0 0 25%;
     max-width: 25%;
     position: relative;
     width: 100%;
@@ -735,9 +714,10 @@
 
 /* 이벤트 css */
 .container-notice .col-full {
+    box-sizing: border-box;
     -webkit-box-flex: 0;
     flex: 0 0 100%;
-    max-width: 1150px;
+    max-width: 100%;
     position: relative;
     width: 100%;
     min-height: 1px;
@@ -819,4 +799,243 @@
 .container-notice .dashboard .search input[type=date]:focus::before,
 .container-notice .dashboard .search input[type=date]:valid::before {
     display: none;
+}
+
+/* 통관조회 css */
+.container-notice .clearance-content {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-notice .clearance-col {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.container-notice .accordion {
+    font-size: 16px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    line-height: 27px;
+}
+.container-notice .accordion:first-child > .accordion-header {
+    border-bottom: 1px solid transparent;
+}
+.container-notice .accordion .accordion-header {
+    background: #ecf2f7;
+    padding: 15px 25px;
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 -1px 0 rgb(0 0 0 / 15%);
+    font-weight: 600;
+}
+.container-notice .accordion .accordion-header::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    opacity: 0;
+    transition: .3s;
+}
+.container-notice .accordion .accordion-body {
+    background: #fff;
+    color: #666;
+    display: block;
+}
+.container-notice .accordion .accordion-content {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+    background: #f6f6f6;
+}
+.container-notice .accordion .accordion-content .order-img {
+    float: left;
+    padding-right: 20px;
+}
+.container-notice .accordion .accordion-content .order-img img {
+    vertical-align: middle;
+    border-style: none;
+    width: 80px;
+    height: 80px;
+}
+.container-notice .accordion .accordion-content .order-info {
+    overflow: hidden;
+    padding-top: 25px;
+}
+.container-notice .accordion .accordion-content .order-info .order-name {
+    float: left;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.container-notice .accordion .accordion-content .order-info .order-name a {
+    color: #444;
+}
+.container-notice .num {
+    font-family: verdana !important;
+}
+.container-notice .accordion .accordion-content .order-info .order-condition {
+    float: left;
+}
+.container-notice .accordion .accordion-content .order-info .order-condition span {
+    float: none;
+    margin-top: -3px;
+}
+.container-notice .company-not-rated,
+.container-notice .not-rated {
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #888;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 600;
+    padding: 7px 9px;
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+}
+.container-notice .accordion .accordion-content .order-info .order-price {
+    float: right;
+    font-size: 15px;
+}
+.container-notice .accordion .accordion-content .order-info .order-price strong {
+    float: none;
+    font-size: 14.7px;
+    font-weight: 700;
+    margin-right: 5px;
+    line-height: 20px;
+    font-family: Tahoma, sans-serif;
+}
+
+.container-notice .col-xl-4 {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    -webkit-box-flex: 0;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.container-notice .accordion_02 {
+    font-size: 16px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.container-notice .accordion_02:first-child > .accordion-header {
+    border-bottom: 1px solid transparent;
+}
+.container-notice .accordion_02 .accordion-header:first-child {
+    border-top: 0px;
+}
+.container-notice .accordion_02 .accordion-header {
+    padding: 15px 25px;
+    background: #2a42e8;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 -1px 0 rgb(0 0 0 / 15%);
+    font-weight: 500;
+    overflow: hidden;
+}
+.container-notice .accordion_02 .accordion-header.active::after {
+    transform: rotate(180deg);
+}
+.container-notice .accordion_02 .accordion-header::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    opacity: 0;
+    transition: 0.3s;
+}
+.container-notice .accordion_02 .accordion-header::after {
+    content: "\f078";
+    font-weight: 800;
+    font-family: 'Font Awesome 6 Free';
+    font-size: 12px;
+    float: right;
+    position: relative;
+    top: -1px;
+    transition: all 0.3s;
+    transform: rotate(0deg);    
+}
+.container-notice .accordion_02 .accordion-header .step-num {
+    user-select: none;
+    float: left;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+.container-notice .accordion_02 .accordion-header .step-txt {
+    user-select: none;
+    float: left;
+    vertical-align: middle;
+}
+.container-notice .accordion_02 .accordion-header .step-txt p {
+    margin-bottom: 0rem;
+    line-height: 27px;
+}
+.container-notice .accordion_02 .accordion-header .step-txt p.step-title {
+    font-weight: bold;
+    font-size: 17px;
+}
+.container-notice .accordion_02 .accordion-header .step-txt p.step-time {
+    font-family: 'Nanum Gothic Light';
+    font-weight: 500;
+    font-size: 15px;
+}
+.container-notice .accordion_02 .accordion-body {
+    background: #fff;
+    color: #666;
+    display: none;
+    line-height: 27px;
+}
+.container-notice .accordion_02 .accordion-content {
+    border: 0px solid #ddd;
+    background: #ddd;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.container-notice table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    background: #fff;
+}
+.container-notice table th,
+.container-notice table td {
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid #d5d5d5;
+}
+.container-notice table th {
+    background-color: #f4f4f4;
+    color: #666;
+    vertical-align: middle;
+    font-weight: 500;
+    width: 25%;
+}
+.container-notice .tc {
+    text-align: center;
 }
