@@ -2,7 +2,7 @@
 /* 배송대행 서비스 안내 */
 #container .informationuse {
     width: 1200px;
-    height: 2641px; 
+    height: 6008px; 
     margin: 70px auto 35px auto; 
 }
 #container .informationuse-title {
@@ -204,25 +204,25 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: white;
-    background-color: #612C87;
+    color: #612C87;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
+}
+#container .return-refund-manual:hover{
+    color: white;
+    background-color: #612C87;
 }
 #container .invoice-number{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: #612C87;
+    color: white;
+    background-color: #612C87;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
-}
-#container .invoice-number:hover{
-    color: white;
-    background-color: #612C87;
 } 
 #container .automatic-order-registration-manual{
     width: 178px;
@@ -342,63 +342,84 @@
     background-color: #612C87;
 }
 /* 콘텐츠*/
-#container .return-refund-manual-content{
+#container .invoice-number-content{
     width: 896px;
-    height: 2590px;
+    height: 5957px;
     float: right; 
 }
-#container .return-refund-title01{
+#container .invoice-number-pc{
     width: 896px;
     height: 30px;
-    margin: 30px 0 0 40px;
+    margin-top: 30px;
 }
-#container .return-refund-manual01{
-    width: 894px;
-    height: 440px;
-    margin-top: 10px;
+#container .invoice-number-pc-manual{
+    width: 896px;
+    height: 120px;
+    margin-top: 20px;
     text-align: center;
 }
-#container .return-refund-title02{
+#container .invoice-number-pc-manual01{
     width: 896px;
-    height: 30px;
-    margin: 80px 0 0 40px;
-}
-#container .return-refund-manual02{
-    width: 894px;
-    height: 424px;
-    margin-top: 10px;
+    height: 231px;
+    margin-top: 50px;
     text-align: center;
 }
-#container .return-refund-title03{
-    width: 896px;
-    height: 30px;
-    margin: 80px 0 0 40px;
-}
-#container .return-refund-manual03{
+#container .invoice-number-pc-manual02{
     width: 894px;
-    height: 383px;
-    margin-top: 80px;
+    height: 260px;
+    margin-top: 50px;
+    text-align: center; 
+}
+#container .invoice-number-pc-manual03{
+    width: 896px;
+    height: 444px;
+    margin-top: 50px;
     text-align: center;
 }
-#container .return-refund-title04{
+#container .invoice-number-mobile{
     width: 896px;
     height: 30px;
-    margin: 80px 0 0 40px;
-}
-#container .return-refund-title04 span{
-    width: 896px;
-    height: 30px;
-    font-size: 12px; 
-}
-#container .return-refund-title04 span span{
-    width: 896px;
-    height: 30px;
-    font-size: 12px;
-}
-#container .return-refund-manual04{
-    width: 894px;
-    height: 751px;
     margin-top: 100px;
+}    
+#container .invoice-number-mobile-manual01{
+    width: 894px;
+    height: 961px;
+    margin-top: 50px;
+    text-align: center;
+}
+#container .invoice-number-mobile-mypage{
+    width: 896px;
+    height: 30px;
+    margin-top: 100px;
+    text-align: center;
+}
+#container .invoice-number-mobile-manual02{
+    width: 896px;
+    height: 961px;
+    margin-top: 50px;
+    text-align: center;
+}#container .invoice-number-mobile-purchase-history{
+    width: 896px;
+    height: 30px;
+    margin-top: 100px;
+    text-align: center;
+}
+#container .invoice-number-mobile-manual03{
+    width: 894px;
+    height: 961px;
+    margin-top: 50px;
+    text-align: center;
+}
+#container .invoice-number-mobile-logistics-view{
+    width: 896px;
+    height: 30px;
+    margin-top: 100px;
+    text-align: center;
+}
+#container .invoice-number-mobile-manual04{
+    width: 896px;
+    height: 961px;
+    margin-top: 150px;
     text-align: center;
 }
 
