@@ -32,10 +32,10 @@
     font-size: 14px;
     color: rgb(68, 68, 68);
 }
-.container-agent .fc-red {
+.container-agent .fc_red {
     color: red;
 }
-.container-agent .s-txt {
+.container-agent .s_txt {
     font-size: 13px;
     line-height: 20px;
 }
@@ -171,6 +171,9 @@
     font-family: inherit;
     line-height: normal;
     cursor: pointer;
+}
+.container-agent .num {
+    font-family: verdana !important;
 }
 
 
@@ -423,6 +426,13 @@
     font-weight: 600;
     color: #333;
     margin-bottom: 0px;
+}
+.container-agent .submit-field h5 span {
+    color: #888;
+    font-weight: 500;
+}
+.container-agent .submit-field h5.point, .container-agent .submit-field h5 span.tc_red {
+    color: red;
 }
 .container-agent .submit-field.field-two .field-block.fl {
     padding-right: 10px;
