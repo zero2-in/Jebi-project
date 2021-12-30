@@ -100,6 +100,80 @@
     position: relative;
     z-index: 1;
 }
+.container-agent .fl {
+    float: left;
+}
+.container-agent .fr {
+    float: right;
+}
+.container-agent h3 {
+    font-size: 22px;
+}
+.container-agent input.with-border, .container-agent input[type=text].with-border, .container-agent input[type=password].with-border,
+.container-agent input[type=email].with-border, .container-agent input[type=number].with-border, 
+.container-agent textarea.with-border, .container-agent select.with-border {
+    border: 1px solid rgb(213, 213, 213);
+    box-shadow: rgb(0 0 0 / 5%) 0px 1px 4px 0px;
+}
+.container-agent input, .container-agent input[type=text], .container-agent input[type=password],
+.container-agent input[type=email], .container-agent input[type=number], 
+.container-agent textarea, .container-agent select {
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    outline: none;
+    font-size: 16px;
+    color: gray;
+    margin: 0px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 1;
+    border: none;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 4px 0px;
+    border-radius: 4px;
+}
+.container-agent input {
+    transition: all 0.1s ease-in-out 0s;
+}
+.container-agent input.with-border.gray-read {
+    background: #f2f4fc;
+}
+.container-agent .with-border.wd100 {
+    width: 100px;
+}
+.container-agent button.button.gray, .container-agent input[type=button].gray, 
+.container-agent input[type=submit].gray, .container-agent a.button.gray {
+    background-color: #eee;
+    color: #666;
+    box-shadow: none;
+}
+.container-agent button.button.gray:hover, .container-agent input[type=button].gray:hover, 
+.container-agent input[type=submit].gray:hover, .container-agent a.button.gray:hover {
+    background-color: #e0e0e0;
+}
+.container-agent button {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    overflow: visible;
+    background: 0px 0px;
+    color: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -130,15 +204,18 @@
     margin-right: -10px;
     margin-left: -10px;
 }
-.container-agent .row::before,
-.container-agent .row::after {
+.container-agent .row::before, .container-agent .row::after, .container-agent .clearfix::after, 
+.container-agent .clearfix::before {
     content: " ";
     display: flex;
 }
-.container-agent .row::after {
+.container-agent .row::after, .container-agent .clearfix::after {
     clear: both;
 }
 
+
+
+/* col 속성 */
 .container-agent .col-common {
     position: relative;
     width: 100%;
@@ -146,10 +223,17 @@
     padding-right: 10px;
     padding-left: 10px;
 }
+.container-agent .col-xl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 .container-agent .col-xl-12 {
     flex: 0 0 100%;
     max-width: 100%;
 }
+
+
+
 
 .container-agent .width-1200 {
     width: 1200px;
@@ -193,6 +277,41 @@
     margin-right: 4px;
     color: #2a41e8;
 }
+.container-agent .dashboard-box .headline .headline-btn {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+}
+.container-agent .dashboard-box .headline .headline-btn .button {
+    padding: 0px 10px;
+    line-height: 35px;
+    height: 35px;
+}
+.container-agent .dashboard-box .button.blue-line, 
+.container-agent .button.blue-line {
+    background-color: #fff;
+    color: #78148c;
+    box-shadow: none;
+    border: 1px solid #78148c;
+}
+.container-agent .dashboard-box .button.blue-line:hover,
+.container-agent .dashboard-box .button.blue-line:hover {
+    background-color: #78148c;
+    color: #fff;
+}
+.container-agent .dashboard-box .button.gray, .container-agent .button.gray {
+    background-color: #eee;
+    color: #666;
+    box-shadow: none;
+}
+.container-agent .dashboard-box .dashboard-box-list .button:not(.ico):hover, 
+.container-agent .dashboard-box .button.red:not(.ico):hover,
+.container-agent .dashboard-box .button.green:not(.ico):hover,
+.container-agent .dashboard-box .button.gray:not(.ico):hover {
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+}
 
 .container-agent ul.dashboard-box-list {
     list-style: none;
@@ -202,11 +321,20 @@
 .container-agent .dashboard-box-list {
     box-shadow: none;
 }
+.container-agent .dashboard-box-list .button {
+    padding: 0px 10px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+    box-shadow: 0 3px 8px rgb(102 103 107 / 15%);
+}
 .container-agent ul.dashboard-box-list > li {
     border-bottom: 1px solid #e4e4e4;
     line-height: 26px;
     padding: 25px;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     position: relative;
     width: 100%;
@@ -296,6 +424,18 @@
     color: #333;
     margin-bottom: 0px;
 }
+.container-agent .submit-field.field-two .field-block.fl {
+    padding-right: 10px;
+}
+.container-agent .submit-field.field-two .field-block.fr {
+    padding-left: 10px;
+}
+.container-agent .submit-field.field-two .field-block {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
 .container-agent .radio-area {
     display: block;
     width: 100%;
@@ -365,4 +505,93 @@
     width: 100%;
     height: 100%;
     z-index: 99;
+}
+
+.container-agent .input-with-icon-left {
+    position: relative;
+}
+.container-agent .input-with-icon-left i {
+    position: absolute;
+    top: 0;
+    color: #a0a0a0;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    background-color: #f8f8f8;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 4px 0 0 4px;
+}
+.container-agent .input-with-icon-left input {
+    padding-left: 50px;
+}
+
+.container-agent .tip-text {
+    position: relative;
+    padding-left: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+.container-agent .tip-text span {
+    position: absolute;
+    top: auto;
+    left: 0px;
+    color: red;
+}
+
+.container-agent .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%
+}
+.container-agent .bootstrap-select.btn-group:not(.input-group-btn), 
+.container-agent .bootstrap-select.btn-group[class*=col-] {
+    float: none;
+    display: flex;
+    margin-left: 0;
+}
+.container-agent .bootstrap-select.btn-group {
+    position: relative;
+}
+.container-agent .bootstrap-select.btn-group button {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    line-height: 0;
+    padding: 0 10px;
+    margin: 0;
+    outline: none;
+    font-size: 16px;
+    color: gray;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #fff;
+    font-weight: 500;
+    opacity: 1;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px 00 rgb(0 0 0 / 5%);
+}
+.container-agent .with-border .dropdown-menu, 
+.container-agent .with-border.bootstrap-select.btn-group button {
+    border: 1px solid #d5d5d5;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 5%);
+}
+.container-agent .bootstrap-select>.dropdown-toggle.bs-placeholder, 
+.container-agent .bootstrap-select>.dropdown-toggle.bs-placeholder:hover, 
+.container-agent .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, 
+.container-agent .bootstrap-select>.dropdown-toggle.bs-placeholder:active {
+    color: gray;
+}
+.container-agent .bootstrap-select > .dropdown-toggle {
+    width: 100%;
+    padding-right: 25px;
+    z-index: 1;
+}
+.container-agent .bootstrap-select .btn {
+    user-select: none;
 }

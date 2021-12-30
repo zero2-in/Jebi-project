@@ -72,7 +72,7 @@
         </div>
         
         <div class="margin-top-50"></div>
-        <form action="" method="post" name="board">
+        <form action="delivery_write.html" method="post" name="board">
             <div class="row">
                 <!-- Dashboard Box 서비스 신청 유의사항 -->
                 <div class="col-xl-12 col-common">
@@ -177,7 +177,7 @@
             <!-- Row -->
             <div class="row">
                 <div class="col-xl-12 col-common tc margin-top-30">
-                    <a href="javascript:void(0)" onclick="setTimeout(function(){location.href=''}, 150)" class="button ripple-effect dark big"
+                    <a href="javascript:void(0)" onclick="setTimeout(function(){goNext()}, 150)" class="button ripple-effect dark big"
                     data-animation="ripple">
                         다음 진행
                     </a>
@@ -187,6 +187,12 @@
     </div>
 
     <script src="../js/btn_ripple_effect.js"></script>
+    <script>
+        function goNext() {
+            if(checkValue(board.dlvr_way, "운송방식을 선택하십시오.")) return;
+            board.submit();
+        }
+    </script>
 
     <!-- Menu footer Start -->
     <div id="footer">
