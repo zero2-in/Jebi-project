@@ -53,17 +53,17 @@
 
     <div class="container-agent">
         <div class="bar-title">
-            <h2 class="title">배송대행 신청</h2>
+            <h2 class="title">구매대행 신청</h2>
 
             <!-- 사이트 이동경로를 만들어라! -->
             <nav id="breadcrumbs" class="dark">
                 <ul class="nav-list">
                     <li><a href="../index.html">Home</a></li>
-                    <li>배송대행</li>
+                    <li>구매대행</li>
                     <li class="select-area">
-                        <button class="dropbtn">배송대행 신청 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <button class="dropbtn">구매대행 신청 <span class="bs-caret"><span class="caret"></span></span></button>
                         <div class="dropdown-content">
-                            <a href="javascript:void(0)">배송대행 신청<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="javascript:void(0)">구매대행 신청<span class="check"><i class="fas fa-check"></i></span></a>
                         </div>
                     </li>
                     <div class="clearfix"></div>
@@ -251,13 +251,6 @@
                                             </h5>
                                             <!-- Buttons -->
                                             <div class="fr margin-bottom-5">
-                                                <a href="javascript:void(0)" data-animation="ripple" onclick="fnPopWinCT('')" class="button ripple-effect charcoal margin-bottom-5">
-                                                    주문자동등록
-                                                </a>
-                                                <a href="#small-dialog" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
-                                                    재고불러오기
-                                                </a>
-
                                                 <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-copy"></i>
                                                 </a>
@@ -289,24 +282,6 @@
 
                                     <div class="col col-common">
                                         <div class="row">
-                                            <!-- 주문번호 -->
-                                            <div class="col-xl-6 col-common">
-                                                <div class="submit-field">
-                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
-                                                </div>
-                                            </div>
-                                            <!-- 트래킹번호 -->
-                                            <div class="col-xl-6 col-common">
-                                                <div class="submit-field">
-                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
-                                                    <div class="tip-text margin-top-10">
-                                                        <div>
-                                                            <span>*</span>
-                                                             트래킹번호가 아직 없는 경우 "마이페이지 > 주문신청 현황"에서 입력 가능
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <!-- 통관품목 검색 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
@@ -646,13 +621,19 @@
                         </ul>
                     </div>
                 </div>
+                <div class="notification error margin-top-20 pd20">
+                    <p>
+                        구매견적을 신청 하신 후 견적이 완료되면 수정이 불가합니다.
+                        <br>
+                        
+				(구매견적을 완료하신 후에 부득이한 사유로 요청서 수정이 필요한 경우에는 1:1문의를 주세요)
+				
+                    </p>
+                </div>
             </div>
             <div class="col-xl-12 col-common tc margin-top-30">
-                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect dark big">
-                    접수대기
-                </a>
                 <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect big">
-                    접수신청
+                    구매견적
                 </a>
             </div>
         </div>

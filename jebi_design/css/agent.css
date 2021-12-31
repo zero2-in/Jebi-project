@@ -32,7 +32,8 @@
     font-size: 14px;
     color: rgb(68, 68, 68);
 }
-.container-agent .fc_red {
+.container-agent .fc_red, 
+.container-agent .with-border.fc_red {
     color: red;
 }
 .container-agent .s_txt {
@@ -142,6 +143,9 @@
 .container-agent input.with-border.gray-read {
     background: #f2f4fc;
 }
+.container-agent input.with-border.necessary {
+    border: 1px solid #f49472;
+}
 .container-agent .with-border.wd100 {
     width: 100px;
 }
@@ -174,6 +178,52 @@
 }
 .container-agent .num {
     font-family: verdana !important;
+}
+.container-agent button.button.charcoal, .container-agent input[type=button].charcoal,
+.container-agent input[type=submit].charcoal, .container-agent a.button.charcoal {
+    background-color: #6f6f6f;
+    color: #fff;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+.container-agent img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+.container-agent input::placeholder {
+    color: #cfcfcf;
+}
+.container-agent .tr {
+    text-align: right;
+}
+.container-agent .bold, .container-agent .with-border.bold {
+    font-weight: bold;
+}
+.container-agent table {
+    border-collapse: collapse;
+}
+.container-agent #backtotop a, .container-agent .header-notifications-trigger span, .container-agent a.header-notifications-button, 
+.container-agent #navigation ul ul.dropdown-nav ul.dropdown-nav li:hover a:after, 
+.container-agent #navigation ul ul.dropdown-nav li:hover a:after, .container-agent .mm-menu em.mm-counter, 
+.container-agent .language-switcher.bootstrap-select.btn-group.open button, 
+.container-agent .language-switcher.bootstrap-select.btn-group button:hover, 
+.container-agent .footer-links ul li a span:before, 
+.container-agent .newsletter button, .container-agent a.blog-post-info:hover, .container-agent #posts-nav li a:hover span, .container-agent .comment-by a.reply:hover, 
+.container-agent .contact-address-headline:after, .container-agent .enable-filters-button span, .container-agent .enable-filters-button i, 
+.container-agent .board-listing.with-apply-button:hover .list-apply-button, .container-agent .letters-list a.current, .container-agent span.button, 
+.container-agent button.button, .container-agent input[type=button], .container-agent input[type=submit], .container-agent a.button, .container-agent mark.color, .container-agent .copy-url .copy-url-button, 
+.container-agent .keyword-input-container .keyword-input-button, .container-agent .tags-container input[type=checkbox]:checked+label, 
+.container-agent input:checked+.switch-button, .container-agent .radio input[type=radio]+label .radio-label:after, 
+.container-agent .uploadButton .uploadButton-button:hover, .container-agent .pricing-plan .button:hover, .container-agent .pricing-plan.recommended .button, 
+.container-agent .pricing-plan .recommended-badge, .container-agent .payment-tab-trigger>input:checked~label::after, .container-agent .breathing-icon, 
+.container-agent .icon-box-check, .container-agent .testimonial-author span, .container-agent .qtyInc:hover, .container-agent .qtyDec:hover, .container-agent #sign-in-dialog .mfp-close:hover, 
+.container-agent #small-dialog-1 .mfp-close:hover, .container-agent #small-dialog-2 .mfp-close:hover, .container-agent #small-dialog-3 .mfp-close:hover, 
+.container-agent #small-dialog-4 .mfp-close:hover, .container-agent #small-dialog .mfp-close:hover, .container-agent .slider-selection, .container-agent .cluster-visible, 
+.container-agent .marker-container, .container-agent .custom-zoom-in:hover, .container-agent .custom-zoom-out:hover, .container-agent #geoLocation:hover, .container-agent #streetView:hover, 
+.container-agent #scrollEnabling:hover, .container-agent #scrollEnabling.enabled, .container-agent a.apply-now-button, .container-agent a.attachment-box:hover, 
+.container-agent .project-indicators .indicator-bar span, .container-agent .dashboard-nav ul li span.nav-tag, .container-agent .dashboard-box .button.dark:not(.ico):hover,
+.container-agent .messages-inbox ul li:before, .container-agent .message-by h5 i {
+    background-color: #78148c;
 }
 
 
@@ -226,12 +276,31 @@
     padding-right: 10px;
     padding-left: 10px;
 }
+.container-agent .col-xl-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
 .container-agent .col-xl-6 {
     flex: 0 0 50%;
     max-width: 50%;
 }
+.container-agent .col-xl-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
 .container-agent .col-xl-12 {
     flex: 0 0 100%;
+    max-width: 100%;
+}
+.container-agent .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+.container-agent .col {
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
     max-width: 100%;
 }
 
@@ -315,6 +384,15 @@
     background-color: #333;
     box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
 }
+.container-agent .dashboard-box .button.ico {
+    width: auto;
+    text-align: center;
+}
+.container-agent .dashboard-box .button.ico i {
+    font-size: 14px;
+    position: relative;
+    left: 1px;
+}
 
 .container-agent ul.dashboard-box-list {
     list-style: none;
@@ -333,6 +411,15 @@
     display: inline-block;
     box-shadow: 0 3px 8px rgb(102 103 107 / 15%);
 }
+.container-agent .dashboard-box-list a.button i {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 1px;
+    font-size: 14px;
+    line-height: 0;
+    margin-left: -2px;
+}
 .container-agent ul.dashboard-box-list > li {
     border-bottom: 1px solid #e4e4e4;
     line-height: 26px;
@@ -348,6 +435,7 @@
 .container-agent ul.dashboard-box-list > li:last-child {
     border-bottom: none;
 }
+
 .container-agent textarea.agree_02, 
 .container-agent div.agree_02 {
     height: 400px;
@@ -444,6 +532,13 @@
     width: 50%;
     float: left;
     position: relative;
+}
+.container-agent .submit-field span.stxt {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    color: #cfcfcf;
+    font-size: 16px;
 }
 
 .container-agent .radio-area {
@@ -604,4 +699,86 @@
 }
 .container-agent .bootstrap-select .btn {
     user-select: none;
+}
+
+.container-agent .avatar-wrapper {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: none;
+    margin: -2px auto 20px!important;
+    transition: all 0.3s ease;
+}
+.container-agent .avatar-wrapper:hover {
+    transform: scale(1.05);
+}
+.container-agent .avatar-wrapper .file-pic {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+.container-agent .file-pic::after {
+    font-family: 'Font Awesome 6 Free';
+    content: "\f53f";
+    font-weight: 800;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 120px;
+    position: absolute;
+    font-size: 60px;
+    background: #f0f0f0;
+    color: #aaa;
+    text-align: center;
+}
+
+.container-agent .wrp-ImgUpBtn .file-upload {
+    display: none;
+}
+.container-agent .wrp-ImgUpBtn .button {
+    background-color: #78148c;
+}
+
+.container-agent .notification {
+    line-height: 1.5em;
+    position: relative;
+    padding: 10px;
+    /* padding-right: 50px; */
+    border-radius: 3px;
+    width: 100%;
+}
+.container-agent .notification.error {
+    color: #de5959;
+    background-color: #ffe9e9;
+}
+.container-agent .notification p {
+    margin: 0;
+    font-size: 14px;
+}
+.container-agent .notification.pd20 {
+    padding: 20px;
+}
+
+.container-agent table.basic-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    background: #fff;
+}
+.container-agent table.basic-table td {
+    position: relative;
+    word-break: normal;
+}
+.container-agent table.basic-table th, .container-agent table.basic-table td {
+    padding: 10px 15px;
+    border: 1px solid #f4f4f4;
+}
+.container-agent table.basic-table td.title {
+    background: #f4f4f4;
+    font-weight: bold;
 }
