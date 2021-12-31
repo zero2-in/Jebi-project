@@ -53,17 +53,17 @@
 
     <div class="container-agent">
         <div class="bar-title">
-            <h2 class="title">배송대행 신청</h2>
+            <h2 class="title">구매대행 신청</h2>
 
             <!-- 사이트 이동경로를 만들어라! -->
             <nav id="breadcrumbs" class="dark">
                 <ul class="nav-list">
                     <li><a href="../index.html">Home</a></li>
-                    <li>배송대행</li>
+                    <li>구매대행</li>
                     <li class="select-area">
-                        <button class="dropbtn">배송대행 신청 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <button class="dropbtn">구매대행 신청 <span class="bs-caret"><span class="caret"></span></span></button>
                         <div class="dropdown-content">
-                            <a href="javascript:void(0)">배송대행 신청<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="javascript:void(0)">구매대행 신청<span class="check"><i class="fas fa-check"></i></span></a>
                         </div>
                     </li>
                     <div class="clearfix"></div>
@@ -72,7 +72,7 @@
         </div>
         
         <div class="margin-top-50"></div>
-        <form action="delivery_write.html" method="post" name="board">
+        <form action="purchase_write.html" method="post" name="board">
             <div class="row">
                 <!-- Dashboard Box 서비스 신청 유의사항 -->
                 <div class="col-xl-12 col-common">
@@ -90,18 +90,18 @@
                                     <div class="with-border agree_02">
                                         <ul>
                                             <!-- 약관 내용 -->
-                                            <li style="text-align: left; line-height: 1.8;">1. 출고 마감시간은 오전 11시 입니다. 오전 11시까지 결제확인 된 주문건만 당일 출고됩니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">2. 항공운송 불가품목(배터리,액체,식품 등)이 포함된 주문서는 출고보류 처리 후, 해상운송으로 자동 변경되고 다음 영업일에 재출고 됩니다. (선안내되지 않습니다.) 항공운송 불가 품목 상세내용은 공지사항 &gt; 제비 이용안내 내용을 참고바랍니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">3. 배송대행신청서 작성 시 최대 품목수는 20개입니다.(묶음배송시 동일제한)  같은 상품이더라도 트래킹번호가 나뉘어 발송되는 경우 트래킹번호를 기준으로 나누어 기재해주셔야 합니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">4. 노데이터 입고(주문건이 입고되기 전에 트래킹번호를 입력하지 않았거나 잘못 입력한 경우)시 트래킹번호당 500원의 추가요금이 발생합니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">5. 트래킹번호를 반드시 입력해주셔야 빠르고 정확한 입고확인이 가능합니다. 트래킹번호가 부정확하거나 사서함번호가 없이 입고된 경우 입고확인이 늦어지거나 누락배송 될 수 있습니다. 노데이터 입고 발생으로 배송누락될 시 추가배송요금은 정상청구됩니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">6. 한개의 트래킹 번호로 입고된 물건은 각기 다른 주문건으로 분할발송은 불가합니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">7. 트래킹번호 오입력, 판매자 착불 발송일 경우 제품이 계속 ‘입고전’상태로 보여 질 수 있습니다.모든 상품에 입력하신 트래킹번호의 정확,부정확의 여부는 직박구리에서 확인이 어렵습니다.또한 제품이 입고되어도 센터 입고 절차가 완료될 때까지 ‘입고전’으로 표시될 수 있습니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">8. 국내배송은 CJ택배로 진행되며 택배사의 규정상 포장 부피가 가로+세로+높이의 합이 130cm 를 초과하는 경우, 한 변의 길이가 100cm 를 초과하는 경우, 중량이 20kg을 초과하는 경우에는 화물택배로 전환되어 진행되고 배송비용은 착불청구 됩니다.화물택배 전환발송 시 운송장이 변경되며 고객센터로 문의하시면 안내 받으실 수 있습니다. (선안내되지 않습니다.)</li>
-                                            <li style="text-align: left; line-height: 1.8;">9. 택배사에서 지정한 기준 무게, 부피 초과시 택배운송 불가로 인해 일반 화물택배로 착불발송 됩니다. 직박구리 배송비용은 해외특송 운임비로, 국내 택배비용 부분환불은 불가능합니다.</li>
-                                            <li style="text-align: left; line-height: 1.8;">10. 운송사에서 지정한 무게, 부피 초과 시 포장 사이즈 비용이 추가 청구 됩니다. 상세 금액은 비용 안내-&gt;부가서비스 내용을 참고 바랍니다. </li>
-                                            <li style="text-align: left; line-height: 1.8;">11. 합배송의 경우에도 하나의 배송요청서로 작성해주시면 되며, 접수대기,접수신청 상태에서는 상품의 추가등록, 배송지 정보 수정이 가능하며 자동으로 상품포장 단계로 진행되지 않습니다. 단, 입고가 완료된 상품의 내용 수정은 불가능합니다. (주문서 이동불가)</li>
-                                            <li style="text-align: left; line-height: 1.8;">12. 묶음배송 신청은 2개 이상의 배송신청서(주문번호)를 묶음으로 배송요청하실 경우에 해당하며 ‘입고 전’ 상태에서 무료로 제공됩니다.</li>
+                                            <li>1.&nbsp;구매대행은 한 주문서당 최대 15개품목 까지만 신청 가능합니다.</li>
+                                            <li>2.&nbsp;1688, 티몰, 타오바오 에서만 구매대행이 가능합니다.</li>
+                                            <li>3. 구매대행 상품urlL은 pc버전의 url로 입력해 주시고( 모바일 주소 불가), 구매대행 주문서 작성 시 옵션명은 판매 페이지에 있는 중국어 옵션명으로 똑같이 작성해 주시기 바랍니다.(구매 페이지 옵션이 영문인 경우 영문으로 작성)</li>
+                                            <li>4.&nbsp;구매견적이 완료된 이후에는 주문서 수정이 불가하며, 구매견적시 문제가 발생되는 경우 쪽지로 안내드리오니 받은쪽지함을 확인바랍니다. </li>
+                                            <li>5.&nbsp;구매완료 이후(주문서의 상태가 구매완료, 중국판매자가 제품발송 전) 단순변심으로 인한 주문 취소 시 직박구리 취소 수수료 2,000원 제외 후 환불진행됩니다.(중국 내 반품 배송료가 발생하는 경우 추가 청구)</li>
+                                            <li>6.&nbsp;구매대행 상품을 판매자가 발송한 이후 주문취소시 직박구리 취소 수수료 3,000원 제외 후 환불진행됩니다.(중국 내 반품 배송료가 발생하는 경우 추가차감)</li>
+                                            <li>7. 입고된 상품의 무료보관기간은 입고된 날로부터 30일까지이며, 30일 이후에는 보관료 5000원이 배송비에 추가청구되고 총 60일 경과후에는 상품이 폐기처리 됩니다. (예약상품+일반상품 구매시 예약상품의 발송일자를 꼭 확인하시어 유의바랍니다.)</li>
+                                            <li>8.&nbsp;구매대행 진행시 신청 제품의 판매 상태(품절, 판매중단등)와 선적 및 통관이 불가능 한 경우 주문이 진행되지 않을수 있습니다.(액체류는 구매대행이 불가합니다.)</li>
+                                            <li>9.&nbsp;구매대행 주문서의 수정요청 및 결제요청일이 7일 이상 경과되면 자동으로 주문서는 취소 처리됩니다. 취소처리된 주문서는 복구가 불가합니다.</li>
+                                            <li>10.&nbsp;직박구리는 관련법규를 준수하며 가품 및 이미테이션제품은 구매대행 진행이 불가합니다.</li>
+                                            <li>11.&nbsp;선적이 불가능 하거나 통관이 불가능한 상품 구입으로 인한 불이익은 직박구리가 책임지지 않습니다.</li>
+                                            <li>12.&nbsp;구매대행은 나눔배송, 묶음배송 처리가 불가합니다. 따라서 먼저 입고된 상품을 먼저 배송진행하시는 것은 불가하오니 판매페이지에 명시되어있는 상품 발송일자를 꼭 확인 바랍니다.</li>
                                             <!-- 약관 내용 끝 -->
                                         </ul>
                                     </div>
