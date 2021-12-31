@@ -2,9 +2,8 @@
 /* 배송대행 서비스 안내 */
 #container .informationuse {
     width: 1200px;
-    height: 8950px; 
+    height: 3750px; 
     margin: 70px auto 35px auto;  
-    border: 1px solid #fc0303; 
 }
 #container .informationuse-title {
     width: 1198px;
@@ -289,25 +288,25 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: white;
-    background-color: #612C87;
+    color: #612C87;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 } 
+#container .issuance-of-unique-number:hover{
+    color: white;
+    background-color: #612C87;
+}
 #container .customs-duty{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: #612C87;
+    color: white;
+    background-color: #612C87;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
-}
-#container .customs-duty:hover{
-    color: white;
-    background-color: #612C87;
 } 
 #container .import-prohibited-items{
     width: 178px;
@@ -342,162 +341,171 @@
     color: white;
     background-color: #612C87;
 }
-/* 콘텐츠*/
+/* 콘텐츠/관부가세란?*/
 #container .customs-duty-content{
     width: 896px;
-    height: 8888px;
+    height: 3688px;
     float: right; 
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-box1{
     width: 894px;
     height: 260px;
     margin-top: 30px;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-what{
     width: 894px;
     height: 50px;
     margin-top: 10px;
     text-align: center;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-what-img{
     width: 894px;
     height: 152px;
     text-align: center;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-box1 p{
     width: 890px;
     height: 20px;
     padding-top: 10px;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-calculus-notice{
     width: 894px;
     height: 430px;
     margin-top: 30px;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-box2{
     width: 435px;
     height: 303px;
     margin-top: 50px;
     float: left;
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-calculus{
     width: 433px;
-    height: 50px;
-    border: 1px solid #612C87; 
+    height: 50px; 
 }
 #container .customs-duty-calculus-img{
     width: 433px;
     height: 111px;
     margin-top: 10px;
     text-align: center; 
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-calculus-img p{
     width: 431px;
     height: 80px;
     margin-top: 10px;
-    text-align: left; 
-    border: 1px solid #612C87; 
+    text-align: left;  
 }
 #container .customs-duty-box3{
     width: 435px;
     height: 361px;
     float: right;
-    margin-top: 50px;
-    border: 1px solid #612C87; 
+    margin-top: 50px; 
 }
 #container .customs-duty-notice{
     width: 433px;
-    height: 50px;
-    border: 1px solid #612C87; 
+    height: 50px; 
 }
 #container .customs-duty-notice-img{
     width: 433px;
     height: 111px;
     margin-top: 10px;
     text-align: center; 
-    border: 1px solid #612C87; 
 }
 #container .customs-duty-notice-img p{
     width: 431px;
     height: 170px;
     margin-top: 10px;
     text-align: left; 
-    border: 1px solid #612C87; 
 }
+/* 일반물품 관세율표 */
 #container .tariff-rate{
-    width: 894px;
+    width: 884px;
     height: 40px;
+    padding-left: 10px;
     margin-top: 10px;
     border-top: 1px solid rgb(0, 0, 0);
-    background-color: rgb(205, 205, 205);;
+    background-color: rgb(205, 205, 205);
 }
 #container .tariff-rate h2{
     width: 894px;
     height: 30px;
     margin-top: 7px;
-    border: 1px solid #612C87; 
 }
 #container .uniqueness{
-    width: 550px;
-    height: 20px;
+    width: 450px;
+    height: 18px;
     padding-top: 5px;
     margin-top: 10px;
-    border: 1px solid rgb(0, 0, 0);
+    font-size: 13px;
     background-color: rgb(253, 247, 189);
 }
 #container .tariff-rate-table-box{
     width: 894px;
-    height: 2200px;
+    height: 2221px;
     margin-top: 7px;
-    border: 1px solid #612C87; 
 }
 #container .tariff-rate-table{
     width: 892px;
     height: 1328px;
     margin-top: 7px;
     text-align: center; 
-    border: 1px solid #612C87; 
 }
 #container .tariff-rate-table .title{
     margin-top: 7px;
     padding-right: 15px;
     text-align: right;
     background-color: rgb(205, 205, 205); 
-    border: 1px solid #612C87;
+    border: 1px solid rgb(205, 205, 205);
 }
 #container .tariff-rate-table th{
     height: 30px;
     margin-top: 7px;
-    border: 1px solid #612C87; 
+    border: 1px solid rgb(205, 205, 205); 
     background-color: rgb(205, 205, 205);
 }
 #container .tariff-rate-table td{
     height: 30px;
     margin-top: 7px;
-    border: 1px solid #612C87;
+    border: 1px solid rgb(205, 205, 205);
 }
+/* 특소세 부과물품 */
 #container .special-tax{
-    width: 894px;
-    height: 40px;
-    margin-top: 10px;
+    width: 884px;
+    height: 30px;
+    padding: 10px 0 0 10px;
+    margin-top: 100px;
     border-top: 1px solid rgb(0, 0, 0);
     background-color: rgb(205, 205, 205);
 }
 #container .special-tax-table-box{
     width: 894px;
-    height: 1300px;
+    height: 500px;
     margin-top: 7px;
-    border: 1px solid #612C87; 
 }
-
+#container .special-tax-table{
+    width: 892px;
+    height: 437px;
+    margin-top: 7px;
+    text-align: center; 
+}
+#container .special-tax-table th{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+    background-color: rgb(205, 205, 205);
+}
+#container .special-tax-table .title{
+    margin-top: 7px;
+    padding-right: 15px;
+    text-align: right;
+    background-color: rgb(205, 205, 205); 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .special-tax-table td{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+}
 
 
 

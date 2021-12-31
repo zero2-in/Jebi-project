@@ -226,7 +226,7 @@
     color: white;
     background-color: #612C87;
 } 
-#container .automatic-order-registration-manual{
+#container .automatic-order-registration{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -236,7 +236,7 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .automatic-order-registration-manual:hover{
+#container .automatic-order-registration:hover{
     color: white;
     background-color: #612C87;
 } 
@@ -254,7 +254,7 @@
     padding: 7px 0 0 10px;
     background-color: rgb(208, 174, 240);  
 }
-#container .chinese-size-manual{
+#container .chinese-size-condition-table{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -264,7 +264,7 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .chinese-size-manual:hover{
+#container .chinese-size-condition-table:hover{
     color: white;
     background-color: #612C87;
 } 

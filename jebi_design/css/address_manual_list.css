@@ -2,7 +2,7 @@
 /* 배송대행 서비스 안내 */
 #container .informationuse {
     width: 1200px;
-    height: 1970px; 
+    height: 1751px; 
     margin: 70px auto 35px auto;
 }
 #container .informationuse-title {
@@ -53,7 +53,7 @@
 /* 서브 메인/배송대행 이용방법 */
 #container .informationuse-sub-title{
     width: 296px;
-    height: 1843px; 
+    height: 1643px; 
     float: left;
 }
 #container .delivery-agent{
@@ -226,7 +226,7 @@
     color: white;
     background-color: #612C87;
 } 
-#container .automatic-order-registration-manual{
+#container .automatic-order-registration{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -236,7 +236,7 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .automatic-order-registration-manual:hover{
+#container .automatic-order-registration:hover{
     color: white;
     background-color: #612C87;
 } 
@@ -254,7 +254,7 @@
     padding: 7px 0 0 10px;
     background-color: rgb(208, 174, 240);  
 }
-#container .chinese-size-manual{
+#container .chinese-size-condition-table{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -264,7 +264,7 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .chinese-size-manual:hover{
+#container .chinese-size-condition-table:hover{
     color: white;
     background-color: #612C87;
 } 
@@ -346,8 +346,8 @@
 /* 콘텐츠*/
 #container .address-input-manual-content{
     width: 896px;
-    height: 1919px;
-    float: right; 
+    height: 1700px;
+    float: right;  
 }
 #container .address-input-manual{
     width: 894px;
@@ -365,7 +365,7 @@
     width: 894px;
     height: 650px;
     margin-top: 50px;
-    text-align: center;
+    text-align: center; 
 }
 #container .jebi-homepage{
     width: 894px;
@@ -399,6 +399,6 @@
 #container .address-input03-manual{
     width: 894px;
     height: 373px;
-    margin-top: 70px;
-    text-align: center;
+    margin-top: 100px;
+    text-align: center; 
 }

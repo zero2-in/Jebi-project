@@ -227,7 +227,7 @@
     color: white;
     background-color: #612C87;
 } 
-#container .automatic-order-registration-manual{
+#container .automatic-order-registration{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -237,17 +237,17 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .automatic-order-registration-manual:hover{
+#container .automatic-order-registration:hover{
     color: white;
     background-color: #612C87;
-}
+} 
 #container .taobao-agent{
     width: 230px;
     height: 253px;
     margin-top: 7px; 
     border-bottom: 1px solid rgb(205, 205, 205);
-}
-/* 서브 메인/이용팁 */  
+} 
+/* 서브 메인/이용팁 */
 #container .use-tip{
     width: 220px;
     height: 23px;
@@ -255,7 +255,7 @@
     padding: 7px 0 0 10px;
     background-color: rgb(208, 174, 240);  
 }
-#container .chinese-size-manual{
+#container .chinese-size-condition-table{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -265,10 +265,10 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .chinese-size-manual:hover{
+#container .chinese-size-condition-table:hover{
     color: white;
     background-color: #612C87;
-} 
+}
 #container .chinese-delivery-tracking{
     width: 178px;
     height: 20px;
