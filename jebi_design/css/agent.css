@@ -199,6 +199,32 @@
 .container-agent .bold, .container-agent .with-border.bold {
     font-weight: bold;
 }
+.container-agent table {
+    border-collapse: collapse;
+}
+.container-agent #backtotop a, .container-agent .header-notifications-trigger span, .container-agent a.header-notifications-button, 
+.container-agent #navigation ul ul.dropdown-nav ul.dropdown-nav li:hover a:after, 
+.container-agent #navigation ul ul.dropdown-nav li:hover a:after, .container-agent .mm-menu em.mm-counter, 
+.container-agent .language-switcher.bootstrap-select.btn-group.open button, 
+.container-agent .language-switcher.bootstrap-select.btn-group button:hover, 
+.container-agent .footer-links ul li a span:before, 
+.container-agent .newsletter button, .container-agent a.blog-post-info:hover, .container-agent #posts-nav li a:hover span, .container-agent .comment-by a.reply:hover, 
+.container-agent .contact-address-headline:after, .container-agent .enable-filters-button span, .container-agent .enable-filters-button i, 
+.container-agent .board-listing.with-apply-button:hover .list-apply-button, .container-agent .letters-list a.current, .container-agent span.button, 
+.container-agent button.button, .container-agent input[type=button], .container-agent input[type=submit], .container-agent a.button, .container-agent mark.color, .container-agent .copy-url .copy-url-button, 
+.container-agent .keyword-input-container .keyword-input-button, .container-agent .tags-container input[type=checkbox]:checked+label, 
+.container-agent input:checked+.switch-button, .container-agent .radio input[type=radio]+label .radio-label:after, 
+.container-agent .uploadButton .uploadButton-button:hover, .container-agent .pricing-plan .button:hover, .container-agent .pricing-plan.recommended .button, 
+.container-agent .pricing-plan .recommended-badge, .container-agent .payment-tab-trigger>input:checked~label::after, .container-agent .breathing-icon, 
+.container-agent .icon-box-check, .container-agent .testimonial-author span, .container-agent .qtyInc:hover, .container-agent .qtyDec:hover, .container-agent #sign-in-dialog .mfp-close:hover, 
+.container-agent #small-dialog-1 .mfp-close:hover, .container-agent #small-dialog-2 .mfp-close:hover, .container-agent #small-dialog-3 .mfp-close:hover, 
+.container-agent #small-dialog-4 .mfp-close:hover, .container-agent #small-dialog .mfp-close:hover, .container-agent .slider-selection, .container-agent .cluster-visible, 
+.container-agent .marker-container, .container-agent .custom-zoom-in:hover, .container-agent .custom-zoom-out:hover, .container-agent #geoLocation:hover, .container-agent #streetView:hover, 
+.container-agent #scrollEnabling:hover, .container-agent #scrollEnabling.enabled, .container-agent a.apply-now-button, .container-agent a.attachment-box:hover, 
+.container-agent .project-indicators .indicator-bar span, .container-agent .dashboard-nav ul li span.nav-tag, .container-agent .dashboard-box .button.dark:not(.ico):hover,
+.container-agent .messages-inbox ul li:before, .container-agent .message-by h5 i {
+    background-color: #78148c;
+}
 
 
 
@@ -732,4 +758,24 @@
 .container-agent .notification p {
     margin: 0;
     font-size: 14px;
+}
+
+.container-agent table.basic-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    background: #fff;
+}
+.container-agent table.basic-table td {
+    position: relative;
+    word-break: normal;
+}
+.container-agent table.basic-table th, .container-agent table.basic-table td {
+    padding: 10px 15px;
+    border: 1px solid #f4f4f4;
+}
+.container-agent table.basic-table td.title {
+    background: #f4f4f4;
+    font-weight: bold;
 }

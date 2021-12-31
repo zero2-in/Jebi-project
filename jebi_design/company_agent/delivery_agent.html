@@ -189,6 +189,11 @@
     <script src="../js/btn_ripple_effect.js"></script>
     <script>
         function goNext() {
+            var agree = document.board.t_agree.checked;
+            if(!agree) {
+                alert("서비스 신청 유의사항 약관에 동의하셔야 합니다.")
+                return;
+            }
             if(checkValue(board.dlvr_way, "운송방식을 선택하십시오.")) return;
             board.submit();
         }

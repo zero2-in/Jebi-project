@@ -126,11 +126,11 @@
                                             <h5>받는 사람</h5>
                                             <!-- 한글 이름 -->
                                             <div class="field-block fl">
-                                                <input type="text" name="t_kor_name" id="" maxlength="80" placeholder="한글" value="홍길동" class="with-border">
+                                                <input type="text" name="t_kor_name" id="" maxlength="80" placeholder="한글" value="홍길동" class="with-border ">
                                             </div>
                                             <!-- 영문 이름 -->
                                             <div class="field-block fr">
-                                                <input type="text" name="t_eng_name" id="" maxlength="80" placeholder="영문" value="HONGGILDONG" class="with-border">
+                                                <input type="text" name="t_eng_name" id="" maxlength="80" placeholder="영문" value="HONGGILDONG" class="with-border ">
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
@@ -155,13 +155,13 @@
                                             </div>
                                             <div>
                                                 <!-- 개인통관보유부호 : person_ctms_no -->
-                                                <input type="text" name="person_ctms_no" maxlength="20" value="P210000000000" class="with-border">
+                                                <input type="text" name="person_ctms_no" maxlength="20" value="P210000000000" class="with-border ">
                                             </div>
                                         </div>
                                         <div class="submit-field">
                                             <div class="input-with-icon-left">
                                                 <i class="fas fa-phone"></i>
-                                                <input type="text" name="t_mobile" class="input-text with-border" maxlength="20" placeholder="휴대전화" value="01012345678">
+                                                <input type="text" name="t_mobile" class="input-text with-border " maxlength="20" placeholder="휴대전화" value="01012345678">
                                             </div>
                                         </div>
                                     </div>
@@ -292,13 +292,13 @@
                                             <!-- 주문번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border" placeholder="주문번호 Order No.">
+                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
                                                 </div>
                                             </div>
                                             <!-- 트래킹번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary" placeholder="트래킹번호(Tracking No)">
+                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
                                                     <div class="tip-text margin-top-10">
                                                         <div>
                                                             <span>*</span>
@@ -470,7 +470,193 @@
             </div>
         </div>
         <!-- Row / End -->
-        
+        <!-- Row -->
+        <div class="row">
+            <!-- Dashboard Box 부가서비스 -->
+            <div class="col-xl-12 col-common">
+                <!-- 상품정보 -->
+                <div class="dashboard-box">
+                    <!-- 헤드라인 -->
+                    <div class="headline">
+                        <h3>
+                            <i class="fas fa-angle-double-right"></i>
+                             부가서비스
+                        </h3>
+                    </div>
+                    <div class="content">
+                        <ul class="dashboard-box-list">
+                            <li>
+                                <table class="basic-table">
+                                    <colgroup>
+                                        <col width="15%">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="title">예치금 자동결제</td>
+                                            <td>
+                                                <!-- 자동결제 -->
+                                                <div class="radio">
+                                                    <input type="radio" name="svc_dvs" id="AUTO_SVC" value="1">
+                                                    <label for="AUTO_SVC">
+                                                        <span class="radio-label"></span>
+                                                         자동결제
+                                                    </label>
+                                                </div>
+                                                <!-- 수동결제 -->
+                                                <div class="radio">
+                                                    <input type="radio" name="svc_dvs" id="MANUAL_SVC" value="2" checked>
+                                                    <label for="MANUAL_SVC">
+                                                        <span class="radio-label"></span>
+                                                         수동결제
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">검수옵션</td>
+                                            <td>
+                                                <div class="checkbox-area">
+                                                    <!-- 정밀검수 -->
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="detail_insp" id="DETAIL_INSP" value="detail">
+                                                        <label for="DETAIL_INSP">
+                                                            <span class="checkbox-icon"></span>
+                                                             정밀검수
+                                                            <span class="fc_red">(￦3,000)</span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- 기본사진촬영 -->
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="default_pic" id="DEFAULT_PIC" value="default">
+                                                        <label for="DEFAULT_PIC">
+                                                            <span class="checkbox-icon"></span>
+                                                            기본사진촬영 
+                                                            <span class="fc_red">(￦0)</span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- 사진 추가 -->
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="add_pic" id="ADD_PIC" value="more">
+                                                        <label for="ADD_PIC">
+                                                            <span class="checkbox-icon"></span>
+                                                            사진추가 
+                                                            <span class="fc_red">(￦1,000)</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col col-common">
+                                                        <div class="row">
+                                                            <!-- 정밀검수요청사항 -->
+                                                            <div class="col-xl-6 col-common">
+                                                                <div class="submit-field">
+                                                                    <input type="text" name="insp_req" maxlength="500" placeholder="정밀검수요청사항(사진추가제공X)" class="with-border">
+                                                                </div>
+                                                            </div>
+                                                            <!-- 사진추가 요청사항 -->
+                                                            <div class="col-xl-6 col-common">
+                                                                <div class="submit-field">
+                                                                    <input type="text" name="photo_req" maxlength="500" placeholder="사진추가 요청사항(대상트래킹번호+요청내용 기재필수)" class="with-border">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="fc_red">*정밀검수/사진추가 선택시 요청내용에 따라 추가비용이 발생할 수 있습니다.</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">포장옵션</td>
+                                            <td>
+                                                <div class="checkbox-area">
+                                                    <!-- 폴리백 포장 -->
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="poly_bag" id="POLY_BAG" value="poly">
+                                                        <label for="POLY_BAG">
+                                                            <span class="checkbox-icon"></span>
+                                                            폴리백 포장 
+                                                            <span class="fc_red">(￦1,000)</span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- 안전포장 -->
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="safety_bag" id="SAFETY_BAG" value="safety">
+                                                        <label for="SAFETY_BAG">
+                                                            <span class="checkbox-icon"></span>
+                                                            안전포장 
+                                                            <span class="fc_red">(￦3,000)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">제거옵션</td>
+                                            <td>
+                                                <div class="checkbox-area">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="remove_box" id="REMOVE_BOX" value="box_remove">
+                                                        <label for="REMOVE_BOX">
+                                                            <span class="checkbox-icon"></span>
+                                                            박스제거 
+                                                            <span class="fc_red">(￦0)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">통관옵션</td>
+                                            <td>
+                                                <div class="checkbox-area">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="simple_clearance" id="SIMPLE_CLEARANCE" value="simple_cl">
+                                                        <label for="SIMPLE_CLEARANCE">
+                                                            <span class="checkbox-icon"></span>
+                                                            간이통관 
+                                                            <span class="fc_red">(￦3,300)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">기타옵션</td>
+                                            <td>
+                                                <div class="checkbox-area">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="island_mountain" id="ISLAND_MOUNTAIN" value="mountain_area">
+                                                        <label for="ISLAND_MOUNTAIN">
+                                                            <span class="checkbox-icon"></span>
+                                                            도서산간지역-제주도,울릉도,완도 등 
+                                                            <span class="fc_red">(￦4,000)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                <div class="submit-field">
+                                    <h5>물류센터 요청사항</h5>
+                                    <input type="text" name="center_req" maxlength="100" class="with-border">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12 col-common tc margin-top-30">
+                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect dark big">
+                    접수대기
+                </a>
+                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect big">
+                    접수신청
+                </a>
+            </div>
+        </div>
+        <!-- Row / End -->
     </div>
 
     <script src="../js/btn_ripple_effect.js"></script>
