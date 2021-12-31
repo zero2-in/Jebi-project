@@ -232,6 +232,54 @@
     color: rgb(102, 103, 107);
     transition: all 0.3s ease 0s;
 }
+.container-agent .transparent-header #navigation>ul li:hover ul li:hover a:after, 
+.container-agent .transparent-header #navigation>ul li:hover a:after, 
+.container-agent .transparent-header #navigation>ul li a.current:after, 
+.container-agent .compact-list-layout .board-listing:before, 
+.container-agent .tasks-list-container.compact-list .task-listing:before, 
+.container-agent .compact-list.pro-list-layout .project-con::before, 
+.container-agent .tabs-header, 
+.container-agent .intro-search-field .field-title, 
+.container-agent .category-box:hover, 
+.container-agent .photo-box:hover:before, 
+.container-agent .photo-box.small .photo-box-content span, 
+.container-agent .slick-prev:hover, 
+.container-agent .slick-next:hover, 
+.container-agent .bootstrap-select.btn-group .bs-actionsbox div button:hover {
+    background: #2a41e8;
+}
+.container-agent img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+.container-agent p {
+    font-size: 16px;
+    line-height: 27px;
+}
+.container-agent select.btn {
+    cursor: pointer;
+}
+.container-agent input[type=date]::before {
+    color: #cfcfcf;
+    content: attr(data-placeholder);
+    width: 100%;
+}
+.container-agent input[type=date]:focus::before,
+.container-agent input[type=date]:valid::before {
+    display: none;
+}
+.container-agent button.button.green, .container-agent input[type=button].green, 
+.container-agent input[type=submit].green, .container-agent a.button.green {
+    background-color: #47bb67;
+    color: #fff;
+    box-shadow: none;
+}
+.container-agent .dashboard-box .button.green, .container-agent .button.green {
+    background-color: #40b660;
+    box-shadow: 0 3px 8px rgb(64 182 96 / 15%);
+}
+
 
 
 
@@ -997,4 +1045,234 @@
     line-height: 20px;
     font-family: Tahoma, Sans-serif;
     float: right;
+}
+
+.section.gray {
+    background: #eff1f3;
+}
+.section {
+    display: block;
+}
+
+.container-agent .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 30px);
+}
+.container-agent .list-container.pro-list-layout {
+    width: 100%;
+}
+
+.container-agent .compact-list.pro-list-layout {
+    border-radius: 4px;
+}
+.container-agent .compact-list.pro-list-layout .project-con:first-of-type {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+.container-agent .compact-list.pro-list-layout .project-con:last-of-type {
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+}
+.container-agent .compact-list.pro-list-layout .project-con::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    display: block;
+    background: #66676b;
+    transition: .3s;
+    opacity: 0;
+}
+.container-agent .compact-list.pro-list-layout .project-con:hover::before {
+    opacity: 1;
+}
+.container-agent .compact-list.pro-list-layout .project {
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+.container-agent .compact-list.pro-list-layout .project:hover {
+    transform: translateY(0);
+}
+
+.container-agent .pro-list-layout .project {
+    margin: 0 0 25px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+.container-agent .pro-list-layout .project-overview {
+    text-align: left;
+    padding: 20px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container-agent .pro-list-layout .project-overview .project-avatar {
+    width: 80px;
+    margin: 0;
+}
+.container-agent .pro-list-layout .project-overview-inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.container-agent .project-con {
+    border-bottom: 1px solid #e4e4e4;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+    background: #fff;
+}
+
+.container-agent .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+    transition: .3s;
+    position: relative;
+    cursor: default;
+}
+
+.container-agent .project-overview {
+    text-align: center;
+    padding: 38px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container-agent .project-overview .project-avatar {
+    width: 110px;
+    margin: 0 auto;
+    position: relative;
+}
+.container-agent .project-overview .project-avatar .verified-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.container-agent .project-overview .project-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container-agent .project-overview .project-name {
+    text-align: left;
+    margin: 0 0 0 20px;
+    padding-right: 20px;
+}
+
+.container-agent .project-overview-inner {
+    flex: 1;
+}
+
+.container-agent .verified-badge {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-color: #38b653;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 10;
+    font-weight: 500;
+    color: #fff;
+}
+.container-agent .verified-badge::before {
+    content: "";
+    font-family: "Font Awesome 6 Free";
+    font-size: 14px;
+    color: #fff;
+    position: relative;
+    top: 0;
+    line-height: 27px;
+}
+
+.container-agent .project-name {
+    margin-top: 0px;
+}
+.container-agent .project-name span {
+    color: #888;
+}
+.container-agent .project-name p {
+    line-height: 1.5em;
+    color: #666;
+    margin-bottom: 0px;
+}
+.container-agent .project-name p a {
+    position: relative;
+    top: 1px;
+}
+.container-agent .project-name h4, .container-agent .project-name h4 a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.container-agent .project-name img.flag, .container-agent img.flag {
+    height: 15px;
+    border-radius: 3px;
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    box-shadow: 0 0 3px rgb(0 0 0 / 20%);
+    margin-left: 4px;
+    cursor: default;
+}
+
+.container-agent .not-rated, .container-agent .company-not-rated {
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #888;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 600;
+    padding: 7px 9px;
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.container-agent .search-con {
+    width: 100%;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: .3s;
+}
+.container-agent .search-con:hover {
+    background: #fcfcfc;
+}
+.container-agent .search-con .submit-field {
+    margin-bottom: 0px;
+    width: 20%;
+    box-sizing: border-box;
+    padding: 5px;
+    float: left;
+}
+.container-agent .search-con .search-btn {
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    bottom: 5px;
+    top: 6px;
+}
+.container-agent .search-con .search-btn a {
+    width: 100%;
+    text-align: center;
+}
+
+.container-agent .search-con-inner {
+    position: relative;
+    padding-right: 95px;
 }
