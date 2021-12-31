@@ -225,6 +225,13 @@
 .container-agent .messages-inbox ul li:before, .container-agent .message-by h5 i {
     background-color: #78148c;
 }
+.container-agent a, .container-agent button {
+    outline: none !important;
+}
+.container-agent a {
+    color: rgb(102, 103, 107);
+    transition: all 0.3s ease 0s;
+}
 
 
 
@@ -781,4 +788,213 @@
 .container-agent table.basic-table td.title {
     background: #f4f4f4;
     font-weight: bold;
+}
+
+.container-agent .my-pages-box {
+    box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+    background: #454b5e;
+}
+
+.container-agent .my-pages-container {
+    border-radius: 4px;
+    display: flex;
+}
+
+.container-agent .my-page {
+    flex: 1;
+    padding: 25px;
+    position: relative;
+    border-right: 1px solid #2d3342;
+}
+.container-agent .my-page:first-of-type {
+    padding-left: 25px;
+}
+.container-agent .my-page:last-of-type {
+    padding-right: 25px;
+}
+.container-agent .my-page:last-child {
+    border-right: 0px;
+}
+.container-agent .my-page h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 0px;
+    height: 18px;
+}
+
+.container-agent .my-page.recommended {
+    box-shadow: 0 0 45px rgb(0 0 0 / 9%);
+}
+.container-agent .recommended .my-page-label {
+    background-color: rgba(233, 247, 254, .1);
+    color: #aaecf0;
+}
+.container-agent .recommended .my-page-label strong {
+    color: #aaecf0;
+}
+.container-agent .my-page-label {
+    background: #f6f6f6;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px;
+    margin: 0px;
+}
+.container-agent .my-page-label strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 20px;
+    font-family: Tahoma, Sans-serif;
+}
+
+.container-agent .grade .my-page-label {
+    background-color: rgba(251, 246, 221, .1);
+    color: #ffba31;
+}
+.container-agent .grade .my-page-label strong {
+    color: #f7db3c;
+}
+
+.container-agent .stamp_area {
+    width: 100%;
+    height: 50px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+.container-agent .stamp_area .stamp_box {
+    float: left;
+}
+.container-agent .stamp_area .stamp_title {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.container-agent .stamp_area .stamp_txt {
+    float: left;
+    padding-left: 20px;
+    line-height: 50px;
+}
+.container-agent .stamp_area .stamp_box::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container-agent .stamp_area .stamp_img {
+    float: right;
+}
+.container-agent .stamp_area .stamp_img ul {
+    overflow: hidden;
+    padding-top: 10px;
+}
+.container-agent .stamp_area .stamp_img ul li {
+    float: left;
+    margin-left: 20px;
+}
+.container-agent .stamp_area .stamp_img ul li.cp {
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+}
+.container-agent .stamp_area .stamp_img ul li.cp02 {
+    width: 40px;
+    height: 25px;
+    text-indent: -9999px;
+    padding-top: 5px;
+}
+.container-agent .stamp_area .stamp_img ul li.coupon01 {
+    background: url('../images/coupon01.png') center top/contain no-repeat;
+}
+.container-agent .stamp_area .stamp_img ul li.coupon02 {
+    background: url('../images/coupon02.png') center top/contain no-repeat;
+}
+.container-agent .stamp_area .stamp_img ul li.coupon03 {
+    background: url('../images/coupon03.png') center top no-repeat;
+}
+.container-agent .stamp_area .stamp_img ul li.coupon04 {
+    background: url('../images/coupon04.png') center top no-repeat;
+}
+.container-agent .stamp_area .stamp_img ul li.equals {
+    line-height: 30px;
+}
+
+.container-agent .my-steps-box {
+    box-shadow: 0 0 25px rgb(0 0 0 /10%);
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.container-agent .my-steps-container {
+    border-radius: 4px;
+    display: flex;
+}
+
+.container-agent .my-step {
+    flex: 1;
+    border-right: 1px solid #e4e4e4;
+}
+.container-agent .my-step:last-child {
+    border-right: 0px;
+}
+.container-agent .my-step h3 {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.container-agent .my-step h3 i {
+    padding-right: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.container-agent .my-step-label {
+    border-radius: 4px;
+    font-size: 14.7px;
+    color: #888;
+    text-align: center;
+    margin: 0px;
+}
+.container-agent .my-step-label::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container-agent .my-step-label ul li {
+    width: 100%;
+    border-bottom: 1px solid #e4e4e4;
+}
+.container-agent .my-step-label ul li:last-child {
+    border-bottom: 0px;
+}
+.container-agent .my-step-label ul li:hover, .container-agent .my-step-label ul li.active {
+    background: #f0f0f0;
+}
+.container-agent .my-step-label ul li a {
+    display: block;
+    color: #333;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+.container-agent .my-step-label span {
+    float: left;
+}
+.container-agent .my-step-label strong {
+    font-size: 14.7px;
+    font-weight: 700;
+    margin-right: 5px;
+    line-height: 20px;
+    font-family: Tahoma, Sans-serif;
+    float: right;
 }
