@@ -512,12 +512,84 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Details -->
+                                <div class="project-details">
+                                    <div class="project-details-list">
+                                        <ul>
+                                            <li>
+                                                 입고상태 
+                                                <span>입고완료</span>
+                                            </li>
+                                            <li>
+                                                 주문상태 
+                                                 <span>
+                                                     <strong>
+                                                         <!-- 오류입고인 경우 오류확인하기 -->
+                                                          출고완료 
+                                                     </strong>
+                                                 </span>
+                                            </li>
+                                            <li>
+                                                처리일 
+                                                <span>2022-01-02 03:48</span>
+                                            </li>
+                                            <li>
+                                                등록일 
+                                                <span>2022-10-10 17:31</span>
+                                            </li>
+                                        </ul>
+                                        <div class="project-btn">
+                                            <!-- 오류입고인 경우 오류확인하기 -->
+                                            <a href="../clearance/clearance.html" target="_blank" data-animation="ripple" title="통관조회 하기" class="button gray ripple-effect">
+                                                <i class="fas fa-box-open"></i>
+                                            </a>
+                                            <a href="order_status_view.html" target="_blank" title="주문정보 보기" class="button gray ripple-effect">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                            <a href="#small-dialog" title="실사 전체보기" class="popup-with-zoom-anim button ripple-effect">
+                                                <i class="fas fa-camera"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- projects Container / End -->
                 </div>
             </div>
+            <!-- Row / End -->
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-xl-12 col-common">
+                    <div class="pagination-container margin-top-10 margin-bottom-20">
+                        <nav class="pagination">
+                            <ul>
+                                <li class="pagination-arrow">
+                                    <a href="javascript:void(0)" data-animation="ripple" title="이전 10페이지 없음" class="ripple-effect">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-animation="ripple" class="current-page ripple-effect">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="pagination-arrow">
+                                    <a href="javascript:void(0)" title="다음 없음" class="ripple-effect">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination / End -->
         </div>
+        <!-- Spacer -->
+        <div class="padding-top-70"></div>
+        <!-- Spacer / End -->
     </div>
 
     <script src="../js/btn_ripple_effect.js"></script>
@@ -525,7 +597,7 @@
     <!-- Menu footer Start -->
     <div id="footer">
         <!-- Menu information-use Start -->
-        <div class="favorites-service">
+        <div class="favorites-service mypage">
             <div class="content">           
                 <ul>
                     <li><div class="information-use"><a href="">이용안내</a></div></li>
