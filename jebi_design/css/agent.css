@@ -7,6 +7,10 @@
     font-size: 16px;
     text-transform: none;
 }
+.container-agent a:hover {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+}
 .container-agent *,
 .container-agent *::before,
 .container-agent *::after {
@@ -36,6 +40,9 @@
 .container-agent .with-border.fc_red {
     color: red;
 }
+.container-agent .fc_blue {
+    color: #486cca;
+}
 .container-agent .s_txt {
     font-size: 13px;
     line-height: 20px;
@@ -49,10 +56,7 @@
 .container-agent ul.dashboard-box-list > li:hover {
     background-color: #fcfcfc;
 }
-.container-agent .radio input[type=radio] + label .radio-label::after, 
-.container-agent a.button {
-    background-color: #78148c;
-}
+
 .container-agent .tc {
     text-align: center;
 }
@@ -258,6 +262,11 @@
     background-color: #40b660;
     box-shadow: 0 3px 8px rgb(64 182 96 / 15%);
 }
+.container-agent .dashboard-box .content.with-padding {
+    padding: 25px;
+}
+
+
 
 
 
@@ -422,7 +431,7 @@
     border: 1px solid #78148c;
 }
 .container-agent .dashboard-box .button.blue-line:hover,
-.container-agent .dashboard-box .button.blue-line:hover {
+.container-agent .button.blue-line:hover {
     background-color: #78148c;
     color: #fff;
 }
@@ -1196,10 +1205,17 @@
     padding: 0px 10px;
     float: left;
 }
+.container-agent .pro-list-layout .project-details a.button:hover {
+    box-shadow: none;
+}
 .container-agent .pro-list-layout .project-details a.button i {
     width: auto;
     font-size: 14px;
     position: relative;
+}
+
+.container-agent .project-details a.button:hover {
+    box-shadow: 0 4px 12px rgb(102 103 107 / 20%);
 }
 
 .container-agent .project-con {
@@ -1379,23 +1395,6 @@
     color: #333;
 }
 
-.container-agent .transparent-header #navigation>ul li:hover ul li:hover a:after, 
-.container-agent .transparent-header #navigation>ul li:hover a:after, 
-.container-agent .transparent-header #navigation>ul li a.current:after, 
-.container-agent .compact-list-layout .board-listing:before, 
-.container-agent .tasks-list-container.compact-list .task-listing:before, 
-.container-agent .compact-list.pro-list-layout .project-con::before, 
-.container-agent .tabs-header, 
-.container-agent .intro-search-field .field-title, 
-.container-agent .category-box:hover, 
-.container-agent .photo-box:hover:before, 
-.container-agent .photo-box.small .photo-box-content span, 
-.container-agent .slick-prev:hover, 
-.container-agent .slick-next:hover, 
-.container-agent .bootstrap-select.btn-group .bs-actionsbox div button:hover {
-    background: #2a41e8;
-}
-
 .container-agent .pagination {
     display: block;
     margin: 0;
@@ -1558,4 +1557,295 @@
 
 .container-agent .boxed-widget-inner {
     padding: 25px;
+}
+
+.container-agent .avatar-wrapper-box {
+    width: 100%;
+    position: relative;
+}
+.container-agent .avatar-wrapper-box .btn-group {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.container-agent .avatar-wrapper-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: none;
+    margin: 0 auto;
+    transition: all .3s ease;
+}
+.container-agent .avatar-wrapper-img .file-pic {
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+    object-fit: cover;
+}
+
+.container-agent .messages-container {
+    margin: 0;
+    box-shadow: 0 0 12px 0 rgb(0 0 0 / 6%);
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.container-agent .messages-container-inner {
+    display: flex;
+}
+.container-agent .messages-container-inner .message-content {
+    display: flex;
+    flex-direction: column;
+}
+.container-agent .messages-container-inner .messages-inbox, 
+.container-agent .messages-container-inner .message-content {
+    flex: 1;
+}
+.container-agent .messages-container-inner .message-content-inner {
+    padding: 30px;
+    padding-bottom: 0;
+    flex-grow: 1;
+}
+
+.container-agent .message-content, 
+.container-agent .messages-container-inner .messages-inbox {
+    overflow: hidden;
+}
+
+.container-agent .message-content-inner {
+    max-height: 750px;
+}
+.container-agent .message-content-inner, 
+.container-agent .messages-container-inner .messages-inbox ul {
+    overflow-y: scroll;
+    width: calc(100% + 18px);
+}
+
+.container-agent .message-time-sign {
+    text-align: center;
+    display: block;
+    position: relative;
+    margin-bottom: 25px;
+}
+.container-agent .message-time-sign::before {
+    content: "";
+    height: 1px;
+    background-color: #eaeaea;
+    display: block;
+    max-width: 30%;
+    margin: 0 auto;
+    position: relative;
+    top: 14px;
+    z-index: 10;
+}
+.container-agent .message-time-sign span {
+    background-color: #fff;
+    font-size: 14px;
+    color: #888;
+    z-index: 11;
+    position: relative;
+    padding: 0 10px;
+}
+
+.container-agent .row-clearfix {
+    display: block;
+}
+.container-agent .row-clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.container-agent .message-bubble {
+    display: block;
+    position: relative;
+    margin-bottom: 25px;
+}
+.container-agent .message-bubble .message-avatar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #eee;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 13.7px;
+    color: #333;
+}
+.container-agent .message-bubble .message-text {
+    margin-left: 70px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 12px 18px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    line-height: 25px;
+}
+.container-agent .message-bubble .message-text::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid #f4f4f4;
+    left: -6px;
+    right: auto;
+    top: 19px;
+    position: absolute;
+}
+.container-agent .message-bubble .message-text p {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    line-height: 25px;
+}
+.container-agent .message-bubble.me .message-avatar {
+    left: auto;
+    right: 0;
+    background: #66676b;
+    color: #fff;
+}
+.container-agent .message-bubble.me .message-text {
+    margin-left: 0;
+    margin-right: 70px;
+    background-color: #66676b;
+    color: #fff;
+    position: relative;
+    float: right;
+}
+.container-agent .message-bubble.me .message-text::before {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #66676b;
+    border-right: none;
+    right: -6px;
+    left: auto;
+}
+
+.container-agent .message-reply {
+    border-top: 1px solid #eaeaea;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+/* Summernote 속성 우선순위 수정 */
+.container-agent .note-editor .note-btn {
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #dae0e5;
+    white-space: nowrap;
+    outline: 0;
+    color: #333;
+    background-color: #fff;
+    border-color: #dae0e5;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container-agent .note-btn:hover, .container-agent .note-btn.focus {
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #dae0e5;
+    background-color: #ebebeb;
+    outline: 0;
+    border-radius: 1px;
+}
+.container-agent .note-btn-primary:hover, .container-agent .note-btn-primary:focus, .container-agent .note-btn-primary.focus {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #dae0e5;
+    background-color: #fa6362;
+    border-radius: 1px;
+}
+.container-agent .note-modal-footer {
+    height: 60px;
+}
+/* Summernote 수정 / End */
+
+.container-agent .transparent-header #navigation>ul li:hover ul li:hover a:after, 
+.container-agent .transparent-header #navigation>ul li:hover a:after, 
+.container-agent .transparent-header #navigation>ul li a.current:after, 
+.container-agent .compact-list-layout .board-listing:before, 
+.container-agent .tasks-list-container.compact-list .task-listing:before, 
+.container-agent .compact-list.pro-list-layout .project-con::before, 
+.container-agent .tabs-header, 
+.container-agent .intro-search-field .field-title, 
+.container-agent .category-box:hover, 
+.container-agent .photo-box:hover:before, 
+.container-agent .photo-box.small .photo-box-content span, 
+.container-agent .slick-prev:hover, 
+.container-agent .slick-next:hover, 
+.container-agent .bootstrap-select.btn-group .bs-actionsbox div button:hover {
+    background: #2a41e8;
+}
+.container-agent a, 
+.container-agent .header-widget .log-in-button:hover i, 
+.container-agent .notification-text span.color, 
+.container-agent .header-notifications-content .notification-text span.color, 
+.container-agent ul.user-menu-small-nav li a:hover, 
+.container-agent ul.user-menu-small-nav li a:hover i, 
+.container-agent #navigation ul li:hover a:after, 
+.container-agent #navigation ul li a.current, 
+.container-agent #navigation ul li a.current:after, 
+.container-agent #navigation ul li:hover a,  
+.container-agent #breadcrumbs.white ul li a:hover, 
+.container-agent .single-page-header .header-details li a:hover, 
+.container-agent .blog-post-content h3 a:hover, 
+.container-agent #posts-nav li a:hover, 
+.container-agent .task-tags span, 
+.container-agent .boardpro-detail-item a:hover, 
+.container-agent .list-4 li:before, 
+.container-agent .list-3 li:before, 
+.container-agent .list-2 li:before, 
+.container-agent .share-buttons-content span strong, 
+.container-agent .keyword, 
+.container-agent .banner-headline strong.color, 
+.container-agent .category-box-icon, 
+.container-agent .recommended .pricing-plan-label, 
+.container-agent .recommended .pricing-plan-label strong, 
+.container-agent .testimonial-box:before, 
+.container-agent .single-counter h3, 
+.container-agent .popup-tabs-nav li.active a, 
+.container-agent .dialog-with-tabs .forgot-password:hover, 
+.container-agent .dropdown-menu>li>a:hover, 
+.container-agent .dropdown-menu>.active>a, 
+.container-agent .dropdown-menu>.active>a:hover, 
+.container-agent .bootstrap-select .dropdown-menu li.selected a span.check-mark:before, 
+.container-agent .bootstrap-select .dropdown-menu li.selected:hover a span.check-mark:before, 
+.container-agent .boxed-list-headline h3 i, 
+.container-agent .boxed-list-item .item-details .detail-item a:hover, 
+.container-agent .job-overview .job-overview-inner ul li i, 
+.container-agent .dashboard-nav ul:before, 
+.container-agent .dashboard-nav ul li.active-submenu a i, 
+.container-agent .dashboard-nav ul li.active a i, 
+.container-agent .dashboard-nav ul li:hover a i, 
+.container-agent .dashboard-nav ul li.active-submenu a, 
+.container-agent .dashboard-nav ul li:hover a, 
+.container-agent .dashboard-nav ul li.active a, 
+.container-agent .dashboard-nav ul li.active-submenu a:after, 
+.container-agent .dashboard-nav ul li.active a:after, 
+.container-agent .dashboard-nav ul li:hover a:after, 
+.container-agent .dashboard-box .headline h3 i, 
+.container-agent .help-icon, 
+.container-agent .header-widget .log-in-button:hover, 
+.container-agent .header-widget .log-in-button:hover i {
+    color: #2a41e8;
 }
