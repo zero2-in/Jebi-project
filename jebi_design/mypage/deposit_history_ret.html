@@ -143,10 +143,10 @@
                     <!-- Headline -->
                     <div class="headline-tab-menu">
                         <ul>
-                            <li class="active">
+                            <li>
                                 <a href="deposit_history.html">적립신청</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="deposit_history_ret.html">환불신청</a>
                             </li>
                             <li>
@@ -159,27 +159,24 @@
                             <ul class="dashboard-box-list">
                                 <li>
                                     <div class="row">
-                                        <div class="col-xl-4 col-common">
+                                        <div class="col-xl-3 col-common">
                                             <div class="submit-field">
-                                                <input type="text" name="MNY" class="with-border" placeholder="예치금액(￦)">
+                                                <input type="text" name="MNY" class="with-border" placeholder="환불금액(￦)">
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-common">
+                                        <div class="col-xl-3 col-common">
                                             <div class="submit-field">
-                                                <input type="text" name="PAYIN_NM" maxlength="40" class="with-border" placeholder="입금자명">
+                                                <input type="text" name="MNY" class="with-border" placeholder="예금주">
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-common">
-                                            <div class="input-with-icon-left">
-                                                <i class="far fa-calendar"></i>
-                                                <input type="date" name="PAYIN_DT" class="input-text with-border" aria-required="true" required data-placeholder="입금일">
+                                        <div class="col-xl-3 col-common">
+                                            <div class="submit-field">
+                                                <input type="text" name="MNY" class="with-border" maxlength="40" placeholder="은행명">
                                             </div>
                                         </div>
-                                        <div class="col-xl-12 col-common">
-                                            <div class="notification warning">
-                                                <select name="PAYIN_ACC" class="btn-group bootstrap-select with-border">
-                                                    <option value="">우리은행268-069109-02-001 (주식회사 제이에스에이치)</option>
-                                                </select>
+                                        <div class="col-xl-3 col-common">
+                                            <div class="submit-field">
+                                                <input type="text" name="MNY" class="with-border" maxlength="40" placeholder="환불금 수령 계좌번호">
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +191,7 @@
                 </div>
                 <div class="tc margin-top-30">
                     <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect big">
-                        예치금 신청
+                        환불 신청
                     </a>
                 </div>
             </div>
@@ -207,7 +204,7 @@
                                     <div class="board-listing width-adjustment">
                                         <div class="board-listing-details">
                                             <div class="board-listing-description">
-                                                <h3 class="board-listing-title">예치금 신청 내역이 없습니다.</h3>
+                                                <h3 class="board-listing-title">환불 내역이 없습니다.</h3>
                                                 <div class="board-listing-footer"></div>
                                             </div>
                                         </div>

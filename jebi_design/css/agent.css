@@ -1,4 +1,4 @@
-/* 배송대행, 구매대행 css */
+/* 배송대행, 구매대행, 마이페이지, 어드민 css */
 .container-agent {
     width: 1200px;
     margin: 0 auto;
@@ -319,6 +319,10 @@
     padding-right: 10px;
     padding-left: 10px;
 }
+.container-agent .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
 .container-agent .col-xl-4 {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
@@ -371,6 +375,19 @@
     padding: 15px;
     padding-bottom: 32px;
 }
+.container-agent .board-listing h3.board-listing-title, 
+.container-agent .board-listing h3.board-listing-title a {
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+}
+.container-agent .board-listing .board-listing-footer {
+    background-color: #f9f9f9;
+    padding: 20px 35px;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+}
+
 .container-agent .width-1200 {
     width: 1200px;
 }
@@ -479,6 +496,52 @@
 .container-agent .dashboard-box .board-listing.width-adjustment {
     max-width: 60%;
 }
+.container-agent .dashboard-box .board-listing .board-listing-footer {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+.container-agent .dashboard-box .headline-tab-menu {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    border-right: 0px;
+    border-left: 0px;
+}
+.container-agent .dashboard-box .headline-tab-menu ul {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+.container-agent .dashboard-box .headline-tab-menu ul li {
+    transition: .3s ease;
+    width: 33.333%;
+    float: left;
+    border-right: 1px solid #e0e0e0;
+}
+.container-agent .dashboard-box .headline-tab-menu ul li:last-child {
+    border-right: 0px;
+}
+.container-agent .dashboard-box .headline-tab-menu ul li a {
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    padding: 15px 0 10px 0;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    font-weight: bold;
+}
+.container-agent .dashboard-box .headline-tab-menu ul li.active a, 
+.container-agent .dashboard-box .headline-tab-menu ul li a:hover {
+    background: #ecf2f7;
+}
+.container-agent .dashboard-box .search-con {
+    box-shadow: none;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 0px;
+}
 
 .container-agent ul.dashboard-box-list {
     list-style: none;
@@ -516,7 +579,7 @@
     width: 100%;
     flex-flow: row wrap;
     transition: 0.3s;
-    min-height: 98px;
+    /*min-height: 98px;*/
 }
 .container-agent ul.dashboard-box-list > li:last-child {
     border-bottom: none;
@@ -764,6 +827,7 @@
 }
 .container-agent .bootstrap-select.btn-group {
     position: relative;
+    cursor: pointer;
 }
 .container-agent .bootstrap-select.btn-group button {
     position: relative;
@@ -848,7 +912,7 @@
     background-color: #78148c;
 }
 
-.container-agent .notification {
+.container-agent .notification, .container-agent #result, .container-agent .success {
     line-height: 1.5em;
     position: relative;
     padding: 10px;
@@ -866,6 +930,13 @@
 }
 .container-agent .notification.pd20 {
     padding: 20px;
+}
+.container-agent .notification.warning {
+    background-color: #fdfadd;
+}
+.container-agent .notification.warning, .container-agent .notification.warning a, 
+.container-agent .notification.warning strong {
+    color: #8f872e;
 }
 
 .container-agent table.basic-table {
@@ -1373,6 +1444,19 @@
     padding-right: 95px;
 }
 
+.container-agent .search-con-inner2 {
+    display: table;
+    margin: 0 auto;
+}
+.container-agent .search-con-inner2 .submit-field {
+    width: 250px;
+}
+.container-agent .search-con-inner2 .search-btn2 {
+    float: left;
+    position: relative;
+    top: 5px;
+}
+
 .container-agent .project-details-list ul {
     list-style: none;
     padding: 0;
@@ -1734,6 +1818,8 @@
     align-items: flex-start;
     margin-top: 15px;
 }
+
+
 
 /* Summernote 속성 우선순위 수정 */
 .container-agent .note-editor .note-btn {
