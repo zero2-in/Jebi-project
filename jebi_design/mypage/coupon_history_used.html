@@ -143,11 +143,11 @@
                     <!-- Headline -->
                     <div class="headline-tab-menu">
                         <ul class="row-2">
-                           <li class="active width50">
+                           <li class="width50">
                                <a href="coupon_history.html">사용가능쿠폰</a>
                            </li>
-                           <li class="width50">
-                               <a href="coupon_history_used.html">사용불가쿠폰</a>
+                           <li class="active width50">
+                               <a href="coupon_history_used.html">사용한쿠폰</a>
                            </li>
                         </ul>
                     </div>
@@ -155,16 +155,6 @@
                     <form action="" name="frmSearch" method="post">
                         <div class="search-con">
                             <div class="search-con-inner2">
-                                <div class="submit-field">
-                                    <select name="" class="btn-group bootstrap-select with-border">
-                                        <option value=""> = 발행구분 </option>
-                                        <option value="1"> 회원가입 이벤트 </option>
-                                        <option value="2"> 회원가입 추천인 </option>
-                                        <option value="3"> 관리자 발급 </option>
-                                        <option value="4"> 회원등업 쿠폰 발급 </option>
-                                        <option value="5"> 출고 이벤트 </option>
-                                    </select>
-                                </div>
                                 <div class="submit-field">
                                     <select name="" class="btn-group bootstrap-select with-border">
                                         <option value=""> = 발행종류 </option>
@@ -185,14 +175,46 @@
                         <div class="content">
                             <ul class="dashboard-box-list">
                                 <li>
+                                    <!-- board-listing -->
                                     <div class="board-listing width-adjustment">
+                                        <!-- board-listing-details -->
                                         <div class="board-listing-details">
+                                            <!-- Details -->
                                             <div class="board-listing-description">
-                                                <h3 class="board-listing-title">사용가능한 쿠폰이 없습니다.</h3>
-                                                <div class="board-listing-footer"></div>
+                                                <h3 class="board-listing-title">배송비 쿠폰</h3>
+                                                <!-- board-listing-footer -->
+                                                <div class="board-listing-footer">
+                                                    <ul class="fl">
+                                                        <li>
+                                                            <i class="fas fa-tag"></i>26661
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-gift"></i>
+                                                            <strong class="num fc_red">￦6,500</strong>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-calendar"></i><span class="num s_txt">2021-10-09~2021-12-08</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Task Details -->
+                                    <ul class="dashboard-task-info">
+                                        <li>
+                                            <span>발급일</span>
+                                            <span>2021.10.09</span>
+                                        </li>
+                                        <li>
+                                            <span>사용일</span>
+                                            <span class="fc_red">2021.10.12</span>
+                                        </li>
+                                        <li>
+                                            <span>상태</span>
+                                            <span>사용완료</span>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

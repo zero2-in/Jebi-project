@@ -37,7 +37,9 @@
     color: rgb(68, 68, 68);
 }
 .container-agent .fc_red, 
-.container-agent .with-border.fc_red {
+.container-agent .with-border.fc_red, 
+.container-agent .project-details-list .fc_red, 
+.container-agent .dashboard-task-info .fc_red {
     color: red;
 }
 .container-agent .fc_blue {
@@ -387,6 +389,27 @@
     border-radius: 0 0 4px 4px;
     position: relative;
 }
+.container-agent .board-listing .board-listing-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container-agent .board-listing .board-listing-footer ul li {
+    display: block;
+    margin-right: 14px;
+    color: #777;
+}
+.container-agent .board-listing .board-listing-footer ul li i {
+    position: relative;
+    margin-right: 3px;
+    color: #777;
+}
+.container-agent .board-listing .board-listing-footer ul li:last-child {
+    margin-right: 0;
+}
+.container-agent .board-listing .board-listing-footer ul.fl li {
+    float: left;
+}
 
 .container-agent .width-1200 {
     width: 1200px;
@@ -521,6 +544,9 @@
 }
 .container-agent .dashboard-box .headline-tab-menu ul li:last-child {
     border-right: 0px;
+}
+.container-agent .dashboard-box .headline-tab-menu ul li.width50 {
+    width: 50%;
 }
 .container-agent .dashboard-box .headline-tab-menu ul li a {
     z-index: 1;
@@ -1817,6 +1843,48 @@
     display: flex;
     align-items: flex-start;
     margin-top: 15px;
+}
+
+.container-agent .dashboard-task-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-self: flex-end;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+    justify-content: center;
+}
+.container-agent .dashboard-task-info li {
+    display: inline-block;
+    border-right: 1px solid #d0d0d0;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.container-agent .dashboard-task-info li:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border: none;
+}
+.container-agent .dashboard-task-info li span {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    line-height: 20px;
 }
 
 
