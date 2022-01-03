@@ -83,6 +83,12 @@
     background-color: #333;
     box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
 }
+.container-agent .button i, .container-agent a.button i {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    top: 2px;
+}
 .container-agent span.button, .container-agent button.button, .container-agent input[type=button], 
 .container-agent input[type=submit], .container-agent a.button {
     background-color: #66676b;
@@ -360,6 +366,7 @@
 .container-agent .board-listing {
     display: block;
     border-radius: 4px;
+    /*box-shadow: 0 2px 12px rgb(0 0 0 / 12%);*/
     margin-bottom: 30px;
     background-color: #fff;
     transition: .3s;
@@ -409,6 +416,14 @@
 }
 .container-agent .board-listing .board-listing-footer ul.fl li {
     float: left;
+}
+.container-agent .board-listing .board-listing-footer.fr {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.container-agent .board-listing .board-listing-footer.fr ul li.date {
+    width: 110px;
 }
 
 .container-agent .width-1200 {
@@ -480,6 +495,10 @@
     color: #666;
     box-shadow: none;
 }
+.container-agent .dashboard-box .button.red, .container-agent .button.red {
+    background-color: #dc3139;
+    box-shadow: 0 3px 8px rgb(234 65 81 / 15%);
+}
 .container-agent .dashboard-box .dashboard-box-list .button:not(.ico):hover, 
 .container-agent .dashboard-box .button.red:not(.ico):hover,
 .container-agent .dashboard-box .button.green:not(.ico):hover,
@@ -509,6 +528,12 @@
 }
 .container-agent .dashboard-box .board-listing .board-listing-description {
     padding-top: 0;
+}
+.container-agent .dashboard-box .board-listing .board-listing-description .checkbox {
+    margin-right: 0px;
+    float: left;
+    position: relative;
+    top: 3px;
 }
 .container-agent .dashboard-box .board-listing-details {
     box-shadow: none;
@@ -609,6 +634,9 @@
 }
 .container-agent ul.dashboard-box-list > li:last-child {
     border-bottom: none;
+}
+.container-agent ul.dashboard-box-list > li.ntc-height {
+    min-height: auto;
 }
 
 .container-agent textarea.agree_02, 
