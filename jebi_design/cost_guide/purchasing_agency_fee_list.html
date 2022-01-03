@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/informationuse.css">
+    <link rel="stylesheet" href="../css/purchasing_agency_fee_list.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
     
     <title>제비 - 배송대행</title>
@@ -22,15 +22,15 @@
         </div>
 
         <div class="img-logo">
-            <a href="index.html">
+            <a href="../index.html">
                 <img src="../images/logo.png" height="100px">
             </a>
         </div>
 
         <div class="btn-menu">
             <ul class="menu-main">
-                <li><a href="informationuse_list.html">이용안내</a></li>
-                <li><a href="">비용안내</a></li>
+                <li><a href="../informationuse/informationuse_list.html">이용안내</a></li>
+                <li><a href="shipping_list.html">비용안내</a></li>
                 <li><a href="../company_agent/delivery_agent.html">배송대행</a></li>
                 <li><a href="">구매대행</a></li>
                 <li><a href="../notice/notice_list.html">고객센터</a></li>
@@ -52,23 +52,20 @@
 
     <!-- Container Start -->
     <div id="container">
-         <!-- Informatio Use Start -->
-        <div class="informationuse">
+         <!-- cost-guide Start -->
+        <div class="cost-guide">
             <!-- Title / nav-list  Start -->
-            <div class="informationuse-title"><p>배송비</p>
+            <div class="cost-guide-title"><p>구매대행 수수료</p>
                 <nav id="breadcrumbs" class="dark">
                     <ul class="nav-list">
                         <li><a href="../index.html">Home</a></li>
-                        <li>이용안내</li>
+                        <li>비용안내</li>
                         <li class="select-area">
-                            <button class="dropbtn">배송대행 이용방법<span class="bs-caret"><span class="caret"></span></span></button>
+                            <button class="dropbtn">배송비<span class="bs-caret"><span class="caret"></span></span></button>
                             <div class="dropdown-content">
-                                <a href="">배송대행 이용방법&nbsp;&nbsp;&nbsp;<i class="fas fa-check"></i></span></a>
-                                <a href="">구매대행 이용방법</a>
-                                <a href="">사업자 이용안내</a>
-                                <a href="">타오바오 이용방법</a>
-                                <a href="">이용팁</a>
-                                <a href="">노데이터 처리방법</a>
+                                <a href="shipping_list.html">배송비</a>
+                                <a href="add_ons_list.html">부가서비스</a>
+                                <a href="purchasing_agency_fee_list.html">구매대행 수수료&nbsp;&nbsp;&nbsp;<i class="fas fa-check"></i></a>
                             </div>
                         </li>   
                     </ul>
@@ -77,54 +74,23 @@
             <!-- Title / nav-list  End -->
 
             <!-- Sub title  Start -->
-            <div class="informationuse-sub-title">
-                <div class="delivery-agent">
-                    <div class="delivery-agent-manual">배송대행 이용방법</div>
-                    <a href="delivery_agent_service_list.html"><div class="delivery-agent-service">배송대행 서비스 안내</div></a>
-                    <a href="delivery_agent_application_manual_list.html"><div class="delivery-agent-application-manual">배송대행 신청서 작성법</div></a>
+            <div class="cost-guide-sub-title">
+                <div class="btn-shipping">
+                    <a href="shipping_list.html"><div class="shipping">배송비</div></a>
+                    <a href="add_ons_list.html"><div class="add-ons">부가서비스</div></a>
+                    <a href="purchasing_agency_fee_list.html"><div class="purchasing-agency-fee">구매대행 수수료</div></a>
                 </div>
-                <div class="purchasingagent-agent">
-                    <div class="purchasingagent-agent-manual">구매대행 이용방법</div>
-                    <a href="purchasing_agent_service_list.html"><div class="purchasingagent-agent-service">구매대행 서비스 안내</div></a>
-                    <a href="purchasingagent_agent_application_manual_list.html"><div class="purchasingagent-agent-application-manual">구매대행 신청서 작성법</div></a>
-                </div>
-                <a href="business_user_guide_list.html"><div class="business-user-guide">사업자 이용안내</div></a>
-                <div class="taobao-agent">
-                    <div class="taobao-manual">타오바오 이용방법</div>
-                    <a href="joni_manual_list.html"><div class="join-manual">가입방법</div></a>
-                    <a href="address_manual_list.html"><div class="address-manual">주소 설정하기</div></a>
-                    <a href="purchase_payment_list.html"><div class="purchase-payment">구매결제하기</div></a>
-                    <a href="return_refund_manual_list.html"><div class="return-refund-manual">반품/환불방법</div></a>
-                    <a href="invoice_number_list.html"><div class="invoice-number">송장번호 확인하기</div></a>
-                    <a href="automatic_order_registration_list.html"><div class="automatic-order-registration">주문자동등록방법</div></a>
-                </div>
-                <div class="use-tip-agent">
-                    <div class="use-tip">이용팁</div>
-                    <a href="chinese_size_condition_table_list.html"><div class="chinese-size-condition-table">중국사이즈 조건표</div></a>
-                    <a href="chinese_delivery_tracking_list.html"><div class="chinese-delivery-tracking">중국내 배송조회</div></a>
-                    <a href="issuance_of_unique_number_list.html"><div class="issuance-of-unique-number">개인통관고유부호발급 방법</div></a>
-                    <a href="customs_duty_list.html"><div class="customs-duty">관/부가세 안내</div></a>
-                    <a href="import_prohibited_items_list.html"><div class="import-prohibited-items">수입금지품목</div></a>
-                </div>
-                <a href="nodata_processing_manual_list.html"><div class="nodata-processing-manual">노데이터 처리방법</div></a>
             </div>
             <!-- Sub title  End -->
 
             <!-- Content  Start -->
-            <div class="informationuse-content"> 
-                    <div class="overseas-shipping"><img src="../images/overseas_shipping_img.png" height="186px"></div>
-                    <div class="delivery-agent-process"><img src="../images/delivery-agent-process.jpg" height="213px"></div>
-                    <div class="delivery-agent-step01"><img src="../images/delivery-agent-step01.jpg" height="198px"></div>
-                    <div class="delivery-agent-step02"><img src="../images/delivery-agent-step02.jpg" height="200px"></div>
-                    <div class="delivery-agent-step03"><img src="../images/delivery-agent-step03.jpg" height="229px"></div>
-                    <div class="delivery-agent-step04"><img src="../images/delivery-agent-step04.jpg" height="199px"></div>
-                    <div class="delivery-agent-step05"><img src="../images/delivery-agent-step05.jpg" height="169px"></div>
-                    <div class="delivery-agent-step06"><img src="../images/delivery-agent-step06.jpg" height="138px"></div>
+            <div class="purchasing-agency-fee-content"> 
+                <div class="purchasing-agency-fee-img"><img src="../images/purchasing_agency_fee_img.jpg" height="120px"></div>  
+                <div class="product-price"><img src="../images/product_price_img.jpg" height="198px"></div>   
             </div>
             <!-- Content  End -->
-            
         </div>
-        <!-- Informatio Use End-->
+        <!-- cost-guide End-->
     </div>
     <!-- Container End -->
     <!-- Menu footer Start -->
