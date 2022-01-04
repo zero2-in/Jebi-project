@@ -59,6 +59,13 @@ body {
 #breadcrumbs .nav-list li:first-child {
     margin-left: 0px;
 }
+#breadcrumbs .nav-list li:first-child > a, 
+#breadcrumbs .nav-list li:first-child > a:hover {
+    color: rgb(102, 102, 102);
+}
+#breadcrumbs .nav-list li a:hover {
+    color: rgb(102, 103, 107);
+}
 #breadcrumbs .nav-list li:first-child::before {
     margin: 0;
     border: none;
@@ -84,9 +91,10 @@ body {
     border-radius: 6px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 999;
 }
 #breadcrumbs .dropdown-content a {
+    color: #666;
     border-radius: 8px;
     padding: 5px 16px;
     margin: 10px 5px;
@@ -183,8 +191,14 @@ body {
 .margin-bottom-20 {
     margin-bottom: 20px!important;
 }
+.margin-bottom-30 {
+    margin-bottom: 30px!important;
+}
 .margin-bottom-40 {
     margin-bottom: 40px!important;
+}
+.padding-top-70 {
+    padding-top: 70px!important;
 }
 .padding-bottom-0 {
     padding-bottom: 0px!important;

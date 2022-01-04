@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/agent.css">
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <title>제비 - 배송대행</title>
+</head>
+<body>
+    <!-- Header Start -->
+    <div id="header">
+        <div class="btn-login">
+            <ul class="menu-login">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">고객센터</a></li>
+            </ul>
+        </div>
+
+        <div class="img-logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" height="100px">
+            </a>
+        </div>
+
+        <div class="btn-menu">
+            <ul class="menu-main">
+                <li><a href="">이용안내</a></li>
+                <li><a href="">비용안내</a></li>
+                <li><a href="">배송대행</a></li>
+                <li><a href="">구매대행</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">마이페이지</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- Header End -->
+    
+    <!-- nav Script -->
+    <script>
+        $(document).ready(function () {
+            $("#breadcrumbs .dropbtn").click(function () { 
+                $("#breadcrumbs .dropdown-content").toggle(200);
+                $("#breadcrumbs .select-area .caret").toggleClass("active");
+            });
+        });
+    </script>
+
+    <div class="container-agent">
+        <div class="bar-title">
+            <h2 class="title">쿠폰 내역</h2>
+
+            <!-- 사이트 이동경로를 만들어라! -->
+            <nav id="breadcrumbs" class="dark">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li>마이페이지</li>
+                    <li class="select-area">
+                        <button class="dropbtn">쿠폰 내역 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <div class="dropdown-content">
+                            <a href="order_status.html">주문신청 현황</a>
+                            <a href="purchase_manage.html">결제 관리</a>
+                            <a href="deposit_history.html">예치금 내역</a>
+                            <a href="point_history.html">포인트 내역</a>
+                            <a href="javascript:void(0)">쿠폰 내역<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="mailbox.html">받은 쪽지함</a>
+                            <a href="myinfo.html">회원정보 수정</a>
+                        </div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="margin-top-50"></div>
+
+        <!-- 마이페이지 컨테이너 -->
+        <div class="my-pages-box">
+            <div class="my-pages-container">
+
+                <div class="my-page recommended">
+                    <h3>김영인</h3>
+                    <div class="my-page-label">
+                        <strong>일반</strong>
+                    </div>
+                </div>
+
+                <div class="my-page grade">
+                    <h3>나의 사서함</h3>
+                    <div class="my-page-label">
+                        <strong>#JB19648</strong>
+                    </div>
+                </div>
+
+                <div class="my-page grade">
+                    <h3>예치금(￦)</h3>
+                    <div class="my-page-label">
+                        <a href="">
+                            <strong>0</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="my-page grade">
+                    <h3>포인트(P)</h3>
+                    <div class="my-page-label">
+                        <a href="">
+                            <strong>0</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="my-page grade">
+                    <h3>쿠폰</h3>
+                    <div class="my-page-label">
+                        <a href="">
+                            <strong>0</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="my-page grade">
+                    <h3>미결제</h3>
+                    <div class="my-page-label">
+                        <a href="">
+                            <strong>0</strong>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 마이페이지 컨테이너 / 끝 -->
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-12 col-common">
+                <div class="dashboard-box margin-top-0 margin-bottom-20">
+                    <!-- Headline -->
+                    <div class="headline-tab-menu">
+                        <ul class="row-2">
+                           <li class="width50">
+                               <a href="coupon_history.html">사용가능쿠폰</a>
+                           </li>
+                           <li class="active width50">
+                               <a href="coupon_history_used.html">사용한쿠폰</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <!-- search-con -->
+                    <form action="" name="frmSearch" method="post">
+                        <div class="search-con">
+                            <div class="search-con-inner2">
+                                <div class="submit-field">
+                                    <select name="" class="btn-group bootstrap-select with-border">
+                                        <option value=""> = 발행종류 </option>
+                                        <option value="1"> 배송비 </option>
+                                    </select>
+                                </div>
+                                <div class="search-btn2">
+                                    <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect">
+                                        검색 <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- search-con / End -->
+                    <form action="" name="frmDpstUseL" method="post">
+                        <div class="content">
+                            <ul class="dashboard-box-list">
+                                <li>
+                                    <!-- board-listing -->
+                                    <div class="board-listing width-adjustment">
+                                        <!-- board-listing-details -->
+                                        <div class="board-listing-details">
+                                            <!-- Details -->
+                                            <div class="board-listing-description">
+                                                <h3 class="board-listing-title">배송비 쿠폰</h3>
+                                                <!-- board-listing-footer -->
+                                                <div class="board-listing-footer">
+                                                    <ul class="fl">
+                                                        <li>
+                                                            <i class="fas fa-tag"></i>26661
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-gift"></i>
+                                                            <strong class="num fc_red">￦6,500</strong>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-calendar"></i><span class="num s_txt">2021-10-09~2021-12-08</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Task Details -->
+                                    <ul class="dashboard-task-info">
+                                        <li>
+                                            <span>발급일</span>
+                                            <span>2021.10.09</span>
+                                        </li>
+                                        <li>
+                                            <span>사용일</span>
+                                            <span class="fc_red">2021.10.12</span>
+                                        </li>
+                                        <li>
+                                            <span>상태</span>
+                                            <span>사용완료</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Row / End -->
+        <!-- Pagination -->
+        <div class="row">
+            <div class="col-xl-12 col-common">
+                <div class="pagination-container margin-top-10 margin-bottom-20">
+                    <nav class="pagination">
+                        <ul>
+                            <li class="pagination-arrow">
+                                <a href="javascript:void(0)" data-animation="ripple" title="이전 10페이지 없음" class="ripple-effect">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li
+                            ><li>
+                                <a href="javascript:void(0)" data-animation="ripple" class="current-page ripple-effect">
+                                    1
+                                </a>
+                            </li
+                            ><li class="pagination-arrow">
+                                <a href="javascript:void(0)" title="다음 없음" data-animation="ripple" class="ripple-effect">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination / End -->
+    </div>
+
+    <script src="../js/btn_ripple_effect.js"></script>
+
+    <!-- Menu footer Start -->
+    <div id="footer">
+        <!-- Menu information-use Start -->
+        <div class="favorites-service">
+            <div class="content">           
+                <ul>
+                    <li><div class="information-use"><a href="">이용안내</a></div></li>
+                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
+                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
+                    <li><div class="service-center"><a href="">고객센터</a></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use Start --> 
+        <div class="content01">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
+                    <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
+                    <li><div class="account-number">268-069109-02-001</div></li>
+                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
+                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use End --> 
+
+        <!-- Menu deposit-account Start --> 
+        <div class="content02">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
+                    <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu deposit-account Start --> 
+
+        <!-- Menu Mutual Start --> 
+        <div class="content03">
+            <div class="mutual">
+                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
+                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
+                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
+            </div>
+            <ul>
+                <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
+            </ul>
+        </div>
+        <!-- Menu Mutual Start --> 
+    </div>
+    <!-- Menu footer End --> 
+</body>
+</html>
