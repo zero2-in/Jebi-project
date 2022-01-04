@@ -2,6 +2,7 @@
 
 /* 2554줄 부터 공통 css */
 
+
 /* 헤더 */
 #header {
     height: 280px;
@@ -97,29 +98,35 @@
 #container .content {
     width: 1200px;
     height: 300px;
-    margin: 80px auto 35px auto;
-    border: 1px solid rgb(205, 205, 205);
+    margin: 80px auto 35px auto;	
+}
+#container .notice-question {
+	width:588px;
+    height: 298px;
+    float:left;
+	border: 1px solid rgb(205, 205, 205);	
 }
 #container .notice {
-	width:1200px;
+	width:588px;
     height: 70px;
-	border-bottom: 1px solid rgb(205, 205, 205);	
+	border-bottom: 1px solid rgb(205, 205, 205);
+    background-color: rgb(208, 174, 240);	
 }
 #container .notice-title{
-	width:1090px;
-	height:40px;
+	width:488px;
+	height:43px;
     float:left;
     text-align: center;
-	padding-top: 20px;
-	font-size:20px;	 
+	padding-top: 25px;
+	font-size:20px;	
 }
 #container .btn-notice{
 	float:right;
-	width:86px;
-	height:40px;
-	padding: 20px 0 0 20px;
+	width:76px;
+	height:43px;
+	padding: 25px 0 0 20px;
 	font-size:25px;
-	color:gray;
+	color:gray;	
 }
 #container .notice-content{
 	padding : 10px 0 0 30px;
@@ -133,11 +140,8 @@
 #container .notice-content li a span{
 	float:right;
 	font-size:15px;
-  padding-right: 30px;
+    padding-right: 30px;
 }
-
-
-
 /* 고객센터 */
 #container .customer-service-center{
 	width:588px;
@@ -929,6 +933,7 @@
     float: right;
     	
 }    
+   	
 
 /*
 --------------------------------------------- index css / End -----------------------------------------------------
