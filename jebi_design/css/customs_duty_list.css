@@ -362,13 +362,8 @@
 }
 #container .customs-duty-what-img{
     width: 894px;
-    height: 152px;
+    height: 170px;
     text-align: center;
-}
-#container .customs-duty-box1 p{
-    width: 890px;
-    height: 20px;
-    padding-top: 10px;
 }
 #container .customs-duty-calculus-notice{
     width: 894px;
@@ -387,7 +382,7 @@
 }
 #container .customs-duty-calculus-img{
     width: 433px;
-    height: 111px;
+    height: 125px;
     margin-top: 10px;
     text-align: center; 
 }
@@ -409,7 +404,7 @@
 }
 #container .customs-duty-notice-img{
     width: 433px;
-    height: 111px;
+    height: 25px;
     margin-top: 10px;
     text-align: center; 
 }
