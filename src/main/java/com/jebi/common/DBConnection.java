@@ -14,7 +14,7 @@ public class DBConnection {
             System.out.println("드라이버 로드 실패");
             e.printStackTrace();
         }
-        final String DB_IP = "localhost";
+        final String DB_IP = "183.107.30.124";
         final String DB_PORT = "3306";
         final String DB_NAME = "jebi_db";
         final String DB_URL = "jdbc:mariadb://" + DB_IP + ":" + DB_PORT + "/" + DB_NAME;
