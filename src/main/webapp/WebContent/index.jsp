@@ -1,45 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="js/slick.min.js">
-    <link rel="stylesheet" href="css/layout.css">
-    <title>제비 - 배송대행</title>
-</head>
-<body>
-    <!-- Header Start -->
-    <div id="header">
-        <div class="btn-login">
-            <ul class="menu-login">
-                <li><a href="member/login.html">로그인</a></li>
-                <li><a href="member/join.html">회원가입</a></li>
-                <li><a href="notice/notice_list.html">고객센터</a></li>
-            </ul>
-        </div>
-
-        <div class="img-logo">
-            <a href="index.html">
-                <img src="images/logo.png" height="100px">
-            </a>
-        </div>
-
-        <div class="btn-menu">
-            <ul class="menu-main">
-                <li><a href="informationuse/informationuse_list.html">이용안내</a></li>
-                <li><a href="cost_guide/shipping_list.html">비용안내</a></li>
-                <li><a href="company_agent/delivery_agent.html">배송대행</a></li>
-                <li><a href="company_agent/purchase_agent.html">구매대행</a></li>
-                <li><a href="notice/notice_list.html">고객센터</a></li>
-                <li><a href="mypage/order_status.html">마이페이지</a></li>
-            </ul>
-        </div>   
-    </div>
-    <!-- Header End -->
+<%@ include file="common_header.jsp" %>
 
     <!-- slick slider Script -->
     <script>
@@ -261,62 +222,8 @@
     </div>
     <!-- Container End -->
 
-    <!-- Footer Start -->
-    <div id="footer">
-        <!-- Information-use Start -->
-        <div class="informationuse">
-            <div class="content">           
-                <ul>
-                    <li><div class="information-use"><a href="">이용안내</a></div></li>
-                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
-                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
-                    <li><div class="service-center"><a href="">고객센터</a></div></li>
-                </ul>
-            </div>
-        </div>
-        <!--Information-use Start --> 
-        <div class="content01">
-            <div class="deposit-account">          
-                <ul>
-                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
-                    <li><div class="wooribank"><img src="images/woori_bank_logo_img.png" height="31px"></div></li>
-                    <li><div class="account-number">268-069109-02-001</div></li>
-                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
-                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Information-use End --> 
-
-        <!-- Deposit-account Start --> 
-        <div class="content02">
-            <div class="deposit-account">          
-                <ul>
-                    <li><div class="lg"><img src="images/lg_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="unipass"><img src="images/uni_pass_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="kcs"><img src="images/k_c_s_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="kcssa"><img src="images/service_logo_img.png" height="50px"></div></li>
-                    <li><div class="kcsa"><img src="images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="ksci"><img src="images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Deposit-account Start --> 
-
-        <!-- Mutual Start --> 
-        <div class="content03">
-            <div class="mutual">
-                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
-                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
-                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
-            </div>
-            <ul>
-                <li><div class="jebi-logo"><img src="images/logo.png" height="70px"></div></li>
-            </ul>
-        </div>
-        <!-- Mutual Start --> 
-    </div>
-    <!-- Footer End --> 
+    <!-- Footer -->
+    <%@ include file="common_footer.jsp" %>
 </body>
 
 </html>
