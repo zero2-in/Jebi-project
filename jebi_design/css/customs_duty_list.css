@@ -1,77 +1,9 @@
 @charset "utf-8";
-
-/* 헤더 */
-#header {
-    height: 280px;
-    margin: 0 auto;
-}
-
-/* 로그인 메뉴 */
-#header .btn-login {
-    width: 1200px;
-    height: 46px;
-    padding-top: 24px;
-    margin: 0 auto;
-}
-#header .btn-login .menu-login {
-    float: right;
-}
-#header .btn-login .menu-login li {
-    display: inline-block;
-    text-align: center;
-    padding: 0 20px;
-    border-right: 1px solid #444;
-}
-#header .btn-login .menu-login li:last-child {
-    border-right: none;
-}
-
-/* 로고 이미지 */
-#header .img-logo {
-    width: 1200px;
-    height: 105px;
-    text-align: center;
-    margin: 10px auto 35px auto;
-}
-
-/* 메인메뉴 */
-#header .btn-menu {
-    min-width: 1200px;
-    width: 100%;
-    height: 60px;  
-    text-align: center;
-    background: #612C87;
-}
-#header .btn-menu .menu-main {
-    width: 1200px;
-    height: 40px;
-
-    padding-top: 20px;
-    margin: 0 auto;
-}
-#header .btn-menu .menu-main li {
-    display: inline-block;
-    text-align: center;
-    padding: 0 30px;
-    border-right: 1.2px solid #fff;
-}
-#header .btn-menu .menu-main li:last-child {
-    border-right: none;
-}
-#header .btn-menu .menu-main li a {
-    transition: color 0.2s;
-    font-size: 20px;
-    color: #fff;
-}
-#header .btn-menu .menu-main li a:hover {
-    transition: color 0.2s;
-    color: #bbb;
-}
 /* 배송대행 서비스 안내 */
 #container .informationuse {
     width: 1200px;
-    height: 3651px; 
-    margin: 70px auto 35px auto;
+    height: 3750px; 
+    margin: 70px auto 35px auto;  
 }
 #container .informationuse-title {
     width: 1198px;
@@ -99,7 +31,6 @@
     height: 25px;
     padding-left: 24px;
     font-size: 15px;
-    
     float: left;	
 }
 #container .toggle{
@@ -156,11 +87,14 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: white;
     font-size: 14px;
+    color: #612C87;
     border-radius: 5px 5px 5px 5px; 
-    background-color: #612C87; 
     border: 1px solid #612C87;
+}
+#container .delivery-agent-application-manual:hover{
+    color: white;
+    background-color: #612C87; 
 }
 #container .purchasingagent-agent{
     width: 230px;
@@ -245,7 +179,7 @@
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
     color: #612C87;
-   font-size: 14px;
+    font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
@@ -258,30 +192,16 @@
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
+    font-size: 14px;
     color: #612C87;
-   font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
 #container .purchase-payment:hover{
     color: white;
     background-color: #612C87;
-} 
-#container .return-refund-manual{
-    width: 178px;
-    height: 20px;
-    margin-bottom: 7px;
-    padding: 7px 0 0 10px;
-    color: #612C87;
-   font-size: 14px;
-    border-radius: 5px 5px 5px 5px; 
-    border: 1px solid #612C87; 
 }
-#container .return-refund-manual:hover{
-    color: white;
-    background-color: #612C87;
-} 
-#container .invoice-number{
+#container .return-refund-manual{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -291,24 +211,38 @@
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .invoice-number:hover{
+#container .return-refund-manual:hover{
     color: white;
     background-color: #612C87;
-} 
-#container .automatic-order-registration-manual{
+}
+#container .invoice-number{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
     color: #612C87;
-   font-size: 14px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+} 
+#container .invoice-number:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .automatic-order-registration{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
 }
-#container .automatic-order-registration-manual:hover{
+#container .automatic-order-registration:hover{
     color: white;
     background-color: #612C87;
-} 
+}
 #container .taobao-agent{
     width: 230px;
     height: 253px;
@@ -323,7 +257,7 @@
     padding: 7px 0 0 10px;
     background-color: rgb(208, 174, 240);  
 }
-#container .chinese-size-manual{
+#container .chinese-size-condition-table{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
@@ -332,11 +266,11 @@
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
-}
-#container .chinese-size-manual:hover{
+} 
+#container .chinese-size-condition-table:hover{
     color: white;
     background-color: #612C87;
-} 
+}
 #container .chinese-delivery-tracking{
     width: 178px;
     height: 20px;
@@ -350,7 +284,7 @@
 #container .chinese-delivery-tracking:hover{
     color: white;
     background-color: #612C87;
-} 
+}
 #container .issuance-of-unique-number{
     width: 178px;
     height: 20px;
@@ -360,24 +294,21 @@
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
-}
+} 
 #container .issuance-of-unique-number:hover{
     color: white;
     background-color: #612C87;
-}  
+}
 #container .customs-duty{
     width: 178px;
     height: 20px;
     margin-bottom: 7px;
     padding: 7px 0 0 10px;
-    color: #612C87;
+    color: white;
+    background-color: #612C87;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px; 
     border: 1px solid #612C87; 
-}
-#container .customs-duty:hover{
-    color: white;
-    background-color: #612C87;
 } 
 #container .import-prohibited-items{
     width: 178px;
@@ -411,168 +342,174 @@
 #container .nodata-processing-manual:hover{
     color: white;
     background-color: #612C87;
-}  
-/* 콘텐츠*/
-
-
-/* 풋터 시작*/
-#footer{
-
-} 
-/* 이용안내 */
-#footer .informationuse {
+}
+/* 콘텐츠/관부가세란?*/
+#container .customs-duty-content{
+    width: 896px;
+    height: 3688px;
+    float: right; 
+}
+#container .customs-duty-box1{
+    width: 894px;
+    height: 260px;
+    margin-top: 30px;
+}
+#container .customs-duty-what{
+    width: 894px;
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+#container .customs-duty-what-img{
+    width: 894px;
+    height: 152px;
+    text-align: center;
+}
+#container .customs-duty-box1 p{
+    width: 890px;
+    height: 20px;
+    padding-top: 10px;
+}
+#container .customs-duty-calculus-notice{
+    width: 894px;
+    height: 430px;
+    margin-top: 30px;
+}
+#container .customs-duty-box2{
+    width: 435px;
+    height: 303px;
+    margin-top: 50px;
+    float: left;
+}
+#container .customs-duty-calculus{
+    width: 433px;
+    height: 50px; 
+}
+#container .customs-duty-calculus-img{
+    width: 433px;
+    height: 111px;
+    margin-top: 10px;
+    text-align: center; 
+}
+#container .customs-duty-calculus-img p{
+    width: 431px;
     height: 80px;
-	background-color: rgb(220, 220, 220);	
+    margin-top: 10px;
+    text-align: left;  
 }
-#footer .content {
-    width: 1200px;
-    margin: 80px auto 35px auto;			
-}
-#footer .information-use {
-    width: 100px;
-    height: 48px;
-    padding-top:30px ;
-    text-align: center;
-    float: left;		
-}
-#footer .terms-of-use {
-    width: 100px;
-    height: 48px;
-    padding-top:30px ;
-    text-align: center;
-    float: left;		
-}
-#footer .privacy {
-    width: 150px;
-    height: 48px;
-    padding-top:30px ;
-    text-align: center;
-    float: left;		
-}
-#footer .service-center {
-    width: 100px;
-    height: 48px;
-    padding-top:30px ;
-    text-align: center;
-    float: left;    	
-}
-/* 입금계좌 안내 */
-#footer .content01 {
-    width: 1200px;
-    height: 80px;
-    margin: 30px auto 35px auto;
-    border-top: 1px solid rgb(205, 205, 205);	 
-    border-bottom: 1px solid rgb(205, 205, 205);		
-}
-#footer .deposit-account {
-    width: 1198px;
-    height: 78px;
-    text-align: center;	
-    border: 1px solid rgb(255, 255, 255);	
-}
-#footer .deposit{
-    width: 150px;
-    height: 48px;
-    padding-top:30px ;
-    font-size: 20px;
-    text-align: center;
-    float: left;		
-}
-#footer .wooribank{
-    width: 140px;
-    height: 63px;
-    padding-top:25px ;
-    text-align: center;
-    float: left;		
-}
-#footer .account-number{
-    width: 300px;
-    height: 63px;
-    padding-top: 25px;
-    font-size: 30px;
-    color: #612C87; 
-    text-align: center;
-    float: left;		
-}
-#footer .corporation-jsh{
-    width: 300px;
-    height: 45px;
-    padding-top:33px ;
-    font-size: 15px;
-    text-align: center;
-    float: left;		
-}
-#footer .applicable-exchange-rate{
-    width: 300px;
-    height: 45px;
-    padding-top:33px ;
-    font-size: 15px;
-    text-align: center;
-    float: right;		
-}
-/* 협력업체 */
-#footer .content02 {
-    width: 1200px;
-    height: 56px;
-    margin: 30px auto 35px auto;
-}   
-#footer .lg{
-    width: 178px;
-    height: 52px;
-    margin: 0 10px 0 27px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}
-#footer .unipass{
-    width: 179px;
-    height: 52px;
-    margin-right: 10px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}  
-#footer .kcs{
-    width: 179px;
-    height: 52px;
-    margin-right: 10px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}  
-#footer .kcssa{
-    width: 179px;
-    height: 52px;
-    margin-right: 10px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}  
-#footer .kcsa{
-    width: 179px;
-    height: 52px;
-    margin-right: 10px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}  
-#footer .ksci{
-    width: 179px;
-    height: 52px;
-    float: left;
-    border: 1px solid rgb(205, 205, 205);		
-}   
-/* 협력업체 */
-#footer .content03 {
-    width: 1200px;
-    height: 212px;
-    margin: 30px auto 35px auto;	
-}  
-#footer .mutual{
-    width: 1198px;
-    height: 90px;
-    padding-top: 20px;
-    font-size: 16px;
-    	
-}
-#footer .jebi-logo{
-    width: 250px;
-    height: 98px;
+#container .customs-duty-box3{
+    width: 435px;
+    height: 361px;
     float: right;
-    	
-}    
+    margin-top: 50px; 
+}
+#container .customs-duty-notice{
+    width: 433px;
+    height: 50px; 
+}
+#container .customs-duty-notice-img{
+    width: 433px;
+    height: 111px;
+    margin-top: 10px;
+    text-align: center; 
+}
+#container .customs-duty-notice-img p{
+    width: 431px;
+    height: 170px;
+    margin-top: 10px;
+    text-align: left; 
+}
+/* 일반물품 관세율표 */
+#container .tariff-rate{
+    width: 884px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgb(205, 205, 205);
+}
+#container .tariff-rate h2{
+    width: 894px;
+    height: 30px;
+    margin-top: 7px;
+}
+#container .uniqueness{
+    width: 450px;
+    height: 18px;
+    padding-top: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    background-color: rgb(253, 247, 189);
+}
+#container .tariff-rate-table-box{
+    width: 894px;
+    height: 2221px;
+    margin-top: 7px;
+}
+#container .tariff-rate-table{
+    width: 892px;
+    height: 1328px;
+    margin-top: 7px;
+    text-align: center; 
+}
+#container .tariff-rate-table .title{
+    margin-top: 7px;
+    padding-right: 15px;
+    text-align: right;
+    background-color: rgb(205, 205, 205); 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .tariff-rate-table th{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205); 
+    background-color: rgb(205, 205, 205);
+}
+#container .tariff-rate-table td{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+}
+/* 특소세 부과물품 */
+#container .special-tax{
+    width: 884px;
+    height: 30px;
+    padding: 10px 0 0 10px;
+    margin-top: 100px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgb(205, 205, 205);
+}
+#container .special-tax-table-box{
+    width: 894px;
+    height: 500px;
+    margin-top: 7px;
+}
+#container .special-tax-table{
+    width: 892px;
+    height: 437px;
+    margin-top: 7px;
+    text-align: center; 
+}
+#container .special-tax-table th{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+    background-color: rgb(205, 205, 205);
+}
+#container .special-tax-table .title{
+    margin-top: 7px;
+    padding-right: 15px;
+    text-align: right;
+    background-color: rgb(205, 205, 205); 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .special-tax-table td{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+}
+
+
+
+
+
