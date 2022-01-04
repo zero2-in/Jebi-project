@@ -19,7 +19,7 @@ public class DBConnection {
         final String DB_NAME = "jebi_db";
         final String DB_URL = "jdbc:mariadb://" + DB_IP + ":" + DB_PORT + "/" + DB_NAME;
         Connection con = null;
-        try{
+        try {
             con = DriverManager.getConnection(DB_URL, "jebi", "0122");
         } catch(SQLException e) {
             System.out.println("접속 실패!");
@@ -28,7 +28,7 @@ public class DBConnection {
     }
 
     public static void closeDB(Connection con, PreparedStatement ps, ResultSet rs) {
-        try{
+        try {
             if(rs != null) rs.close();
             if(ps != null) ps.close();
             if(con != null) con.close();
