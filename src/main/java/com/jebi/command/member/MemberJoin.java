@@ -31,8 +31,8 @@ public class MemberJoin implements Command {
         String sms_rcv_yn = request.getParameter("SMS_RCV_YN");
         String email_rcv_yn = request.getParameter("EMAIL_RCV_YN");
 
-        if(sms_rcv_yn == null) sms_rcv_yn = "";
-        if(email_rcv_yn == null) email_rcv_yn = "";
+        if(sms_rcv_yn == null) sms_rcv_yn = "N";
+        if(email_rcv_yn == null) email_rcv_yn = "N";
 
         int result = dao.insertMember(new MemberDTO(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn));
         String msg = result==1? "회원가입이 완료되었습니다!" : "회원가입에 실패했습니다.";

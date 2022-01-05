@@ -147,11 +147,16 @@
         function check() {
             if(checkValue(board.id, "아이디를 입력하세요")) return false;
             if(onOnlyAlphaNumber(board.id.value)) {
-                alert("아이디는 영문, 숫자 조합만 가능합니다");
+                alert("아이디는 영문, 숫자 조합만 가능합니다.");
                 return false;
             }
             if(board.id.value.length < 4) {
                 alert("아이디는 4자리 이상이어야 합니다.");
+                board.id.focus();
+                return false;
+            }
+            if(board.chk_id.value != board.id.value) {
+                alert("사용불가한 아이디입니다.");
                 board.id.focus();
                 return false;
             }
@@ -249,7 +254,7 @@
 
             // 아이디 검사
             $("input[name=id]").blur(function() {
-                if(board.id.value.length > 5) {
+                if(board.id.value.length > 3) {
                     $.ajax({
                         type: "post",
                         async: false,

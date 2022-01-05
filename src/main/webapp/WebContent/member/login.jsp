@@ -68,7 +68,7 @@
                     <!-- 버튼 회원가입, 찾기 그룹! -->
                     <div class="btn-group-login">
 
-                        <button type="button" class="join-login ripple-effect" data-animation="ripple" onclick="setTimeout(function() {location.href='join.html';}, 150);">
+                        <button type="button" class="join-login ripple-effect" data-animation="ripple" onclick="setTimeout(function() {goSite('join');}, 150);">
                             <i class="fas fa-user-plus"></i>&nbsp;&nbsp;회원가입
                         </button>
 
