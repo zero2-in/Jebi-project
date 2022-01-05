@@ -2,6 +2,10 @@
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
 
+<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+</div>
+
+<link rel="stylesheet" href="css/magnific-popup.css">
     <!-- nav Script -->
     <script>
         $(document).ready(function () {
@@ -114,7 +118,9 @@
                         </label>
                     </div>
                     <div class="terms">
-
+                        <a href="#small-dialog" onclick="fnPopup('ServiceTerms')" class="popup-with-zoom-anim">
+                            <%@ include file="service_terms.jsp" %>
+                        </a>
                     </div>
                 </div>
                 <div class="field-agree">
@@ -124,7 +130,11 @@
                             <span class="icon-checkbox"></span> * 개인정보 수집 및 이용에 대한 안내 <span class="require">(필수)</span>
                         </label>
                     </div>
-                    <div class="terms"></div>
+                    <div class="terms">
+                        <a href="#small-dialog" onclick="fnPopup('PersonalTerms')" class="popup-with-zoom-anim">
+                            <%@ include file="personal_terms.jsp" %>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="btn-wrap">
@@ -141,6 +151,7 @@
     <!-- Footer -->
     <%@ include file="../common_footer.jsp" %>
 
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/btn_ripple_effect.js"></script>
     <script src="js/aromanize.js"></script>
     <script>
@@ -215,6 +226,14 @@
             }
 
             return true;
+        }
+
+        function fnPopup(siteSrc) {
+            $.magnificPopup.open({
+                type: 'inline', 
+                modal: true,
+                
+            });
         }
     </script>
     <script>

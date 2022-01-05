@@ -1503,6 +1503,15 @@
     width: 100%;
     height: 200px;
     border: 1px solid #d5d5d5;
+    line-height: 27px;
+    overflow: hidden;
+}
+.board-join .field-agree .terms a {
+    font-family: 'Nanum Gothic';
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 25px;
+    display: block;
 }
 
 .board-join .btn-wrap {

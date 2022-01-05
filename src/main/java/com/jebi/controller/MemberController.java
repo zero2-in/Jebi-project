@@ -50,4 +50,14 @@ public class MemberController {
         Command checkid = new CheckId();
         checkid.execute(request, response);
     }
+
+    @RequestMapping("ServiceTerms")
+    public String terms1() {
+        return "member/service_terms";
+    }
+
+    @RequestMapping("PersonalTerms")
+    public String terms2() {
+        return "member/personal_terms";
+    }
 }
