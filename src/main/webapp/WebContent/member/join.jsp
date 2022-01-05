@@ -45,7 +45,7 @@
 
                 <div class="form-join">
                     <span class="info">* 기본정보</span> <span class="indicator-check">사용불가</span>
-
+                    <input type="hidden" name="chk_id">
                     <p class="box-text">
                         <i class="fas fa-user-circle"></i>
                         <input class="input" type="text" name="id" placeholder="아이디">
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="btn-wrap">
-                    <button type="button" class="btn-submit" data-animation="ripple" onclick="return check();">
+                    <button type="submit" class="btn-submit" data-animation="ripple">
                         <span class="text">가입하기</span>
                         <span class="arrow-animate"><i class="fas fa-long-arrow-alt-right"></i></span>
                     </button>
@@ -219,7 +219,7 @@
                 $(this).parent(".box-text").next("p.arrow-box").css("display", "inline-block");
                 $(this).parent(".box-text").css("height", "50px");
             });
-            $(".input").blur(function (e) { 
+            $(".input").blur(function () { 
                 $(".box-text + p.arrow-box").css("display", "none");
                 $(".box-text").css("height", "40px");
             });
@@ -245,6 +245,39 @@
             // 한글이름을 영문이름으로 즉각 변환하라!
             $("input[name=kor_name]").on("propertychange change keyup paste input", function () {
                 $("input[name=eng_name]").val($(this).val().romanize().toUpperCase());
+            });
+
+            // 아이디 검사
+            $("input[name=id]").blur(function() {
+                if(board.id.value.length > 5) {
+                    $.ajax({
+                        type: "post",
+                        async: false,
+                        url: "Checkid",
+                        data: "id="+$(this).val(),
+                        success: function (data) {
+                            if(data.trim() == "valid") {
+                                if(onOnlyAlphaNumber(board.id.value)) {
+                                    $(".form-join .indicator-check").css("color", "red");
+                                    $(".form-join .indicator-check").html("사용불가");
+                                }
+                                else {
+                                    board.chk_id.value = board.id.value;
+                                    $(".form-join .indicator-check").css("color", "#2a41e8");
+                                    $(".form-join .indicator-check").html("사용가능");
+                                }
+                            } 
+                            else {
+                                $(".form-join .indicator-check").css("color", "red");
+                                $(".form-join .indicator-check").html("사용불가");
+                            }
+                        }
+                    });
+                }
+                else {
+                    $(".form-join .indicator-check").css("color", "red");
+                    $(".form-join .indicator-check").html("사용불가");
+                }
             });
         });
     </script>

@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jebi.command.member.CheckId;
 import com.jebi.command.member.MemberJoin;
 import com.jebi.common.Command;
 
@@ -41,5 +42,12 @@ public class MemberController {
         } 
 
         return pageLink;
+    }
+
+    // 아이디 (중복) 검사
+    @RequestMapping("Checkid")
+    public void checkId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command checkid = new CheckId();
+        checkid.execute(request, response);
     }
 }
