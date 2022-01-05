@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="js/slick.min.js">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <title>제비 - 배송대행</title>
 </head>
 <body>
@@ -37,18 +38,31 @@
         </div>   
     </div>
     <!-- Header End -->
-
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- slick slider Script -->
     <script>
         $('.post-wrapper').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      nextArrow:$('.next'),
-      prevArrow:$('.prev'),
-    });
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow:$('.next'),
+            prevArrow:$('.prev'),
+        });
+
+        function fnPopUp() {
+            $.magnificPopup({
+                items: [
+                    {
+                        src: 'departure_schedule.html',
+                        type: 'iframe'
+                    }
+                ]
+            });
+        }
     </script>
+    
     
     <!-- Container Start -->
     <div id="container">
@@ -160,17 +174,17 @@
             <div class="content02"> 
                 <div class="schedule">
                     <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
-                    <p class="btn-departure-schedule"><a href ="">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
+                    <p class="btn-departure-schedule"><a href ="javascript:void(0)" onclick="fnPopUp()">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
                 </div>
                 <div class="oneweek-schedule">
                     <ul>
-                        <li><div class="sun"><a href="">12-19(일)<br><p>항공 스케줄 없음<br></p><p>해운 스케줄 없음</p></a></div></li>
-                        <li><div class="mon"><a href="">12-20(월)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
-                        <li><div class="tues"><a href="">12-21(화)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
-                        <li><div class="wednes"><a href="">12-22(수)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
-                        <li><div class="thurs"><a href="">12-23(목)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
-                        <li><div class="fri"><a href="">12-24(금)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
-                        <li><div class="satur"><a href="">12-25(토)<br><p>항공 스케줄 없음<br></p><p>해운 스케줄 없음</p></a></div></li>
+                        <li><div class="sun"><a href="javascript:void(0)" onclick="fnPopUp()">12-19(일)<br><p>항공 스케줄 없음<br></p><p>해운 스케줄 없음</p></a></div></li>
+                        <li><div class="mon"><a href="javascript:void(0)" onclick="fnPopUp()">12-20(월)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
+                        <li><div class="tues"><a href="javascript:void(0)" onclick="fnPopUp()">12-21(화)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
+                        <li><div class="wednes"><a href="javascript:void(0)" onclick="fnPopUp()">12-22(수)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
+                        <li><div class="thurs"><a href="javascript:void(0)" onclick="fnPopUp()">12-23(목)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
+                        <li><div class="fri"><a href="javascript:void(0)" onclick="fnPopUp()">12-24(금)<br><img src="images/air_img.png" height="30px"><br><img src="images/shi_img.png" height="30px"></a></div></li>
+                        <li><div class="satur"><a href="javascript:void(0)" onclick="fnPopUp()">12-25(토)<br><p>항공 스케줄 없음<br></p><p>해운 스케줄 없음</p></a></div></li>
                     </ul>
                 </div>
             </div>
