@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.dto.MemberDTO;
+import com.jebi.dto.NaverDTO;
 
 public class MemberDAO {
     CommonUtil util = new CommonUtil();
@@ -56,6 +57,7 @@ public class MemberDAO {
         try {
             if(util.getRs().next()) {
                 name = util.getRs().getString("kor_name");
+                setLastLogin(id);
             }
         } catch(SQLException e) {
             util.viewErr(debugMethod);
@@ -88,6 +90,30 @@ public class MemberDAO {
         return admin;
     }
 
+    public boolean checkEmail(String id, String email) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        boolean already = false;
+        String query = "SELECT id, email FROM jebi_member WHERE email = '"+email+"'";
+        util.runQuery(query, debugMethod, 0);
+        try {
+            if(util.getRs().next()) {
+                if(id.equals(util.getRs().getString("id"))) {
+                    already = false;
+                }
+                else {
+                    already = true;
+                }
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return already;
+    }
+
     // 회원가입
     public int insertMember(MemberDTO dto) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -101,5 +127,54 @@ public class MemberDAO {
         util.closeDB();
 
         return result;
+    }
+
+    // 이미 네이버 등록했는지 확인
+    public boolean checkNaver(NaverDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        boolean already = false;
+        
+        String query = "SELECT id FROM jebi_member WHERE id = '"+dto.getN_id()+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                already = true;
+                setLastLogin(dto.getN_id());
+            }
+            else {
+                insertNaver(dto);
+                setLastLogin(dto.getN_id());
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return already;
+    }
+
+    // 네이버 등록
+    private void insertNaver(NaverDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "INSERT INTO jebi_member \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
+        "VALUES('"+dto.getN_id()+"', 'naver', '"+dto.getN_name()+"', \r\n" +
+        "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N')";
+
+        util.runQuery(query, debugMethod, 1);
+        util.closeDB();
+    }
+
+    // 최종 로그인 시간 등록
+    private void setLastLogin(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "UPDATE jebi_member SET last_login_date = CURRENT_TIMESTAMP WHERE id = '"+id+"'";
+        util.runQuery(query, debugMethod, 1);
+        util.closeDB();
     }
 }

@@ -9,6 +9,7 @@ import com.jebi.command.member.CheckId;
 import com.jebi.command.member.MemberJoin;
 import com.jebi.command.member.MemberLogin;
 import com.jebi.command.member.MemberLogout;
+import com.jebi.command.member.NaverLogin;
 import com.jebi.common.Command;
 
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,13 @@ public class MemberController {
                 pageLink = "common_alert_page";
                 break;
             }
+            // 네이버 로그인
+            case "naverSave" : {
+                Command naver = new NaverLogin();
+                naver.execute(request, response);
+                pageLink = "common_alert_popup";
+                break;
+            }
         } 
 
         return pageLink;
@@ -64,6 +72,11 @@ public class MemberController {
     public void checkId(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Command checkid = new CheckId();
         checkid.execute(request, response);
+    }
+
+    @RequestMapping("NaverLogin")
+    public String naverLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        return "member/naver_login";
     }
 
     @RequestMapping("ServiceTerms")
