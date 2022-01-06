@@ -1,0 +1,510 @@
+@charset "utf-8";
+/* 배송대행 서비스 안내 */
+#container .informationuse {
+    width: 1200px;
+    height: 3750px; 
+    margin: 70px auto 35px auto;  
+}
+#container .informationuse-title {
+    width: 1198px;
+    height: 40px; 
+}
+#container .informationuse-title p{
+    width: 299px;
+    height: 29px;
+    font-size: 24px;
+    padding-top: 7px; 
+    float: left;
+}
+#container .btn-manual{
+    width: 350px;
+    height: 24px;
+    padding-top: 14px; 
+    float: right;
+    border-radius: 5px 5px 5px 5px; 
+    background-color: rgb(220, 220, 220);	
+    border: 1px solid rgb(220, 220, 220);	
+}
+/* 홈/이용안내/배송대행 이용방법 */
+#container .home{
+    width: 155px;
+    height: 25px;
+    padding-left: 24px;
+    font-size: 15px;
+    float: left;	
+}
+#container .toggle{
+    width: 155px;
+    height: 25px;
+    font-size: 15px;
+    float: right;
+}
+#container .dropdown-content{
+    width: 180px;
+    height: 260px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid rgb(205, 205, 205);	
+}
+#container .dropdown-content i{
+    color: #612C87;	
+}
+/* 서브 메인/배송대행 이용방법 */
+#container .informationuse-sub-title{
+    width: 296px;
+    height: 1843px; 
+    float: left;
+}
+#container .delivery-agent{
+    width: 230px;
+    height: 112px;
+    margin-top: 40px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+#container .delivery-agent-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240); 
+}
+#container .delivery-agent-service{
+    width: 180px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .delivery-agent-service:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .delivery-agent-application-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    font-size: 14px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87;
+}
+#container .delivery-agent-application-manual:hover{
+    color: white;
+    background-color: #612C87; 
+}
+#container .purchasingagent-agent{
+    width: 230px;
+    height: 112px;
+    margin-top: 7px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+/* 서브 메인/구대행 이용방법 */
+#container .purchasingagent-agent-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);  
+}
+#container .purchasingagent-agent-service{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .purchasingagent-agent-service:hover{
+    color: white;
+    background-color: #612C87;
+} 
+#container .purchasingagent-agent-application-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+   font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .purchasingagent-agent-application-manual:hover{
+    color: white;
+    background-color: #612C87;
+}  
+#container .business-user-guide{
+    width: 220px;
+    height: 23px;
+    margin: 7px 0 7px 0;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .business-user-guide:hover{
+    color: white;
+    background-color: #612C87;
+} 
+/* 서브 메인/타오바오 이용방법 */
+ #container .taobao-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);  
+}
+#container .join-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .join-manual:hover{
+    color: white;
+    background-color: #612C87;
+} 
+#container .address-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .address-manual:hover{
+    color: white;
+    background-color: #612C87;
+} 
+#container .purchase-payment{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    font-size: 14px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .purchase-payment:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .return-refund-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .return-refund-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .invoice-number{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+} 
+#container .invoice-number:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .automatic-order-registration{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .automatic-order-registration:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .taobao-agent{
+    width: 230px;
+    height: 253px;
+    margin-top: 7px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+} 
+/* 서브 메인/이용팁 */
+#container .use-tip{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);  
+}
+#container .chinese-size-condition-table{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+} 
+#container .chinese-size-condition-table:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .chinese-delivery-tracking{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .chinese-delivery-tracking:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .issuance-of-unique-number{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+} 
+#container .issuance-of-unique-number:hover{
+    color: white;
+    background-color: #612C87;
+}
+#container .customs-duty{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: white;
+    background-color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+} 
+#container .import-prohibited-items{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .import-prohibited-items:hover{
+    color: white;
+    background-color: #612C87;
+} 
+#container .use-tip-agent{
+    width: 230px;
+    height: 217px;
+    margin-top: 7px; 
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+#container .nodata-processing-manual{
+    width: 220px;
+    height: 23px;
+    margin: 7px 0 7px 0;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px; 
+    border: 1px solid #612C87; 
+}
+#container .nodata-processing-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+/* 콘텐츠/관부가세란?*/
+#container .customs-duty-content{
+    width: 896px;
+    height: 3688px;
+    float: right; 
+}
+#container .customs-duty-box1{
+    width: 894px;
+    height: 260px;
+    margin-top: 30px;
+}
+#container .customs-duty-what{
+    width: 894px;
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+#container .customs-duty-what-img{
+    width: 894px;
+    height: 170px;
+    text-align: center;
+}
+#container .customs-duty-calculus-notice{
+    width: 894px;
+    height: 430px;
+    margin-top: 30px;
+}
+#container .customs-duty-box2{
+    width: 435px;
+    height: 303px;
+    margin-top: 50px;
+    float: left;
+}
+#container .customs-duty-calculus{
+    width: 433px;
+    height: 50px; 
+}
+#container .customs-duty-calculus-img{
+    width: 433px;
+    height: 125px;
+    margin-top: 10px;
+    text-align: center; 
+}
+#container .customs-duty-calculus-img p{
+    width: 431px;
+    height: 80px;
+    margin-top: 10px;
+    text-align: left;  
+}
+#container .customs-duty-box3{
+    width: 435px;
+    height: 361px;
+    float: right;
+    margin-top: 50px; 
+}
+#container .customs-duty-notice{
+    width: 433px;
+    height: 50px; 
+}
+#container .customs-duty-notice-img{
+    width: 433px;
+    height: 25px;
+    margin-top: 10px;
+    text-align: center; 
+}
+#container .customs-duty-notice-img p{
+    width: 431px;
+    height: 170px;
+    margin-top: 10px;
+    text-align: left; 
+}
+/* 일반물품 관세율표 */
+#container .tariff-rate{
+    width: 884px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgb(205, 205, 205);
+}
+#container .tariff-rate h2{
+    width: 894px;
+    height: 30px;
+    margin-top: 7px;
+}
+#container .uniqueness{
+    width: 450px;
+    height: 18px;
+    padding-top: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    background-color: rgb(253, 247, 189);
+}
+#container .tariff-rate-table-box{
+    width: 894px;
+    height: 2221px;
+    margin-top: 7px;
+}
+#container .tariff-rate-table{
+    width: 892px;
+    height: 1328px;
+    margin-top: 7px;
+    text-align: center; 
+}
+#container .tariff-rate-table .title{
+    margin-top: 7px;
+    padding-right: 15px;
+    text-align: right;
+    background-color: rgb(205, 205, 205); 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .tariff-rate-table th{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205); 
+    background-color: rgb(205, 205, 205);
+}
+#container .tariff-rate-table td{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+}
+/* 특소세 부과물품 */
+#container .special-tax{
+    width: 884px;
+    height: 30px;
+    padding: 10px 0 0 10px;
+    margin-top: 100px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgb(205, 205, 205);
+}
+#container .special-tax-table-box{
+    width: 894px;
+    height: 500px;
+    margin-top: 7px;
+}
+#container .special-tax-table{
+    width: 892px;
+    height: 437px;
+    margin-top: 7px;
+    text-align: center; 
+}
+#container .special-tax-table th{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+    background-color: rgb(205, 205, 205);
+}
+#container .special-tax-table .title{
+    margin-top: 7px;
+    padding-right: 15px;
+    text-align: right;
+    background-color: rgb(205, 205, 205); 
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .special-tax-table td{
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid rgb(205, 205, 205);
+}
+
+
+
+
+

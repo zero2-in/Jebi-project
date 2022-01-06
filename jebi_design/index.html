@@ -38,6 +38,9 @@
         </div>   
     </div>
     <!-- Header End -->
+    <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
+        <div class="sign-in-form" id="dialog-cont"></div>
+    </div>
     <!-- Magnific Popup -->
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- slick slider Script -->
@@ -61,6 +64,31 @@
                 ]
             });
         }
+         // 팝업
+         $(".popup-with-zoom-anim").magnificPopup({
+                type: 'inline', 
+
+                fixedContentPos: false, 
+                fixedBgPos: true, 
+
+                overflowY: 'auto',
+
+                closeBtnInside: true, 
+                preloader: false, 
+
+                midClick: true, 
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+            function fnPopup(siteSrc) {
+            $.ajax({
+                type: "post",
+                url: siteSrc,
+                success: function (data) {
+                    $("#small-dialog #dialog-cont").html(data);
+                }
+            });
+        } 
     </script>
     
     
@@ -174,7 +202,7 @@
             <div class="content02"> 
                 <div class="schedule">
                     <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
-                    <p class="btn-departure-schedule"><a href ="javascript:void(0)" onclick="fnPopUp()">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
+                    <p class="btn-departure-schedule"><a href="#small-dialog" onclick="fnPopup('DepartureSchedule')" class="popup-with-zoom-anim">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
                 </div>
                 <div class="oneweek-schedule">
                     <ul>
