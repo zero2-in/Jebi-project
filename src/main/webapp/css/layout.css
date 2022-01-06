@@ -4653,3 +4653,325 @@
 .container-agent .header-widget .log-in-button:hover i {
     color: #2a41e8;
 }
+
+
+/*
+------------------------------------------------ 팝업 디자인 ----------------------------------------------------
+*/
+
+.my-mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+
+
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  /* animate in */
+  .my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* animate out */
+  .my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+
+    opacity: 0;
+  }
+
+  /* Dark overlay, start state */
+  .my-mfp-zoom-in.mfp-bg {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+  }
+  /* animate in */
+  .my-mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: 0.8;
+  }
+  /* animate out */
+  .my-mfp-zoom-in.mfp-removing.mfp-bg {
+    opacity: 0;
+  }
+
+
+
+  /**
+  * Fade-move animation for second dialog
+  */
+ 
+  /* at start */
+  .my-mfp-slide-bottom .zoom-anim-dialog {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+
+    -webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+
+  }
+ 
+  /* animate in */
+  .my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+    -webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -moz-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -ms-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -o-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    transform: translateY(0) perspective( 600px ) rotateX( 0 );
+  }
+
+  /* animate out */
+  .my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+    opacity: 0;
+
+    -webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+  }
+
+  /* Dark overlay, start state */
+  .my-mfp-slide-bottom.mfp-bg {
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+  }
+  /* animate in */
+  .my-mfp-slide-bottom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+  }
+  /* animate out */
+  .my-mfp-slide-bottom.mfp-removing.mfp-bg {
+    opacity: 0;
+  }
+
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: .85;
+}
+.my-mfp-zoom-in.mfp-bg {
+    opacity: .001;
+    transition: opacity .3s ease-out;
+}
+.mfp-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    overflow: hidden;
+    position: fixed;
+    background: #111;
+}
+.mfp-wrap {
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2001;
+    position: fixed;
+    outline: none!important;
+    -webkit-backface-visibility: hidden;
+}
+
+.dialog-with-tabs#sign-in-dialog, .dialog-with-tabs#small-dialog-1, 
+.dialog-with-tabs#small-dialog-2, .dialog-with-tabs#small-dialog-3, 
+.dialog-with-tabs#small-dialog-4, .dialog-with-tabs#small-dialog {
+    padding: 0;
+    color: #666;
+    max-width: 800px;
+    box-shadow: 0 0 25px rgba(0,0,0,.25);
+}
+#small-dialog {
+    background: #fff;
+    padding: 40px;
+    padding-top: 0;
+    text-align: left;
+    margin: 40px auto;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 4px;
+    max-width: 800px;
+}
+
+.popup-tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    height: 62px;
+    background: #f8f8f8;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.popup-tabs-nav li {
+    float: left;
+    line-height: 62px;
+    height: 62px;
+    padding: 0;
+    margin-right: 0;
+    position: relative;
+}
+.popup-tabs-nav li:first-child.active {
+    border-left: none;
+    border-radius: 4px 0 0 0;
+}
+.popup-tabs-nav li.active a:hover, .popup-tabs-nav li.active {
+    background-color: #fff;
+}
+.popup-tabs-nav li.active {
+    background-color: #fff;
+    position: relative;
+}
+.popup-tabs-nav li.active:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    z-index: 111;
+}
+.popup-tabs-nav li.active a {
+    color: #66676b;
+    font-weight: 600;
+}
+.popup-tabs-nav li:first-child a {
+    border-radius: 4px 0 0 0;
+}
+.popup-tabs-nav li a {
+    border: none;
+    color: #777;
+    display: inline-block;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 10;
+    position: relative;
+    height: 100%;
+    padding: 0 30px;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    transition: all .3s,font-weight 0s;
+    border-right: 1px solid #e0e0e0;
+}
+.popup-tabs-nav li a, .popup-tab-reviews {
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+
+.popup-tabs-container {
+    /* overflow: hidden; */
+    width: 100%;
+}
+.popup-tab-content {
+    padding: 0px;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    width: 100%;
+}
+.compact-list-layout {
+    background-color: #fff;
+    border-radius: 4px;
+    /* box-shadow: 0 2px 12px rgba(0,0,0,.12); */
+}
+
+#sign-in-dialog.dialog-with-tabs .mfp-close, #small-dialog.dialog-with-tabs .mfp-close, 
+#small-dialog-1.dialog-with-tabs .mfp-close, #small-dialog-2.dialog-with-tabs .mfp-close, 
+#small-dialog-3.dialog-with-tabs .mfp-close, #small-dialog-4.dialog-with-tabs .mfp-close {
+    color: #888;
+    background-color: #f8f8f8;
+    border-left: 1px solid #e0e0e0;
+    border-radius: 0 4px 0 0;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 41px;
+}
+#sign-in-dialog .mfp-close, #small-dialog-1 .mfp-close, #small-dialog-2 .mfp-close, 
+#small-dialog-3 .mfp-close, #small-dialog-4 .mfp-close, #small-dialog .mfp-close {
+    color: #666;
+    background-color: #e4e4e4;
+    border-radius: 4px;
+    top: 28px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+}
+#small-dialog .mfp-close, #small-dialog-1 .mfp-close, #small-dialog-2 .mfp-close, 
+#small-dialog-3 .mfp-close, #small-dialog-4 .mfp-close, #sign-in-dialog, .mfp-close, .mfp-close:hover {
+    color: #fff;
+}
+.og-close, button.mfp-close {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: -20px;
+    display: block;
+    right: -12px;
+    cursor: pointer!important;
+    z-index: 9999;
+    color: #fff;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    border-radius: 50%;
+    margin: 0;
+    background-color: transparent;
+    outline: none;
+    transform: translate3d(0,0,0);
+}
+button.mfp-close, button.mfp-arrow {
+    overflow: visible;
+    cursor: pointer;
+    border: 0;
+    -webkit-appearance: none;
+    display: block;
+    padding: 0;
+    z-index: 506;
+}
+.dialog-with-tabs .mfp-close:before, .dialog-with-tabs .mfp-close:before {
+    font-size: 24px;
+}
+
+.popup-tabs-nav li.active a, .dialog-with-tabs .forgot-password:hover {
+    color: #2a41e8;
+}

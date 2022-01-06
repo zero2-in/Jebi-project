@@ -52,12 +52,12 @@ public class MemberController {
     }
 
     @RequestMapping("ServiceTerms")
-    public String terms1() {
-        return "member/service_terms";
+    public String serviceTerms() {
+        return "member/service_terms_form";
     }
 
     @RequestMapping("PersonalTerms")
-    public String terms2() {
-        return "member/personal_terms";
+    public String personalTerms() {
+        return "member/personal_terms_form";
     }
 }

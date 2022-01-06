@@ -2,16 +2,36 @@
     pageEncoding="UTF-8" %>
 <%@ include file="common_header.jsp" %>
 
+<div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide"> <!-- 이 아이디와 클래스는 항상 같게 할 것 -->
+    <div class="sign-in-form" id="small-dialog-content"></div>
+</div>
+
     <!-- slick slider Script -->
     <script>
-        $('.post-wrapper').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      nextArrow:$('.next'),
-      prevArrow:$('.prev'),
-    });
+        $('.post-wrapper').slick({ // 이 스크립트 아마도 에러
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow:$('.next'),
+            prevArrow:$('.prev'),
+        });
+        // 팝업
+        $(".popup-window-departure-schedule").magnificPopup({
+            type: 'inline', 
+
+            fixedContentPos: false, 
+            fixedBgPos: true, 
+
+            overflowY: 'auto',
+
+            closeBtnInside: true, 
+            preloader: false, 
+
+            midClick: true, 
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
     </script>
     
     <!-- Container Start -->
@@ -124,7 +144,7 @@
             <div class="content02"> 
                 <div class="schedule">
                     <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
-                    <p class="btn-departure-schedule"><a href ="">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
+                    <p class="btn-departure-schedule"><a href ="#small-dialog" onclick="fnPopup('DepartureSchedule')" class="popup-window-departure-schedule">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
                 </div>
                 <div class="oneweek-schedule">
                     <ul>

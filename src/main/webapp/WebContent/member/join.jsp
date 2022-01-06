@@ -2,9 +2,13 @@
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
 
-<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+<div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
+    <div class="sign-in-form" id="dialog-cont">
+
+    </div>
 </div>
 
+<!-- Magnific popup css -->
 <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- nav Script -->
     <script>
@@ -151,6 +155,7 @@
     <!-- Footer -->
     <%@ include file="../common_footer.jsp" %>
 
+    <!-- Scripts -->
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/btn_ripple_effect.js"></script>
     <script src="js/aromanize.js"></script>
@@ -229,10 +234,12 @@
         }
 
         function fnPopup(siteSrc) {
-            $.magnificPopup.open({
-                type: 'inline', 
-                modal: true,
-                
+            $.ajax({
+                type: "post",
+                url: siteSrc,
+                success: function (data) {
+                    $("#small-dialog #dialog-cont").html(data);
+                }
             });
         }
     </script>
@@ -302,6 +309,23 @@
                     $(".form-join .indicator-check").css("color", "red");
                     $(".form-join .indicator-check").html("사용불가");
                 }
+            });
+
+            // 팝업
+            $(".popup-with-zoom-anim").magnificPopup({
+                type: 'inline', 
+
+                fixedContentPos: false, 
+                fixedBgPos: true, 
+
+                overflowY: 'auto',
+
+                closeBtnInside: true, 
+                preloader: false, 
+
+                midClick: true, 
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
             });
         });
     </script>
