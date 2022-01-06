@@ -16,39 +16,20 @@
 
 <!-- Magnific popup css -->
 <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- nav Script -->
-    <script>
-        $(document).ready(function () {
-            $("#breadcrumbs .dropbtn").click(function () { 
-                $("#breadcrumbs .dropdown-content").toggle(200);
-                $("#breadcrumbs .select-area .caret").toggleClass("active");
-            });
-        });
-    </script>
+<script>
+    $(document).ready(function () {
+        $("#breadcrumbs #pageTitle").html("회원가입");
+        $("#breadcrumbs .join").addClass("selected");
+        $("#breadcrumbs .join").attr("href", "javascript:void(0)");
+    });
+</script>
 
-    <!-- 회원가입 -->
-    <div class="container-join">
-        <div class="bar-title">
-            <h2 class="title">회원가입</h2>
-
-             <!-- 사이트 이동경로를 만들어라! -->
-             <nav id="breadcrumbs" class="dark">
-                <ul class="nav-list">
-                    <li><a href="/jebi">Home</a></li>
-                    <li>회원관리</li>
-                    <li class="select-area">
-                        <button class="dropbtn">회원가입 <span class="bs-caret"><span class="caret"></span></span></button>
-                        <div class="dropdown-content">
-                            <a href="javascript:void(0)">회원가입<span class="check"><i class="fas fa-check"></i></span></a>
-                            <a href="javascript:goSite('login')">로그인</a>
-                            <a href="#">아이디/비번찾기</a>
-                        </div>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </nav>
-        </div>
-
+<!-- 회원가입 -->
+<div class="container-join">
+    <div class="bar-title">
+        <h2 class="title">회원가입</h2>
+        <%@ include file="breadcrumbs_member.jsp" %>
+    </div>
         <form action="Member" method="post" onsubmit="return check();" name="board">
             <input type="hidden" name="separate" value="register">
             <div class="board-join">

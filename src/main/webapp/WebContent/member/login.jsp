@@ -8,36 +8,18 @@
     </script>
 </c:if>
 
-    <!-- nav Script -->
-    <script>
-        $(document).ready(function () {
-            $("#breadcrumbs .dropbtn").click(function () { 
-                $("#breadcrumbs .dropdown-content").toggle(200);
-                $("#breadcrumbs .select-area .caret").toggleClass("active");
-            });
-        });
-    </script>
+<script>
+     $(document).ready(function () {
+        $("#breadcrumbs #pageTitle").html("로그인");
+        $("#breadcrumbs .login").addClass("selected");
+        $("#breadcrumbs .login").attr("href", "javascript:void(0)");
+    });
+</script>
 
     <div class="container-login">
         <div class="bar-title">
             <h2 class="title">로그인</h2>
-
-            <!-- 사이트 이동경로를 만들어라! -->
-            <nav id="breadcrumbs" class="dark">
-                <ul class="nav-list">
-                    <li><a href="/jebi">Home</a></li>
-                    <li>회원관리</li>
-                    <li class="select-area">
-                        <button class="dropbtn">로그인 <span class="bs-caret"><span class="caret"></span></span></button>
-                        <div class="dropdown-content">
-                            <a href="javascript:goSite('join')">회원가입</a>
-                            <a href="javascript:void(0)">로그인<span class="check"><i class="fas fa-check"></i></span></a>
-                            <a href="#">아이디/비번찾기</a>
-                        </div>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </nav>
+            <%@ include file="breadcrumbs_member.jsp" %>
         </div>
 
         <form action="Member" method="post" onsubmit="return check();" name="login">

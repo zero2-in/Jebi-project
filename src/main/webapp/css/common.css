@@ -108,8 +108,10 @@ body {
     float: right;
     color: #2a41e8;
 }
-#breadcrumbs .dropdown-content a.active {
-    content: attr();
+#breadcrumbs .dropdown-content a.selected span.check::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 800;
+    content: "\f00c";
 }
 #breadcrumbs .select-area span {
     font-size: 14px;
