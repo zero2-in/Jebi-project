@@ -7,6 +7,7 @@
 #header {
     height: 280px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* 로그인 메뉴 */
@@ -16,17 +17,238 @@
     padding-top: 24px;
     margin: 0 auto;
 }
+#header .header-notifications {
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+#header .header-notifications.active .header-notifications-dropdown {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+#header .header-notifications:last-child {
+    margin-right: -15px;
+}
+#header .header-notifications-trigger, #header .header-notifications-trigger a {
+    font-size: 22px;
+    color: rgb(51, 51, 51);
+    position: relative;
+    top: 55%;
+}
+#header .header-notifications-trigger span {
+    display: inline-block;
+    top: -14px;
+    margin-left: -16px;
+    height: 19px;
+    width: 19px;
+    line-height: 19px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    background-color: #78148c;
+    border-radius: 50%;
+    position: relative;
+    font-weight: bold;
+    font-family: verdana !important;
+}
+#header .header-notifications-dropdown {
+    width: 360px;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px 0px;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    position: absolute;
+    top: calc(100% - 10px);
+    right: -15px;
+    text-align: left;
+    z-index: 100;
+    transform: scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    pointer-events: none;
+}
+#header .header-notifications-dropdown::before {
+    content: "";
+    position: absolute;
+    right: 43px;
+    top: -6px;
+    width: 0px;
+    height: 0px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgb(215, 215, 215);
+}
+
+#header .header-notifications-headline {
+    padding: 18px 25px 17px;
+    line-height: 24px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+#header .header-notifications-headline h4, #header .header-notifications-headline span {
+    display: inline-block;
+}
+#header h4 {
+    color: #333;
+    font-weight: 500;
+}
+#header .header-notifications-content {
+    display: block;
+    width: 100%;
+}
+#header .header-notifications-scroll {
+    display: block;
+    overflow: hidden;
+    height: auto;
+}
+#header [data-simplebar=init] {
+    display: flex;
+}
+#header [data-simplebar] {
+    position: relative;
+    z-index: 0;
+    overflow: hidden!important;
+    max-height: inherit;
+}
+
+#header .simplebar-scroll-content {
+    overflow-x: hidden!important;
+    overflow-y: scroll;
+    min-width: 100%!important;
+    max-height: inherit!important;
+    -webkit-box-sizing: content-box!important;
+    box-sizing: content-box!important;
+}
+#header .simplebar-content {
+    overflow-y: hidden!important;
+    overflow-x: scroll;
+    -webkit-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    min-height: 100%!important;
+}
+#header .header-notifications-content ul li {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    transition: all 0.25s ease 0s;
+    padding: 14px 7px;
+}
+#header .header-notifications-content ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+#header .header-notifications-content ul li:last-child {
+    border-bottom: none;
+}
+#header .header-notifications-content ul li:hover {
+    background-color: rgb(250, 250, 250);
+}
+#header .notification-text, .header-notifications-content .notification-text {
+    padding-left: 20px;
+    padding-right: 5px;
+    display: inline-block;
+    line-height: 23px;
+    font-size: 14.7px;
+}
+#header .notification-text strong, .header-notifications-content .notification-text strong {
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+}
+#header .header-notifications-content .notification-msg-text {
+    display: inline-block;
+    line-height: 23px;
+    font-size: 14.7px;
+    margin: 4px 0px;
+}
+#header .header-notifications-content p {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.25em;
+}
+#header .simplebar-track {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 11px;
+    height: calc(100% - 6px);
+    margin-top: 6px;
+}
+#header .simplebar-track.vertical {
+    top: 0;
+}
+#header .simplebar-track.horizontal {
+    left: 0;
+    width: auto;
+    height: 11px;
+    display: none;
+}
+
+#header a.header-notifications-button {
+    border-radius: 0px 0px 4px 4px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    font-size: 14.7px;
+    padding: 16px 16px;
+    background-color: #78148c;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+}
+#header .ripple-effect-dark, #header .ripple-effect {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+#header .button-sliding-icon {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+#header a.header-notifications-button i {
+    font-size: 16px;
+    line-height: 0;
+    top: 1px;
+    position: relative;
+    max-width: 0px;
+    display: inline-block;
+    margin-left: 4px;
+}
+#header .button-sliding-icon i {
+    opacity: 0;
+    max-width: 0;
+    transition: .25s;
+    display: inline-block;
+    transform: translateX(-20px);
+}
+#header .button-sliding-icon:hover i {
+    max-width: 20px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 #header .btn-login .menu-login {
     float: right;
 }
-#header .btn-login .menu-login li {
+#header .btn-login .menu-login > li {
     display: inline-block;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 15px;
     border-right: 1px solid #444;
 }
-#header .btn-login .menu-login li:last-child {
+#header .btn-login .menu-login > li:last-child {
     border-right: none;
+}
+#header .btn-login .menu-login > li .logout {
+    color: rgb(97, 44, 135);
+    font-weight: 600;
+}
+#header .btn-login .menu-login > li a span {
+    font-family: 'Nanum Gothic Light';
+    color: rgb(255, 0, 0);
 }
 
 /* 로고 이미지 */
@@ -110,7 +332,7 @@
 	width:588px;
     height: 70px;
 	border-bottom: 1px solid rgb(205, 205, 205);
-    background-color: rgb(208, 174, 240);	
+    background-color: rgb(255, 255, 255);	
 }
 #container .notice-title{
 	width:488px;
@@ -155,7 +377,7 @@
 	height:43px;
 	padding-top: 27px;
 	font-size:20px;	
-    background-color: rgb(208, 174, 240);
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid rgb(205, 205, 205);	
 }
 #container .customer-service-center-Tel-time-inquiry-answer{
@@ -305,7 +527,7 @@
 	width: 588px;
     height: 70px;
 	border-bottom: 1px solid rgb(205, 205, 205);
-    background-color: rgb(208, 174, 240);	
+    background-color: rgb(255, 255, 255);	
 }
 #container .address-title{
     width: 588px;
@@ -367,7 +589,7 @@
 #container .review {
 	width: 588px;
     height: 70px;
-    background-color: rgb(208, 174, 240);
+    background-color: rgb(255, 255, 255);
 	border-bottom: 1px solid rgb(205, 205, 205);	
 }
 #container .review-title{
@@ -773,12 +995,13 @@
 }
 
 #footer {
-    
+    width: 100%;
 }
 /* 이용안내 */
 #footer .informationuse,
 #footer .favorites-service {
 	background-color: rgb(220, 220, 220);	
+    width: 100%;
 }
 #footer .content {
     width: 1200px;
@@ -4717,12 +4940,12 @@
 
 
 
-  /**
-  * Fade-move animation for second dialog
-  */
- 
-  /* at start */
-  .my-mfp-slide-bottom .zoom-anim-dialog {
+/**
+ Fade-move animation for second dialog
+*/
+
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
     opacity: 0;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -4734,21 +4957,20 @@
     -ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
     -o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
     transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+}
 
-  }
- 
-  /* animate in */
-  .my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
     opacity: 1;
     -webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 );
     -moz-transform: translateY(0) perspective( 600px ) rotateX( 0 );
     -ms-transform: translateY(0) perspective( 600px ) rotateX( 0 );
     -o-transform: translateY(0) perspective( 600px ) rotateX( 0 );
     transform: translateY(0) perspective( 600px ) rotateX( 0 );
-  }
+}
 
-  /* animate out */
-  .my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
     opacity: 0;
 
     -webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
@@ -4756,25 +4978,25 @@
     -ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
     -o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
     transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
-  }
+}
 
-  /* Dark overlay, start state */
-  .my-mfp-slide-bottom.mfp-bg {
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
     opacity: 0;
 
     -webkit-transition: opacity 0.3s ease-out;
     -moz-transition: opacity 0.3s ease-out;
     -o-transition: opacity 0.3s ease-out;
     transition: opacity 0.3s ease-out;
-  }
-  /* animate in */
-  .my-mfp-slide-bottom.mfp-ready.mfp-bg {
+}
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
     opacity: 0.8;
-  }
-  /* animate out */
-  .my-mfp-slide-bottom.mfp-removing.mfp-bg {
+}
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
     opacity: 0;
-  }
+}
 
 .my-mfp-zoom-in.mfp-ready.mfp-bg {
     opacity: .85;

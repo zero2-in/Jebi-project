@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
+<c:if test="${not empty session_name}">
+    <script>
+        alert("이미 로그인하셨습니다!");
+        location.href="/jebi";
+    </script>
+</c:if>
 
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
     <div class="sign-in-form" id="dialog-cont">

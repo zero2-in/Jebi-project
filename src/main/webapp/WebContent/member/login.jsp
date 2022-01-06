@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
+<c:if test="${not empty session_name}">
+    <script>
+        alert("이미 로그인하셨습니다!");
+        location.href="/jebi"; //TODO 마이페이지로
+    </script>
+</c:if>
 
     <!-- nav Script -->
     <script>
@@ -34,7 +40,8 @@
             </nav>
         </div>
 
-        <form action="" method="post" onsubmit="return check();" name="login">
+        <form action="Member" method="post" onsubmit="return check();" name="login">
+            <input type="hidden" name="separate" value="dologin">
             <div class="board-login">
                 <div class="text-welcome">
                     <h3 class="title">Login is welcome.</h3>

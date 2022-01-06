@@ -14,4 +14,9 @@ public class IndexController {
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return "index";
     }
+    // 출항스케줄 팝업창
+    @RequestMapping("DepartureSchedule")
+    public String DepartureSchedule() {
+        return "departure_schedule";
+    }
 }

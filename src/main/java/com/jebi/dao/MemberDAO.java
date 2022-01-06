@@ -46,6 +46,48 @@ public class MemberDAO {
         return available;
     }
 
+    public String getLogin(String id, String password) {
+        String name = "";
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "SELECT kor_name FROM jebi_member WHERE id = '"+id+"' AND password = '"+password+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                name = util.getRs().getString("kor_name");
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return name;
+    }
+
+    public boolean checkAdmin(String id) {
+        boolean admin = false;
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "SELECT administrator FROM jebi_member WHERE id = '"+id+"'";
+        util.runQuery(query, debugMethod, 0);
+        
+        try {
+            if(util.getRs().next()) {
+                if(util.getRs().getString("administrator").equals("Y")) {
+                    admin = true;
+                }
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return admin;
+    }
+
     // 회원가입
     public int insertMember(MemberDTO dto) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();

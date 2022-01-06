@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jebi.command.member.CheckId;
 import com.jebi.command.member.MemberJoin;
+import com.jebi.command.member.MemberLogin;
+import com.jebi.command.member.MemberLogout;
 import com.jebi.common.Command;
 
 import org.springframework.stereotype.Controller;
@@ -32,10 +34,23 @@ public class MemberController {
                 pageLink = "member/join";
                 break;
             }
+            case "dologin" : {
+                Command login = new MemberLogin();
+                login.execute(request, response);
+                pageLink = "common_alert_page";
+                break;
+            }
             // 가입
             case "register" : {
                 Command register = new MemberJoin();
                 register.execute(request, response);
+                pageLink = "common_alert_page";
+                break;
+            }
+            // 로그아웃
+            case "logout" : {
+                Command logout = new MemberLogout();
+                logout.execute(request, response);
                 pageLink = "common_alert_page";
                 break;
             }
