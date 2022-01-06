@@ -2,6 +2,7 @@ package com.jebi.dao;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.SQLException;
 
 import com.jebi.common.CommonUtil;
@@ -176,5 +177,49 @@ public class MemberDAO {
         String query = "UPDATE jebi_member SET last_login_date = CURRENT_TIMESTAMP WHERE id = '"+id+"'";
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
+    }
+
+    // 비밀번호 난수 생성
+    public String getSecurePassword(int num) {
+        StringBuffer buffer = new StringBuffer();
+        SecureRandom random = new SecureRandom();
+
+        char[] pwdTable = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+				'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+				'Y', 'Z',	//0~25(26)
+				'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+				'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+				'y', 'z',	//26~51(26)
+				'1', '2', '3', '4', '5', '6', '7', '8', '9', '0',	//52~61(10)
+				'*', '#', '+', '-', '_', '=', '~', '!', '@', '$', '%', '^', '&', '(',
+				')', '{', '}', '[', ']', ':', ';', '<', '>', '?', '/'//62~86(25)
+				};
+            
+        String[] s = new String[8];
+        int[] randomNum = new int[s.length];
+        s[0] = Character.toString(pwdTable[random.nextInt(26)]);	// 대문자
+        s[1] = Character.toString(pwdTable[random.nextInt(26)]);	
+        s[2] = Character.toString(pwdTable[random.nextInt(26)+26]);	// 소문자
+        s[3] = Character.toString(pwdTable[random.nextInt(26)+26]);
+        s[4] = Character.toString(pwdTable[random.nextInt(10)+52]);	// 숫자
+        s[5] = Character.toString(pwdTable[random.nextInt(10)+52]);
+        s[6] = Character.toString(pwdTable[random.nextInt(25)+62]);	// 특수문자
+        s[7] = Character.toString(pwdTable[random.nextInt(25)+62]);
+        for(int i=0; i<randomNum.length; i++) {
+            randomNum[i] = random.nextInt(s.length);
+            for(int j=0; j<i; j++) {
+                if(randomNum[i] == randomNum[j])
+                    i--;
+            }
+        }
+        buffer.append(s[(random.nextInt(2)+2)]);
+        for(int i=0; i<s.length; i++) {
+            buffer.append(s[randomNum[i]]);
+        }
+        for(int i=0; i<(num-(s.length+1)); i++) {
+            buffer.append(pwdTable[random.nextInt(pwdTable.length)]);
+        }
+
+        return buffer.toString();
     }
 }
