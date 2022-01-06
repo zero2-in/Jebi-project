@@ -2,7 +2,6 @@
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
 
-<link rel="stylesheet" href="css/informationuse.css">
  <!-- nav Script -->
  <script>
     $(document).ready(function () {
@@ -14,7 +13,7 @@
 </script>
 
 <!-- Container Start -->
-<div id="container">
+<div class="container-informationuse">
      <!-- Informatio Use Start -->
     <div class="informationuse">
         <!-- Title / nav-list  Start -->
