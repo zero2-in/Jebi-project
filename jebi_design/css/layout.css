@@ -994,6 +994,132 @@
 --------------------------------------------- index css / End -----------------------------------------------------
 */
 
+/* 출항 스케줄 */
+.departure-container .departure-schedule {
+    width: 800px;
+    height: 500px; 
+    margin: 70px auto 35px auto;
+    border: 1px solid rgb(220, 220, 220);
+}
+.departure-container .popup-tabs-nav {
+    width: 688px;
+    height: 45px; 
+    float: left;
+    padding: 20px 0 0 10px;
+}
+.departure-container .popup-tabs-nav a{
+    color: blue;
+}
+.departure-container .mfp-close{
+    width: 98px;
+    height: 67px;
+    float: right; 
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+}
+.departure-container .popup-tabs-container{
+    width: 798px;
+    height: 431px; 
+}
+.departure-container .sch-wrap input{
+    width: 786px;
+    height: 35px; 
+    padding-left: 10px;
+    border: 1px solid rgb(220, 220, 220);
+}
+.departure-container .sch-calendarbox-sch-box{
+    width: 330px;
+    height: 392px; 
+    float: left;
+    border-right: 1px solid rgb(220, 220, 220);
+}
+.departure-container .year{
+    width: 328px;
+    height: 20px; 
+    padding-top: 10px;
+    text-align: center;
+}
+.departure-container .sch-table{
+    width: 330px;
+    height: 35px; 
+    padding-top: 7px;
+    text-align: center;
+}
+.departure-container .sch-table th{
+    width: 330px;
+    height: 31px; 
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+}
+.departure-container .sch-red{
+    color: red;
+}
+.departure-container .sch-blue{
+    color: blue;
+}
+.departure-container .sch-table td{
+    width: 330px;
+    height: 39px; 
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+}
+.departure-container .off{
+    background-color: #bbbbbb;
+}
+.departure-container .on{
+    background-color: #e9b3ff;
+}
+.departure-container .today{
+    background-color: #43ff5c;
+}
+.departure-container .contxt{
+    width: 328px;
+    height: 32px; 
+    padding-top: 20px;
+    text-align: center;
+}
+.departure-container .contxt i{
+    background-color: #bbbbbb;
+    color: #bbbbbb;
+}.departure-container .sch-listbox{
+    width: 462px;
+    height: 392px; 
+    float: right;
+}
+.departure-container .sch-year{
+    width: 460px;
+    height: 30px; 
+    padding-top: 10px;
+    text-align: center;
+}
+.departure-container .schedule-list{
+    width: 460px;
+    height: 126px; 
+}
+.departure-container .basic-table-sch_list{
+    width: 460px;
+    height: 100px; 
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+}
+.departure-container .basic-table-sch_list th{
+    width: 460px;
+    height: 36px; 
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+} 
+.departure-container .basic-table-sch_list td{
+    width: 460px;
+    height: 36px; 
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+} 
+
+/*
+--------------------------------------------- depature_schedule css / End ---------------------------------------------------------
+*/
+
 /* 로그인 css */
 .container-login {
     width: 1200px;
