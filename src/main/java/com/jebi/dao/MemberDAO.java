@@ -6,6 +6,7 @@ import java.security.SecureRandom;
 import java.sql.SQLException;
 
 import com.jebi.common.CommonUtil;
+import com.jebi.dto.KakaoDTO;
 import com.jebi.dto.MemberDTO;
 import com.jebi.dto.NaverDTO;
 
@@ -157,6 +158,33 @@ public class MemberDAO {
         return already;
     }
 
+    // 이미 카카오 등록했는지 확인
+    public boolean checkKakao(KakaoDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        boolean already = false;
+
+        String query = "SELECT id FROM jebi_member WHERE id = '"+dto.getKid()+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                already = true;
+                setLastLogin(dto.getKid());
+            }
+            else {
+                insertKakao(dto);
+                setLastLogin(dto.getKid());
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return already;
+    }
+
     // 네이버 등록
     private void insertNaver(NaverDTO dto) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -165,6 +193,19 @@ public class MemberDAO {
         "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
         "VALUES('"+dto.getN_id()+"', 'naver', '"+dto.getN_name()+"', \r\n" +
         "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N')";
+
+        util.runQuery(query, debugMethod, 1);
+        util.closeDB();
+    }
+
+    // 카카오 등록 
+    private void insertKakao(KakaoDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "INSERT INTO jebi_member \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
+        "VALUES('"+dto.getKid()+"', 'kakao', '"+dto.getKnickname()+"', \r\n" +
+        "'kakao', '설정해주세요', '"+dto.getKemail()+"', 'N', 'N')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();

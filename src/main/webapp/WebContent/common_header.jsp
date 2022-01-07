@@ -16,6 +16,24 @@
     <script src="js/summernote-lite.js"></script>
     <script src="js/common.js"></script>
     <script src="lang/summernote-ko-KR.min.js"></script>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        function naverLogout() {
+            naverLogin.logout();
+        }
+        window.Kakao.init('ea9b16978914214066b5b86cbe93e844');
+        function kakaoLogout() {
+            if (!Kakao.Auth.getAccessToken()) {
+                console.log('Not logged in.');
+                return;
+            }
+            Kakao.Auth.logout(function(response) {
+                alert(response +' logout');
+                window.location.href='/'
+            });
+        };
+    </script>
     <title>제비 - 배송대행</title>
 </head>
 <body>
@@ -75,7 +93,7 @@
                     <li><a href="">예치금 <span>(0)</span></a></li>
                     <li><a href="">결제대기 <span>(0)</span></a></li>
                     <li><a href="javascript:goSite('cs')">고객센터</a></li>
-                    <li><a href="javascript:goSite('logout')" class="logout">Logout</a></li>
+                    <li><a href="javascript:goSite('logout')" <c:if test="${session_social eq 'naver'}">onclick="naverLogout()"</c:if> <c:if test="${session_social eq 'kakao'}">onclick="kakaoLogout()"</c:if> class="logout">Logout</a></li>
                 </c:if>
                 <c:if test="${empty session_name}">
                     <li><a href="javascript:goSite('login')">로그인</a></li>

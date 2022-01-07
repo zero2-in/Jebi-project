@@ -5,11 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jebi.command.member.CheckId;
-import com.jebi.command.member.MemberJoin;
-import com.jebi.command.member.MemberLogin;
-import com.jebi.command.member.MemberLogout;
-import com.jebi.command.member.NaverLogin;
+import com.jebi.command.member.*;
 import com.jebi.common.Command;
 
 import org.springframework.stereotype.Controller;
@@ -60,6 +56,13 @@ public class MemberController {
                 Command naver = new NaverLogin();
                 naver.execute(request, response);
                 pageLink = "common_alert_popup";
+                break;
+            }
+            // 카카오 로그인
+            case "kakaoSave" : {
+                Command kakao = new KakaoLogin();
+                kakao.execute(request, response);
+                pageLink = "common_alert_page";
                 break;
             }
         } 
