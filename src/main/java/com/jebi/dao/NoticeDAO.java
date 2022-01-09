@@ -1,7 +1,6 @@
 package com.jebi.dao;
 
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import com.jebi.common.CommonUtil;
@@ -23,14 +22,12 @@ public class NoticeDAO {
 
         try {
             while(util.getRs().next()) {
-                DecimalFormat df = new DecimalFormat("###,###");
-
-                String no = df.format(util.getRs().getInt("no"));
+                String no = util.getRs().getString("no");
                 String title = util.getRs().getString("title");
                 String important = util.getRs().getString("important");
                 String reg_name = util.getRs().getString("reg_name");
                 String reg_date = util.getRs().getString("reg_date");
-                String hit = df.format(util.getRs().getInt("hit"));
+                int hit = util.getRs().getInt("hit");
 
                 list.add(new NoticeDTO(no, title, important, reg_name, reg_date, hit));
             }
@@ -41,5 +38,38 @@ public class NoticeDAO {
         }
 
         return list;
+    }
+
+    public NoticeDTO getNoticeView(String no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        NoticeDTO dto = null;
+
+        String query = "SELECT a.no, a.title, a.content, a.important, reg_id, b.kor_name AS reg_name, \r\n" +
+        "date_format(a.reg_date, '%Y-%m-%d %H:%i') AS reg_date, a.hit \r\n" +
+        "FROM jebi_notice a, jebi_member b \r\n" +
+        "WHERE a.reg_id = b.id AND a.no = '"+no+"'";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                String title = util.getRs().getString("title");
+                String content = util.getRs().getString("content");
+                String important = util.getRs().getString("important");
+                String reg_id = util.getRs().getString("reg_id");
+                String reg_name = util.getRs().getString("reg_name");
+                String reg_date = util.getRs().getString("reg_date");
+                int hit = util.getRs().getInt("hit");
+
+                dto = new NoticeDTO(no, title, content, important, reg_id, reg_name, reg_date, hit);
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return dto;
     }
 }

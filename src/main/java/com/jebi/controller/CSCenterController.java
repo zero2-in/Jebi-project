@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jebi.command.notice.NoticeList;
+import com.jebi.command.notice.NoticeView;
 import com.jebi.common.Command;
 
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,8 @@ public class CSCenterController {
             }
             // 공지사항 보기
             case "noticeview" : {
+                Command view = new NoticeView();
+                view.execute(request, response);
                 pageLink = "notice/notice_view";
                 break;
             }

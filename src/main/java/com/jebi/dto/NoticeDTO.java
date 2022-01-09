@@ -1,24 +1,29 @@
 package com.jebi.dto;
 
 public class NoticeDTO {
-    private String no, title, content, important, reg_id, reg_name, reg_date, hit;
+    private String no, title, content, important, reg_id, reg_name, reg_date;
+    private int hit;
 
     // 리스트
-    public NoticeDTO(String no, String title, String important, String reg_name, String reg_date, String hit) {
-        this.no = no;
+    public NoticeDTO(String no, String title,  String important, String reg_name, String reg_date, int hit) {
         this.title = title;
         this.important = important;
         this.reg_name = reg_name;
         this.reg_date = reg_date;
+        this.no = no;
         this.hit = hit;
     }
 
-    public String getNo() {
-        return this.no;
-    }
-
-    public void setNo(String no) {
+    // 보기
+    public NoticeDTO(String no, String title, String content, String important, String reg_id, String reg_name, String reg_date, int hit) {
+        this.title = title;
+        this.content = content;
+        this.important = important;
+        this.reg_id = reg_id;
+        this.reg_name = reg_name;
+        this.reg_date = reg_date;
         this.no = no;
+        this.hit = hit;
     }
 
     public String getTitle() {
@@ -69,11 +74,19 @@ public class NoticeDTO {
         this.reg_date = reg_date;
     }
 
-    public String getHit() {
+    public String getNo() {
+        return this.no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+    
+    public int getHit() {
         return this.hit;
     }
 
-    public void setHit(String hit) {
+    public void setHit(int hit) {
         this.hit = hit;
-    }    
+    }   
 }

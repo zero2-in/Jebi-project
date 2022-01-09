@@ -41,7 +41,7 @@
                                         <strong class="important">공지</strong>
                                     </c:if>
                                     <c:if test="${list.getImportant() eq 'N'}">
-                                        ${list.getNo()}
+                                        <fmt:formatNumber value="${list.getNo()}" type="number"></fmt:formatNumber>
                                     </c:if>
                                 </div>
                                 <!-- Title -->
@@ -67,7 +67,7 @@
                                         <li><i class="far fa-edit"></i> ${list.getReg_name()}</li>
                                         <li><i class="far fa-calendar"></i> ${list.getReg_date()}</li>
                                         <c:if test="${list.getImportant() ne 'N'}">
-                                            <li><i class="far fa-eye"></i> ${list.getHit()}</li>
+                                            <li><i class="far fa-eye"></i> <fmt:formatNumber value="${list.getHit()}" type="number"></fmt:formatNumber></li>
                                         </c:if>
                                     </ul>
                                 </div>
