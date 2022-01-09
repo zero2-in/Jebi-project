@@ -5,6 +5,9 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jebi.command.notice.NoticeList;
+import com.jebi.common.Command;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,8 +20,16 @@ public class CSCenterController {
         String pageLink = "";
 
         switch(separate) {
+            // 공지사항 리스트
             case "notice" : {
-                
+                Command list = new NoticeList();
+                list.execute(request, response);
+                pageLink = "notice/notice_list";
+                break;
+            }
+            // 공지사항 보기
+            case "noticeview" : {
+                pageLink = "notice/notice_view";
                 break;
             }
         }

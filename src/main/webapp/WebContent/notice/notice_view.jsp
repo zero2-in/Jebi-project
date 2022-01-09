@@ -1,79 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <script src="../js/common.js"></script>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <title>제비 - 배송대행</title>
-</head>
-<body>
-    <!-- Header Start -->
-    <div id="header">
-        <div class="btn-login">
-            <ul class="menu-login">
-                <li><a href="member/login.html">로그인</a></li>
-                <li><a href="member/join.html">회원가입</a></li>
-                <li><a href="notice/notice_list.html">고객센터</a></li>
-            </ul>
-        </div>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
 
-        <div class="img-logo">
-            <a href="../index.html">
-                <img src="../images/logo.png" height="100px">
-            </a>
-        </div>
+<%@ include file="../common_header.jsp" %>
 
-        <div class="btn-menu">
-            <ul class="menu-main">
-                <li><a href="">이용안내</a></li>
-                <li><a href="">비용안내</a></li>
-                <li><a href="">배송대행</a></li>
-                <li><a href="">구매대행</a></li>
-                <li><a href="">고객센터</a></li>
-                <li><a href="">마이페이지</a></li>
-            </ul>
-        </div>
-        
-    </div>
-    <!-- Header End -->
-
-    <!-- nav Script -->
-    <script>
-        $(document).ready(function () {
-            $("#breadcrumbs .dropbtn").click(function () { 
-                $("#breadcrumbs .dropdown-content").toggle(200);
-                $("#breadcrumbs .select-area .caret").toggleClass("active");
-            });
-        });
-    </script>
+   <!-- 사이트 네비게이션 이름, 주소 표시 -->
+   <%@ include file="common_notice.jsp" %>
 
     <div class="container-notice">
         <div class="bar-title">
             <h2 class="title">공지사항</h2>
 
-            <!-- 사이트 이동경로를 만들어라! -->
-            <nav id="breadcrumbs" class="dark">
-                <ul class="nav-list">
-                    <li><a href="../index.html">Home</a></li>
-                    <li>고객센터</li>
-                    <li class="select-area">
-                        <button class="dropbtn">공지사항 <span class="bs-caret"><span class="caret"></span></span></button>
-                        <div class="dropdown-content">
-                            <a href="javascript:void(0)">공지사항<span class="check"><i class="fas fa-check"></i></span></a>
-                            <a href="../faq/faq_list.html">자주하는질문</a>
-                            <a href="../qna/qna_list.html">1:1문의</a>
-                            <a href="../review/review_list.html">이용후기</a>
-                            <a href="../event/event_list.html">이벤트</a>
-                            <a href="../nodata/nodata_list.html">노데이터</a>
-                            <a href="../clearance/clearance.html">통관조회</a>
-                        </div>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </nav>
+            <%@ include file="../breadcrumbs_cscenter.jsp" %>
         </div>
         
         <div class="dashboard margin-bottom-40">
@@ -148,63 +85,8 @@
         </div>
     </div>
 
-    <script src="../js/btn_ripple_effect.js"></script>
+    <%@ include file="../common_footer.jsp" %>
 
-    <!-- Menu footer Start -->
-    <div id="footer">
-        <!-- Menu information-use Start -->
-        <div class="favorites-service">
-            <div class="content">           
-                <ul>
-                    <li><div class="information-use"><a href="">이용안내</a></div></li>
-                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
-                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
-                    <li><div class="service-center"><a href="">고객센터</a></div></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Menu Information-use Start --> 
-        <div class="content01">
-            <div class="deposit-account">          
-                <ul>
-                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
-                    <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
-                    <li><div class="account-number">268-069109-02-001</div></li>
-                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
-                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Menu Information-use End --> 
-
-        <!-- Menu deposit-account Start --> 
-        <div class="content02">
-            <div class="deposit-account">          
-                <ul>
-                    <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
-                    <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
-                    <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Menu deposit-account Start --> 
-
-        <!-- Menu Mutual Start --> 
-        <div class="content03">
-            <div class="mutual">
-                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
-                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
-                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
-            </div>
-            <ul>
-                <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
-            </ul>
-        </div>
-        <!-- Menu Mutual Start --> 
-    </div>
-    <!-- Menu footer End --> 
+    <script src="js/btn_ripple_effect.js"></script>
 </body>
 </html>

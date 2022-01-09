@@ -26,6 +26,13 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 공지사항
+        case "notice" : {
+            urldirect.action = "CSCenter";
+            urldirect.separate.value = "notice";
+            urldirect.submit();
+            break;
+        }
         // 이용안내
         case "infouse" : {
             urldirect.action = "InformationUse";
