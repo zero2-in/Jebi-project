@@ -1,0 +1,390 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+    pageEncoding="UTF-8" %>
+<%@ include file="../common_header.jsp" %>
+    
+    <!-- nav Script -->
+    <script>
+        $(document).ready(function () {
+            $("#breadcrumbs .dropbtn").click(function () { 
+                $("#breadcrumbs .dropdown-content").toggle(200);
+                $("#breadcrumbs .select-area .caret").toggleClass("active");
+            });
+        });
+    </script>
+
+    <div class="container-notice">
+        <div class="bar-title">
+            <h2 class="title">공지사항</h2>
+
+            <!-- 사이트 이동경로를 만들어라! -->
+            <nav id="breadcrumbs" class="dark">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li>고객센터</li>
+                    <li class="select-area">
+                        <button class="dropbtn">공지사항 <span class="bs-caret"><span class="caret"></span></span></button>
+                        <div class="dropdown-content">
+                            <a href="javascript:void(0)">공지사항<span class="check"><i class="fas fa-check"></i></span></a>
+                            <a href="../faq/faq_list.html">자주하는질문</a>
+                            <a href="../qna/qna_list.html">1:1문의</a>
+                            <a href="../review/review_list.html">이용후기</a>
+                            <a href="../event/event_list.html">이벤트</a>
+                            <a href="../nodata/nodata_list.html">노데이터</a>
+                            <a href="../clearance/clearance.html">통관조회</a>
+                        </div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dashboard">
+            <div class="search-con">
+                <div class="row">
+                    <!-- 검색 폼! -->
+                    <form action="notice_list.html" method="post" name="search">
+                        <div class="search">
+                            <input type="text" name="s" class="search-text" placeholder="제목">
+                            <button type="button" class="search-btn ripple-effect" data-animation="ripple">
+                                검색 <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="content">
+                <ul class="board">
+                    <!-- List Block -->
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                <strong class="important">공지</strong>
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html"><b class="important">**제비 이용 안내**</b></a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 14:12</li>
+                                    <li><i class="far fa-eye"></i> 2,994</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                <strong class="important">공지</strong>
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html"><b style="color: #78148c">첫1kg 배송은 무료 입니다.</b></a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 14:29</li>
+                                    <li><i class="far fa-eye"></i> 5,201</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                38,203
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">주문서 작성시 유의사항</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 17:22</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                34,146
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">2021년 중국 국경절 일정 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 15:53</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                33,846
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">9월 12일(일), 13일(월) 항공출고건 지연안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 13:59</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                33,761
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">2021년 추석 일정 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 10:49</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                33,520
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">9월6일 항공 출고건 출항 지연안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 15:16</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                32,632
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">8월 9일~16일 항공 출고 관련 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 16:35</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                31,239
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">택배파업관련 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 18:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                31,213
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">관세청 개인통관고유부호 검증시스템 변경 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 13:33</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                30,579
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">[긴급] CJ대한통운 국내 운송지연 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 11:47</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="board-listing">
+                            <!-- No -->
+                            <div class="list-no">
+                                29,946
+                            </div>
+                            <!-- Title -->
+                            <h3 class="board-title">
+                                <a href="notice_view.html">해운운송 통관 지연 안내</a>
+                                <span class="status-button">new</span>
+                            </h3>
+                            <!-- Writter, Reg Date, Hit -->
+                            <div class="board-footer">
+                                <ul class="fl">
+                                    <li><i class="far fa-edit"></i> 관리자</li>
+                                    <li><i class="far fa-calendar"></i> 2021-12-24 12:06</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="paging">
+            <ul>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple"><i class="fas fa-chevron-left"></i></a></li>
+                <li><a href="javascript:void(0)" class="current-page ripple-effect" data-animation="ripple">1</a></li>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple">2</a></li>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple">3</a></li>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple">4</a></li>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple">5</a></li>
+                <li><a href="javascript:void(0)" class="ripple-effect" data-animation="ripple"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/btn_ripple_effect.js"></script>
+
+    <!-- Menu footer Start -->
+    <div id="footer">
+        <!-- Menu information-use Start -->
+        <div class="favorites-service">
+            <div class="content">           
+                <ul>
+                    <li><div class="information-use"><a href="">이용안내</a></div></li>
+                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
+                    <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
+                    <li><div class="service-center"><a href="">고객센터</a></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use Start --> 
+        <div class="content01">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="deposit"><b>입금계좌 안내</b></div></li>
+                    <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
+                    <li><div class="account-number">268-069109-02-001</div></li>
+                    <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
+                    <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Information-use End --> 
+
+        <!-- Menu deposit-account Start --> 
+        <div class="content02">
+            <div class="deposit-account">          
+                <ul>
+                    <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
+                    <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
+                    <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu deposit-account Start --> 
+
+        <!-- Menu Mutual Start --> 
+        <div class="content03">
+            <div class="mutual">
+                상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
+                사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
+                소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
+            </div>
+            <ul>
+                <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
+            </ul>
+        </div>
+        <!-- Menu Mutual Start --> 
+    </div>
+    <!-- Menu footer End --> 
+</body>
+</html>

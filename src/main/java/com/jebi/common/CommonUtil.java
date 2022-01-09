@@ -34,7 +34,7 @@ public class CommonUtil {
         int result = 0;
 
         try {
-            con = DBConnection.getConnectioin();
+            con = DBConnection.getConnection();
             ps = con.prepareStatement(query);
             switch(type) {
                 case 0 : rs = ps.executeQuery(); result+=1; break;

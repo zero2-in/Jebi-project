@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBConnection {
-    public static Connection getConnectioin() {
+    public static Connection getConnection() {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
         } catch(ClassNotFoundException e) {
