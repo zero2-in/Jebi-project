@@ -29,7 +29,7 @@ public class CSCenterController {
                 break;
             }
             // 공지사항 보기
-            case "noticeview" : {
+            case "notice-view" : {
                 Command view = new NoticeView();
                 view.execute(request, response);
                 pageLink = "notice/notice_view";

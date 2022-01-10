@@ -72,4 +72,47 @@ public class NoticeDAO {
 
         return dto;
     }
+
+    // 이전글 조회
+    public String[] getPrevNotice(String no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String[] prevNotice = new String[2];
+
+        String query = "";
+        util.runQuery(query, debugMethod, 0);
+        try {
+            if(util.getRs().next()) {
+
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return prevNotice;
+    }
+
+    // 다음글 조회
+    public String[] getNextNotice(String no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String[] nextNotice = new String[2];
+
+        String query = "";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return nextNotice;
+    }
 }

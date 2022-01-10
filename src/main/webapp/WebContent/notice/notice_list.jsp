@@ -97,7 +97,7 @@
     <script src="js/btn_ripple_effect.js"></script>
     <script>
         function goView(arg) {
-            urldirect.separate.value = "noticeview";
+            urldirect.separate.value = "notice-view";
             urldirect.no.value = arg;
             urldirect.submit();
         }
