@@ -1,3 +1,4 @@
 #VSCode Settings Ignore
 .vscode/*
 target/m2e-wtp/web-resources/META-INF/maven/com.mycompany/jebi/*
+.idea/*
