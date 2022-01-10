@@ -14,7 +14,7 @@ public class NoticeDAO {
         list = new ArrayList<>();
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "SELECT a.no, a.title, a.important, b.kor_name AS reg_name, date_format(a.reg_date, '%Y-%m-%d %H:%i') AS reg_date, a.hit \r\n" +
+        String query = "SELECT a.no, a.title, a.important, b.kor_name AS reg_name, to_char(a.reg_date, 'yyyy-MM-dd hh:mm') AS reg_date, a.hit \r\n" +
         "FROM jebi_notice a, jebi_member b \r\n" +
         "WHERE a.reg_id = b.id \r\n" +
         "ORDER BY a.important DESC, no DESC";
@@ -46,7 +46,7 @@ public class NoticeDAO {
         NoticeDTO dto = null;
 
         String query = "SELECT a.no, a.title, a.content, a.important, reg_id, b.kor_name AS reg_name, \r\n" +
-        "date_format(a.reg_date, '%Y-%m-%d %H:%i') AS reg_date, a.hit \r\n" +
+        "to_char(a.reg_date, 'yyyy-MM-dd hh:mm') AS reg_date, a.hit \r\n" +
         "FROM jebi_notice a, jebi_member b \r\n" +
         "WHERE a.reg_id = b.id AND a.no = '"+no+"'";
 

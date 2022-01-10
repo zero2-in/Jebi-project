@@ -9,15 +9,12 @@ import java.sql.SQLException;
 public class DBConnection {
     public static Connection getConnection() {
         try {
-            Class.forName("org.mariadb.jdbc.Driver");
+            Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch(ClassNotFoundException e) {
             System.out.println("드라이버 로드 실패");
             e.printStackTrace();
         }
-        final String DB_IP = "183.107.30.124";
-        final String DB_PORT = "3306";
-        final String DB_NAME = "jebi_db";
-        final String DB_URL = "jdbc:mariadb://" + DB_IP + ":" + DB_PORT + "/" + DB_NAME;
+        final String DB_URL = "jdbc:oracle:thin:@192.168.0.43:1521:xe";
         Connection con = null;
         try {
             con = DriverManager.getConnection(DB_URL, "jebi", "0122");

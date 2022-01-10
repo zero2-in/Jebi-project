@@ -205,7 +205,7 @@ public class MemberDAO {
         String query = "INSERT INTO jebi_member \r\n" +
         "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
         "VALUES('"+dto.getKid()+"', 'kakao', '"+dto.getKnickname()+"', \r\n" +
-        "'kakao', '설정해주세요', '"+dto.getKemail()+"', 'N', 'N')";
+        "'kakao', 'required', '"+dto.getKemail()+"', 'N', 'N')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
