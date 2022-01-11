@@ -116,5 +116,10 @@
             }
         }
     </script>
+    <script>
+        $(document).ready(function () {
+            $("img").attr("loop=infinite");
+        });
+    </script>
 </body>
 </html>

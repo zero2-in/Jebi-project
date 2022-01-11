@@ -29,7 +29,6 @@ function goSite(arg) {
         // 공지사항
         case "notice" : {
             urldirect.action = "Notice";
-            urldirect.separate.value = "list";
             urldirect.submit();
             break;
         }
@@ -43,7 +42,6 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
-
         // 이용안내
         case "infouse" : {
             urldirect.action = "InformationUse";

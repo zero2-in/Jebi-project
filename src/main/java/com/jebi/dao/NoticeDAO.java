@@ -235,7 +235,7 @@ public class NoticeDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "UPDATE jebi_notice SET title = '"+dto.getTitle()+"', content = ?, \n" +
-                "important = '"+dto.getImportant()+"', reg_id = '"+dto.getReg_id()+"' WHERE no = '"+dto.getNo()+"', reg_date = CURRENT_TIMESTAMP";
+                "important = '"+dto.getImportant()+"', reg_id = '"+dto.getReg_id()+"', reg_date = CURRENT_TIMESTAMP WHERE no = '"+dto.getNo()+"'";
 
         return util.runQuery(query, debugMethod, dto.getContent());
     }

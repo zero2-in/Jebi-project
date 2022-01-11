@@ -33,6 +33,11 @@ public class NaverLogin implements Command {
         } else {
             dao.checkNaver(dto);
             HttpSession session = request.getSession();
+            if(dao.checkAdmin(nid)) {
+                session.setAttribute("session_level", "top");
+            } else {
+                session.setAttribute("session_level", "");
+            }
 
             session.setAttribute("session_name", nname);
             session.setAttribute("session_id", nid);
