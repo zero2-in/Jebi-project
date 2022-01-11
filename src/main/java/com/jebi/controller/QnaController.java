@@ -1,5 +1,7 @@
 package com.jebi.controller;
 
+import com.jebi.command.qna.QnaList;
+import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,6 +19,8 @@ public class QnaController {
 
         switch(separate) {
             case "list" : {
+                Command list = new QnaList();
+                list.execute(request, response);
                 pageLink = "qna/qna_list";
                 break;
             }
