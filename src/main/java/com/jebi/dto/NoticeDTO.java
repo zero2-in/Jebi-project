@@ -26,6 +26,15 @@ public class NoticeDTO {
         this.hit = hit;
     }
 
+    // 쓰기
+    public NoticeDTO(String no, String title, String content, String important, String reg_id) {
+        this.no = no;
+        this.title = title;
+        this.content = content;
+        this.important = important;
+        this.reg_id = reg_id;
+    }
+
     public String getTitle() {
         return this.title;
     }

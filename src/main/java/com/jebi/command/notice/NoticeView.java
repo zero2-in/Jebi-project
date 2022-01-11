@@ -13,7 +13,13 @@ public class NoticeView implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         NoticeDAO dao = new NoticeDAO();
         String no = request.getParameter("no");
-        
+
+        dao.hitNotice(no);
+
         request.setAttribute("dto", dao.getNoticeView(no));
+        request.setAttribute("prevNo", dao.getPrevNotice(no)[0]);
+        request.setAttribute("prevTitle", dao.getPrevNotice(no)[1]);
+        request.setAttribute("nextNo", dao.getNextNotice(no)[0]);
+        request.setAttribute("nextTitle", dao.getNextNotice(no)[1]);
     }
 }

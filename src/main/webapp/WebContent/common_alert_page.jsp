@@ -10,6 +10,7 @@
 <body>
     <form action="${url}" method="post" name="urldirect">
         <input type="hidden" name="separate" value="${separate}">
+        <input type="hidden" name="no" value="${no}">
     </form>
     <script>
         alert("${msg}");

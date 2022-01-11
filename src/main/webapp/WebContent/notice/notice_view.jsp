@@ -53,25 +53,37 @@
             <a href="javascript:void(0)" onclick="setTimeout(function() {goSite('notice');}, 200)" class="button ripple-effect blue-line" data-animation="ripple">
                 목록
             </a>
+            <c:if test="${session_level eq 'top'}">
+                <a href="javascript:void(0)" onclick="setTimeout(function() {goModify('${dto.getNo()}')}, 200)" class="button ripple-effect blue-line" data-animation="ripple">
+                    수정
+                </a>
+                <a href="javascript:void(0)" onclick="setTimeout(function() {goDelete('${dto.getNo()}')}, 200)" class="button ripple-effect" data-animation="ripple">
+                    삭제
+                </a>
+            </c:if>
         </div>
 
         <div class="prev-next-box">
             <div class="box-wrap">
                 <ul class="post-nav margin-bottom-40">
-                    <!-- 다음 글 -->
-                    <li class="next-post">
-                        <a href="javascript:void(0)">
-                            <span>다음글</span>
-                            <strong>주문서 작성시 유의사항</strong>
-                        </a>
-                    </li>
-                    <!-- 이전 글 -->
-                    <li class="prev-post">
-                        <a href="javascript:void(0)">
-                            <span>이전글</span>
-                            <strong>9월 12일(일), 13(월) 항공출고건 지연안내</strong>
-                        </a>
-                    </li>
+                    <c:if test="${not empty nextTitle}">
+                        <!-- 다음 글 -->
+                        <li class="next-post">
+                            <a href="javascript:goView('${nextNo}')">
+                                <span>다음글</span>
+                                <strong>${nextTitle}</strong>
+                            </a>
+                        </li>
+                    </c:if>
+                    <c:if test="${not empty prevTitle}">
+                        <!-- 이전 글 -->
+                        <li class="prev-post">
+                            <a href="javascript:goView('${prevNo}')">
+                                <span>이전글</span>
+                                <strong>${prevTitle}</strong>
+                            </a>
+                        </li>
+                    </c:if>
                 </ul>
             </div>
         </div>
@@ -80,5 +92,29 @@
     <%@ include file="../common_footer.jsp" %>
 
     <script src="js/btn_ripple_effect.js"></script>
+    <script>
+        function goView(arg) {
+            urldirect.action = "Notice";
+            urldirect.separate.value = "view";
+            urldirect.no.value = arg;
+            urldirect.submit();
+        }
+
+        function goModify(arg) {
+            urldirect.action = "Notice";
+            urldirect.separate.value = "modify";
+            urldirect.no.value = arg;
+            urldirect.submit();
+        }
+
+        function goDelete(arg) {
+            if(confirm("정말 이 게시글을 삭제하시겠습니까?")) {
+                urldirect.action = "Notice";
+                urldirect.separate.value = "delete";
+                urldirect.no.value = arg;
+                urldirect.submit();
+            }
+        }
+    </script>
 </body>
 </html>

@@ -22,17 +22,28 @@ function goSite(arg) {
         }
         // 고객센터
         case "cs" : {
-            urldirect.action = "CSCenter";
+            urldirect.action = "Notice";
             urldirect.submit();
             break;
         }
         // 공지사항
         case "notice" : {
-            urldirect.action = "CSCenter";
-            urldirect.separate.value = "notice";
+            urldirect.action = "Notice";
+            urldirect.separate.value = "list";
             urldirect.submit();
             break;
         }
+        case "faq" : {
+            urldirect.action = "Faq";
+            urldirect.submit();
+            break;
+        }
+        case "qna" : {
+            urldirect.action = "Qna";
+            urldirect.submit();
+            break;
+        }
+
         // 이용안내
         case "infouse" : {
             urldirect.action = "InformationUse";

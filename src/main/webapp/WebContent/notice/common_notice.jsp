@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <script>
     $(document).ready(function () {
         $("#breadcrumbs #pageTitle").html("공지사항");

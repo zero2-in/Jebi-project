@@ -1,9 +1,12 @@
 package com.jebi.common;
 
+import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CommonUtil {
     private Connection con = null;
@@ -40,6 +43,30 @@ public class CommonUtil {
                 case 0 : rs = ps.executeQuery(); result+=1; break;
                 case 1 : result = ps.executeUpdate(); break;
             }
+        } catch(SQLException e) {
+            e.printStackTrace();
+            System.out.println("\n\n-------------------------------------");
+            System.out.println(debugMethod+"메소드에서 오류가 발생했습니다!");
+            System.out.println("실행된 query : "+query);
+            System.out.println("-------------------------------------\n\n");
+        }
+
+        return result;
+    }
+
+    // 긴 글 등록
+    public int runQuery(String query, String debugMethod, String content) {
+        int result = 0;
+
+        try {
+            con = DBConnection.getConnection();
+            con.setAutoCommit(false);
+            StringReader reader = new StringReader(content);
+            ps = con.prepareStatement(query);
+            ps.setCharacterStream(1, reader, content.length());
+            result = ps.executeUpdate();
+            con.commit();
+            con.setAutoCommit(true);
         } catch(SQLException e) {
             e.printStackTrace();
             System.out.println("\n\n-------------------------------------");

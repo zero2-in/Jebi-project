@@ -15,7 +15,7 @@
         <li><a href="/jebi">Home</a></li>
         <li>고객센터</li>
         <li class="select-area">
-            <button class="dropbtn">공지사항 <span class="bs-caret"><span class="caret"></span></span></button>
+            <button class="dropbtn"><span id="pageTitle"></span> <span class="bs-caret"><span class="caret"></span></span></button>
             <div class="dropdown-content">
                 <a href="javascript:goSite('notice')"    class="notice">공지사항<span class="check"></span></a>
                 <a href="javascript:goSite('faq')"       class="faq">자주하는질문   <span class="check"></span></a>
