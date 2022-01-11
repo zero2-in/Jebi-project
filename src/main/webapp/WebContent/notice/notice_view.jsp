@@ -38,7 +38,7 @@
                         <i class="far fa-calendar"></i> ${dto.getReg_date()}
                     </span>
                     <span class="blog-post-info">
-                        <i class="far fa-eye"></i> ${dto.getHit()}
+                        <i class="far fa-eye"></i> <fmt:formatNumber value="${dto.getHit()}" type="number" />
                     </span>
                 </div>
 
