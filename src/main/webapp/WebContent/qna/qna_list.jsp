@@ -25,19 +25,15 @@
                 <div class="row">
                     <!-- 검색 폼! -->
                     <form action="Qna" method="post" name="search">
+                        <input type="hidden" name="category">
                         <div class="search">
-                            <input type="text" name="s" class="search-text" placeholder="제목">
-                            <button type="button" class="search-btn ripple-effect" data-animation="ripple">
+                            <input type="text" name="s" class="search-text" placeholder="제목" value="${s}">
+                            <button type="submit" class="search-btn ripple-effect" data-animation="ripple">
                                 검색 <i class="fas fa-search"></i>
                             </button>
-                            <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() { location.href='qna_write.jsp'}, 150)" data-animation="ripple">
+                            <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() {goWrite()}, 150)" data-animation="ripple">
                                 글쓰기
                             </button>
-                            <c:if test="${session_level eq 'top'}">
-                                <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() { location.href='qna_write.html'}, 150)" data-animation="ripple">
-                                    공지등록
-                                </button>
-                            </c:if>
                         </div>
                     </form>
 
@@ -46,109 +42,130 @@
 
             <div class="category-tab-area">
                 <div class="category-tab">
-                    <div class="category-tab-link active">
-                        <a href="javascript:void(0)">
+                    <div class="category-tab-link <c:if test="${empty category}">active</c:if>">
+                        <a href="javascript:void(0)" onclick="findCategory('')">
                             전체
                         </a>
                     </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            입출고
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            결제
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            구매대행
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            반품,교환
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            통관
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            누락
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            노데이터
-                        </a>
-                    </div>
-                    <div class="category-tab-link">
-                        <a href="javascript:void(0)">
-                            기타
-                        </a>
-                    </div>
+                    <c:forEach items="${category_list}" var="list" begin="0" end="${category_list.size()}">
+                        <div class="category-tab-link <c:if test="${category eq list[0]}">active</c:if>">
+                            <a href="javascript:void(0)" onclick="findCategory('${list[0]}')">
+                                    ${list[1]}
+                            </a>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
 
             <div class="content">
                 <ul class="board">
-                    <!-- List Block -->
-                    <li class="row">
-                        <div class="board-listing">
-                            <!-- No -->
-                            <div class="list-no">
-                                <strong class="important">공지</strong>
+                    <c:forEach items="${important_list}" var="list">
+                        <!-- List Block -->
+                        <li class="row">
+                            <div class="board-listing">
+                                <!-- No -->
+                                <div class="list-no">
+                                    <strong class="important">공지</strong>
+                                </div>
+                                <!-- Title -->
+                                <h3 class="board-title">
+                                    <a href="javascript:goView('${list.getNo()}')"><span class="gray">[${list.getCategory_name()}]</span>
+                                        <c:if test="${list.getImportant() eq 'Y'}">
+                                            <b class="important">${list.getTitle()}</b>
+                                        </c:if>
+                                        <c:if test="${list.getImportant() eq 'X'}">
+                                            <b style="color: #78148c">${list.getTitle()}</b>
+                                        </c:if>
+                                    </a>
+                                    <span class="status-button">new</span>
+                                </h3>
+                                <!-- Writter, Reg Date, Hit -->
+                                <div class="board-footer">
+                                    <ul class="fl">
+                                        <li><i class="far fa-edit"></i> ${list.getReg_name()}</li>
+                                        <li><i class="far fa-calendar"></i> ${list.getReg_date()}</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <!-- Title -->
-                            <h3 class="board-title">
-                                <a href="qna_view.jsp"><span class="gray">[기타]</span> <b class="important">★문의글 등록 전 꼭 확인해주세요★</b></a>
-                                <span class="status-button">new</span>
-                            </h3>
-                            <!-- Writter, Reg Date, Hit -->
-                            <div class="board-footer">
-                                <ul class="fl">
-                                    <li><i class="far fa-edit"></i> 관리자</li>
-                                    <li><i class="far fa-calendar"></i> 2021-12-28 16:53</li>
-                                    <li><i class="far fa-eye"></i> 1,516</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:forEach>
 
-                    <li class="row">
-                        <div class="board-listing">
-                            <!-- No -->
-                            <div class="list-no">
-                                <strong class="important">공지</strong>
-                            </div>
-                            <!-- Title -->
-                            <h3 class="board-title">
-                                <a href="qna_view.jsp"><span class="gray">[기타]</span> <b style="color: #78148c">문의사항은 작성자만 볼 수 있습니다.</b></a>
-                                <span class="status-button">new</span>
-                            </h3>
-                            <!-- Writter, Reg Date, Hit -->
-                            <div class="board-footer">
-                                <ul class="fl">
-                                    <li><i class="far fa-edit"></i> 관리자</li>
-                                    <li><i class="far fa-calendar"></i> 2021-12-28 10:39</li>
-                                    <li><i class="far fa-eye"></i> 7,071</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+                    <c:if test="${session_level eq 'top'}">
+                        <c:if test="${empty all_list}">
+                            <li class="row">
+                                <div class="board-listing">
+                                    <h3 class="board-title">
+                                        데이터가 없습니다.
+                                    </h3>
+                                </div>
+                            </li>
+                        </c:if>
 
-                    <li class="row">
-                        <div class="board-listing">
-                            <h3 class="board-title">
-                                데이터가 없습니다.
-                            </h3>
-                        </div>
-                    </li>
+                        <c:forEach items="${all_list}" var="list">
+                            <!-- List Block -->
+                            <li class="row">
+                                <div class="board-listing">
+                                    <!-- No -->
+                                    <div class="list-no">
+                                        <fmt:formatNumber type="number" value="${list.getNo()}" />
+                                    </div>
+                                    <!-- Title -->
+                                    <h3 class="board-title">
+                                        <a href="javascript:goView('${list.getNo()}')">
+                                            <span class="gray">[${list.getCategory_name()}]</span>
+                                            ${list.getTitle()}
+                                        </a>
+                                        <span class="status-button">new</span>
+                                    </h3>
+                                    <!-- Writter, Reg Date, Hit -->
+                                    <div class="board-footer">
+                                        <ul class="fl">
+                                            <li><i class="far fa-edit"></i> ${list.getReg_name()}</li>
+                                            <li><i class="far fa-calendar"></i> ${list.getReg_date()}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${session_level ne 'top'}">
+                        <c:if test="${empty my_list}">
+                            <li class="row">
+                                <div class="board-listing">
+                                    <h3 class="board-title">
+                                        데이터가 없습니다.
+                                    </h3>
+                                </div>
+                            </li>
+                        </c:if>
 
+                        <c:forEach items="${my_list}" var="list">
+                            <!-- List Block -->
+                            <li class="row">
+                                <div class="board-listing">
+                                    <!-- No -->
+                                    <div class="list-no">
+                                        <fmt:formatNumber type="number" value="${list.getNo()}" />
+                                    </div>
+                                    <!-- Title -->
+                                    <h3 class="board-title">
+                                        <a href="javascript:goView('${list.getNo()}')">
+                                            <span class="gray">[${list.getCategory_name()}]</span>
+                                                ${list.getTitle()}
+                                        </a>
+                                        <span class="status-button">new</span>
+                                    </h3>
+                                    <!-- Writter, Reg Date, Hit -->
+                                    <div class="board-footer">
+                                        <ul class="fl">
+                                            <li><i class="far fa-edit"></i> ${list.getReg_name()}</li>
+                                            <li><i class="far fa-calendar"></i> ${list.getReg_date()}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </c:if>
                 </ul>
             </div>
         </div>
@@ -183,6 +200,30 @@
 
     <%@ include file="../common_footer.jsp" %>
 
-    <script src="../js/btn_ripple_effect.js"></script>
+    <script src="js/btn_ripple_effect.js"></script>
+    <script>
+        function goView(arg) {
+            urldirect.action = "Qna";
+            urldirect.separate.value = "view";
+            urldirect.no.value = arg;
+            urldirect.submit();
+        }
+
+        function goWrite() {
+            urldirect.action = "Qna";
+            urldirect.separate.value = "write";
+            urldirect.submit();
+        }
+
+        function goPage(arg) {
+            search.action = "Qna?pageNum="+arg;
+            search.submit();
+        }
+
+        function findCategory(arg) {
+            search.category.value = arg;
+            search.submit();
+        }
+    </script>
 </body>
 </html>

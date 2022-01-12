@@ -41,7 +41,7 @@ public class CommonUtil {
             ps = con.prepareStatement(query);
             switch(type) {
                 case 0 : rs = ps.executeQuery(); result+=1; break;
-                case 1 : result = ps.executeUpdate(); break;
+                case 1 : result = ps.executeUpdate(); closeDB(); break;
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -90,5 +90,9 @@ public class CommonUtil {
 
     public void closeDB() {
         DBConnection.closeDB(con, ps, rs);
+    }
+
+    public static String getFile_dir(String directoryName) {
+        return "C:/Users/fushi/Desktop/work-kyi/java_project/jebi-project/src/main/webapp/file_room/"+directoryName+"/";
     }
 }

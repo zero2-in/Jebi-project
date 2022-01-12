@@ -1,10 +1,11 @@
 package com.jebi.command.qna;
 
 import com.jebi.common.Command;
-import com.jebi.dao.FaqDAO;
+import com.jebi.dao.QnaDAO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class QnaList implements Command {
@@ -17,7 +18,7 @@ public class QnaList implements Command {
         if(search == null) search = "";
         if(category == null) category = "";
 
-        FaqDAO dao = new FaqDAO();
+        QnaDAO dao = new QnaDAO();
 
         int pageSize = 10; // 한 페이지에 출력할 레코드 수
 
@@ -42,7 +43,11 @@ public class QnaList implements Command {
         int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;
         int endPage = startPage + pageBlock - 1;
 
-        request.setAttribute("list", dao.getFaqList(category, search, startRow, endRow));
+        HttpSession session = request.getSession();
+
+        request.setAttribute("all_list", dao.getQnaList(category, search, startRow, endRow));
+        request.setAttribute("my_list", dao.getQnaList(category, search, startRow, endRow, (String)session.getAttribute("session_id")));
+        request.setAttribute("important_list", dao.getImportantQnaList());
         request.setAttribute("s", search);
         request.setAttribute("pageSize", pageSize);
         request.setAttribute("pageNum", pageNum);

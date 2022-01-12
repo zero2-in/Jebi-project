@@ -434,7 +434,7 @@
     float: left;
     border: 1px solid rgb(205, 205, 205);
 }
-#container .id{
+#container .input{
     width: 400px;
     height: 70px;
     margin: 30px 0 0 30px;
@@ -2040,6 +2040,9 @@
     width: 1200px;
     margin: 0 auto;
 }
+.container-login *::placeholder {
+    color: #cfcfcf;
+}
 .container-login .bar-title {
     width: 100%;
     height: 50px;
@@ -2336,6 +2339,9 @@
 .container-join {
     width: 1200px;
     margin: 0 auto;
+}
+.container-join *::placeholder {
+    color: #cfcfcf;
 }
 .container-join .bar-title {
     width: 100%;
@@ -2802,6 +2808,9 @@
     background-color: #eaeaea;
     color: #333;
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+.container-notice *::placeholder {
+    color: #cfcfcf;
 }
 
 /* 공지사항 view 관련 css */
@@ -3835,6 +3844,7 @@
     background-color: #e0e0e0;
 }
 .container-agent button {
+    vertical-align: middle;
     border: none;
     margin: 0px;
     padding: 0px;
@@ -3866,6 +3876,9 @@
     border-style: none;
 }
 .container-agent input::placeholder {
+    color: #cfcfcf;
+}
+.container-agent *::placeholder {
     color: #cfcfcf;
 }
 .container-agent .tr {
@@ -3936,6 +3949,15 @@
 .container-agent .dashboard-box .content.with-padding {
     padding: 25px;
 }
+.container-agent textarea {
+    height: auto;
+    line-height: 27px;
+    padding: 20px;
+    min-height: 100px;
+    min-width: 100%;
+    transition: none 0s ease 0s !important;
+}
+
 
 
 
@@ -5578,6 +5600,100 @@
     line-height: 20px;
 }
 
+.container-agent .comments ul li, .container-agent .comments ul li ul li,
+.container-agent ul li ul li ul li, .container-agent .comments ul li ul li ul li ul li {
+    margin: 10px 0 0 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.container-agent .comments {
+    margin: -10px 0 0;
+}
+.container-agent .comments ul {
+    padding-left: 0;
+}
+.container-agent .comments ul li {
+    position: relative;
+    display: block;
+}
+
+.container-agent .comments-amount {
+    color: #888;
+    font-weight: 500;
+}
+
+.container-agent .comment-content {
+    color: #666;
+    /* padding: 0 0 0 100px */
+}
+.container-agent .comment-content span {
+    color: #888;
+}
+.container-agent .comment-content p {
+    padding: 5px 0;
+    margin: 3px 0 0;
+    line-height: 26px;
+}
+
+.container-agent .comment-by {
+    width: 100%;
+    padding-top: 5px;
+    font-weight: 500;
+    color: #333;
+}
+.container-agent .comment-by span.date {
+    color: #888;
+    font-weight: 500;
+    margin: 0 0 0;
+    float: none;
+    display: inline-block;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 13px;
+}
+.container-agent .comment-by span.edit a {
+    display: inline-block;
+    text-decoration: underline;
+    margin-left: 10px;
+    color: #777;
+}
+
+.container-agent .button-sliding-icon {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.container-agent .button-sliding-icon i {
+    opacity: 0;
+    max-width: 0;
+    transition: .25s;
+    display: inline-block;
+    transform: translateX(-20px);
+}
+
+.container-agent .button.button-sliding-icon {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.container-agent .button.button-sliding-icon i {
+    padding-right: 5px;
+}
+.container-agent .button.button-sliding-icon:hover {
+    padding-right: 20px;
+}
+.container-agent .button.button-sliding-icon:hover i {
+    max-width: 20px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container-agent .button i.fa-arrow-right {
+    font-size: 16px;
+    top: 1px;
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+}
 
 
 /* Summernote 속성 우선순위 수정 */

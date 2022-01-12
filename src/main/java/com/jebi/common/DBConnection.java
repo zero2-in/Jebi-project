@@ -14,7 +14,7 @@ public class DBConnection {
             System.out.println("드라이버 로드 실패");
             e.printStackTrace();
         }
-        final String DB_URL = "jdbc:oracle:thin:@192.168.0.43:1521:xe";
+        final String DB_URL = "jdbc:oracle:thin:@192.168.0.11:1521:xe";
         Connection con = null;
         try {
             con = DriverManager.getConnection(DB_URL, "jebi", "0122");
