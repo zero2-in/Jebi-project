@@ -37,6 +37,10 @@
             1:1문의
         </a>
         <c:if test="${session_level eq 'top'}">
+            <a href="javascript:void(0)" onclick="setTimeout(function(){location.href='Event'}, 150)"
+               class="button ripple-effect blue-line" data-animation="ripple">
+                목록
+            </a>
             <a href="javascript:void(0)" onclick="setTimeout(function() {goModify('${dto.getNo()}')}, 200)" class="button ripple-effect blue-line" data-animation="ripple">
                 수정
             </a>
@@ -70,6 +74,7 @@
             urldirect.action = "Event";
             urldirect.separate.value = "delete";
             urldirect.no.value = arg;
+            urldirect.attach.value = "${dto.getAttach()}";
             urldirect.submit();
         }
     }

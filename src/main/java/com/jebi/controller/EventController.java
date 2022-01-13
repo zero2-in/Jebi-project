@@ -1,10 +1,6 @@
 package com.jebi.controller;
 
-import com.jebi.command.event.EventList;
-import com.jebi.command.event.EventModify;
-import com.jebi.command.event.EventSave;
-import com.jebi.command.event.EventView;
-import com.jebi.command.notice.*;
+import com.jebi.command.event.*;
 import com.jebi.common.Command;
 import com.jebi.common.CommonUtil;
 import com.jebi.common.MultipartCommand;
@@ -53,23 +49,24 @@ public class EventController {
                 pageLink = "event/event_view";
                 break;
             }
-            // 공지사항 수정폼
+            // 이벤트 수정폼
             case "modify" : {
                 Command modify = new EventModify();
                 modify.execute(request, response);
                 pageLink = "event/event_modify";
                 break;
             }
-            // 공지사항 수정
+            // 이벤트 수정
             case "update" : {
-                Command update = new NoticeUpdate();
-                update.execute(request, response);
+                MultipartRequest mpr = getMpr(request);
+                MultipartCommand update = new EventUpdate();
+                update.execute(mpr, request, response);
                 pageLink = "common_alert_page";
                 break;
             }
-            // 공지사항 삭제
+            // 이벤트 삭제
             case "delete" : {
-                Command delete = new NoticeDelete();
+                Command delete = new EventDelete();
                 delete.execute(request, response);
                 pageLink = "common_alert_page";
                 break;

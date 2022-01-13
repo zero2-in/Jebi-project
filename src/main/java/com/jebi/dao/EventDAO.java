@@ -110,8 +110,8 @@ public class EventDAO {
 
         EventDTO dto = null;
 
-        String query = "SELECT no, title, sub_title, content, attach, start_date, end_date \n" +
-                "FROM jebi_event\n" +
+        String query = "SELECT no, title, sub_title, content, attach, to_char(start_date, 'yyyy-MM-dd') AS start_date, to_char(end_date, 'yyyy-MM-dd') AS end_date \n" +
+                "FROM jebi_event \n" +
                 "WHERE no = '"+no+"'";
 
         util.runQuery(query, debugMethod, 0);
@@ -135,5 +135,24 @@ public class EventDAO {
         }
 
         return dto;
+    }
+    // 이벤트 수정
+    public int updateEvent(EventDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "UPDATE jebi_event SET title = '"+dto.getTitle()+"', sub_title = '"+dto.getSub_title()+"', content = ?, \n" +
+                "start_date = '"+dto.getStart_date()+"', end_date = '"+dto.getEnd_date()+"', attach = '"+dto.getAttach()+"' " +
+                "WHERE no = '"+dto.getNo()+"'";
+
+        return util.runQuery(query, debugMethod, dto.getContent());
+    }
+
+    // 이벤트 삭제
+    public int deleteEvent(String no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "DELETE FROM jebi_event WHERE no = '"+no+"'";
+
+        return util.runQuery(query, debugMethod, 1);
     }
 }

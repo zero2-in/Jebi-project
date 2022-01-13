@@ -111,7 +111,7 @@
                         <ul class="btn-jebi-naver-talk">
                             <li><a href="member/join.html" class="jebi">제비 회원가입</a></li>
                             <li><a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=Hi0oJsyzfOnKraAX79h8&redirect_uri=http%3A%2F%2Fwww%2Ejikbak%2Ecom%2FFront%2FJoin%2FN%5Fapi%2Easp&state=41362a0516eebb5fde48e4a4c478f938" class="naver" onclick="window.open(this.href, '_blank', 'width=550, height=745'); return false;">네이버 아이디로 로그인</a></li>                    
-                            <li><a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fredirect_uri%3Dkakaojs%26response_type%3Dcode%26state%3Deg0aj43gfkco0fytupqanm%26proxy%3DeasyXDM_Kakao_k84ccnx3vj_provider%26ka%3Dsdk%252F1.24.1%2520os%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttp%25253A%25252F%25252Fwww.jikbak.com%26origin%3Dhttp%253A%252F%252Fwww.jikbak.com%26client_id%3D2194f6bd15f50ffeba89834addd14504" class="talk" onclick="window.open(this.href, '_blank', 'width=550, height=745'); return false;">카카오톡 계정으로 로그인</a></li>  
+                            <li><button type="button" class="talk" onclick="kakaoLogin()" onclick="window.open(this.href, '_blank', 'width=550, height=745'); data-animation="ripple">카카오톡 계정으로 로그인</button></li>
                         </ul>
                     </div>                
             </div>
