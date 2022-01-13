@@ -2,12 +2,13 @@
     pageEncoding="UTF-8" %>
 <%@ include file="common_header.jsp" %>
 
-<script src="js/jquery.magnific-popup.min.js"></script>
-<link rel="stylesheet" href="css/magnific-popup.css">
 
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
-    <div class="schedule-form" id="dialog-cont"></div>
+    <div class="schedule-form" id="dialog-cont">
+
+    </div>
 </div>
+<link rel="stylesheet" href="css/magnific-popup.css">
 
     <!-- Popup Script -->
     <script>
@@ -23,21 +24,22 @@
     </script>
     <script>
          $(document).ready(function () {
-            $(".popup-with-zoom-anim").magnificPopup({
-                type: 'inline', 
+             // 팝업
+             $(".popup-with-zoom-anim").magnificPopup({
+                 type: 'inline',
 
-                fixedContentPos: false, 
-                fixedBgPos: true, 
+                 fixedContentPos: false,
+                 fixedBgPos: true,
 
-                overflowY: 'auto',
+                 overflowY: 'auto',
 
-                closeBtnInside: true, 
-                preloader: false, 
+                 closeBtnInside: true,
+                 preloader: false,
 
-                midClick: true, 
-                removalDelay: 300,
-                mainClass: 'my-mfp-zoom-in'
-            });
+                 midClick: true,
+                 removalDelay: 300,
+                 mainClass: 'my-mfp-zoom-in'
+             });
         });
     </script>
     <script src="js/naver_login.js"></script>
@@ -109,9 +111,9 @@
                             <li><a href="">비밀번호 찾기</a></li>
                         </ul>
                         <ul class="btn-jebi-naver-talk">
-                            <li><a href="member/join.html" class="jebi">제비 회원가입</a></li>
-                            <li><a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=Hi0oJsyzfOnKraAX79h8&redirect_uri=http%3A%2F%2Fwww%2Ejikbak%2Ecom%2FFront%2FJoin%2FN%5Fapi%2Easp&state=41362a0516eebb5fde48e4a4c478f938" class="naver" onclick="window.open(this.href, '_blank', 'width=550, height=745'); return false;">네이버 아이디로 로그인</a></li>                    
-                            <li><button type="button" class="talk" onclick="kakaoLogin()" onclick="window.open(this.href, '_blank', 'width=550, height=745'); data-animation="ripple">카카오톡 계정으로 로그인</button></li>
+                            <li><a href="javascript:goSite('join')" class="jebi">제비 회원가입</a></li>
+                            <li><a href="javascript:void(0)" class="naver" onclick="naverLogin()" style="('width=800, height=600')">네이버 아이디로 로그인</a></li>
+                            <li><a href="javascript:void(0)"  class="talk" onclick="kakaoLogin()">카카오톡 계정으로 로그인</a></li>
                         </ul>
                     </div>                
             </div>
@@ -232,13 +234,19 @@
 
         <!-- Dlivery-purchase Start -->
         <div class="content01">
-            <div class="dlivery-purchase-title"><a href=""><b>배송대행 절차 ㅣ</b>구매대행 절차</a></div>
+            <div class="dlivery-purchase-title">
+                <form name="category" action="/jebi" method="post">
+                    <input type="hidden" name="t_category">
+                </form>
+                <ul>
+                    <li class="<c:if test="${empty category}">active</c:if>"><a href="javascript:void(0)" onclick="goCategory('')">배송대행 절차</a></li>
+                    <li class="<c:if test="${category eq '2'}">active</c:if>"><a href="javascript:void(0)" onclick="goCategory('2')">구매대행 절차</a></li>
+                </ul>
+            </div>
             <div class="dlivery-purchase-procedure">                   
                 <ul>
                     <li><div class="dlivery-procedure"><img src="images/dlivery01_1_img.png" height="150px"></div></li>
                     <li><div class="purchase-procedure"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
-
-
                 </ul>  
             </div>
         </div> 
@@ -261,12 +269,38 @@
         </div>
         <!-- Departure-schedule End -->
     </div>
+    <form action="Member" method="post" name="kakaologin">
+        <input type="hidden" name="separate" value="kakaoSave">
+        <input type="hidden" name="k_id">
+        <input type="hidden" name="k_nickname">
+        <input type="hidden" name="k_email">
+    </form>
     <!-- Container End -->
 
     <!-- Footer -->
     <%@ include file="common_footer.jsp" %>
 
+    <!-- script -->
+    <script>
+        function check() {
+            if(checkValue(login.id, "아이디를 입력하세요")) return;
+            if(checkValue(login.password, "비밀번호를 입력하세요")) return;
+
+            saveid();
+
+            login.submit();
+        }
+
+        function goCategory(arg) {
+            category.t_category.value = arg;
+            category.submit();
+        }
+    </script>
     <script src="js/btn_ripple_effect.js"></script>
+    <script src="js/naver_login.js"></script>
+    <script src="js/kakao_login.js"></script>
+    <script src="js/use_cookie_save_id.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
 </body>
 
 </html>
