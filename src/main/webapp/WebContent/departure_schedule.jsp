@@ -10,7 +10,7 @@
     
     <!-- Script --> 
     <script>
-    
+
     </script>
      <!-- Container Start -->
     <div class="departure-container">

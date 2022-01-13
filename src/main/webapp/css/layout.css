@@ -278,7 +278,7 @@
 #header .btn-menu .menu-main li {
     display: inline-block;
     text-align: center;
-    padding: 0 30px;
+    padding: 0 26px;
     border-right: 1.2px solid #fff;
 }
 #header .btn-menu .menu-main li:last-child {
@@ -288,10 +288,14 @@
     transition: color 0.2s;
     font-size: 20px;
     color: #fff;
+    padding: 5px 10px;
 }
 #header .btn-menu .menu-main li a:hover {
     transition: color 0.2s;
     color: #bbb;
+}
+#header .btn-menu .menu-main li a.active {
+    border-bottom: 1px solid #fff;
 }
 
 /* Index 메인 */
@@ -430,7 +434,7 @@
     float: left;
     border: 1px solid rgb(205, 205, 205);
 }
-#container .id{
+#container .input{
     width: 400px;
     height: 70px;
     margin: 30px 0 0 30px;
@@ -1622,11 +1626,422 @@
 /*
 ---------------------------------------------- informationuse css / End -------------------------------------------
 */
+/* 배송대행 서비스 안내 */
+.container-address-manual-list .informationuse {
+    width: 1200px;
+    height: 1751px;
+    margin: 70px auto 35px auto;
+}
+.container-address-manual-list .informationuse-title {
+    width: 1198px;
+    height: 40px;
+}
+.container-address-manual-list .informationuse-title p{
+    width: 299px;
+    height: 29px;
+    font-size: 24px;
+    padding-top: 7px;
+    float: left;
+}
+.container-address-manual-list .btn-manual{
+    width: 350px;
+    height: 24px;
+    padding-top: 14px;
+    float: right;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgb(220, 220, 220);
+    border: 1px solid rgb(220, 220, 220);
+}
+/* 홈/이용안내/배송대행 이용방법 */
+.container-address-manual-list .home{
+    width: 155px;
+    height: 25px;
+    padding-left: 24px;
+    font-size: 15px;
+
+    float: left;
+}
+.container-address-manual-list .toggle{
+    width: 155px;
+    height: 25px;
+    font-size: 15px;
+    float: right;
+}
+.container-address-manual-list .dropdown-content{
+    width: 180px;
+    height: 260px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgb(205, 205, 205);
+}
+.container-address-manual-list .dropdown-content i{
+    color: #612C87;
+}
+/* 서브 메인/배송대행 이용방법 */
+.container-address-manual-list .informationuse-sub-title{
+    width: 296px;
+    height: 1643px;
+    float: left;
+}
+.container-address-manual-list .delivery-agent{
+    width: 230px;
+    height: 112px;
+    margin-top: 40px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.container-address-manual-list .delivery-agent-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+}
+.container-address-manual-list .delivery-agent-service{
+    width: 180px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .delivery-agent-service:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .delivery-agent-application-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    font-size: 14px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .delivery-agent-application-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .purchasingagent-agent{
+    width: 230px;
+    height: 112px;
+    margin-top: 7px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+/* 서브 메인/구대행 이용방법 */
+.container-address-manual-list .purchasingagent-agent-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+}
+.container-address-manual-list .purchasingagent-agent-service{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .purchasingagent-agent-service:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .purchasingagent-agent-application-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .purchasingagent-agent-application-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .business-user-guide{
+    width: 220px;
+    height: 23px;
+    margin: 7px 0 7px 0;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .business-user-guide:hover{
+    color: white;
+    background-color: #612C87;
+}
+/* 서브 메인/타오바오 이용방법 */
+.container-address-manual-list .taobao-manual{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+}
+.container-address-manual-list .join-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .join-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .address-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: white;
+    background-color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .purchase-payment{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .purchase-payment:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .return-refund-manual{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .return-refund-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .invoice-number{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .invoice-number:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .automatic-order-registration{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .automatic-order-registration:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .taobao-agent{
+    width: 230px;
+    height: 253px;
+    margin-top: 7px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+/* 서브 메인/이용팁 */
+.container-address-manual-list .use-tip{
+    width: 220px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    background-color: rgb(208, 174, 240);
+}
+.container-address-manual-list .chinese-size-condition-table{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .chinese-size-condition-table:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .chinese-delivery-tracking{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .chinese-delivery-tracking:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .issuance-of-unique-number{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .issuance-of-unique-number:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .customs-duty{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .customs-duty:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .import-prohibited-items{
+    width: 178px;
+    height: 20px;
+    margin-bottom: 7px;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .import-prohibited-items:hover{
+    color: white;
+    background-color: #612C87;
+}
+.container-address-manual-list .use-tip-agent{
+    width: 230px;
+    height: 217px;
+    margin-top: 7px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.container-address-manual-list .nodata-processing-manual{
+    width: 220px;
+    height: 23px;
+    margin: 7px 0 7px 0;
+    padding: 7px 0 0 10px;
+    color: #612C87;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #612C87;
+}
+.container-address-manual-list .nodata-processing-manual:hover{
+    color: white;
+    background-color: #612C87;
+}
+/* 콘텐츠*/
+.container-address-manual-list .address-input-manual-content{
+    width: 896px;
+    height: 1700px;
+    float: right;
+}
+.container-address-manual-list .address-input-manual{
+    width: 894px;
+    height: 120px;
+    margin-top: 35px;
+    text-align: center;
+}
+.container-address-manual-list .address-input01-manual{
+    width: 894px;
+    height: 315px;
+    margin-top: 35px;
+    text-align: center;
+}
+.container-address-manual-list .address-input02-manual{
+    width: 894px;
+    height: 650px;
+    margin-top: 50px;
+    text-align: center;
+}
+.container-address-manual-list .jebi-homepage{
+    width: 894px;
+    height: 23px;
+    margin-top: 50px;
+    text-align: center;
+}
+.container-address-manual-list .detail-address{
+    width: 894px;
+    height: 25px;
+    margin-top: 50px;
+    color: rgb(133, 133, 133);
+    text-align: center;
+}
+.container-address-manual-list .detail-address  span{
+    color: rgb(28, 28, 28);
+}
+.container-address-manual-list .detail-address  span span{
+    color: rgb(255, 0, 0);
+}
+.container-address-manual-list .mailbox-number{
+    width: 894px;
+    height: 25px;
+    font-size: 14px;
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+.container-address-manual-list .mailbox-number span{
+    color: rgb(28, 28, 28);
+}
+.container-address-manual-list .address-input03-manual{
+    width: 894px;
+    height: 373px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/*
+---------------------------------------------- address manual list css / End ---------------------------------------
+ */
 
 /* 로그인 css */
 .container-login {
     width: 1200px;
     margin: 0 auto;
+}
+.container-login *::placeholder {
+    color: #cfcfcf;
 }
 .container-login .bar-title {
     width: 100%;
@@ -1924,6 +2339,9 @@
 .container-join {
     width: 1200px;
     margin: 0 auto;
+}
+.container-join *::placeholder {
+    color: #cfcfcf;
 }
 .container-join .bar-title {
     width: 100%;
@@ -2390,6 +2808,9 @@
     background-color: #eaeaea;
     color: #333;
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+.container-notice *::placeholder {
+    color: #cfcfcf;
 }
 
 /* 공지사항 view 관련 css */
@@ -3423,6 +3844,7 @@
     background-color: #e0e0e0;
 }
 .container-agent button {
+    vertical-align: middle;
     border: none;
     margin: 0px;
     padding: 0px;
@@ -3454,6 +3876,9 @@
     border-style: none;
 }
 .container-agent input::placeholder {
+    color: #cfcfcf;
+}
+.container-agent *::placeholder {
     color: #cfcfcf;
 }
 .container-agent .tr {
@@ -3524,6 +3949,15 @@
 .container-agent .dashboard-box .content.with-padding {
     padding: 25px;
 }
+.container-agent textarea {
+    height: auto;
+    line-height: 27px;
+    padding: 20px;
+    min-height: 100px;
+    min-width: 100%;
+    transition: none 0s ease 0s !important;
+}
+
 
 
 
@@ -5166,6 +5600,100 @@
     line-height: 20px;
 }
 
+.container-agent .comments ul li, .container-agent .comments ul li ul li,
+.container-agent ul li ul li ul li, .container-agent .comments ul li ul li ul li ul li {
+    margin: 10px 0 0 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.container-agent .comments {
+    margin: -10px 0 0;
+}
+.container-agent .comments ul {
+    padding-left: 0;
+}
+.container-agent .comments ul li {
+    position: relative;
+    display: block;
+}
+
+.container-agent .comments-amount {
+    color: #888;
+    font-weight: 500;
+}
+
+.container-agent .comment-content {
+    color: #666;
+    /* padding: 0 0 0 100px */
+}
+.container-agent .comment-content span {
+    color: #888;
+}
+.container-agent .comment-content p {
+    padding: 5px 0;
+    margin: 3px 0 0;
+    line-height: 26px;
+}
+
+.container-agent .comment-by {
+    width: 100%;
+    padding-top: 5px;
+    font-weight: 500;
+    color: #333;
+}
+.container-agent .comment-by span.date {
+    color: #888;
+    font-weight: 500;
+    margin: 0 0 0;
+    float: none;
+    display: inline-block;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 13px;
+}
+.container-agent .comment-by span.edit a {
+    display: inline-block;
+    text-decoration: underline;
+    margin-left: 10px;
+    color: #777;
+}
+
+.container-agent .button-sliding-icon {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.container-agent .button-sliding-icon i {
+    opacity: 0;
+    max-width: 0;
+    transition: .25s;
+    display: inline-block;
+    transform: translateX(-20px);
+}
+
+.container-agent .button.button-sliding-icon {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.container-agent .button.button-sliding-icon i {
+    padding-right: 5px;
+}
+.container-agent .button.button-sliding-icon:hover {
+    padding-right: 20px;
+}
+.container-agent .button.button-sliding-icon:hover i {
+    max-width: 20px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container-agent .button i.fa-arrow-right {
+    font-size: 16px;
+    top: 1px;
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+}
 
 
 /* Summernote 속성 우선순위 수정 */

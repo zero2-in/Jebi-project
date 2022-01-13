@@ -36,6 +36,11 @@ public class KakaoLogin implements Command {
             session.setAttribute("session_id", kid);
             session.setAttribute("session_level", "");
             session.setAttribute("session_social", "kakao");
+            if(dao.checkAdmin(kid)) {
+                session.setAttribute("session_level", "top");
+            } else {
+                session.setAttribute("session_level", "");
+            }
             session.setMaxInactiveInterval(60 * 60 * 6);
 
             msg = knickname+"님 로그인되었습니다";

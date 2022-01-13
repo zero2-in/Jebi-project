@@ -40,6 +40,18 @@
             });
         });
     </script>
+    <script src="js/naver_login.js"></script>
+    <script src="js/kakao_login.js"></script>
+    <script>
+        function check() {
+            if(checkValue(login.id, "아이디를 입력하세요")) return;
+            if(checkValue(login.password, "비밀번호를 입력하세요")) return;
+
+            saveid();
+
+            login.submit();
+        }
+    </script>
     
     <!-- Container Start -->
     <div id="container">
@@ -52,10 +64,10 @@
             <div class="notice-question">
                 <div class="notice">
                     <p class="notice-title">공지사항</p>
-                    <p class="btn-notice"><a href ="notice/notice_list.html"><i class="fas fa-plus-square"></i></a>
+                    <p class="btn-notice"><a href ="javascript:goSite('cs')"><i class="fas fa-plus-square"></i></a>
                 </div>	
                     <ul class="notice-content">	
-                        <li><a href="">주문서 작성시 유의사항<span>2021-12-14</span></a></li>								
+                        <li><a href="">주문서 작성시 유의사항<span>2021-12-14</span></a></li>
                         <li><a href="">2021년 중국 국경절 일정 안내<span>2021-09-27</span></a></li>	
                         <li><a href="">9월 12일(일), 13일(월) 항공출고건 지연안내<span>2021-09-15</span></a></li>
                         <li><a href="">2021년 추석 일정 안내<span>2021-09-14</span></a></li>
@@ -72,7 +84,7 @@
                     <ul>
                         <li><div class="tel"><b>031-708-1120</b></div></li>
                         <li><div class="time">평일 오전 10시~오후 5시 [점심시간 오후 12시~1시]<br>주말/공휴일 휴무</div></li>
-                        <li><div class="inquiry"><a href="qna/qna_list.html"><p>1:1문의</p></a></div></li>
+                        <li><div class="inquiry"><a href="javascript:goSite('qna')"><p>1:1문의</p></a></div></li>
                         <li><div class="answer">궁금한 점이 있으신가요?<br>1:1문의에 남겨주시면 친절히 답변 드리겠습니다.</div></li>
                     </ul>  
                 </div>                 
@@ -81,12 +93,13 @@
          <!-- Customer-service-center End --> 
 
         <!-- Login Start -->
-        <div class="content01">    
+        <div class="content01">
+            <form action="Member" method="post" onsubmit="return check();" name="login">
             <div class="login-box">
                 <div class="id-password-box">
-                    <input type="text"  class="id"  placeholder="&nbsp;&nbsp;아이디">
-                    <input type="button" onClick="" value="로그인" class="btn-log" > 
-                    <input type="password"  class="password"  placeholder="&nbsp;&nbsp;비밀번호">         
+                    <input type="text"  name="id" class="input"  placeholder="&nbsp;&nbsp;아이디">
+                    <button type="button" class="btn-log" data-animation="ripple"  onclick="setTimeout(function() {check();}, 100);">로그인</button>
+                    <input type="password" name="password" class="password"  placeholder="&nbsp;&nbsp;비밀번호">
                 </div>
                     <div class="checksave">
                         <input type="checkbox" value="1" id="idsave" name="idsave"><label for="idsave">&nbsp;&nbsp;&nbsp;아이디 저장</label>
@@ -102,6 +115,7 @@
                         </ul>
                     </div>                
             </div>
+            </form>
             <!-- Login End -->
 
             <!-- China-address Start -->
@@ -236,11 +250,11 @@
                 <div class="favorites-service-title">즐겨찾는 서비스</div>
                 <div class="sverice-Information">
                     <ul>
-                        <li><div class="guide"><a href="informationuse/informationuse_list.html"><img src="images/service_guide_img.png" height="98px"><p>초보자 이용 가이드</p></a></div></li>
-                        <li><div class="questions"><a href="qna/qna_list.html"><img src="images/questions_img.png" height="98px"><p>문의사항</p></a></div></li>
-                        <li><div class="Fee-information"><a href="cost_guide/shipping_list.html"><img src="images/Fee_information_img.png" height="98px"><p>국제배송 요금안내</p></a></div></li>
-                        <li><div class="transportation-information"><a href="informationuse/invoice_number_list.html"><img src="images/rate_system_img.png" height="98px"><p>운송안내</p></a></div></li>
-                        <li><div class="taobao-insert"><a href="informationuse/automatic_order_registration_list.html"><img src="images/insert_img.png" height="98px"><p>타오바오 주문자동등록</p></a></div></li>
+                        <li><div class="guide"><a href="javascript:goSite('delivery_agent_service_list')"><img src="images/service_guide_img.png" height="98px"><p>초보자 이용 가이드</p></a></div></li>
+                        <li><div class="questions"><a href="javascript:goSite('faq')"><img src="images/questions_img.png" height="98px"><p>문의사항</p></a></div></li>
+                        <li><div class="Fee-information"><a href="javascript:goSite('shipping')"><img src="images/Fee_information_img.png" height="98px"><p>국제배송 요금안내</p></a></div></li>
+                        <li><div class="transportation-information"><a href="javascript:goSite('invoice_number_list')"><img src="images/rate_system_img.png" height="98px"><p>운송안내</p></a></div></li>
+                        <li><div class="taobao-insert"><a href="javascript:goSite('automatic_order_registration_list')"><img src="images/insert_img.png" height="98px"><p>타오바오 주문자동등록</p></a></div></li>
                     </ul>
                 </div>
             </div>

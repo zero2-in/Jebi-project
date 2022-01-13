@@ -19,7 +19,7 @@
     <script>
         var naverLogin = new naver.LoginWithNaverId( { 
              clientId: "h7lrKULKMeSh_QPm3QPL", // 내꺼 
-             callbackUrl: "http://183.107.30.124:8080/jebi/NaverLogin", 
+             callbackUrl: "http://192.168.0.43:8080/jebi/NaverLogin",
              isPopup: true, 
              callbackHandle: true /* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */ 
         } ); /* (3) 네아로 로그인 정보를 초기화하기 위하여 init을 호출 */ 
