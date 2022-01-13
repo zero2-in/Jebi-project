@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
-    @RequestMapping(value="/")
+    @RequestMapping(value={"/", "/jebi"})
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String category = request.getParameter("t_category");
+
+        System.out.println(category);
+        request.setAttribute("category", category);
         return "index";
-
-
     }
     // 출항스케줄 팝업창
     @RequestMapping("DepartureSchedule")

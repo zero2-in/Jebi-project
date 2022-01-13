@@ -13,7 +13,9 @@ public class EventList implements Command {
         request.setCharacterEncoding("utf-8");
 
         String search = request.getParameter("s");
+        String category = request.getParameter("category");
         if(search == null) search = "";
+        if(category == null) category = "";
 
         EventDAO dao = new EventDAO();
 
@@ -53,5 +55,6 @@ public class EventList implements Command {
         request.setAttribute("pageBlock", pageBlock);
         request.setAttribute("startPage", startPage);
         request.setAttribute("endPage", endPage);
+        request.setAttribute("category", category);
     }
 }
