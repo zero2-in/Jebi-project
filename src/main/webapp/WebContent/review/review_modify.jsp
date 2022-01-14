@@ -2,6 +2,13 @@
          pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
 
+<c:if test="${session_level ne 'top'}">
+    <script>
+        alert("비정상적인 접근입니다!");
+        location.href = "Review";
+    </script>
+</c:if>
+
 <!-- 사이트 네비게이션 이름, 주소 표시 -->
 <%@ include file="common_review.jsp" %>
 
@@ -12,22 +19,22 @@
         <%@ include file="../breadcrumbs_cscenter.jsp" %>
     </div>
 
-    <form action="Review?separate=save" name="board" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="separate" value="save">
+    <form action="Review?separate=update" name="board" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="t_no" value="${dto.getNo()}">
         <div class="dashboard margin-bottom-40">
 
             <div class="content">
                 <ul class="dashboard-box-list">
                     <li>
                         <div class="submit-field margin-bottom-0">
-                            <input type="text" name="t_title" class="with-border" placeholder="제목">
+                            <input type="text" name="t_title" class="with-border" value="${dto.getTitle()}">
                         </div>
                     </li>
 
                     <li>
                         <div class="submit-field">
                             <input type="hidden" name="t_content">
-                            <div id="summernote"></div>
+                            <div id="summernote">${dto.getContent()}"</div>
                         </div>
                     </li>
 
@@ -35,8 +42,24 @@
                         <div class="submit-field margin-bottom-0">
                             <div class="upload-button">
                                 <input type="file" accept="image/*, application/pdf" name="t_attach" id="upload" class="upload-button-input" multiple>
-                                <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
-                                <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                <c:choose>
+                                    <c:when test="${not empty dto.getAttach()}">
+                                        <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
+                                        <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="delAtt" name="t_deleteAttach" value="${dto.getAttach()}">
+                                            <label for="delAtt">
+                                                <span class="checkbox-icon"></span>
+                                                    ${dto.getAttach()} 파일 삭제
+                                            </label>
+                                        </div>
+                                        <input type="hidden" name="t_preAttach" value="${dto.getAttach()}">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
+                                        <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </li>

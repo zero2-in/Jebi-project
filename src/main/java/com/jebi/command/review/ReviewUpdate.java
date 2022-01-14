@@ -1,9 +1,9 @@
-package com.jebi.command.event;
+package com.jebi.command.review;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.common.MultipartCommand;
-import com.jebi.dao.EventDAO;
-import com.jebi.dto.EventDTO;
+import com.jebi.dao.ReviewDAO;
+import com.jebi.dto.ReviewDTO;
 import com.oreilly.servlet.MultipartRequest;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,24 +12,23 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 
-public class EventUpdate implements MultipartCommand {
+public class ReviewUpdate implements MultipartCommand {
     @Override
     public void execute(MultipartRequest mpr, HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("utf-8");
 
-        EventDAO dao = new EventDAO();
+        ReviewDAO dao = new ReviewDAO();
 
         String no = mpr.getParameter("t_no");
         String title = mpr.getParameter("t_title");
-        String sub_title= mpr.getParameter("t_sub_title");
         String content = mpr.getParameter("t_content");
         String attach = mpr.getFilesystemName("t_attach");
-        String start_date = mpr.getParameter("t_start_date");
-        String end_date = mpr.getParameter("t_end_date");
+        String reg_id = mpr.getParameter("t_reg_id");
+        String reg_date = mpr.getParameter("t_reg_date");
         String deleteAttach = mpr.getParameter("t_deleteAttach");
         String preAttach = mpr.getParameter("t_preAttach");
 
-        String file_dir = CommonUtil.getFile_dir("event");
+        String file_dir = CommonUtil.getFile_dir("review");
 
         if(preAttach == null) preAttach = "";
         String dbattach = preAttach;
@@ -52,8 +51,8 @@ public class EventUpdate implements MultipartCommand {
         HttpSession session = request.getSession();
 
         if(attach != null) {
-            File file = new File(CommonUtil.getFile_dir("event"), attach);
-            file.renameTo(new File(CommonUtil.getFile_dir("event"), no+"_"+attach));
+            File file = new File(CommonUtil.getFile_dir("review"), attach);
+            file.renameTo(new File(CommonUtil.getFile_dir("review"), no+"_"+attach));
         } else {
             attach = "";
         }
@@ -61,11 +60,11 @@ public class EventUpdate implements MultipartCommand {
         int result = 0;
 
         if(session.getAttribute("session_level").equals("top")) {
-            result = dao.updateEvent(new EventDTO(no, title, sub_title, content, dbattach, start_date, end_date));
+            result = dao.updateReview(new ReviewDTO(no, title, content, dbattach, reg_id, reg_date));
         }
         String msg = result==1? "게시글이 수정되었습니다." : "수정에 실패했습니다.";
 
         request.setAttribute("msg", msg);
-        request.setAttribute("url", "Event");
+        request.setAttribute("url", "Review");
     }
 }
