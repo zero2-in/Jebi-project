@@ -46,7 +46,7 @@ public class NaverLogin implements Command {
             session.setMaxInactiveInterval(60 * 60 * 6);
 
             msg = nname+"님 로그인되었습니다";
-            url = "/jebi";  //TODO 나중에 마이페이지로 바로 연결
+            url = "OrderStatus";
         }
 
         request.setAttribute("msg", msg);

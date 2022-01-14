@@ -21,6 +21,7 @@
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
+        $(document).scrollTop('${scroll}');
         function naverLogout() {
             naverLogin.logout();
         }
@@ -34,7 +35,7 @@
                 alert(response +' logout');
                 window.location.href='/'
             });
-        };
+        }
     </script>
     <title>제비 - 배송대행</title>
 </head>
@@ -44,6 +45,7 @@
         <input type="hidden" name="separate">
         <input type="hidden" name="no">
         <input type="hidden" name="attach">
+        <input type="hidden" name="scroll">
     </form>
     <!-- Header Start -->
     <div id="header">

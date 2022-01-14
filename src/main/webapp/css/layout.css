@@ -5280,6 +5280,13 @@
 #footer .favorites-service.mypage .content {
     margin-top: 0;
 }
+#footer .informationuse.mypage {
+    background: #eff1f3;
+    margin: 0;
+}
+#footer .informationuse.mypage .content {
+    margin-top: 0;
+}
 
 .container-agent .content-right-offset {
     padding-right: 30px;

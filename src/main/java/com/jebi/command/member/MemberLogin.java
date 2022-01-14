@@ -40,7 +40,7 @@ public class MemberLogin implements Command {
             session.setMaxInactiveInterval(60 * 60 * 6);
 
             msg = name + "님 로그인되었습니다";
-            url = "/jebi";  //TODO 나중에 마이페이지로 바로 연결
+            url = "OrderStatus";
         } 
         else {
             msg = "로그인 정보가 없습니다. 아이디와 비밀번호를 확인해주세요.";

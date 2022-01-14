@@ -4,7 +4,7 @@
 <c:if test="${not empty session_name}">
     <script>
         alert("이미 로그인하셨습니다!");
-        location.href="/jebi"; //TODO 마이페이지로
+        location.href="OrderStatus";
     </script>
 </c:if>
 
