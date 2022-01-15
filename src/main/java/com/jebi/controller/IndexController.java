@@ -14,7 +14,6 @@ public class IndexController {
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String category = request.getParameter("t_category");
 
-        System.out.println(category);
         request.setAttribute("category", category);
         return "index";
     }
