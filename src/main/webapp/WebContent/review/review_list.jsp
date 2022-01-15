@@ -17,13 +17,13 @@
         <div class="search-con">
             <div class="row">
                 <!-- 검색 폼! -->
-                <form action="notice_list.html" method="post" name="search">
+                <form action="Review" method="post" name="search">
                     <div class="search">
                         <input type="text" name="s" class="search-text" placeholder="제목">
                         <button type="button" class="search-btn ripple-effect" data-animation="ripple">
                             검색 <i class="fas fa-search"></i>
                         </button>
-                        <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() { location.href='review_write.html'}, 150)" data-animation="ripple">
+                        <button type="button" class="ripple-effect button blue-line" onclick="setTimeout(function() {goWrite()}, 150)" data-animation="ripple">
                             글쓰기
                         </button>
                     </div>
@@ -165,7 +165,14 @@
 <!-- Footer -->
 <%@ include file="../common_footer.jsp" %>
 
-<script src="../js/btn_ripple_effect.js"></script>
+<script src="js/btn_ripple_effect.js"></script>
+<script>
+    function goWrite() {
+        urldirect.separate = "write";
+        urldirect.action = "Review";
+        urldirect.submit();
+    }
+</script>
 
 </body>
 </html>

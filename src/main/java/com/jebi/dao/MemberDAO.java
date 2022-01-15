@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.dto.KakaoDTO;
@@ -121,9 +122,9 @@ public class MemberDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "INSERT INTO jebi_member \r\n" +
-        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker) \r\n" +
         "VALUES('"+dto.getId()+"', '"+dto.getPassword()+"', '"+dto.getKor_name()+"', \r\n" +
-        "'"+dto.getEng_name()+"', '"+dto.getPhone()+"', '"+dto.getEmail()+"', '"+dto.getSms_rcv_yn()+"', '"+dto.getEmail_rcv_yn()+"')";
+        "'"+dto.getEng_name()+"', '"+dto.getPhone()+"', '"+dto.getEmail()+"', '"+dto.getSms_rcv_yn()+"', '"+dto.getEmail_rcv_yn()+"', '"+dto.getLocker()+"')";
 
         int result = util.runQuery(query, debugMethod, 1);
         util.closeDB();
@@ -262,5 +263,65 @@ public class MemberDAO {
         }
 
         return buffer.toString();
+    }
+
+    public String getMaxLockerNum() {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String locker = "#JB00001";
+        String query = "SELECT nvl2(max(locker), '#JB'||LTRIM((TO_CHAR((substr(max(locker), 4)+1), '00000'))), '#JB00001') " +
+                "AS maxlocker FROM jebi_member";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                locker = util.getRs().getString("maxlocker");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return locker;
+    }
+
+    public MemberDTO getMyList(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        MemberDTO dto = null;
+
+        String query = "SELECT kor_name, eng_name, phone, email, SMS_RCV_YN, EMAIL_RCV_YN, ADMINISTRATOR, \n" +
+                "to_char(REG_DATE, 'yyyy-MM-dd') AS reg_date, UNREG, to_char(UNREG_DATE, 'yyyy-MM-dd hh:mi') AS unreg_date, " +
+                "to_char(LAST_LOGIN_DATE, 'yyyy-MM-dd hh:mi') AS last_login_date, " +
+                "LOCKER FROM jebi_member \n" +
+                "WHERE id = '"+id+"'";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                String kor_name = util.getRs().getString("kor_name");
+                String eng_name = util.getRs().getString("eng_name");
+                String phone = util.getRs().getString("phone");
+                String email = util.getRs().getString("email");
+                String sms_rcv_yn = util.getRs().getString("sms_rcv_yn");
+                String email_rcv_yn = util.getRs().getString("email_rcv_yn");
+                String administrator = util.getRs().getString("administrator");
+                String reg_date = util.getRs().getString("reg_date");
+                String unreg = util.getRs().getString("unreg");
+                String unreg_date = util.getRs().getString("unreg_date");
+                String last_login_date = util.getRs().getString("last_login_date");
+                String locker = util.getRs().getString("locker");
+
+                dto = new MemberDTO(id, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker, unreg, unreg_date, last_login_date, administrator, reg_date);
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return dto;
     }
 }

@@ -231,7 +231,7 @@ function goSite(arg) {
 
         // 마이페이지
         case "mypage" : {
-            urldirect.action = "Mypage";
+            urldirect.action = "OrderStatus";
             urldirect.submit();
             break;
         }

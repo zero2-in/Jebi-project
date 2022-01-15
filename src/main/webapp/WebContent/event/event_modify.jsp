@@ -19,8 +19,8 @@
         <%@ include file="../breadcrumbs_cscenter.jsp" %>
     </div>
 
-    <form action="Event?separate=save" name="board" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="separate" value="save">
+    <form action="Event?separate=update" name="board" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="t_no" value="${dto.getNo()}">
         <div class="dashboard margin-bottom-40">
 
             <div class="content">
@@ -42,13 +42,13 @@
 
                             <div class="submit-field">
                                 <div class="input-with-icon-left">
-                                    <i class="far fa-calendar"></i><input type="date" name="t_start_date" class="with-border" data-placeholder="${dto.getStart_date()}" required>
+                                    <i class="far fa-calendar"></i><input type="date" name="t_start_date" class="with-border" value="${dto.getStart_date()}">
                                 </div>
                             </div>
 
                             <div class="submit-field">
                                 <div class="input-with-icon-left">
-                                    <i class="far fa-calendar"></i><input type="date" name="t_end_date" class="with-border" data-placeholder="${dto.getEnd_date()}" required>
+                                    <i class="far fa-calendar"></i><input type="date" name="t_end_date" class="with-border" value="${dto.getEnd_date()}">
                                 </div>
                             </div>
 
@@ -64,10 +64,26 @@
                     </li>
                     <li>
                         <div class="submit-field margin-bottom-0">
-                            <div class="upload-button">
+                            <div class="upload-button container-agent">
                                 <input type="file" accept="image/*, application/pdf" name="t_attach" id="upload" class="upload-button-input" multiple>
-                                <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
-                                <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                <c:choose>
+                                    <c:when test="${not empty dto.getAttach()}">
+                                        <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
+                                        <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="delAtt" name="t_deleteAttach" value="${dto.getAttach()}">
+                                            <label for="delAtt">
+                                                <span class="checkbox-icon"></span>
+                                                    ${dto.getAttach()} 파일 삭제
+                                            </label>
+                                        </div>
+                                        <input type="hidden" name="t_preAttach" value="${dto.getAttach()}">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <label for="upload" class="upload-button-button ripple-effect" data-animation="ripple">파일찾기</label>
+                                        <span class="upload-button-file-name">파일 최대 크기 : 10 MB</span>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </li>
@@ -156,7 +172,7 @@
             }
         }
 
-        if(confirm("게시글을 등록하시겠습니까?")) {
+        if(confirm("게시글을 수정하시겠습니까?")) {
             board.submit();
         }
     }

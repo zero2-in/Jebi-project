@@ -18,6 +18,7 @@
             <div class="row">
                 <!-- 검색 폼! -->
                 <form action="Event" method="post" name="search">
+                    <input type="hidden" name="category">
                     <div class="search">
                         <input type="text" name="s" class="search-text" placeholder="제목">
                         <button type="button" class="search-btn ripple-effect" data-animation="ripple">
@@ -35,13 +36,13 @@
 
         <div class="category-tab-area">
             <div class="category-tab">
-                <div class="category-tab-link active">
-                    <a href="javascript:void(0)">
+                <div class="category-tab-link <c:if test="${empty category}">active</c:if>">
+                    <a href="javascript:void(0)" onclick="findCategory('')">
                         진행중인 이벤트
                     </a>
                 </div>
-                <div class="category-tab-link">
-                    <a href="javascript:void(0)">
+                <div class="category-tab-link <c:if test="${category eq 'expire'}">active</c:if>">
+                    <a href="javascript:void(0)" onclick="findCategory('expire')">
                         종료된 이벤트
                     </a>
                 </div>
@@ -133,6 +134,11 @@
 
     function goPage(arg) {
         search.action = "Event?pageNum="+arg;
+        search.submit();
+    }
+
+    function findCategory(arg) {
+        search.category.value = arg;
         search.submit();
     }
 </script>

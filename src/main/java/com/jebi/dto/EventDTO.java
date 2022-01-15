@@ -12,7 +12,7 @@ public class EventDTO {
         this.start_date = start_date;
         this.end_date = end_date;
     }
-    //등록//상세조회
+    //등록//상세조회//업데이트
     public EventDTO(String no, String title, String sub_title, String content, String attach, String start_date, String end_date) {
         this.no = no;
         this.title = title;
