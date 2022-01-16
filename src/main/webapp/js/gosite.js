@@ -242,5 +242,17 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 배송대행 신청서 작성 페이지
+        case "delivery" : {
+            urldirect.action = "DeliveryAgent";
+            urldirect.submit();
+            break;
+        }
+        // 구매대행 신청서 작성 페이지
+        case "purchase" : {
+            urldirect.action = "PurchaseAgent";
+            urldirect.submit();
+            break;
+        }
     }
 }

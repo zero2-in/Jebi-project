@@ -120,8 +120,8 @@
             <ul class="menu-main">
                 <li><a href="javascript:goSite('infouse')"      id="infoUse">이용안내</a></li>
                 <li><a href="javascript:goSite('shipping')"     id="shipList">비용안내</a></li>
-                <li><a href="company_agent/delivery_agent.html" id="deliveryAgent">배송대행</a></li>
-                <li><a href="company_agent/purchase_agent.html" id="purchaseAgent">구매대행</a></li>
+                <li><a href="javascript:goSite('delivery')"     id="deliveryAgent">배송대행</a></li>
+                <li><a href="javascript:goSite('purchase')"     id="purchaseAgent">구매대행</a></li>
                 <li><a href="javascript:goSite('cs')"           id="csCenter">고객센터</a></li>
                 <li><a href="javascript:goSite('mypage')"       id="myPage">마이페이지</a></li>
             </ul>

@@ -3691,6 +3691,10 @@
     font-size: 16px;
     text-transform: none;
 }
+.container-agent.popup {
+    width: inherit;
+    margin: inherit;
+}
 .container-agent a:hover {
     text-decoration: none;
     color: rgb(51, 51, 51);
@@ -4432,6 +4436,7 @@
     width: 50%;
     float: left;
     position: relative;
+    display: inline-block;
 }
 .container-agent .submit-field span.stxt {
     position: absolute;
@@ -5715,6 +5720,7 @@
 }
 
 
+
 /* Summernote 속성 우선순위 수정 */
 .container-agent .note-editor .note-btn {
     display: inline-block;
@@ -6074,6 +6080,9 @@
     /* overflow: hidden; */
     width: 100%;
 }
+.popup-tabs-container .pd20 {
+    padding: 20px 20px 0px;
+}
 .popup-tab-content {
     padding: 0px;
     position: relative;
@@ -6146,9 +6155,18 @@ button.mfp-close, button.mfp-arrow {
 .dialog-with-tabs .mfp-close:before, .dialog-with-tabs .mfp-close:before {
     font-size: 24px;
 }
+.dialog-with-tabs .container-agent input {
+    margin-bottom: 10px;
+}
 
 .popup-tabs-nav li.active a, .dialog-with-tabs .forgot-password:hover {
     color: #2a41e8;
+}
+
+.no-text {
+    border-top: 1px solid #e4e4e4;
+    padding: 50px 0;
+    text-align: center;
 }
 
 

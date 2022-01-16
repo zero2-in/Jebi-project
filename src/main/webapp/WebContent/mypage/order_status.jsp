@@ -103,206 +103,32 @@
         <!-- 주문현황 탭 -->
         <div class="my-steps-container">
 
-            <div class="my-step">
-                <h3>
-                    <i class="fas fa-truck"></i>
-                    배송대행
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>접수대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>접수신청</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <c:forEach items="${status_list}" var="list">
+                <div class="my-step">
+                    <h3>
+                        <!-- Icon -->
+                        <c:if test="${list.getCategory() eq '배송대행'}"><i class="fas fa-truck"></i></c:if>
+                        <c:if test="${list.getCategory() eq '구매대행'}"><i class="fas fa-shopping-cart"></i></c:if>
+                        <c:if test="${list.getCategory() eq '리턴관리'}"><i class="fas fa-sync"></i></c:if>
+                        <c:if test="${list.getCategory() eq '입/출고'}"><i class="fas fa-sign-out-alt"></i></c:if>
+                        <c:if test="${list.getCategory() eq '오류'}"><i class="far fa-times-circle"></i></c:if>
+                        <c:if test="${list.getCategory() eq '재고관리'}"><i class="fas fa-box-open"></i></c:if>
 
-            <div class="my-step">
-                <h3>
-                    <i class="fas fa-shopping-cart"></i>
-                    구매대행
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>구매견적</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>구매완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
+                        ${list.getCategory()}
+                    </h3>
+                    <div class="my-step-label">
+                        <ul>
+                            <c:forEach items="${list.getStatus_list()}" var="map">
+                                <li>
+                                    <a href="">
+                                        <span>${map.value}</span><strong><span class="fr num"> 0 </span></strong>
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <div class="my-step">
-                <h3>
-                    <i class="fas fa-sync"></i>
-                    리턴관리
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>반품신청</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>반품완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="my-step">
-                <h3>
-                    <i class="fas fa-sign-out-alt"></i>
-                    입/출고
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>입고대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>입고완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>결제완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>출고대기</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>출고완료</span><strong><span class="fr num"> 1 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="my-step">
-                <h3>
-                    <i class="far fa-times-circle"></i>
-                    오류
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>오류입고</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>오류무시</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>출고보류</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>미도착건</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>신청취소</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="my-step">
-                <h3>
-                    <i class="fas fa-box-open"></i>
-                    재고관리
-                </h3>
-                <div class="my-step-label">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <span>재고전체내역</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>재고신청</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>입고완료</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>사용가능</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>재고소진</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>재고배송내역</span><strong><span class="fr num"> 0 </span></strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </c:forEach>
 
         </div>
     </div>
@@ -334,37 +160,15 @@
                                 <div class="btn-group bootstrap-select with-border">
                                     <select name="" class="btn bs-placeholder btn-default">
                                         <option value=""> = 주문상태</option>
-                                        <optgroup label="[배송대행]">
-                                            <option value="1">접수대기</option>
-                                            <option value="2">접수신청</option>
-                                        </optgroup>
-                                        <optgroup label="[구매대행]">
-                                            <option value="14">구매견적</option>
-                                            <option value="15">결제대기</option>
-                                            <option value="16">결제완료</option>
-                                            <option value="17">구매완료</option>
-                                        </optgroup>
-                                        <optgroup label="[리턴관리]">
-                                            <option value="18">반품신청</option>
-                                            <option value="19">결제대기</option>
-                                            <option value="20">결제완료</option>
-                                            <option value="21">반품완료</option>
-                                        </optgroup>
-                                        <optgroup label="[입/출고]">
-                                            <option value="3">입고대기</option>
-                                            <option value="4">입고완료</option>
-                                            <option value="5">결제대기</option>
-                                            <option value="6">결제완료</option>
-                                            <option value="7">출고대기</option>
-                                            <option value="8">출고완료</option>
-                                        </optgroup>
-                                        <optgroup label="[오류]">
-                                            <option value="9">오류입고</option>
-                                            <option value="10">오류무시</option>
-                                            <option value="11">출고보류</option>
-                                            <option value="12">미도착건</option>
-                                            <option value="13">신청취소</option>
-                                        </optgroup>
+
+                                        <c:forEach items="${status_list}" var="list">
+                                            <optgroup label="[${list.getCategory()}]">
+                                                <c:forEach items="${list.getStatus_list()}" var="map">
+                                                    <option value="${map.key}">${map.value}</option>
+                                                </c:forEach>
+                                            </optgroup>
+                                        </c:forEach>
+
                                     </select>
                                 </div>
                             </div>
