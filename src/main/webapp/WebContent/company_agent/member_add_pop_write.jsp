@@ -22,10 +22,7 @@
                             <div class="col-xl-12 col-common">
                                 <div class="submit-field field-two">
                                     <div class="field-block padding-right-10">
-                                        <input type="text" name="keyword" maxlength="40" placeholder="예) 판교역로 235, 제주 첨단로 242" class="with-border" value="" onkeydown="if(event.keyCode == 13) {fnEnterJusoSearch('frmMemAddrS', 'sTxtFindAddr')}">
-                                    </div>
-                                    <div class="field-block padding-left-10">
-                                        <a href="javascript:void(0)" onclick="fnEnterJusoSearch('frmMemAddrS', 'sTxtFindAddr')" class="button gray ripple-effect fl">
+                                        <a href="javascript:void(0)" onclick="fnJusoSearch()" class="button gray ripple-effect fl">
                                             우편번호 검색
                                         </a>
                                     </div>
@@ -45,9 +42,9 @@
                                     </div>
                                     <div class="clearfix"></div>
                                     <input type="text" name="CONS_ADDR" id="CONS_ADDR" maxlength="100" placeholder="주소(한글)" class="with-border gray-read" value onblur="fnHanEng(this.value, frmMemAddrS.CONS_ADDR_EN);" readonly>
-                                    <input type="hidden" name="CONS_ADDR_EN" id="CONS_ADDR_EN" maxlength="100" placeholder="주소(영문)" class="with-border" value="">
+
                                     <input type="text" name="CONS_ADDR_DET" maxlength="100" placeholder="상세(한글)" class="with-border" value="" onblur="fnHanEng(this.value, frmMemAddrS.CONS_ADDR_DET_EN);">
-                                    <input type="hidden" name="CONS_ADDR_DET_EN" maxlength="100" placeholder="상세(영문)" class="with-border" value="">
+
                                 </div>
                             </div>
                         </div>
