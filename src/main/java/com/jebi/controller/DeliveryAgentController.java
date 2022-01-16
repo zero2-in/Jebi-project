@@ -1,5 +1,6 @@
 package com.jebi.controller;
 
+import com.jebi.command.deliveryagent.DeliveryAddrList;
 import com.jebi.command.deliveryagent.DeliveryAddressAdd;
 import com.jebi.command.deliveryagent.DeliveryWrite;
 import com.jebi.common.Command;
@@ -37,6 +38,8 @@ public class DeliveryAgentController {
     // 주소지 리스트
     @RequestMapping(value = "MemAddrPop_L")
     public String memAddrPopL(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command list = new DeliveryAddrList();
+        list.execute(request, response);
         return "company_agent/member_add_pop_list";
     }
 
@@ -44,6 +47,12 @@ public class DeliveryAgentController {
     @RequestMapping(value = "MemAddrPop_W")
     public String memAddrPopW(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return "company_agent/member_add_pop_write";
+    }
+
+    // 주소지 수정
+    @RequestMapping(value = "MemAddrPop_E")
+    public String memAddrPopE(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        return "";
     }
 
     @RequestMapping(value = "AddAddress")

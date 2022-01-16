@@ -1,7 +1,7 @@
 package com.jebi.dto;
 
 public class DeliveryAddressDTO {
-    private String reg_id, cons_zip, cons_ckbaseyn, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no;
+    private String no, reg_id, cons_zip, cons_ckbaseyn, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no;
 
     public DeliveryAddressDTO(String reg_id, String cons_zip, String cons_ckbaseyn, String cons_addr, String cons_addr_det, String cons_nm_kr, String cons_nm_en, String mob_no, String person_ctms_no) {
         this.reg_id = reg_id;
@@ -13,6 +13,21 @@ public class DeliveryAddressDTO {
         this.cons_nm_en = cons_nm_en;
         this.mob_no = mob_no;
         this.person_ctms_no = person_ctms_no;
+    }
+
+    // 리스트
+    public DeliveryAddressDTO(String no, String cons_zip, String cons_addr, String cons_addr_det, String cons_nm_kr, String cons_nm_en, String mob_no) {
+        this.no = no;
+        this.cons_zip = cons_zip;
+        this.cons_addr = cons_addr;
+        this.cons_addr_det = cons_addr_det;
+        this.cons_nm_kr = cons_nm_kr;
+        this.cons_nm_en = cons_nm_en;
+        this.mob_no = mob_no;
+    }
+
+    public String getNo() {
+        return no;
     }
 
     public String getReg_id() {
