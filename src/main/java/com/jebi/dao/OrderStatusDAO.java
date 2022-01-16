@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.jebi.common.CommonUtil;
+import com.jebi.dto.DeliveryAddressDTO;
 import com.jebi.dto.StatusListDTO;
 
 public class OrderStatusDAO {
@@ -58,5 +59,17 @@ public class OrderStatusDAO {
 
         return list;
     }
-    
+
+    // 주소 추가
+    public int insertAddress(DeliveryAddressDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "INSERT INTO jebi_dlvr_address \n" +
+                "(no, reg_id, cons_zip, cons_ckbaseyn, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no) \n" +
+                "VALUES(nvl2((SELECT max(no) FROM jebi_dlvr_address), (SELECT (max(no)+1) FROM jebi_dlvr_address), '1'), \n" +
+                "'"+dto.getReg_id()+"', '"+dto.getCons_zip()+"', '"+dto.getCons_ckbaseyn()+"', '"+dto.getCons_addr()+"', \n" +
+                "'"+dto.getCons_addr_det()+"', '"+dto.getCons_nm_kr()+"', '"+dto.getCons_nm_en()+"', '"+dto.getMob_no()+"', '"+dto.getPerson_ctms_no()+"')";
+
+        return util.runQuery(query, debugMethod, 1);
+    }
 }

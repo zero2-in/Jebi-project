@@ -3,7 +3,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        function goSave() {
+            if(checkValue(frmMemAddrS.CONS_ZIP, "우편번호 검색을 해주세요.")) return;
+            if(checkValue(frmMemAddrS.CONS_ADDR_DET, "상세주소를 입력해주세요.")) return;
+            if(checkValue(frmMemAddrS.CONS_NM_KR, "한글 이름을 입력해주세요.")) return;
+            if(checkValue(frmMemAddrS.CONS_NM_EN, "영문 이름을 입력해주세요.")) return;
+            if(checkValue(frmMemAddrS.MOB_NO, "휴대전화 번호를 입력해주세요.")) return;
+            if(onOnlyNum(frmMemAddrS.MOB_NO.value)) {
+                alert("- 빼고 입력해주세요.")
+                frmMemAddrS.MOB_NO.focus();
+                return;
+            }
+            if(checkValue(frmMemAddrS.PERSON_CTMS_NO, "개인통관고유번호를 입력해주세요.")) return;
 
+            if(confirm("배송지 주소를 저장하시겠습니까?")) {
+                var cons_zip = frmMemAddrS.CONS_ZIP.value;
+                var cons_ckbaseyn = frmMemAddrS.ckBASE_YN.value;
+                var cons_addr = frmMemAddrS.CONS_ADDR.value;
+                var cons_addr_det = frmMemAddrS.CONS_ADDR_DET.value;
+                var cons_nm_kr = frmMemAddrS.CONS_NM_KR.value;
+                var cons_nm_en = frmMemAddrS.CONS_NM_EN.value;
+                var mob_no = frmMemAddrS.MOB_NO.value;
+                var person_ctms_no = frmMemAddrS.PERSON_CTMS_NO.value;
+
+                $.ajax({
+                    type: "post",
+                    url: "AddAddress",
+                    data: "cons_zip="+cons_zip+"&cons_ckbaseyn="+cons_ckbaseyn+"&cons_addr="+cons_addr+"&cons_addr_det="+cons_addr_det+"&cons_nm_kr="+cons_nm_kr+"&cons_nm_en="+cons_nm_en+"&mob_no="+mob_no+"&person_ctms_no="+person_ctms_no,
+                    success: function (data) {
+                        if(data.trim() == 'success') {
+                            fnPopup('MemAddrPop_L');
+                        } else {
+                            console.log(data);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container-agent popup">
@@ -34,16 +72,16 @@
                                     <h5>주소</h5>
                                     <input type="text" name="CONS_ZIP" id="CONS_ZIP" maxlength="10" placeholder="우편번호" class="with-border wd100 fl margin-right-10 gray-read" value readonly>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="ckBASE_YN" id="ckBASE_YN" value>
+                                        <input type="checkbox" name="ckBASE_YN" id="ckBASE_YN" value="Y">
                                         <label for="ckBASE_YN">
                                             <span class="checkbox-icon"></span>
                                             기본배송지
                                         </label>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <input type="text" name="CONS_ADDR" id="CONS_ADDR" maxlength="100" placeholder="주소(한글)" class="with-border gray-read" value onblur="fnHanEng(this.value, frmMemAddrS.CONS_ADDR_EN);" readonly>
+                                    <input type="text" name="CONS_ADDR" id="CONS_ADDR" maxlength="100" placeholder="주소(한글)" class="with-border gray-read" value readonly>
 
-                                    <input type="text" name="CONS_ADDR_DET" maxlength="100" placeholder="상세(한글)" class="with-border" value="" onblur="fnHanEng(this.value, frmMemAddrS.CONS_ADDR_DET_EN);">
+                                    <input type="text" name="CONS_ADDR_DET" maxlength="100" placeholder="상세(한글)" class="with-border" value="">
 
                                 </div>
                             </div>
@@ -56,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-6 col-common">
-                                <input type="text" name="CONS_NM_KR" maxlength="80" placeholder="이름(한글)" class="with-border" value="" onblur="fnHanEng(this.value, frmMemAddrS.CONS_NM_EN);">
+                                <input type="text" name="CONS_NM_KR" maxlength="80" placeholder="이름(한글)" class="with-border" value="" onblur="frmMemAddrS.CONS_NM_EN.value = this.value.romanize().toUpperCase();">
                             </div>
                             <div class="col-xl-6 col-common">
                                 <input type="text" name="CONS_NM_EN" maxlength="80" placeholder="이름(영문)" class="with-border" value="">
@@ -68,7 +106,7 @@
                         </div>
                         <div class="radio-area margin-bottom-10">
                             <div class="radio">
-                                <input type="radio" name="CTMS_DVS_CD" id="radio-1" value="1">
+                                <input type="radio" name="CTMS_DVS_CD" id="radio-1" value="1" checked>
                                 <label for="radio-1">
                                     <span class="radio-label"></span>
                                     개인통관고유부호
@@ -89,7 +127,7 @@
                 </div>
                 <!-- Button -->
                 <div class="tc margin-bottom-35">
-                    <a href="javascript:void(0)" onclick="fnMemAddr_M('');" class="button ripple-effect margin-top-30">
+                    <a href="javascript:void(0)" onclick="goSave()" class="button ripple-effect margin-top-30">
                         주소 저장
                     </a>
                     <a href="javascript:void(0)" onclick="fnPopup('MemAddrPop_L')" class="popup-with-zoom-anim button ripple-effect gray margin-top-30">

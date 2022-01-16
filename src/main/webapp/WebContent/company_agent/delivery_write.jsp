@@ -646,6 +646,7 @@
 <script src="js/btn_ripple_effect.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/aromanize.js"></script>
 <script>
     $(document).ready(function () {
         $(".wrp-ImgUpBtn .img-up").click(function() {
@@ -668,6 +669,17 @@
             removalDelay: 300,
             mainClass: 'my-mfp-zoom-in'
         });
+
+        // 한글이름을 영문이름으로 즉각 변환하라!
+        $("input[name=t_kor_name]").blur(function() {
+            $("input[name=t_eng_name]").val($(this).val().romanize().toUpperCase());
+        });
+
+        $("input[name=CONS_NM_KR]").blur(function() {
+            $("input[name=CONS_NM_EN]").val($(this).val().romanize().toUpperCase());
+        });
+
+
     });
 </script>
 <script>
@@ -696,7 +708,7 @@
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                     addr = data.roadAddress;
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
+                    addr = data.roadAddress;
                 }
 
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
@@ -744,7 +756,7 @@
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                     addr = data.roadAddress;
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
+                    addr = data.roadAddress;
                 }
 
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.

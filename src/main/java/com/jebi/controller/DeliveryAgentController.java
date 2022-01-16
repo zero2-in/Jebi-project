@@ -1,5 +1,6 @@
 package com.jebi.controller;
 
+import com.jebi.command.deliveryagent.DeliveryAddressAdd;
 import com.jebi.command.deliveryagent.DeliveryWrite;
 import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
@@ -43,5 +44,11 @@ public class DeliveryAgentController {
     @RequestMapping(value = "MemAddrPop_W")
     public String memAddrPopW(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return "company_agent/member_add_pop_write";
+    }
+
+    @RequestMapping(value = "AddAddress")
+    public void addAddress(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command add = new DeliveryAddressAdd();
+        add.execute(request, response);
     }
 }
