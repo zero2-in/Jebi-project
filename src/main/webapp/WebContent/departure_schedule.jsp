@@ -13,160 +13,281 @@
 
         </script>
         <!-- Container Start -->
-        <div class="departure-container">
-            <div class="departure-schedule">
-                <ul class="popup-tabs-nav">
-                    <li class="active"><a href="javascript:">출항스케줄</a></li>
-                </ul>
+        <!--  모달창 시작   -->
 
-                <div class="popup-tabs-container">
-                    <!-- Tab Start -->
-                    <div class="popup-tab-content" id="tab">
-                        <!-- Content Start -->
-                        <div class="pd20">
-                            <!-- B: ScheduleBox Start -->
-                            <div class="sch-wrap" id="schedulebox">
-                                <form name="frmschedule" id="frmschedule" method="get">
-                                    <input type="text" name="sbegindt" value="2022-01-05">
-                                </form>
-                                <div class="sch-calendarbox-sch-box">
-                                    <div class="year"><a href="javascript:" onclick="fnDepartureInit('MP', '2022-01-05');" title="이전 월">◀</a> <span class="tityear">2022</span>년 <span class="titmonth">1</span>월 <a href="javascript:" onclick="fnDepartureInit('MN', '2022-01-04');" title="다음 월">▶</a></div>
-                                    <div class="calendar">
-                                        <table class="sch-table">
-                                            <tbody>
-                                            <tr>
-                                                <th class="sch-red">일</th>
-                                                <th>월</th>
-                                                <th>화</th>
-                                                <th>수</th>
-                                                <th>목</th>
-                                                <th>금</th>
-                                                <th class="sch-blue">토</th>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="sch-table" id="vwschedule">
-                                            <tbody>
-                                            <tr>
-                                                <td class="" onclick="fnDepartureDay('2021-12-26');" style="cursor:pointer;">26</td>
-                                                <td class="" onclick="fnDepartureDay('2021-12-27');">27</td>
-                                                <td class="" onclick="fnDepartureDay('2021-12-28');">28</td>
-                                                <td class="" onclick="fnDepartureDay('2021-12-29');">29</td>
-                                                <td class="" onclick="fnDepartureDay('2021-12-30');">30</td>
-                                                <td class="" onclick="fnDepartureDay('2021-12-31');">31</td>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-01');">1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-02');">2</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-03');">3</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-04');">4</td>
-                                                <td class="today" onclick="fnDepartureDay('2022-01-05');">5</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-06');">6</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-07');">7</td>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-08');">8</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-09');">9</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-10');">10</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-11');">11</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-12');">12</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-13');">13</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-14');">14</td>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-15');">15</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-16');">16</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-17');">17</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-18');">18</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-19');">19</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-20');">20</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-21');">21</td>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-22');">22</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-23');">23</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-24');">24</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-25');">25</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-26');">26</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-27');">27</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-28');">28</td>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-29');">29</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="off" onclick="fnDepartureDay('2022-01-30');">30</td>
-                                                <td class="on" onclick="fnDepartureDay('2022-01-31');">31</td>
-                                                <td class="" onclick="fnDepartureDay('2022-02-01');">1</td>
-                                                <td class="" onclick="fnDepartureDay('2022-02-02');">2</td>
-                                                <td class="" onclick="fnDepartureDay('2022-02-03');">3</td>
-                                                <td class="" onclick="fnDepartureDay('2022-02-04');">4</td>
-                                                <td class="" onclick="fnDepartureDay('2022-02-05');">5</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="contxt"><i class="fas fa-circle"></i> 으로 된 일은 스케줄이 없습니다.</div>
-                                    </div><!-- //calendar -->
-                                </div> <!-- //sch_calendarBox -->
-
-                                <div class="sch-listbox">
-                                    <div class="sch-year">
-                                        <a href="javascript:" class="fl" onclick="fnDepartureInit('DP', '2022-01-05');" title="이전 일">◀</a><strong><span class="tityear">2022</span>년 <span class="titmonth">1</span>월 <span class="titday">5</span>일</strong><a href="javascript:" class="fr" onclick="fnDepartureInit('DN', '2022-01-05');" title="다음 일">▶</a>
-                                    </div>
-
-                                    <div class="schedule-list">
-                                        <table class="basic-table-sch_list" id="vwdeparture">
-                                            <colgroup>
-                                                <col width="20%"><col width="15%"><col width="20%"><col width="*">
-                                            </colgroup>
-                                            <tbody>
-                                            <tr>
-                                                <th>센터</th>
-                                                <th>운송</th>
-                                                <th>출발시간</th>
-                                                <th class="">특이사항</th>
-                                            </tr>
+        <style type="text/css">
+            .dialog-with-tabs#small-dialog-2, .dialog-with-tabs#small-dialog-3,
+            .dialog-with-tabs#small-dialog-4, .dialog-with-tabs#small-dialog {
+                padding: 0;
+                color: #666;
+                max-width: 950px;
+                height: 740px;
+                padding: 10px;
+                box-shadow: 0 0 25px rgba(0,0,0,.25);
+            }
 
 
-                                            <tr>
-                                                <td data-label="센터"><div class="sch-list-txt">위해</div></td>
-                                                <td class="tc" data-label="운송">
-                                                    <div class="sch-list-txt"><img src="/images/airplane_img.png" width="25"></div>
-                                                    <!-- <div class="schedule_way">
-                                                        <i class="icon-line-awesome-ship"></i>
-                                                    </div> -->
-                                                </td>
-                                                <td class="tc" data-label="출발시간">
-                                                    <div class="sch-list-txt">12:00</div>
-                                                </td>
-                                                <td data-label="특이사항"><div class="sch-list-txt"></div></td>
-                                            </tr>
+            p{padding:0; margin:0}
+            a { color:#000000;text-decoration:none; }
+            .scriptCalendar { width:650px; text-align:center; border:1px solid #BDBDBD}
+            .scriptCalendar > thead > tr > td { width:50px;height:50px; }
+            .scriptCalendar > thead > tr:first-child > td { font-weight:bold; }
 
-                                            <tr>
-                                                <td data-label="센터"><div class="sch-list-txt">위해</div></td>
-                                                <td class="tc" data-label="운송">
-                                                    <div class="sch-list-txt"><img src="/images/ship_img.png" width="25"></div>
-                                                    <!-- <div class="schedule_way">
-                                                        <i class="icon-line-awesome-ship"></i>
-                                                    </div> -->
-                                                </td>
-                                                <td class="tc" data-label="출발시간">
-                                                    <div class="sch-list-txt">12:00</div>
-                                                </td>
-                                                <td data-label="특이사항"><div class="sch-list-txt"></div></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- E: ScheduleBox -->
+            .scriptCalendar > thead > tr:last-child > td { background-color:#D9E5FF; }
+            .scriptCalendar > tbody > tr > td { width:100px;height:100px; }
+        </style>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                buildCalendar();
+            });
 
-                        </div>
-                        <!-- Content / End -->
+            var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
+            var date = new Date();  // @param 전역 변수, today의 Date를 세어주는 역할
 
-                    </div>
-                    <!-- Tab / End -->
+            /**
+             * @brief   이전달 버튼 클릭
+             */
+            function prevCalendar() {
+                this.today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+                buildCalendar();    // @param 전월 캘린더 출력 요청
+                $(".month_day").html("");
+                $(".dialog-cont-right-cont-air .dis").css('display','none');
+                $(".dialog-cont-right-cont-ship .dis").css('display','none');
+            }
 
-                </div>
-            </div>
+            /**
+             * @brief   다음달 버튼 클릭
+             */
+            function nextCalendar() {
+                this.today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+                buildCalendar();    // @param 명월 캘린더 출력 요청
+                $(".month_day").html("");
+                $(".dialog-cont-right-cont-air .dis").css('display','none');
+                $(".dialog-cont-right-cont-ship .dis").css('display','none');
+            }
+
+            /**
+             * @brief   캘린더 오픈
+             * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
+             */
+            function buildCalendar() {
+                let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+                let tbCalendar = document.querySelector(".scriptCalendar > tbody");
+                document.getElementById("calYear").innerText = today.getFullYear();                                  // @param YYYY월
+                document.getElementById("calMonth").innerText = autoLeftPad((today.getMonth() + 1), 1);   // @param MM월
+                var nowYear = today.getFullYear();
+                var nowMonth = autoLeftPad((today.getMonth() + 1), 2);
+                // @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
+                while(tbCalendar.rows.length > 0) {
+                    tbCalendar.deleteRow(tbCalendar.rows.length - 1);
+                }
+                // @param 첫번째 개행
+                let row = tbCalendar.insertRow();
+                // @param 날짜가 표기될 열의 증가값
+                let dom = 1;
+                // @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
+                //               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
+                let daysLength = (Math.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7) - doMonth.getDay();
+
+                // @param 달력 출력
+                // @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
+
+                for(let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
+                    let column = row.insertCell();
+                    let airClickValue="", shipClickValue="";
+                    // @param 평일( 전월일과 익월일의 데이터 제외 )
+                    if(Math.sign(day) == 1 && lastDate.getDate() >= day) {
+                        var forDay = nowYear+nowMonth+autoLeftPad(day,2);
+                        var go = true;
+
+                        var disText = "<span style='float:left;vertical-align:top;padding-bottom: 65px;'>"+day+"</span><br>";
+                        <%				for(int k=0; k <evs.size(); k++){
+                        %>
+                        if(forDay==<%=evs.get(k).getcDay()%>){
+                            <% if(evs.get(k).getGubun().equals("air")){ %>
+                            disText = disText + "<img src='images/air_img.png' height='30px'><br>";
+                            airClickValue = <%=evs.get(k).getDepart()%>+''+<%=evs.get(k).getArrival()%>;
+                            <%	}%>
+                            <% if(evs.get(k).getGubun().equals("ship")){ %>
+                            disText = disText + "<img src='images/shi_img.png' height='30px'>";
+                            shipClickValue = <%=evs.get(k).getDepart()%>+''+<%=evs.get(k).getArrival()%>;
+                            <%	}%>
+                            go = false;
+                        }
+                        <%				} %>
+                        column.innerHTML = disText;
+
+                        // @param 일요일인 경우
+                        if(dom % 7 == 1) {
+                            column.style.color = "#FF4D4D";
+                        }
+
+                        // @param 토요일인 경우
+                        if(dom % 7 == 0) {
+                            column.style.color = "#4D4DFF";
+                            row = tbCalendar.insertRow();   // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
+                        }
+
+                    }
+
+                    // @param 평일 전월일과 익월일의 데이터 날짜변경
+                    else {
+
+                        let exceptDay = new Date(doMonth.getFullYear(), doMonth.getMonth(), day);
+                        column.innerText = autoLeftPad(exceptDay.getDate(), 2);
+                        column.style.color = "#D8D8D8";
+
+                    }
+
+                    // @brief   전월, 명월 음영처리
+                    // @details 현재년과 선택 년도가 같은경우
+                    if(today.getFullYear() == date.getFullYear()) {
+
+                        // @details 현재월과 선택월이 같은경우
+                        if(today.getMonth() == date.getMonth()) {
+
+                            // @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
+                            if(date.getDate() > day && Math.sign(day) == 1) {
+                                column.style.backgroundColor = "#E5E5E5";
+                                column.style.cursor = "pointer";
+                            }
+
+                            // @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
+                            else if(date.getDate() < day && lastDate.getDate() >= day) {
+                                column.style.backgroundColor = "#E8D9FF";
+                                column.style.cursor = "pointer";
+                            }
+
+                            // @details 현재일인 경우
+                            else if(date.getDate() == day) {
+                                column.style.backgroundColor = "#F6F6F6";  //오늘날짜 배경
+                                column.style.cursor = "pointer";
+                            }
+
+                            // @details 현재월보다 이전인경우
+                        } else if(today.getMonth() < date.getMonth()) {
+                            if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
+                                column.style.backgroundColor = "#E5E5E5";
+                                column.style.cursor = "pointer";
+                            }
+                        }
+
+                        // @details 현재월보다 이후인경우
+                        else {
+                            if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
+                                column.style.backgroundColor = "#E8D9FF";
+                                column.style.cursor = "pointer";
+                            }
+                        }
+                    }
+
+                    // @details 선택한년도가 현재년도보다 작은경우
+                    else if(today.getFullYear() < date.getFullYear()) {
+                        if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
+                            column.style.backgroundColor = "#E5E5E5";
+                            column.style.cursor = "pointer";
+                        }
+                    }
+                    // @details 선택한년도가 현재년도보다 큰경우
+                    else {
+                        column.style.backgroundColor = "#E8D9FF";
+                        column.style.cursor = "pointer";
+                    }
+                    column.onclick = function(){ calendarChoiceDay(this,airClickValue,shipClickValue); }
+                    dom++;
+
+                }
+            }
+
+            /**
+             * @brief   날짜 선택
+             * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
+             */
+            function calendarChoiceDay(column,airClickValue,shipClickValue) {
+                var cYear = document.getElementById("calYear").innerText;
+                var cMonth = document.getElementById("calMonth").innerText;
+                var choDay = autoLeftPad(column.innerText.substr(0,2).trim(),2);
+
+                $(".month_day").html(cYear+"년 "+cMonth+"월 "+choDay+"일");
+
+                if(airClickValue !=""){
+                    var dis_month_day = airClickValue.substr(0,4)+"년 "+airClickValue.substr(4,2)+"월 "+airClickValue.substr(6,2)+"일";
+                    $(".month_day").html(dis_month_day);
+                } else if(shipClickValue !=""){
+                    var dis_month_day = shipClickValue.substr(0,4)+"년 "+shipClickValue.substr(4,2)+"월 "+shipClickValue.substr(6,2)+"일";
+                    $(".month_day").html(dis_month_day);
+                }
+                if(airClickValue !=""){
+                    $(".dialog-cont-right-cont-air .dis").css('display','block');
+                    var start = airClickValue;
+                    start = airClickValue.substr(0,4)+"."+airClickValue.substr(4,2)+"."+airClickValue.substr(6,2)+" "+airClickValue.substr(8,2)+":"+airClickValue.substr(10,2);
+                    end = airClickValue.substr(12,4)+"."+airClickValue.substr(16,2)+"."+airClickValue.substr(18,2)+" "+airClickValue.substr(20,2)+":"+airClickValue.substr(22);
+                    $(".air_start").html(start);
+                    $(".air_end").html(end);
+                } else {
+                    $(".dialog-cont-right-cont-air .dis").css('display','none');
+                }
+                if(shipClickValue !=""){
+                    $(".dialog-cont-right-cont-ship .dis").css('display','block');
+                    var start = shipClickValue;
+                    start = shipClickValue.substr(0,4)+"."+shipClickValue.substr(4,2)+"."+shipClickValue.substr(6,2)+" "+shipClickValue.substr(8,2)+":"+shipClickValue.substr(10,2);
+                    end = shipClickValue.substr(12,4)+"."+shipClickValue.substr(16,2)+"."+shipClickValue.substr(18,2)+" "+shipClickValue.substr(20,2)+":"+shipClickValue.substr(22);
+                    $(".ship_start").html(start);
+                    $(".ship_end").html(end);
+                } else {
+                    $(".dialog-cont-right-cont-ship .dis").css('display','none');
+                }
+            }
+
+            /**
+             * @brief   숫자 두자릿수( 00 ) 변경
+             * @details 자릿수가 한지라인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
+             * @param   num     앞에 0을 붙일 숫자 값
+             * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
+             */
+            function autoLeftPad(num, digit) {
+                if(String(num).length < digit) {
+                    num = new Array(digit - String(num).length + 1).join("0") + num;
+                }
+                return num;
+
+            }
+
+        </script>
+        <style>
+            #dialog-cont .dialog-cont-left{float:left}
+            #dialog-cont .dialog-cont-right{float:right}
+            #dialog-cont .dialog-cont-right {
+                width:270px;
+                height:500px;
+            }
+        </style>
+        <div class="dialog-cont-left">
+            <table class="scriptCalendar">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td onClick="prevCalendar();" style="cursor:pointer;"><i class="fas fa-backward"></i></td>
+                    <td colspan="3" align="center">
+                        <span id="calYear"></span>년
+                        <span id="calMonth"></span>월
+                    </td>
+                    <td onClick="nextCalendar();" style="cursor:pointer;"><i class="fas fa-forward"></i></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>일</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
+                        <!-- Content / End -->
 </html>
