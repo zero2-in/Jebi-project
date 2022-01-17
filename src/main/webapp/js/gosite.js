@@ -252,6 +252,9 @@ function goSite(arg) {
         // 구매대행 신청서 작성 페이지
         case "purchase" : {
             urldirect.action = "PurchaseAgent";
+            urldirect.submit();
+            break;
+        }
 
         // 이용약관
         case "termsofuse" : {
