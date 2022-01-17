@@ -10,13 +10,14 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class DeliveryAddressAdd implements Command {
+public class DeliveryAddressUpdate implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
 
         PrintWriter out = response.getWriter();
 
+        String cons_no = request.getParameter("cons_no");
         String cons_zip = request.getParameter("cons_zip");
         String cons_ckbaseyn = request.getParameter("cons_ckbaseyn");
         if(!cons_ckbaseyn.equals("Y")) cons_ckbaseyn = "N";
@@ -32,7 +33,7 @@ public class DeliveryAddressAdd implements Command {
         String id = (String)session.getAttribute("session_id");
 
         OrderStatusDAO dao = new OrderStatusDAO();
-        int result = dao.insertAddress(new DeliveryAddressDTO(id, cons_zip, cons_ckbaseyn, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no));
+        int result = dao.updateAddress(new DeliveryAddressDTO(cons_no, id, cons_zip, cons_ckbaseyn, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no));
 
         if(result==1) out.print("success");
         else out.print("failed");

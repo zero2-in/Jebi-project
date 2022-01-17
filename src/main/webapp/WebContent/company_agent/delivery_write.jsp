@@ -693,6 +693,17 @@
         });
     }
 
+    function fnPopup(siteSrc, arg) {
+        $.ajax({
+            type: "post",
+            url: siteSrc,
+            data: "cons_no="+arg,
+            success: function (data) {
+                $("#small-dialog #dialog-cont").html(data);
+            }
+        });
+    }
+
     // Daum 주소 찾기 API
     function fnJusoSearch() {
         new daum.Postcode({
@@ -788,6 +799,17 @@
                 board.t_address_2.focus();
             }
         }).open();
+    }
+
+    function fnMyAddrGet(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
+        board.t_zip.value = arg0;
+        board.t_address_1.value = arg1;
+        board.t_address_2.value = arg2;
+        board.t_kor_name.value = arg3;
+        board.t_eng_name.value = arg4;
+        board.t_mobile.value = arg5;
+        board.person_ctms_no.value = arg6;
+        $.magnificPopup.close();
     }
 </script>
 </body>

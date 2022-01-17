@@ -121,7 +121,8 @@
                             <c:forEach items="${list.getStatus_list()}" var="map">
                                 <li>
                                     <a href="">
-                                        <span>${map.value}</span><strong><span class="fr num"> 0 </span></strong>
+                                        <c:set var="my_id" value="${session_id}" /> <c:set var="list_key" value="${map.key}" />
+                                        <span>${map.value}</span><strong><span class="fr num"> ${dao.getCategoryCount(my_id, list_key)} </span></strong>
                                     </a>
                                 </li>
                             </c:forEach>

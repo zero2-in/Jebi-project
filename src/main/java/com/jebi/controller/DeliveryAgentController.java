@@ -1,8 +1,6 @@
 package com.jebi.controller;
 
-import com.jebi.command.deliveryagent.DeliveryAddrList;
-import com.jebi.command.deliveryagent.DeliveryAddressAdd;
-import com.jebi.command.deliveryagent.DeliveryWrite;
+import com.jebi.command.deliveryagent.*;
 import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,12 +50,29 @@ public class DeliveryAgentController {
     // 주소지 수정
     @RequestMapping(value = "MemAddrPop_E")
     public String memAddrPopE(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        return "";
+        Command modify = new DeliveryAddressModify();
+        modify.execute(request, response);
+        return "company_agent/member_add_pop_modify";
     }
 
+    // 주소지 삭제
+    @RequestMapping(value = "MemAddrPop_D")
+    public void memAddrPopD(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command delete = new DeliveryAddrDelete();
+        delete.execute(request, response);
+    }
+
+    // 주소지 등록
     @RequestMapping(value = "AddAddress")
     public void addAddress(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Command add = new DeliveryAddressAdd();
         add.execute(request, response);
+    }
+
+    // 주소지 업데이트
+    @RequestMapping(value = "UpdateAddress")
+    public void updateAddress(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command update = new DeliveryAddressUpdate();
+        update.execute(request, response);
     }
 }

@@ -19,7 +19,8 @@
 
             if(confirm("배송지 주소를 저장하시겠습니까?")) {
                 var cons_zip = frmMemAddrS.CONS_ZIP.value;
-                var cons_ckbaseyn = frmMemAddrS.ckBASE_YN.value;
+                var cons_ckbaseyn;
+                if(frmMemAddrS.ckBASE_YN.checked) cons_ckbaseyn = frmMemAddrS.ckBASE_YN.value;
                 var cons_addr = frmMemAddrS.CONS_ADDR.value;
                 var cons_addr_det = frmMemAddrS.CONS_ADDR_DET.value;
                 var cons_nm_kr = frmMemAddrS.CONS_NM_KR.value;

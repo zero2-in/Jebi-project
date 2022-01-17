@@ -3,7 +3,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script></script>
+    <script>
+        function deleteCons(arg) {
+            $.ajax({
+               method: "post",
+               url: "MemAddrPop_D",
+               data: "no="+arg,
+               success: function(data) {
+                   if(data.trim() == 'success') {
+                       alert("삭제되었습니다.");
+                       fnPopup('MemAddrPop_L');
+                   } else {
+                       console.log(data);
+                   }
+               }
+            });
+        }
+    </script>
     <!-- sign-in-form -->
 </head>
 <body>
@@ -17,6 +33,7 @@
             <!-- Tab -->
             <div class="popup-tab-content" id="tab">
                 <form method="post" name="frmSearch" id="frmSearch">
+                    <input type="hidden" name="cons_no">
                     <div class="compact-list-layout">
                         <c:if test="${empty addr_list}">
                             <div class="no-text"> 등록된 배송지 주소가 없습니다. </div>
@@ -44,15 +61,16 @@
                                         </div>
                                     </div>
                                     <!-- Bookmark -->
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" onclick="fnMyAddrGet('${list.getCons_zip()}', '${list.getCons_addr()}', '${list.getCons_addr_det()}',
+                                             '${list.getCons_nm_kr()}', '${list.getCons_nm_en()}', '${list.getMob_no()}', '${list.getPerson_ctms_no()}')">
                                         <span class="bookmark-icon"></span>
                                     </a>
                                     <!-- Buttons -->
                                     <div class="buttons-to-right">
-                                        <a href="javascript:void(0)" onclick="fnPopUp('MemAddrPop_E')" class="popup-with-zoom-anim button gray ripple-effect ico small" data-animation="ripple">
+                                        <a href="javascript:void(0)" onclick="fnPopup('MemAddrPop_E', '${list.getNo()}')" class="popup-with-zoom-anim button gray ripple-effect ico small" data-animation="ripple">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="" class="button gray ripple-effect ico small" data-animation="ripple">
+                                        <a href="javascript:void(0)" onclick="if(confirm('해당 배송지를 삭제하시겠습니까?')) { deleteCons('${list.getNo()}'); }" class="button gray ripple-effect ico small" data-animation="ripple">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </div>
