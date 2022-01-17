@@ -3691,6 +3691,10 @@
     font-size: 16px;
     text-transform: none;
 }
+.container-agent.popup {
+    width: inherit;
+    margin: inherit;
+}
 .container-agent a:hover {
     text-decoration: none;
     color: rgb(51, 51, 51);
@@ -3763,6 +3767,16 @@
     transform: translateY(-3px);
     box-shadow: 0 2px 8px rgb(102 103 107 / 35%);
 }
+
+.container-agent .button.small {
+    padding: 8px;
+    line-height: 20px;
+    height: auto;
+}
+.container-agent .button.small i {
+    top: 2px;
+}
+
 .container-agent .button.dark {
     background-color: #333;
     box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
@@ -4432,6 +4446,7 @@
     width: 50%;
     float: left;
     position: relative;
+    display: inline-block;
 }
 .container-agent .submit-field span.stxt {
     position: absolute;
@@ -5714,6 +5729,105 @@
     margin-left: 2px;
 }
 
+.container-agent .board-listing {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 15px;
+    border-radius: 0;
+    position: relative;
+}
+.container-agent .compact-list-layout .board-listing:hover {
+    transform: none;
+}
+.container-agent .compact-list-layout .board-listing:hover::before {
+    opacity: 1;
+}
+.container-agent .compact-list-layout .board-listing:first-of-type {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+.container-agent .compact-list-layout .board-listing:last-of-type {
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+}
+.container-agent .compact-list-layout .board-listing.btr-pd {
+    padding-right: 85px;
+}
+.container-agent .board-listing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    display: block;
+    background: #66676b;
+    transition: .3s;
+    opacity: 0;
+}
+
+.container-agent span.bookmark-icon {
+    font-size: 20px;
+    position: absolute;
+    z-index: 101;
+    left: 20px;
+    top: 35px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    display: block;
+    height: 39px;
+    width: 39px;
+    border-radius: 50%;
+    transition: all .4s;
+    line-height: 27px;
+    border: 1px solid #b3b3b3;
+}
+.container-agent .bookmark-icon::before {
+    transition: transform .4s cubic-bezier(.8, -.41, .19, 2.5);
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    top: 6px;
+    content: "선택";
+    font-size: 13px;
+}
+.container-agent .bookmark-icon:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.container-agent .compact-list-layout .board-listing span.bookmark-icon {
+    top: 50%;
+    transform: translateY(-51%);
+}
+
+.container-agent .compact-list-layout .board-listing-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    top: 0;
+}
+
+.container-agent .compact-list-layout .board-listing .board-listing-footer {
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0px;
+}
+
+.container-agent .buttons-to-right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: .3s;
+    /*box-shadow: 0 0 10px 15px #fff */
+}
+
+
 
 /* Summernote 속성 우선순위 수정 */
 .container-agent .note-editor .note-btn {
@@ -6074,6 +6188,9 @@
     /* overflow: hidden; */
     width: 100%;
 }
+.popup-tabs-container .pd20 {
+    padding: 20px 20px 0px;
+}
 .popup-tab-content {
     padding: 0px;
     position: relative;
@@ -6146,9 +6263,18 @@ button.mfp-close, button.mfp-arrow {
 .dialog-with-tabs .mfp-close:before, .dialog-with-tabs .mfp-close:before {
     font-size: 24px;
 }
+.dialog-with-tabs .container-agent input {
+    margin-bottom: 10px;
+}
 
 .popup-tabs-nav li.active a, .dialog-with-tabs .forgot-password:hover {
     color: #2a41e8;
+}
+
+.no-text {
+    border-top: 1px solid #e4e4e4;
+    padding: 50px 0;
+    text-align: center;
 }
 
 

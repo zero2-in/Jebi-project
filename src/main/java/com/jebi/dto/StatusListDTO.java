@@ -1,23 +1,21 @@
 package com.jebi.dto;
 
-public class StatusListDTO {
-    private String category, status_code, status_name;
+import java.util.Map;
 
-    public StatusListDTO(String category, String status_code, String status_name) {
+public class StatusListDTO {
+    private String category;
+    private Map<String, String> status_list;
+
+    public StatusListDTO(String category, Map<String, String> status_list) {
         this.category = category;
-        this.status_code = status_code;
-        this.status_name = status_name;
+        this.status_list = status_list;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public String getStatus_code() {
-        return status_code;
-    }
-
-    public String getStatus_name() {
-        return status_name;
+    public Map<String, String> getStatus_list() {
+        return status_list;
     }
 }

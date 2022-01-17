@@ -205,6 +205,9 @@ body {
 .margin-bottom-30 {
     margin-bottom: 30px!important;
 }
+.margin-bottom-35 {
+    margin-bottom: 35px!important;
+}
 .margin-bottom-40 {
     margin-bottom: 40px!important;
 }
@@ -225,4 +228,7 @@ body {
 }
 .padding-left-10 {
     padding-left: 10px!important;
+}
+.padding-left-75 {
+    padding-left: 75px!important;
 }
