@@ -67,7 +67,5 @@ public class EventUpdate implements MultipartCommand {
 
         request.setAttribute("msg", msg);
         request.setAttribute("url", "Event");
-        request.setAttribute("separate", "view");
-        request.setAttribute("no", no);
     }
 }

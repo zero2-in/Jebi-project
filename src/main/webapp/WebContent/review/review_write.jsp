@@ -12,7 +12,8 @@
         <%@ include file="../breadcrumbs_cscenter.jsp" %>
     </div>
 
-    <form action="" name="board" method="post">
+    <form action="Review?separate=save" name="board" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="separate" value="save">
         <div class="dashboard margin-bottom-40">
 
             <div class="content">
@@ -25,6 +26,7 @@
 
                     <li>
                         <div class="submit-field">
+                            <input type="hidden" name="t_content">
                             <div id="summernote"></div>
                         </div>
                     </li>
@@ -45,10 +47,10 @@
         </div>
 
         <div class="button-field">
-            <a href="javascript:void(0)" class="button ripple-effect" data-animation="ripple">
+            <a href="javascript:void(0)" onclick="setTimeout(function(){goSave()}, 150)" class="button ripple-effect" data-animation="ripple">
                 등록
             </a>
-            <a href="javascript:void(0)" onclick="setTimeout(function(){location.href='review_list.html'}, 150)"
+            <a href="javascript:void(0)" onclick="setTimeout(function(){location.href='Review'}, 150)"
                class="button ripple-effect blue-line" data-animation="ripple">
                 목록
             </a>
@@ -56,6 +58,8 @@
 
     </form>
 </div>
+
+<%@ include file="../common_footer.jsp" %>
 
 <script src="../js/btn_ripple_effect.js"></script>
 <script>
@@ -78,64 +82,53 @@
             fontSizes : [ '7', '8', '9', '10', '11', '12', '14', '18',
                 '24', '36' ]
         });
+        $("#upload").change(function() {
+            var str = $(this).val();
+            var fileName = str.split('\\').pop();
+            $(".upload-button .upload-button-file-name").html(fileName);
+        });
     });
 </script>
+<script>
+    function goSave() {
+        if(checkValue(board.t_title, "제목을 입력하세요")) return;
+        var snoteContent = $("#summernote").summernote('code');
+        board.t_content.value = snoteContent;
 
-<!-- Menu footer Start -->
-<div id="footer">
-    <!-- Menu information-use Start -->
-    <div class="favorites-service">
-        <div class="content">
-            <ul>
-                <li><div class="information-use"><a href="">이용안내</a></div></li>
-                <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
-                <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
-                <li><div class="service-center"><a href="">고객센터</a></div></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Menu Information-use Start -->
-    <div class="content01">
-        <div class="deposit-account">
-            <ul>
-                <li><div class="deposit"><b>입금계좌 안내</b></div></li>
-                <li><div class="wooribank"><img src="../images/woori_bank_logo_img.png" height="31px"></div></li>
-                <li><div class="account-number">268-069109-02-001</div></li>
-                <li><div class="corporation-jsh">예금주: 주식회사 제이에스에이치</div></li>
-                <li><div class="applicable-exchange-rate">적용환율 : 우리은행-196 ㅣ 제비-206</div></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Menu Information-use End -->
+        if(checkValue(board.t_content, "내용을 입력하세요")) return;
 
-    <!-- Menu deposit-account Start -->
-    <div class="content02">
-        <div class="deposit-account">
-            <ul>
-                <li><div class="lg"><img src="../images/lg_logo_img.jpg" height="50px"></div></li>
-                <li><div class="unipass"><img src="../images/uni_pass_logo_img.jpg" height="50px"></div></li>
-                <li><div class="kcs"><img src="../images/k_c_s_logo_img.jpg" height="50px"></div></li>
-                <li><div class="kcssa"><img src="../images/service_logo_img.png" height="50px"></div></li>
-                <li><div class="kcsa"><img src="../images/k_c_s_a_logo_img.jpg" height="50px"></div></li>
-                <li><div class="ksci"><img src="../images/k_s_c_i_logo_img.jpg" height="50px"></div></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Menu deposit-account Start -->
+        /*첨부 용량 체크*/
+        var file = board.t_attach;
+        var fileMaxSize  = 10;
+        if(file.value !=""){
+            // 사이즈체크
+            var maxSize  = 1024 * 1024 * fileMaxSize;
+            var fileSize = 0;
 
-    <!-- Menu Mutual Start -->
-    <div class="content03">
-        <div class="mutual">
-            상호:(주)제이에스에이치 ㅣ 대표자명:정상현 ㅣ 대표번호:042-242-4412 ㅣ 개인정보관리책임자:김영인 ㅣ 이메일:jshbak@naver.com(문의불가)<br><br>
-            사업자등록번호: 801-02-81520   통신판매업신고번호:2020-대전중구A-1028<br><br>
-            소재지:대전시 중구 계룡로 825(용두동,희영빌딩)5층
-        </div>
-        <ul>
-            <li><div class="jebi-logo"><img src="../images/logo.png" height="70px"></div></li>
-        </ul>
-    </div>
-    <!-- Menu Mutual Start -->
-</div>
-<!-- Menu footer End -->
+            // 브라우저 확인
+            var browser=navigator.appName;
+            // 익스플로러일 경우
+            if (browser=="Microsoft Internet Explorer"){
+                var oas = new ActiveXObject("Scripting.FileSystemObject");
+                fileSize = oas.getFile(file.value).size;
+            }else {
+                // 익스플로러가 아닐경우
+                fileSize = file.files[0].size;
+            }
+            //alert("파일사이즈 : "+ fileSize);
+
+            if(fileSize > maxSize){
+                alert("첨부파일 사이즈는 "+fileMaxSize+"MB 이내로 등록 가능합니다. ");
+                return;
+            }
+        }
+
+        if(confirm("게시글을 등록하시겠습니까?")) {
+            board.submit();
+        }
+    }
+</script>
+
+
 </body>
 </html>

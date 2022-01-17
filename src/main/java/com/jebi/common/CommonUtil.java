@@ -32,6 +32,7 @@ public class CommonUtil {
         }
     */
 
+
     // type[0] : SELECT, type[1] : UPDATE, DELETE, INSERT
     public int runQuery(String query, String debugMethod, int type) {
         int result = 0;
@@ -93,6 +94,6 @@ public class CommonUtil {
     }
 
     public static String getFile_dir(String directoryName) {
-        return "C:/Users/JSL505-024/Desktop/Project Folder/jebi-project/src/main/webapp/file_room/"+directoryName+"/";
+        return "C:/Users/fushi/Desktop/work-jsh/java_project/jebi-project/src/main/webapp/file_room/"+directoryName+"/";
     }
 }

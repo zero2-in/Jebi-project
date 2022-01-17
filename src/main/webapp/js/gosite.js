@@ -242,5 +242,33 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+
+        // 이용약관
+        case "termsofuse" : {
+            urldirect.action = "Termsofuse";
+            urldirect.submit();
+            break;
+        }
+        //  이용약관
+        case "terms_of_use_list" : {
+            urldirect.action = "Termsofuse";
+            urldirect.separate.value = "terms_of_use_list";
+            urldirect.submit();
+            break;
+        }
+
+        // 개인정보 수집방침
+        case "privacystatement" : {
+            urldirect.action = "Privacystatement";
+            urldirect.submit();
+            break;
+        }
+        // 개인정보 수집방침
+        case "privacy_statement_list" : {
+            urldirect.action = "Privacystatement";
+            urldirect.separate.value = "privacy_statement_list";
+            urldirect.submit();
+            break;
+        }
     }
 }
