@@ -6,7 +6,7 @@
             <div class="content">           
                 <ul>
                     <li><div class="information-use"><a href="">이용안내</a></div></li>
-                    <li><div class="terms-of-use"><a href="">이용약관</a></div></li>
+                    <li><div class="terms-of-use"><a href="terms_of_use/terms_of_use_list.html">이용약관</a></div></li>
                     <li><div class="privacy"><a href="">개인정보수집방침</a></div></li>
                     <li><div class="service-center"><a href="">고객센터</a></div></li>
                 </ul>
