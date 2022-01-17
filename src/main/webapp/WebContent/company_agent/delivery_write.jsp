@@ -294,7 +294,7 @@
                         </h3>
                     </div>
                     <div class="content">
-                        <ul class="dashboard-box-list">
+                        <ul class="dashboard-box-list" id="vw_ProInf">
                             <li>
                                 <div class="row">
                                     <div class="col-xl-12 col-common">
@@ -313,13 +313,13 @@
                                                     재고불러오기
                                                 </a>
 
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" onclick="fnClone()" title="복사" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-copy"></i>
                                                 </a>
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" title="추가" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-plus-square"></i>
                                                 </a>
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" title="삭제" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-trash-alt"></i>
                                                 </a>
                                             </div>
@@ -347,13 +347,13 @@
                                             <!-- 주문번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
+                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No." title="쇼핑몰의 상품주문번호를 기입">
                                                 </div>
                                             </div>
                                             <!-- 트래킹번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
+                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)" title="트래킹넘버란? 중국 운송사의 운송장을 기입. 송장번호가 아직 없는경우 나중에 트래킹 번호가 부여 될시 마이페이지>마이홈> 주문정보에서 수정 합니다. ※ 정확한 트래킹 번호가 기재되지 않을시 오류 입고 되어 처리가 지연 될수 있습니다.">
                                                     <div class="tip-text margin-top-10">
                                                         <div>
                                                             <span>*</span>
@@ -387,7 +387,7 @@
                                             <!-- 상품명 (영문) -->
                                             <div class="col-xl-12 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary">
+                                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary" title="상품명(영문) 구입한 상품에 대한 정확한 영문 상품명을 입력. clothes (X) - > pants / t-shirt / jacket (O)        toy (X) - > toy doll / toy robot / toy car (O)         nike airmax (X) - > running shoes (O)       airpod (X) -> earphone (O)">
                                                     <div class="tip-text margin-top-10">
                                                         <span>*</span>
                                                         정확한 작성을 해주셔야 통관지연을 막을 수 있습니다. (특수문자, 한글 입력 금지)
@@ -450,6 +450,7 @@
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -525,6 +526,164 @@
             </div>
         </div>
         <!-- Row / End -->
+        <!-- B: 상품 Base -->
+        <div id="vw_ProInfBase" style="display: none">
+            <li>
+                <div class="row">
+                    <div class="col-xl-12 col-common">
+                        <div class="submit-field mbw100">
+                            <h5 class="point fl margin-bottom-5">
+                                <span>상품</span>
+                                <span class="num">1</span>
+                                <span class="s_txt tc_red">* 적색 테두리 필수항목</span>
+                            </h5>
+                            <!-- Buttons -->
+                            <div class="fr margin-bottom-5">
+                                <a href="javascript:void(0)" data-animation="ripple" onclick="fnPopWinCT('')" class="button ripple-effect charcoal margin-bottom-5">
+                                    주문자동등록
+                                </a>
+                                <a href="#small-dialog" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
+                                    재고불러오기
+                                </a>
+
+                                <a href="javascript:void(0)" data-animation="ripple" title="복사" class="button gray ripple-effect ico margin-bottom-5">
+                                    <i class="far fa-copy"></i>
+                                </a>
+                                <a href="javascript:void(0)" data-animation="ripple" title="추가" class="button gray ripple-effect ico margin-bottom-5">
+                                    <i class="far fa-plus-square"></i>
+                                </a>
+                                <a href="javascript:void(0)" data-animation="ripple" title="삭제" class="button gray ripple-effect ico margin-bottom-5">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-auto col-common margin-top-2">
+                        <!-- 사진 업로드 -->
+                        <div class="avatar-wrapper">
+                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic">
+                        </div>
+                        <!-- 업로드 버튼 -->
+                        <div class="wrp-ImgUpBtn tc">
+                            <input type="file" name="t_img_up" accept="image/*" class="file-upload">
+                            <a href="javascript:void(0)" data-animation="ripple" class="img-up button ripple-effect margin-bottom-5">
+                                이미지 업로드
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col col-common">
+                        <div class="row">
+                            <!-- 주문번호 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
+                                </div>
+                            </div>
+                            <!-- 트래킹번호 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
+                                    <div class="tip-text margin-top-10">
+                                        <div>
+                                            <span>*</span>
+                                            트래킹번호가 아직 없는 경우 "마이페이지 > 주문신청 현황"에서 입력 가능
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 통관품목 검색 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="" class="with-border" maxlength="40" placeholder="통관품목 검색">
+                                    <!-- TODO 나중에 추가해야 할 리스트 -->
+                                    <ul class="dropdown-menu"></ul>
+                                </div>
+                            </div>
+                            <!-- 통관품목 선택 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field point-border">
+                                    <div class="btn-group bootstrap-select with-border necessary">
+                                        <!-- TODO 나중에 DB로 추가하세요~ -->
+                                        <select name="t_item_seq" class="btn">
+                                            <option value=""> = 통관품목 선택</option>
+                                            <option value="">[목록통관] 가구/조명 - 커튼</option>
+                                            <option value="">[목록통관] 디지털/공구 - 건전지</option>
+                                            <option value="">[일반통관] 등등...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 상품명 (영문) -->
+                            <div class="col-xl-12 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary">
+                                    <div class="tip-text margin-top-10">
+                                        <span>*</span>
+                                        정확한 작성을 해주셔야 통관지연을 막을 수 있습니다. (특수문자, 한글 입력 금지)
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 수량, 합계 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field field-two">
+                                    <div class="field-block fl">
+                                        <input type="text" name="t_quantity" placeholder="수량" maxlength="6" value="1" class="with-border necessary tr">
+                                        <span class="stxt">
+                                                                수량
+                                                            </span>
+                                    </div>
+                                    <div class="field-block fr">
+                                        <input type="text" name="t_amount" value="0" placeholder="합계" class="with-border necessary tr">
+                                        <span class="stxt">&nbsp; 합계(￥)</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <!-- 색상, 사이즈 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field field-two">
+                                    <div class="field-block fl">
+                                        <input type="text" name="t_color" maxlength="100" placeholder="색상" class="with-border necessary">
+                                    </div>
+                                    <div class="field-block fr">
+                                        <input type="text" name="t_size" maxlength="100" placeholder="사이즈" class="with-border necessary">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <!-- 옵션 추가정보 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_shop_site" maxlength="100" placeholder="옵션 추가정보" class="with-border">
+                                </div>
+                            </div>
+                            <!-- 브랜드 -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_brand" placeholder="브랜드" maxlength="40" class="with-border">
+                                </div>
+                            </div>
+                            <!-- 상품 URL -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_shop_url" maxlength="500" placeholder="상품URL" class="with-border necessary">
+                                </div>
+                            </div>
+                            <!-- 이미지 URL -->
+                            <div class="col-xl-6 col-common">
+                                <div class="submit-field">
+                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </div>
         <!-- Row -->
         <div class="row">
             <!-- Dashboard Box 부가서비스 -->

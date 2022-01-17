@@ -3,6 +3,13 @@
 
 <%@ include file="../common_header.jsp" %>
 
+<c:if test="${empty session_name}">
+    <script>
+        alert("로그인 후 이용가능합니다.");
+        location.href = "Member";
+    </script>
+</c:if>
+
 <!-- nav Script -->
 <script>
     $(document).ready(function () {
