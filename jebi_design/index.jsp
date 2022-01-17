@@ -51,7 +51,7 @@
         <div class="content">
             <div class="notice-question">
                 <div class="notice">
-                    <p class="notice-title">공지사항</p>
+                    <p class="notice-title">공지사항1</p>
                     <p class="btn-notice"><a href ="notice/notice_list.html"><i class="fas fa-plus-square"></i></a>
                 </div>	
                     <ul class="notice-content">	
