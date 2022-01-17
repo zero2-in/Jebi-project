@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.jebi.common.CommonUtil;
+import com.jebi.dto.ClearanceListDTO;
 import com.jebi.dto.DeliveryAddressDTO;
 import com.jebi.dto.StatusListDTO;
 
@@ -207,5 +208,31 @@ public class OrderStatusDAO {
         }
 
         return dto;
+    }
+
+    public ArrayList<ClearanceListDTO> getClearanceList() {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        ArrayList<ClearanceListDTO> list = new ArrayList<>();
+        String query = "SELECT * FROM jebi_clearance_list ORDER BY clearance ASC, no ASC";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String no = util.getRs().getString("no");
+                String eng_name = util.getRs().getString("eng_name");
+                String clearance = util.getRs().getString("clearance");
+                String clearance_category = util.getRs().getString("clearance_category");
+                String clearance_name = util.getRs().getString("clearance_name");
+
+                list.add(new ClearanceListDTO(no, eng_name, clearance, clearance_category, clearance_name));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
     }
 }

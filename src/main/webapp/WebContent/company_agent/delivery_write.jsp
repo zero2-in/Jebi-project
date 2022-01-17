@@ -295,6 +295,7 @@
                     </div>
                     <div class="content">
                         <ul class="dashboard-box-list" id="vw_ProInf">
+
                             <li>
                                 <div class="row">
                                     <div class="col-xl-12 col-common">
@@ -316,7 +317,7 @@
                                                 <a href="javascript:void(0)" data-animation="ripple" onclick="fnClone()" title="복사" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-copy"></i>
                                                 </a>
-                                                <a href="javascript:void(0)" data-animation="ripple" title="추가" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" title="추가" onclick="fnProAdd_S()" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-plus-square"></i>
                                                 </a>
                                                 <a href="javascript:void(0)" data-animation="ripple" title="삭제" class="button gray ripple-effect ico margin-bottom-5">
@@ -377,9 +378,9 @@
                                                         <!-- TODO 나중에 DB로 추가하세요~ -->
                                                         <select name="t_item_seq" class="btn">
                                                             <option value=""> = 통관품목 선택</option>
-                                                            <option value="">[목록통관] 가구/조명 - 커튼</option>
-                                                            <option value="">[목록통관] 디지털/공구 - 건전지</option>
-                                                            <option value="">[일반통관] 등등...</option>
+                                                            <c:forEach items="${clearance_list}" var="list">
+                                                                <option value="${list.getNo()}" enum="${list.getEng_name()}">[${list.getClearance()}] ${list.getClearance_category()} - ${list.getClearance_name()}</option>
+                                                            </c:forEach>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -471,6 +472,7 @@
                     </div>
                     <div class="content">
                         <ul class="dashboard-box-list">
+
                             <li>
                                 <div class="row">
                                     <!-- 총 수량 -->
@@ -520,170 +522,13 @@
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Row / End -->
-        <!-- B: 상품 Base -->
-        <div id="vw_ProInfBase" style="display: none">
-            <li>
-                <div class="row">
-                    <div class="col-xl-12 col-common">
-                        <div class="submit-field mbw100">
-                            <h5 class="point fl margin-bottom-5">
-                                <span>상품</span>
-                                <span class="num">1</span>
-                                <span class="s_txt tc_red">* 적색 테두리 필수항목</span>
-                            </h5>
-                            <!-- Buttons -->
-                            <div class="fr margin-bottom-5">
-                                <a href="javascript:void(0)" data-animation="ripple" onclick="fnPopWinCT('')" class="button ripple-effect charcoal margin-bottom-5">
-                                    주문자동등록
-                                </a>
-                                <a href="#small-dialog" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
-                                    재고불러오기
-                                </a>
-
-                                <a href="javascript:void(0)" data-animation="ripple" title="복사" class="button gray ripple-effect ico margin-bottom-5">
-                                    <i class="far fa-copy"></i>
-                                </a>
-                                <a href="javascript:void(0)" data-animation="ripple" title="추가" class="button gray ripple-effect ico margin-bottom-5">
-                                    <i class="far fa-plus-square"></i>
-                                </a>
-                                <a href="javascript:void(0)" data-animation="ripple" title="삭제" class="button gray ripple-effect ico margin-bottom-5">
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-auto col-common margin-top-2">
-                        <!-- 사진 업로드 -->
-                        <div class="avatar-wrapper">
-                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic">
-                        </div>
-                        <!-- 업로드 버튼 -->
-                        <div class="wrp-ImgUpBtn tc">
-                            <input type="file" name="t_img_up" accept="image/*" class="file-upload">
-                            <a href="javascript:void(0)" data-animation="ripple" class="img-up button ripple-effect margin-bottom-5">
-                                이미지 업로드
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col col-common">
-                        <div class="row">
-                            <!-- 주문번호 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
-                                </div>
-                            </div>
-                            <!-- 트래킹번호 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
-                                    <div class="tip-text margin-top-10">
-                                        <div>
-                                            <span>*</span>
-                                            트래킹번호가 아직 없는 경우 "마이페이지 > 주문신청 현황"에서 입력 가능
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 통관품목 검색 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="" class="with-border" maxlength="40" placeholder="통관품목 검색">
-                                    <!-- TODO 나중에 추가해야 할 리스트 -->
-                                    <ul class="dropdown-menu"></ul>
-                                </div>
-                            </div>
-                            <!-- 통관품목 선택 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field point-border">
-                                    <div class="btn-group bootstrap-select with-border necessary">
-                                        <!-- TODO 나중에 DB로 추가하세요~ -->
-                                        <select name="t_item_seq" class="btn">
-                                            <option value=""> = 통관품목 선택</option>
-                                            <option value="">[목록통관] 가구/조명 - 커튼</option>
-                                            <option value="">[목록통관] 디지털/공구 - 건전지</option>
-                                            <option value="">[일반통관] 등등...</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 상품명 (영문) -->
-                            <div class="col-xl-12 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary">
-                                    <div class="tip-text margin-top-10">
-                                        <span>*</span>
-                                        정확한 작성을 해주셔야 통관지연을 막을 수 있습니다. (특수문자, 한글 입력 금지)
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 수량, 합계 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field field-two">
-                                    <div class="field-block fl">
-                                        <input type="text" name="t_quantity" placeholder="수량" maxlength="6" value="1" class="with-border necessary tr">
-                                        <span class="stxt">
-                                                                수량
-                                                            </span>
-                                    </div>
-                                    <div class="field-block fr">
-                                        <input type="text" name="t_amount" value="0" placeholder="합계" class="with-border necessary tr">
-                                        <span class="stxt">&nbsp; 합계(￥)</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <!-- 색상, 사이즈 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field field-two">
-                                    <div class="field-block fl">
-                                        <input type="text" name="t_color" maxlength="100" placeholder="색상" class="with-border necessary">
-                                    </div>
-                                    <div class="field-block fr">
-                                        <input type="text" name="t_size" maxlength="100" placeholder="사이즈" class="with-border necessary">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <!-- 옵션 추가정보 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_shop_site" maxlength="100" placeholder="옵션 추가정보" class="with-border">
-                                </div>
-                            </div>
-                            <!-- 브랜드 -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_brand" placeholder="브랜드" maxlength="40" class="with-border">
-                                </div>
-                            </div>
-                            <!-- 상품 URL -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_shop_url" maxlength="500" placeholder="상품URL" class="with-border necessary">
-                                </div>
-                            </div>
-                            <!-- 이미지 URL -->
-                            <div class="col-xl-6 col-common">
-                                <div class="submit-field">
-                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </div>
         <!-- Row -->
         <div class="row">
             <!-- Dashboard Box 부가서비스 -->
@@ -914,136 +759,6 @@
 
 
     });
-</script>
-<script>
-    function fnPopup(siteSrc) {
-        $.ajax({
-            type: "post",
-            url: siteSrc,
-            success: function (data) {
-                $("#small-dialog #dialog-cont").html(data);
-            }
-        });
-    }
-
-    function fnPopup(siteSrc, arg) {
-        $.ajax({
-            type: "post",
-            url: siteSrc,
-            data: "cons_no="+arg,
-            success: function (data) {
-                $("#small-dialog #dialog-cont").html(data);
-            }
-        });
-    }
-
-    // Daum 주소 찾기 API
-    function fnJusoSearch() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.roadAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    //document.getElementById("sample6_extraAddress").value = extraAddr;
-
-                } else {
-                    //document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                frmMemAddrS.CONS_ZIP.value = data.zonecode;
-                frmMemAddrS.CONS_ADDR.value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                frmMemAddrS.CONS_ADDR_DET.focus();
-            }
-        }).open();
-    }
-
-    function jusoSearch() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.roadAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    //document.getElementById("sample6_extraAddress").value = extraAddr;
-
-                } else {
-                    //document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                board.t_zip.value = data.zonecode;
-                board.t_address_1.value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                board.t_address_2.focus();
-            }
-        }).open();
-    }
-
-    function fnMyAddrGet(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
-        board.t_zip.value = arg0;
-        board.t_address_1.value = arg1;
-        board.t_address_2.value = arg2;
-        board.t_kor_name.value = arg3;
-        board.t_eng_name.value = arg4;
-        board.t_mobile.value = arg5;
-        board.person_ctms_no.value = arg6;
-        $.magnificPopup.close();
-    }
 </script>
 </body>
 </html>

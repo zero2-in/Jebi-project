@@ -26,5 +26,6 @@ public class DeliveryWrite implements Command {
         request.setAttribute("dlvr_way", dlvr_way);
         request.setAttribute("member_dto", memberDao.getMyList((String)session.getAttribute("session_id")));
         request.setAttribute("ckbase_dto", dao.getCkbaseInfo((String)session.getAttribute("session_id")));
+        request.setAttribute("clearance_list", dao.getClearanceList());
     }
 }
