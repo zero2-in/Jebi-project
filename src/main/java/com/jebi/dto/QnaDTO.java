@@ -43,7 +43,6 @@ public class QnaDTO {
         this.no = no;
         this.category_name = category_name;
         this.title = title;
-        this.reg_id = reg_id;
         this.reg_name = reg_name;
         this.reg_date = reg_date;
     }
