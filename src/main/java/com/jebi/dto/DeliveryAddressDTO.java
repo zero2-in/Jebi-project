@@ -41,6 +41,17 @@ public class DeliveryAddressDTO {
         this.person_ctms_no = person_ctms_no;
     }
 
+    // 기본배송지 가져오기
+    public DeliveryAddressDTO(String cons_zip, String cons_addr, String cons_addr_det, String cons_nm_kr, String cons_nm_en, String mob_no, String person_ctms_no) {
+        this.cons_zip = cons_zip;
+        this.cons_addr = cons_addr;
+        this.cons_addr_det = cons_addr_det;
+        this.cons_nm_kr = cons_nm_kr;
+        this.cons_nm_en = cons_nm_en;
+        this.mob_no = mob_no;
+        this.person_ctms_no = person_ctms_no;
+    }
+
     public String getNo() {
         return no;
     }

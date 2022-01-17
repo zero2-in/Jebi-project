@@ -176,4 +176,36 @@ public class OrderStatusDAO {
 
         return dto;
     }
+
+    // 기본 배송지로 체크한 것들 바로 꺼내기
+    public DeliveryAddressDTO getCkbaseInfo(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        DeliveryAddressDTO dto = null;
+
+        String query = "SELECT cons_zip, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no FROM jebi_dlvr_address \n" +
+                "WHERE reg_id = '"+id+"' AND cons_ckbaseyn = 'Y'";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                String cons_zip = util.getRs().getString("cons_zip");
+                String cons_addr = util.getRs().getString("cons_addr");
+                String cons_addr_det = util.getRs().getString("cons_addr_det");
+                String cons_nm_kr = util.getRs().getString("cons_nm_kr");
+                String cons_nm_en = util.getRs().getString("cons_nm_en");
+                String mob_no = util.getRs().getString("mob_no");
+                String person_ctms_no = util.getRs().getString("person_ctms_no");
+
+                dto = new DeliveryAddressDTO(cons_zip, cons_addr, cons_addr_det, cons_nm_kr, cons_nm_en, mob_no, person_ctms_no);
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return dto;
+    }
 }
