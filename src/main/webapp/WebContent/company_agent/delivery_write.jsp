@@ -76,6 +76,7 @@
 
     <!-- 수취인 주소 -->
     <form name="board" action="DeliveryAgent" method="post">
+        <input type="hidden" name="separate">
         <input type="hidden" name="t_logi_center" value="${logi_center}">
         <input type="hidden" name="t_dlvr_way" value="${dlvr_way}"> <!-- 1: 항공, 2: 해운 -->
         <!-- Row -->
@@ -310,7 +311,7 @@
                                                 <a href="javascript:void(0)" data-animation="ripple" onclick="fnPopWinCT('')" class="button ripple-effect charcoal margin-bottom-5">
                                                     주문자동등록
                                                 </a>
-                                                <a href="#small-dialog" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
+                                                <a href="#small-dialog" data-animation="ripple" onclick="fnPopup('StockProPop_S')" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
                                                     재고불러오기
                                                 </a>
 
@@ -332,7 +333,7 @@
                                     <div class="col-auto col-common margin-top-2">
                                         <!-- 사진 업로드 -->
                                         <div class="avatar-wrapper">
-                                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic">
+                                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic ProImg">
                                         </div>
                                         <!-- 업로드 버튼 -->
                                         <div class="wrp-ImgUpBtn tc">
@@ -375,11 +376,10 @@
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field point-border">
                                                     <div class="btn-group bootstrap-select with-border necessary">
-                                                        <!-- TODO 나중에 DB로 추가하세요~ -->
                                                         <select name="t_item_seq" class="btn">
                                                             <option value=""> = 통관품목 선택</option>
                                                             <c:forEach items="${clearance_list}" var="list">
-                                                                <option value="${list.getNo()}" enum="${list.getEng_name()}">[${list.getClearance()}] ${list.getClearance_category()} - ${list.getClearance_name()}</option>
+                                                                <option value="${list.getNo()}" data-enum="${list.getEng_name()}">[${list.getClearance()}] ${list.getClearance_category()} - ${list.getClearance_name()}</option>
                                                             </c:forEach>
                                                         </select>
                                                     </div>
@@ -388,7 +388,7 @@
                                             <!-- 상품명 (영문) -->
                                             <div class="col-xl-12 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary" title="상품명(영문) 구입한 상품에 대한 정확한 영문 상품명을 입력. clothes (X) - > pants / t-shirt / jacket (O)        toy (X) - > toy doll / toy robot / toy car (O)         nike airmax (X) - > running shoes (O)       airpod (X) -> earphone (O)">
+                                                    <input type="text" name="t_item_eng_name" maxlength="100" placeholder="상품명 영문" class="with-border necessary" title="상품명(영문) 구입한 상품에 대한 정확한 영문 상품명을 입력. clothes (X) - > pants / t-shirt / jacket (O)        toy (X) - > toy doll / toy robot / toy car (O)         nike airmax (X) - > running shoes (O)       airpod (X) -> earphone (O)">
                                                     <div class="tip-text margin-top-10">
                                                         <span>*</span>
                                                         정확한 작성을 해주셔야 통관지연을 막을 수 있습니다. (특수문자, 한글 입력 금지)
@@ -444,7 +444,7 @@
                                             <!-- 이미지 URL -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary">
+                                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary" >
                                                 </div>
                                             </div>
                                         </div>
@@ -478,21 +478,21 @@
                                     <!-- 총 수량 -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_quantity" maxlength="8" value="1" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_QTY" maxlength="8" value="1" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 수량</span>
                                         </div>
                                     </div>
                                     <!-- 총 금액 ￥ -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_cost" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_COST" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 금액 ￥</span>
                                         </div>
                                     </div>
                                     <!-- 총 금액 $ -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_cost_usd" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_COST_USD" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 금액 $</span>
                                         </div>
                                     </div>
@@ -707,10 +707,10 @@
                 </div>
             </div>
             <div class="col-xl-12 col-common tc margin-top-30">
-                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect dark big">
+                <a href="javascript:void(0)" onclick="setTimeout(function(){goReady()}, 150)" data-animation="ripple" class="button ripple-effect dark big">
                     접수대기
                 </a>
-                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect big">
+                <a href="javascript:void(0)" onclick="setTimeout(function(){goRequest()}, 150)" data-animation="ripple" class="button ripple-effect big">
                     접수신청
                 </a>
             </div>
@@ -725,6 +725,17 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="js/aromanize.js"></script>
+<script>
+    function goReady() {
+
+    }
+
+    function goRequest() {
+        board.action = "DeliveryAgent";
+        board.separate.value = "request";
+        board.submit();
+    }
+</script>
 <script>
     $(document).ready(function () {
         $(".wrp-ImgUpBtn .img-up").click(function() {
@@ -757,7 +768,48 @@
             $("input[name=CONS_NM_EN]").val($(this).val().romanize().toUpperCase());
         });
 
+        // 이미지 URL
+        $(document).on("change", "input[name=t_img_url]", function(){
+            var idxNo = $(this).index(this);
 
+            $(".ProImg").eq(idxNo).attr("src", $(this).val());
+        });
+
+        // 상품 수량
+        $(document).on("change", "input[name=t_quantity]", function(){
+           var idxlength = $("input[name=t_quantity]").length;
+           var sum = 0;
+           for(var i=0; i<idxlength; i++) {
+               sum += Number($("input[name=t_quantity]").eq(i).val());
+           }
+           $("input[name=TOTAL_PRO_QTY]").val(sum);
+        });
+
+        // 상품 가격
+        $(document).on("change", "input[name=t_amount]", function(){
+            var idxlength = $("input[name=t_amount]").length;
+            var sum = 0;
+            for(var i=0; i<idxlength; i++) {
+                sum += Number($("input[name=t_amount]").eq(i).val());
+            }
+            $("input[name=TOTAL_PRO_COST]").val(sum.toFixed(2));
+            var won = (Number(sum.toFixed(2) * 189));
+            $("input[name=TOTAL_PRO_COST_USD]").val((won / 1210).toFixed(2));
+
+            if((won / 1210) > 150) {
+                $(".notification.error p").html('일반통관');
+            } else {
+                $(".notification.error p").html('목록통관');
+            }
+        });
+
+        $(document).on("change", "select[name=t_item_seq]", function() {
+            for(var i=0; i<$(this).children().length; i++) {
+                if($(this).children().eq(i).val() == $(this).val()) {
+                    $(this).parent().parent().parent().parent().find('input[name=t_item_eng_name]').val($(this).children().eq(i).data('enum'))
+                }
+            }
+        });
     });
 </script>
 </body>

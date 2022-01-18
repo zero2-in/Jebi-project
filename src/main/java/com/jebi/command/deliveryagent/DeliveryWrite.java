@@ -3,7 +3,6 @@ package com.jebi.command.deliveryagent;
 import com.jebi.common.Command;
 import com.jebi.dao.MemberDAO;
 import com.jebi.dao.OrderStatusDAO;
-import com.jebi.dto.DeliveryAddressDTO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -28,6 +28,13 @@ public class DeliveryAgentController {
                 pageLink = "company_agent/delivery_write";
                 break;
             }
+            // 신청
+            case "request" : {
+                Command req = new DeliveryDoRequest();
+                req.execute(request, response);
+                pageLink = "common_alert_page";
+                break;
+            }
         }
 
         return pageLink;
@@ -74,5 +81,11 @@ public class DeliveryAgentController {
     public void updateAddress(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Command update = new DeliveryAddressUpdate();
         update.execute(request, response);
+    }
+
+    // 재고상품리스트
+    @RequestMapping(value = "StockProPop_S")
+    public String stockProPopS(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        return "company_agent/stock_items_list";
     }
 }

@@ -63,7 +63,9 @@ public class OrderStatusDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         int count = 0;
-        String query = "SELECT COUNT(status) cnt FROM jebi_order WHERE reg_id = '"+id+"' AND status = '"+key+"'";
+        String query = "SELECT COUNT(item.status_code) cnt FROM jebi_order con, jebi_order_item item WHERE \n" +
+                "con.reg_id = '"+id+"' AND item.status_code = '"+key+"'\n" +
+                "AND item.order_no = con.order_no";
 
         util.runQuery(query, debugMethod, 0);
         try {
@@ -234,5 +236,26 @@ public class OrderStatusDAO {
         }
 
         return list;
+    }
+
+    // order 테이블 최대 넘버 구하기
+    public String getMaxTable_no() {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String maxNo = "1";
+        String query = "SELECT NVL2(MAX(table_no), (MAX(table_no)+1), '1') maxno FROM jebi_order";
+
+        util.runQuery(query, debugMethod, 0);
+        try {
+            if(util.getRs().next()) {
+                maxNo = util.getRs().getString("maxno");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return maxNo;
     }
 }
