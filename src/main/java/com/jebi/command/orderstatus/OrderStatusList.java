@@ -20,6 +20,7 @@ public class OrderStatusList implements Command {
 
         request.setAttribute("dto", memberDao.getMyList(id));
         request.setAttribute("status_list", dao.getStatusListCategory());
+        request.setAttribute("agent_list", dao.getAgentList(id));
         request.setAttribute("dao", dao);
     }
 }

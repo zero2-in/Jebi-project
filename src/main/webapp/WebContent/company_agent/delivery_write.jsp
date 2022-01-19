@@ -727,10 +727,35 @@
 <script src="js/aromanize.js"></script>
 <script>
     function goReady() {
-
+        alert("미지원입니다.");
     }
 
     function goRequest() {
+        if(checkValue(board.t_zip, "주소를 등록해주세요.")) return;
+        if(checkValue(board.t_address_2, "상세주소를 기입해주세요.")) return;
+        if(checkValue(board.t_kor_name, "성명을 기입해주세요.")) return;
+        if(checkValue(board.t_eng_name, "영문이름을 기입해주세요.")) return;
+        if(checkValue(board.person_ctms_no, "개인통관고유부호를 기입해주세요.")) return;
+        if(checkValue(board.t_mobile, "휴대전화번호를 기입해주세요.")) return;
+        if(onOnlyNum(board.t_mobile.value)) {
+            alert("숫자만 기입해주세요.");
+            board.t_mobile.focus();
+            return;
+        }
+
+        // 배송대행 신청은 주문번호를 받는다. 그리고 아래는 추후에 배열로 처리해야한다.
+        if(checkValue(board.t_shop_no, "주문번호를 입력해주세요.")) return;
+        if(checkValue(board.t_tracking_no, "트래킹번호를 입력해주세요.")) return;
+
+        if(checkValue(board.t_item_seq, "통관품목을 선택해주세요.")) return;
+        if(checkValue(board.t_item_eng_name, "상품명 영문을 입력해주세요.")) return;
+        if(checkValue(board.t_quantity, "상품수량을 입력해주세요.")) return;
+        if(checkValue(board.t_amount, "상품합계를 입력해주세요.")) return;
+        if(checkValue(board.t_color, "상품색상을 입력해주세요.")) return;
+        if(checkValue(board.t_size, "상품사이즈를 입력해주세요.")) return;
+        if(checkValue(board.t_shop_url, "상품 URL을 입력해주세요.")) return;
+        if(checkValue(board.t_img_url, "이미지 URL을 입력해주세요.")) return;
+
         board.action = "DeliveryAgent";
         board.separate.value = "request";
         board.submit();
