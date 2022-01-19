@@ -84,7 +84,7 @@ public class OrderStatusDAO {
         ArrayList<AgentOrderDTO> list = new ArrayList<>();
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "SELECT a.table_no, a.order_no, to_char(a.reg_date, 'yyyy-MM-dd hh-mi') AS reg_date, \n" +
+        String query = "SELECT a.table_no, a.order_no, to_char(a.reg_date, 'yyyy-MM-dd hh:mi') AS reg_date, \n" +
                 "stat.status_name, info.dlvr_method, info.svc_dvs, info.reg_kor_name, \n" +
                 "item.quantity, to_char(item.money_yuan, 'FM999999999999990.00') AS money_yuan, item.tracking_no, item.item_img_url \n" +
                 "FROM jebi_order a, jebi_order_item item, jebi_order_info info, jebi_status_list stat \n" +
