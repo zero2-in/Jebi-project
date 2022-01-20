@@ -1,5 +1,6 @@
 package com.jebi.dao;
 
+import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +8,7 @@ import java.util.Map;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.dto.*;
+import org.springframework.core.annotation.Order;
 
 public class OrderStatusDAO {
     CommonUtil util = new CommonUtil();
@@ -85,7 +87,8 @@ public class OrderStatusDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "SELECT a.table_no, a.order_no, to_char(a.reg_date, 'yyyy-MM-dd hh:mi') AS reg_date, \n" +
-                "stat.status_name, info.dlvr_method, info.svc_dvs, info.reg_kor_name, \n" +
+                "to_char(a.processing_date, 'yyyy-MM-dd hh:mi') AS processing_date, \n" +
+                "stat.status_name, info.dlvr_method, info.svc_dvs, info.reg_kor_name, a.agent_type, \n" +
                 "item.quantity, to_char(item.money_yuan, 'FM999999999999990.00') AS money_yuan, item.tracking_no, item.item_img_url \n" +
                 "FROM jebi_order a, jebi_order_item item, jebi_order_info info, jebi_status_list stat \n" +
                 "WHERE a.reg_id = '"+id+"' AND a.table_no = item.table_no AND a.order_no = item.order_no \n" +
@@ -106,12 +109,14 @@ public class OrderStatusDAO {
                 if(svc_dvs.equals("manual")) svc_dvs = "수동결제";
                 else if(svc_dvs.equals("auto")) svc_dvs = "자동결제";
                 String reg_kor_name = util.getRs().getString("reg_kor_name");
+                String agent_type = util.getRs().getString("agent_type");
                 String quantity = util.getRs().getString("quantity");
                 String money_yuan = util.getRs().getString("money_yuan");
                 String tracking_no = util.getRs().getString("tracking_no");
                 String item_img_url = util.getRs().getString("item_img_url");
+                String processing_date = util.getRs().getString("processing_date");
 
-                list.add(new AgentOrderDTO(table_no, dlvr_method, reg_kor_name, svc_dvs, order_no, status_name, tracking_no, quantity, money_yuan, item_img_url, reg_date));
+                list.add(new AgentOrderDTO(table_no, dlvr_method, reg_kor_name, svc_dvs, order_no, agent_type, status_name, tracking_no, quantity, money_yuan, item_img_url, reg_date, processing_date));
             }
         } catch (SQLException e) {
             util.viewErr(debugMethod);
@@ -120,6 +125,155 @@ public class OrderStatusDAO {
         }
 
         return list;
+    }
+
+    public AgentOrderDTO getOrderView(String table_no, String order_no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        AgentOrderDTO dto = null;
+        String query = "SELECT a.table_no, a.order_no, stat.status_name, info.dlvr_method, a.agent_type, info.svc_dvs, \n" +
+                "info.reg_kor_name, info.reg_eng_name, info.person_ctms_no, info.reg_mob_no, info.cons_zip, \n" +
+                "info.cons_addr, info.cons_addr_det, info.dlvr_req, item.tracking_no, \n" +
+                "c.clearance, c.clearance_category, c.clearance_name, \n" +
+                "c.eng_name AS item_name, item.item_url, item.item_img_url, item.quantity, to_char(item.money_yuan, 'FM999999999999990.00') AS money_yuan, \n" +
+                "info.total_money_yuan, item.item_color, item.item_size, item.item_more_info, \n" +
+                "info.total_money_dollor, info.detail_insp, info.default_pic, info.add_pic, \n" +
+                "info.poly_bag, info.safety_bag, info.remove_box, info.simple_clearance, info.island_mountain, \n" +
+                "info.insp_req, info.photo_req, info.center_req, to_char(a.reg_date, 'yyyy-MM-dd hh:mi') AS reg_date, \n" +
+                "to_char(a.processing_date, 'yyyy-MM-dd hh:mi') AS processing_date \n" +
+                "FROM jebi_order a, jebi_order_item item, \n" +
+                "jebi_order_info info, jebi_status_list stat, \n" +
+                "jebi_clearance_list c \n" +
+                "WHERE a.table_no = '"+table_no+"' AND a.order_no = '"+order_no+"' \n" +
+                "AND item.order_no = a.order_no AND item.table_no = a.table_no AND \n" +
+                "info.table_no = a.table_no AND stat.status_code = item.status_code AND \n" +
+                "item.clearance_code = c.no";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                String status_name = util.getRs().getString("status_name");
+                String dlvr_method = util.getRs().getString("dlvr_method");
+                String agent_type = util.getRs().getString("agent_type");
+                String svc_dvs = util.getRs().getString("svc_dvs");
+                String reg_kor_name = util.getRs().getString("reg_kor_name");
+                String reg_eng_name = util.getRs().getString("reg_eng_name");
+                String person_ctms_no = util.getRs().getString("person_ctms_no");
+                String reg_mob_no = util.getRs().getString("reg_mob_no");
+                String cons_zip = util.getRs().getString("cons_zip");
+                String cons_addr = util.getRs().getString("cons_addr");
+                String cons_addr_det = util.getRs().getString("cons_addr_det");
+                String dlvr_req = util.getRs().getString("dlvr_req");
+                String tracking_no = util.getRs().getString("tracking_no");
+                String clearance = util.getRs().getString("clearance");
+                String clearance_category = util.getRs().getString("clearance_category");
+                String clearance_name = util.getRs().getString("clearance_name");
+                String item_name = util.getRs().getString("item_name");
+                String item_url = util.getRs().getString("item_url");
+                String item_img_utl = util.getRs().getString("item_img_url");
+                String quantity = util.getRs().getString("quantity");
+                String money_yuan = util.getRs().getString("money_yuan");
+                String total_money_yuan = util.getRs().getString("total_money_yuan");
+                String item_color = util.getRs().getString("item_color");
+                String item_size = util.getRs().getString("item_size");
+                String item_more_info = util.getRs().getString("item_more_info");
+                String total_money_dollor = util.getRs().getString("total_money_dollor");
+                String detail_insp = util.getRs().getString("detail_insp");
+                String default_pic = util.getRs().getString("default_pic");
+                String add_pic = util.getRs().getString("add_pic");
+                String poly_bag = util.getRs().getString("poly_bag");
+                String safety_bag = util.getRs().getString("safety_bag");
+                String remove_box = util.getRs().getString("remove_box");
+                String simple_clearance = util.getRs().getString("simple_clearance");
+                String island_mountain = util.getRs().getString("island_mountain");
+                String insp_req = util.getRs().getString("insp_req");
+                String photo_req = util.getRs().getString("photo_req");
+                String center_req = util.getRs().getString("center_req");
+                String reg_date = util.getRs().getString("reg_date");
+                String processing_date = util.getRs().getString("processing_date");
+
+                dto = new AgentOrderDTO(table_no, dlvr_method, reg_kor_name, reg_eng_name, cons_zip, cons_addr, cons_addr_det, person_ctms_no, reg_mob_no,
+                        dlvr_req, total_money_yuan, total_money_dollor, svc_dvs, detail_insp, default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance,
+                        island_mountain, insp_req, photo_req, center_req, order_no, status_name, tracking_no, item_name, quantity, money_yuan, item_color, item_size,
+                        item_more_info, item_url, item_img_utl, agent_type, clearance, clearance_category, clearance_name, reg_date, processing_date);
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return dto;
+    }
+
+    // 주문 신청 현황 주문문의
+    public ArrayList<OrderReplyDTO> getOrderReply(String table_no, String reg_date) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        ArrayList<OrderReplyDTO> list = new ArrayList<>();
+        String query = "SELECT a.no, a.comment_content, b.kor_name AS comment_reg_name, a.comment_reg_id, \n" +
+                "to_char(a.comment_reg_date, 'yyyy-MM-dd') AS comment_reg_date \n" +
+                "FROM jebi_order_reply a, jebi_member b, jebi_order c \n" +
+                "WHERE a.COMMENT_REG_ID = b.ID AND c.table_no = a.TABLE_NO AND c.table_no = '"+table_no+"' AND to_char(a.comment_reg_date, 'yyyy-MM-dd') = '"+reg_date+"' \n" +
+                "ORDER BY a.comment_reg_date ASC";
+
+        util.runQuery(query, debugMethod, 0);
+        try {
+            while(util.getRs().next()) {
+                String no = util.getRs().getString("no");
+                String comment_content = util.getRs().getString("comment_content");
+                String comment_reg_name = util.getRs().getString("comment_reg_name");
+                String comment_reg_id = util.getRs().getString("comment_reg_id");
+                String comment_reg_date = util.getRs().getString("comment_reg_date");
+
+                list.add(new OrderReplyDTO(no, comment_content, comment_reg_id, comment_reg_date, comment_reg_name, table_no));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
+    }
+
+    // 날짜별 주문문의 댓글 수 조회
+    public ArrayList<OrderReplyDTO> getReplyDate(String table_no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        ArrayList<OrderReplyDTO> list = new ArrayList<>();
+        String query = "SELECT to_char(comment_reg_date, 'yyyy-MM-dd') AS reg_date, COUNT(comment_content) AS cnt FROM jebi_order_reply \n" +
+                "WHERE table_no = '"+table_no+"' \n" +
+                "GROUP BY to_char(comment_reg_date, 'yyyy-MM-dd')";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String comment_reg_date = util.getRs().getString("reg_date");
+                int comment_count = util.getRs().getInt("cnt");
+
+                list.add(new OrderReplyDTO(table_no, comment_reg_date, comment_count));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
+    }
+
+    // 주문 문의 등록
+    public int insertOrderReply(OrderReplyDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "INSERT INTO jebi_order_reply\n" +
+                "(NO, COMMENT_CONTENT, COMMENT_REG_ID, COMMENT_REG_DATE, TABLE_NO)\n" +
+                "VALUES((SELECT NVL2(MAX(no), MAX(no)+1, '1') FROM jebi_order_reply), ?, '"+dto.getComment_reg_id()+"', \n" +
+                "CURRENT_TIMESTAMP, '"+dto.getTable_no()+"')";
+
+        return util.runQuery(query, debugMethod, dto.getComment_content());
     }
 
 
@@ -307,8 +461,8 @@ public class OrderStatusDAO {
     public int doRequestDeliveryAgent(DlvrOrderItemDTO itemDTO, DlvrOrderInfoDTO infoDTO, String id) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "INSERT INTO jebi_order (table_no, order_no, reg_id, reg_date) \n" +
-                "VALUES('"+itemDTO.getTable_no()+"', '"+itemDTO.getOrder_no()+"', '"+id+"', CURRENT_TIMESTAMP)";
+        String query = "INSERT INTO jebi_order (table_no, order_no, agent_type, reg_id, reg_date) \n" +
+                "VALUES('"+itemDTO.getTable_no()+"', '"+itemDTO.getOrder_no()+"', '"+infoDTO.getAgent_type()+"', '"+id+"', CURRENT_TIMESTAMP)";
         int result = util.runQuery(query, debugMethod, 1);
 
         if(result == 1) return doInsertOrderItem(itemDTO, infoDTO);
@@ -339,7 +493,7 @@ public class OrderStatusDAO {
 
         String query = "INSERT INTO jebi_order_info \n" +
                 "(table_no, dlvr_method, reg_kor_name, reg_eng_name, cons_zip, cons_addr, cons_addr_det, person_ctms_no, \n" +
-                "reg_mob_no, dlvr_req, total_quantity, total_moeny_yuan, total_money_dollor, svc_dvs, detail_insp, \n" +
+                "reg_mob_no, dlvr_req, total_quantity, total_money_yuan, total_money_dollor, svc_dvs, detail_insp, \n" +
                 "default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance, island_mountain, insp_req, \n" +
                 "photo_req, center_req) \n" +
                 "VALUES('"+dto.getTable_no()+"', '"+dto.getDlvr_method()+"', '"+dto.getReg_kor_name()+"', \n" +

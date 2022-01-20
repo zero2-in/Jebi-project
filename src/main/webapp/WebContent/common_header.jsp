@@ -46,6 +46,8 @@
         <input type="hidden" name="no">
         <input type="hidden" name="attach">
         <input type="hidden" name="scroll">
+        <input type="hidden" name="table_no">
+        <input type="hidden" name="order_no">
     </form>
     <!-- Header Start -->
     <div id="header">

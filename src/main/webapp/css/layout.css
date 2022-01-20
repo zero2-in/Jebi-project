@@ -5592,6 +5592,8 @@
     border-radius: 50%;
     font-size: 13.7px;
     color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .container-agent .message-bubble .message-text {
     margin-left: 70px;

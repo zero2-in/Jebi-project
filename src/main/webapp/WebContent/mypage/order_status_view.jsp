@@ -36,16 +36,17 @@
                         <tr>
                             <td class="title">주문번호</td>
                             <td>
-                                <span class="num bold">211001040</span>
+                                <span class="num bold">${dto.getOrder_no()}</span>
                             </td>
                             <td class="title">진행상태</td>
-                            <td>출고완료 (상품 : 입고완료)</td>
+                            <td>${dto.getStatus_name()} (상품 : 입고대기)</td>
                         </tr>
                         <tr>
                             <td class="title">물류센터</td>
-                            <td><img src="images/CN_flag.png" class="flag"> 중국 - 위해(항공)</td>
+                            <td><img src="images/CN_flag.png" class="flag"> 중국 - 위해(<c:if test="${dto.getDlvr_method() eq 'plane'}">항공</c:if><c:if test="${dto.getDlvr_method() eq 'ship'}">해운</c:if>)</td>
                             <td class="title">신청구분</td>
-                            <td>배송대행 (출고 : 수동결제)</td>
+                            <td>${dto.getAgent_type()} <c:if test="${dto.getSvc_dvs() eq 'auto'}">(출고 : 자동결제)</c:if>
+                                <c:if test="${dto.getSvc_dvs() eq 'manual'}">(출고 : 수동결제)</c:if></td>
                         </tr>
                         </tbody>
                     </table>
@@ -78,19 +79,19 @@
                         <tbody>
                         <tr>
                             <td class="title">이름</td>
-                            <td>김영인 / KIMYOUGNIN</td>
+                            <td>${dto.getReg_kor_name()} / ${dto.getReg_eng_name()}</td>
                             <td class="title">개인통관 정보</td>
-                            <td>개인 : P210026755409(일치)</td>
+                            <td>개인 : ${dto.getPerson_ctms_no()}(일치)</td>
                         </tr>
                         <tr>
                             <td class="title">연락처</td>
-                            <td>01066456209</td>
+                            <td>${dto.getReg_mob_no()}</td>
                             <td class="title">주소</td>
-                            <td>(35255) 대전광역시 서구 남선로 31-12(탄방동), 202호</td>
+                            <td>(${dto.getCons_zip()}) ${dto.getCons_addr()}, ${dto.getCons_addr_det()}</td>
                         </tr>
                         <tr>
                             <td class="title">배송 요청사항</td>
-                            <td colspan="3">배송 전 연락 바랍니다.</td>
+                            <td colspan="3">${dto.getDlvr_req()}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -124,7 +125,7 @@
                                         </div>
                                         <div class="avatar-wrapper-img">
                                             <a href="javascript:void(0)">
-                                                <img src="https://img.alicdn.com/imgextra/i4/3249253975/O1CN01GajNX91fEb3O8mCqG_!!3249253975.jpg_400x400.jpg" onerror="this.src='images/img-upload.png'" class="file-pic">
+                                                <img src="${dto.getItem_img_url()}" onerror="this.src='images/img-upload.png'" class="file-pic">
                                             </a>
                                         </div>
                                         <div class="btn-group"></div>
@@ -141,17 +142,17 @@
                                                 <tbody>
                                                 <tr>
                                                     <td class="title">트래킹번호</td>
-                                                    <td> 75814908257353</td>
+                                                    <td> ${dto.getTracking_no()}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="title">통관품목</td>
-                                                    <td>[목록통관] 잡화 - 우산</td>
+                                                    <td>[${dto.getClearance()}] ${dto.getClearance_category()} - ${dto.getClearance_name()}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="title">상품명</td>
                                                     <td>
-                                                        <a href="https://item.taobao.com/item.htm?id=649362085937&_u=a20cmq4m0ib2cb#;" target="_blank">
-                                                            Unbrella (Umbrella)
+                                                        <a href="${dto.getItem_url()}" target="_blank">
+                                                            ${dto.getItem_eng_name()} (${dto.getItem_eng_name()})
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -159,22 +160,22 @@
                                                     <td class="title">단가 * 수량</td>
                                                     <td>
                                                         <strong class="num">
-                                                            ￥89.00&nbsp; * &nbsp;1  =  <span class="fc_red num">￥89.00</span>
+                                                            ￥${dto.getMoney_yuan()}&nbsp; * &nbsp;${dto.getQuantity()}  =  <span class="fc_red num">￥<fmt:formatNumber type="pattern" value="${dto.getMoney_yuan() * dto.getQuantity()}" pattern="0.00"/></span>
                                                         </strong>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="title">색상/사이즈</td>
-                                                    <td>希儿 / 【现货】</td>
+                                                    <td>${dto.getItem_color()} / ${dto.getItem_size()}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="title">옵션 추가정보</td>
-                                                    <td>www.taobao.com</td>
+                                                    <td>${dto.getItem_more_info()}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="title">입고상태</td>
                                                     <td>
-                                                        <span class="fc_blue">(입고완료)</span>
+                                                        <span class="fc_blue">(입고대기)</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -212,15 +213,15 @@
                         <tbody>
                         <tr>
                             <td class="title">트래킹수</td>
-                            <td><strong class="num">1</strong> 개</td>
+                            <td><strong class="num">${dto.getQuantity()}</strong> 개</td>
                             <td class="title">총 수량</td>
-                            <td><strong class="num">1</strong> 개</td>
+                            <td><strong class="num">${dto.getQuantity()}</strong> 개</td>
                         </tr>
                         <tr>
                             <td class="title">총금액</td>
-                            <td><strong class="num fc_red">￥89.00</strong><span style="padding-left: 15px;">( USD 12.90 )</span></td>
+                            <td><strong class="num fc_red">￥<fmt:formatNumber pattern="0.00" value="${dto.getTotal_money_yuan()}" type="pattern" /></strong><span style="padding-left: 15px;">( USD <fmt:formatNumber pattern="0.00" type="pattern" value="${dto.getTotal_money_dollor()}" /> )</span></td>
                             <td class="title">통관구분</td>
-                            <td>목록통관</td>
+                            <td>${dto.getClearance()}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -286,14 +287,14 @@
                                     <td class="title">예치금 자동결제</td>
                                     <td>
                                         <div class="radio">
-                                            <input type="radio" name="svc_dvs_cd" id="SVC_DVS_CD_1" value="1" disabled>
+                                            <input type="radio" name="svc_dvs_cd" id="SVC_DVS_CD_1" <c:if test="${dto.getSvc_dvs() eq 'auto'}">checked</c:if> disabled>
                                             <label for="SVC_DVS_CD_1">
                                                 <span class="radio-label"></span>
                                                 자동결제
                                             </label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="svc_dvs_cd" id="SVC_DVS_CD_2" value="2" checked disabled>
+                                            <input type="radio" name="svc_dvs_cd" id="SVC_DVS_CD_2" value="2" <c:if test="${dto.getSvc_dvs() eq 'manual'}">checked</c:if> disabled>
                                             <label for="SVC_DVS_CD_2">
                                                 <span class="radio-label"></span>
                                                 수동결제
@@ -305,7 +306,7 @@
                                     <td class="title">검수옵션</td>
                                     <td>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_7" value="7" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_7" <c:if test="${dto.getDetail_insp() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_7">
                                                 <span class="checkbox-icon"></span>
                                                 정밀검수
@@ -315,7 +316,7 @@
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_29" value="29" checked disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_29" <c:if test="${dto.getDefault_pic() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_29">
                                                 <span class="checkbox-icon"></span>
                                                 기본사진촬영
@@ -325,7 +326,7 @@
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_49" value="49" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_49" <c:if test="${dto.getAdd_pic() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_49">
                                                 <span class="checkbox-icon"></span>
                                                 사진추가
@@ -340,7 +341,7 @@
                                     <td class="title">포장옵션</td>
                                     <td>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CARGE_DET_CD_43" value="43" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_43" <c:if test="${dto.getPoly_bag() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_43">
                                                 <span class="checkbox-icon"></span>
                                                 폴리백 포장
@@ -348,7 +349,7 @@
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CARGE_DET_CD_46" value="46" checked disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_46" <c:if test="${dto.getSafety_bag() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_46">
                                                 <span class="checkbox-icon"></span>
                                                 안전포장
@@ -361,7 +362,7 @@
                                     <td class="title">제거옵션</td>
                                     <td>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CARGE_DET_CD_47" value="47" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_47" <c:if test="${dto.getRemove_box() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_43">
                                                 <span class="checkbox-icon"></span>
                                                 박스제거
@@ -374,7 +375,7 @@
                                     <td class="title">통관옵션</td>
                                     <td>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CARGE_DET_CD_38" value="38" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_38" <c:if test="${dto.getSimple_clearance() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_43">
                                                 <span class="checkbox-icon"></span>
                                                 간이통관
@@ -387,7 +388,7 @@
                                     <td class="title">기타옵션</td>
                                     <td>
                                         <div class="checkbox">
-                                            <input type="checkbox" name="charge_det_cd" id="CARGE_DET_CD_9" value="9" disabled>
+                                            <input type="checkbox" name="charge_det_cd" id="CHARGE_DET_CD_9" <c:if test="${dto.getIsland_mountain() eq 'Y'}">checked</c:if> disabled>
                                             <label for="CHARGE_DET_CD_9">
                                                 <span class="checkbox-icon"></span>
                                                 도서산간지역-제주도,울릉도,완도 등
@@ -408,15 +409,15 @@
                                 <tbody>
                                 <tr>
                                     <td class="title">정밀검수 요청사항</td>
-                                    <td></td>
+                                    <td>${dto.getInsp_req()}</td>
                                 </tr>
                                 <tr>
                                     <td class="title">사진추가 요청사항</td>
-                                    <td></td>
+                                    <td>${dto.getPhoto_req()}</td>
                                 </tr>
                                 <tr>
                                     <td class="title">물류센터 요청사항</td>
-                                    <td></td>
+                                    <td>${dto.getCenter_req()}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -444,56 +445,43 @@
                         <div class="message-content">
                             <!-- Message Content Inner -->
                             <div class="message-content-inner">
-                                <div class="message-time-sign">
-                                    <span>2022-01-03</span>
-                                </div>
-
-                                <div class="row-clearfix">
-                                    <div class="message-bubble me">
-                                        <div class="message-bubble-inner">
-                                            <div class="message-avatar">나</div>
-                                            <div class="message-text">
-                                                <p>결제했습니다~ 확인바랍니다.</p>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
+                                <c:forEach items="${replydatelist}" var="datelist">
+                                    <div class="message-time-sign">
+                                        <span>${datelist.getComment_reg_date()}</span>
                                     </div>
-                                </div>
-
-                                <div class="row-clearfix">
-                                    <div class="message-bubble ">
-                                        <div class="message-bubble-inner">
-                                            <div class="message-avatar">관리자</div>
-                                            <div class="message-text">
-                                                <p></p>
-                                                <div><br></div>
-                                                <div>안녕하세요 고객님, 제비 입니다 ^^</div>
-                                                <div><br></div>
-                                                <div>무통장입금은 저희 고객센터가 운영되는 평일 오전 11시, 오후 3시에 일괄처리 됩니다~</div>
-                                                <div><br></div>
-                                                <div><div>오전 11시 이후 입금건이므로 해당 입금건은 조금 후 오후 3시에&nbsp;</div>
-                                                    <div>처리될 예정이오니 조금더 시간양해부탁드립니다</div>
+                                    <c:set var="table_no" value="${datelist.getTable_no()}" />
+                                    <c:set var="reg_date" value="${datelist.getComment_reg_date()}"/>
+                                    <c:forEach items="${dao.getOrderReply(table_no, reg_date)}" var="list">
+                                            <div class="row-clearfix">
+                                                <div class="message-bubble <c:if test='${list.getComment_reg_id() eq session_id}'>me</c:if>">
+                                                    <div class="message-bubble-inner">
+                                                        <div class="message-avatar"><c:if test='${list.getComment_reg_id() eq session_id}'>나</c:if><c:if test='${list.getComment_reg_id() ne session_id}'>${list.getComment_reg_name()}</c:if></div>
+                                                        <div class="message-text">
+                                                            ${list.getComment_content()}
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
                                                 </div>
-                                                <div><br></div>
-                                                <div>감사합니다.</div>
-                                                <div><br></div>
-                                                <div>.</div>
-                                                <p></p>
                                             </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
+                                    </c:forEach>
+                                </c:forEach>
+
                             </div>
                             <!-- Message Content Inner / End -->
                             <!-- Reply Area -->
                             <form method="post" name="frmChat">
                                 <div class="message-reply">
                                     <div id="summernote"></div>
+                                    <input type="hidden" name="reply_content">
                                 </div>
                                 <div class="col-xl-12 col-common tc margin-bottom-30">
                                     <button type="button" onclick="fn_Chat_I()" class="button ripple-effect" data-animation="ripple">
-                                        주문문의 등록
+                                        <c:if test="${session_level eq 'top'}">
+                                            답글 등록
+                                        </c:if>
+                                        <c:if test="${session_level ne 'top'}">
+                                            주문문의 등록
+                                        </c:if>
                                     </button>
                                 </div>
                             </form>
@@ -541,6 +529,28 @@
         });
     });
 </script>
+<script>
+    function fn_Chat_I() {
+        var snoteContent = $("#summernote").summernote('code');
+        frmChat.reply_content.value = snoteContent;
+        if(checkValue(frmChat.reply_content, "글을 작성하세요!")) return;
 
+        if(confirm("글을 등록하시겠습니까?")) {
+            $.ajax({
+               method: 'post',
+                async: false,
+               url: 'OrderDoReply',
+               data: 'reply_content='+frmChat.reply_content.value+'&table_no=${dto.getTable_no()}',
+                success: function(data) {
+                    if(data.trim() == 'success') {
+                        location.reload();
+                    } else {
+                        console.log(data);
+                    }
+                }
+            });
+        }
+    }
+</script>
 </body>
 </html>
