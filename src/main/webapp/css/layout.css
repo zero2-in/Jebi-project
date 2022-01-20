@@ -3933,6 +3933,16 @@
 .container-agent input.with-border.necessary {
     border: 1px solid #f49472;
 }
+.container-agent input.with-border:focus,
+.container-agent input[type="text"].with-border:focus,
+.container-agent input[type="password"].with-border:focus,
+.container-agent input[type="email"].with-border:focus,
+.container-agent input[type="number"].with-border:focus,
+.container-agent textarea.with-border:focus
+{
+    border: 1px solid rgb(213, 213, 213);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+}
 .container-agent .with-border.wd100 {
     width: 100px;
 }

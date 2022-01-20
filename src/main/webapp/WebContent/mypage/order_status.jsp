@@ -121,7 +121,8 @@
                             <c:forEach items="${list.getStatus_list()}" var="map">
                                 <li>
                                     <a href="">
-                                        <span>${map.value}</span><strong><span class="fr num"> 0 </span></strong>
+                                        <c:set var="my_id" value="${session_id}" /> <c:set var="list_key" value="${map.key}" />
+                                        <span>${map.value}</span><strong><span class="fr num"> ${dao.getCategoryCount(my_id, list_key)} </span></strong>
                                     </a>
                                 </li>
                             </c:forEach>
@@ -225,85 +226,89 @@
                 </form>
                 <!-- projects List Container -->
                 <div class="list-container pro-list-layout compact-list">
-                    <div class="project-con">
-                        <!-- project -->
-                        <div class="project">
-                            <!-- Overview -->
-                            <div class="project-overview">
-                                <div class="project-overview-inner">
-                                    <!-- Avatar -->
-                                    <div class="project-avatar">
-                                        <a href="javascript:void(0)">
-                                            <div class="verified-badge">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </div>
-                                            <img src="https://img.alicdn.com/imgextra/i4/3249253975/O1CN01GajNX91fEb3O8mCqG_!!3249253975.jpg_400x400.jpg" onerror="this.src='../images/img-upload.png'">
-                                        </a>
-                                    </div>
-                                    <!-- Name -->
-                                    <div class="project-name">
-                                        <h4>
-                                            배송대행
-                                            <a href="javascript:goView()" title="주문정보 보기" target="_blank" class="num">211001040</a>
-                                            <img src="images/CN_flag.png" class="flag">
-                                        </h4>
-                                        <span class="company-not-rated margin-bottom-5">
-                                                항공 / 수동결제 / 김영인 / 개인(일치)
-                                            </span>
-                                        <br>
-                                        <p>
-                                            <strong>1 개 / ￥89.00</strong>
-                                            <br>
-                                            <a href="../clearance/clearance.html" target="_blank" title="통관조회">
-                                                <i class="fas fa-map-marker-alt"></i>
-                                                <strong class="num">557282591525</strong>
+
+                    <c:forEach items="${agent_list}" var="list">
+                        <div class="project-con">
+                            <!-- project -->
+                            <div class="project">
+                                <!-- Overview -->
+                                <div class="project-overview">
+                                    <div class="project-overview-inner">
+                                        <!-- Avatar -->
+                                        <div class="project-avatar">
+                                            <a href="javascript:void(0)">
+                                                <div class="verified-badge">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </div>
+                                                <img src="${list.getItem_img_url()}" onerror="this.src='../images/img-upload.png'">
                                             </a>
-                                        </p>
+                                        </div>
+                                        <!-- Name -->
+                                        <div class="project-name">
+                                            <h4>
+                                                배송대행
+                                                <a href="javascript:goView()" title="주문정보 보기" target="_blank" class="num">${list.getOrder_no()}</a>
+                                                <img src="images/CN_flag.png" class="flag">
+                                            </h4>
+                                            <span class="company-not-rated margin-bottom-5">
+                                                ${list.getDlvr_method()} / ${list.getSvc_dvs()} / ${list.getReg_kor_name()} / 개인(일치)
+                                            </span>
+                                            <br>
+                                            <p>
+                                                <strong>${list.getQuantity()} 개 / ￥${list.getMoney_yuan()}</strong>
+                                                <br>
+                                                <a href="Clearance" target="_blank" title="통관조회">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <strong class="num">${list.getTracking_no()}</strong>
+                                                </a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Details -->
-                            <div class="project-details">
-                                <div class="project-details-list">
-                                    <ul>
-                                        <li>
-                                            입고상태
-                                            <span>입고완료</span>
-                                        </li>
-                                        <li>
-                                            주문상태
-                                            <span>
+                                <!-- Details -->
+                                <div class="project-details">
+                                    <div class="project-details-list">
+                                        <ul>
+                                            <li>
+                                                입고상태
+                                                <span>입고대기</span>
+                                            </li>
+                                            <li>
+                                                주문상태
+                                                <span>
                                                      <strong>
                                                          <!-- 오류입고인 경우 오류확인하기 -->
-                                                          출고완료
+                                                          ${list.getStatus_name()}
                                                      </strong>
                                                  </span>
-                                        </li>
-                                        <li>
-                                            처리일
-                                            <span>2022-01-02 03:48</span>
-                                        </li>
-                                        <li>
-                                            등록일
-                                            <span>2022-10-10 17:31</span>
-                                        </li>
-                                    </ul>
-                                    <div class="project-btn">
-                                        <!-- 오류입고인 경우 오류확인하기 -->
-                                        <a href="../clearance/clearance.html" target="_blank" data-animation="ripple" title="통관조회 하기" class="button gray ripple-effect">
-                                            <i class="fas fa-box-open"></i>
-                                        </a>
-                                        <a href="javascript:goView()" target="_blank" data-animation="ripple" title="주문정보 보기" class="button gray ripple-effect">
-                                            <i class="far fa-eye"></i>
-                                        </a>
-                                        <a href="#small-dialog" title="실사 전체보기" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect">
-                                            <i class="fas fa-camera"></i>
-                                        </a>
+                                            </li>
+                                            <li>
+                                                처리일
+                                                <span>2022-01-02 03:48</span>
+                                            </li>
+                                            <li>
+                                                등록일
+                                                <span>${list.getReg_date()}</span>
+                                            </li>
+                                        </ul>
+                                        <div class="project-btn">
+                                            <!-- 오류입고인 경우 오류확인하기 -->
+                                            <a href="Clearance" target="_blank" data-animation="ripple" title="통관조회 하기" class="button gray ripple-effect">
+                                                <i class="fas fa-box-open"></i>
+                                            </a>
+                                            <a href="javascript:goView()" target="_blank" data-animation="ripple" title="주문정보 보기" class="button gray ripple-effect">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                            <a href="#small-dialog" title="실사 전체보기" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect">
+                                                <i class="fas fa-camera"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
+
                 </div>
                 <!-- projects Container / End -->
             </div>
