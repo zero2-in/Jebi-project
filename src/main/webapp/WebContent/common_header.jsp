@@ -119,9 +119,9 @@
         <div class="btn-menu">
             <ul class="menu-main">
                 <li><a href="javascript:goSite('infouse')"      id="infoUse">이용안내</a>
-                    <ul >
+                    <ul class="menu-sub-main">
                         <li><a href="#">배송대행 이용방법 <i class="far fa-caret-square-right"></i></a>
-                            <dl class="menu-sub-main">
+                            <dl>
                                 <dt><a href="#">배송대행 서비스 안내 </a></dt>
                                 <dt><a href="#">배송대행 신청서 작성법 </a></dt>
                             </dl>

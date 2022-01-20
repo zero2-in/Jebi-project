@@ -310,13 +310,6 @@
     border-radius: 5px 5px 5px 5px;
     z-index:200;
 }
-#header .btn-menu .menu-main li:hover ::after a{
-    border-top: 10px solid transparent;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #303030;
-    content: "";
-}
 #header .btn-menu .menu-main li:hover ul{
     display:block;
 }
@@ -339,7 +332,7 @@
     padding:10px 10px 15px 15px;
     text-align:left;
 }
-#header .btn-menu .menu-main li ul a:hover, #header .btn-menu .menu-main li ul li:hover a {
+#header .btn-menu .menu-main li ul a:hover, #header .btn-menu .menu-main li ul li:hover > a {
     color:#ffffff;
     text-decoration:none;
 }
@@ -355,19 +348,45 @@
     background: #78148c;
 }
 
-#header .btn-menu .menu-main .menu-sub-main {
+#header .btn-menu .menu-main .menu-sub-main li dl{
     background: #303030;
     display:none;
     height:auto;
-    padding-bottom: 17px;
+    top:0px;
+    margin-left:202px;
     position:absolute;
     width:200px;
     border-radius: 5px 5px 5px 5px;
     z-index:200;
 }
-#header .btn-menu .menu-main li ul li a:hover .menu-sub-main {
+#header .btn-menu .menu-main .menu-sub-main li:hover dl {
     display:block;
-    background-color: #303030;
+}
+#header .btn-menu .menu-main .menu-sub-main li dt{
+    display:block;
+    float:none;
+    margin:0px;
+    padding:0px;
+    width:200px;
+}
+#header .btn-menu .menu-main .menu-sub-main li:hover dt a{
+    background:none;
+}
+#header .btn-menu .menu-main .menu-sub-main li dt a{
+    display:block;
+    height:10px;
+    font-size:14px;
+    color:#A4A4A4;
+    margin:10px;
+    padding:10px 10px 15px 15px;
+    text-align:left;
+}
+#header .btn-menu .menu-main .menu-sub-main li dl a:hover {
+    color:#ffffff;
+    text-decoration:none;
+}
+#header .btn-menu .menu-main .menu-sub-main p{
+    clear:left;
 }
 
 
@@ -595,6 +614,108 @@
     background-position: 5px center;
     background-color: rgb(230, 230, 1) ;
 }
+#container .member-grade {
+    width: 546px;
+    height: 27px;
+    margin: 30px 0  0 20px;
+    padding-top: 13px;
+    text-align: center;
+    border-radius: 3px 3px 3px 3px;
+    background-color: rgb(220, 220, 220) ;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .member-grade-table-box {
+    width: 548px;
+    height: 126px;
+    margin: 15px 0  0 20px;
+}
+#container .deposit {
+    width: 531px;
+    height: 27px;
+    padding: 13px 0 0 15px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .deposit li{
+    float: left;
+}
+#container .deposit  strong{
+    float: right;
+    padding-right: 15px;
+}
+#container .note {
+    width: 257px;
+    height: 27px;
+    float: left;
+    padding: 13px 0 0 15px;
+    border-left: 1px solid rgb(205, 205, 205);
+    border-right: 1px solid rgb(205, 205, 205);
+}
+#container .note li{
+    float: left;
+}
+#container .note  strong{
+    float: right;
+    padding-right: 15px;
+}
+#container .coupon {
+    width: 257px;
+    height: 27px;
+    float: right;
+    padding: 13px 0 0 15px;
+    border-right: 1px solid rgb(205, 205, 205);
+}
+#container .coupon li{
+    float: left;
+}
+#container .coupon  strong{
+    float: right;
+    padding-right: 15px;
+}
+#container .waiting-for-payment {
+    width: 257px;
+    height: 27px;
+    float: left;
+    padding: 13px 0 0 15px;
+    border: 1px solid rgb(205, 205, 205);
+}
+#container .waiting-for-payment li{
+    float: left;
+}
+#container .waiting-for-payment  strong{
+    float: right;
+    padding-right: 15px;
+}
+#container .nodate {
+    width: 257px;
+    height: 27px;
+    float: right;
+    padding: 13px 0 0 15px;
+    border-top: 1px solid rgb(205, 205, 205);
+    border-right: 1px solid rgb(205, 205, 205);
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+#container .nodate li{
+    float: left;
+}
+#container .nodate  strong{
+    float: right;
+    padding-right: 15px;
+}
+#container .index-logout {
+    width: 546px;
+    height: 27px;
+    margin: 15px 0  0 20px;
+    padding-top: 13px;
+    text-align: center;
+    color: #612C87;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #612C87;
+}
+#container .index-logout:hover {
+    color: white;
+    background-color: #612C87;
+}
+
 
 
 /* 중국센터주소 */
@@ -684,12 +805,22 @@
     height: 198px;
 	font-size:15px;
     padding: 34px 0 0 110px;
+    position: relative;
+    overflow: hidden;
+}
+#container .review-content img{
+    float:left;
+    height: 129px;
+    padding: 20px 0 0 0;
 }
 #container .review-content a span{
 	float:right;
 	font-size:17px;
-    padding: 40px 130px 0 0;
+    padding: 40px 100px 0 0;
 }
+
+
+
 /* 출항한주스케줄 */
 #container .content02 {
     width: 1200px;
