@@ -76,6 +76,7 @@
 
     <!-- 수취인 주소 -->
     <form name="board" action="DeliveryAgent" method="post">
+        <input type="hidden" name="separate">
         <input type="hidden" name="t_logi_center" value="${logi_center}">
         <input type="hidden" name="t_dlvr_way" value="${dlvr_way}"> <!-- 1: 항공, 2: 해운 -->
         <!-- Row -->
@@ -99,75 +100,149 @@
                     <div class="content">
                         <ul class="dashboard-box-list">
 
-                            <li>
-                                <div class="row">
-                                    <div class="col-xl-6 col-common">
+                            <c:if test="${empty ckbase_dto}">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-common">
 
-                                        <div class="submit-field field-two">
-                                            <h5>받는 사람</h5>
-                                            <!-- 한글 이름 -->
-                                            <div class="field-block fl">
-                                                <input type="text" name="t_kor_name" maxlength="80" placeholder="한글" value="${member_dto.getKor_name()}" class="with-border ">
+                                            <div class="submit-field field-two">
+                                                <h5>받는 사람</h5>
+                                                <!-- 한글 이름 -->
+                                                <div class="field-block fl">
+                                                    <input type="text" name="t_kor_name" maxlength="80" placeholder="한글" value="${member_dto.getKor_name()}" class="with-border ">
+                                                </div>
+                                                <!-- 영문 이름 -->
+                                                <div class="field-block fr">
+                                                    <input type="text" name="t_eng_name" maxlength="80" placeholder="영문" value="${member_dto.getEng_name()}" class="with-border ">
+                                                </div>
+                                                <div class="clearfix"></div>
                                             </div>
-                                            <!-- 영문 이름 -->
-                                            <div class="field-block fr">
-                                                <input type="text" name="t_eng_name" maxlength="80" placeholder="영문" value="${member_dto.getEng_name()}" class="with-border ">
+
+                                            <div class="submit-field">
+                                                <div class="radio-area margin-bottom-10">
+                                                    <!-- 개인: 1, 사업자: 2 라디오버튼 : ctms_dvs -->
+                                                    <div class="radio">
+                                                        <input type="radio" name="ctms_dvs" id="CTMS_DVS_P" value="1" checked>
+                                                        <label for="CTMS_DVS_P">
+                                                            <span class="radio-label"></span>
+                                                            개인
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="ctms_dvs" id="CTMS_DVS_B" value="2">
+                                                        <label for="CTMS_DVS_B">
+                                                            <span class="radio-label"></span>
+                                                            사업자
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <!-- 개인통관보유부호 : person_ctms_no -->
+                                                    <input type="text" name="person_ctms_no" maxlength="20" value="" placeholder="개인통관고유부호" class="with-border ">
+                                                </div>
                                             </div>
-                                            <div class="clearfix"></div>
+                                            <div class="submit-field">
+                                                <div class="input-with-icon-left">
+                                                    <i class="fas fa-phone"></i>
+                                                    <input type="text" name="t_mobile" class="input-text with-border " maxlength="20" placeholder="휴대전화" value="${member_dto.getPhone()}">
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="submit-field">
-                                            <div class="radio-area margin-bottom-10">
-                                                <!-- 개인: 1, 사업자: 2 라디오버튼 : ctms_dvs -->
-                                                <div class="radio">
-                                                    <input type="radio" name="ctms_dvs" id="CTMS_DVS_P" value="1" checked>
-                                                    <label for="CTMS_DVS_P">
-                                                        <span class="radio-label"></span>
-                                                        개인
-                                                    </label>
+                                        <div class="col-xl-6 col-common">
+                                            <div class="submit-field">
+                                                <!-- 주소 입력 필드 -->
+                                                <h5>주소</h5>
+                                                <input type="text" name="t_zip" maxlength="5" placeholder="우편번호" class="with-border wd100 fl margin-right-10 gray-read" value="" readonly>
+                                                <a href="javascript:jusoSearch()" data-animation="ripple" class="button gray ripple-effect fl">우편번호 검색</a>
+                                                <div class="clearfix"></div>
+                                                <input type="text" name="t_address_1" placeholder="주소" value="" class="with-border margin-top-10 gray-read" readonly>
+                                                <input type="text" name="t_address_2" class="with-border margin-top-10" value="" placeholder="상세주소입력">
+
+                                                <!-- 설명란 -->
+                                                <div class="tip-text margin-top-10">
+                                                    <span>*</span>
+                                                    도로명 주소를 써주십시오.
+                                                    <br>
+                                                    지번 주소 기재 시 통관/세관에서 오류로 분류시켜 통관지연이 될 수 있습니다.
                                                 </div>
-                                                <div class="radio">
-                                                    <input type="radio" name="ctms_dvs" id="CTMS_DVS_B" value="2">
-                                                    <label for="CTMS_DVS_B">
-                                                        <span class="radio-label"></span>
-                                                        사업자
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!-- 개인통관보유부호 : person_ctms_no -->
-                                                <input type="text" name="person_ctms_no" maxlength="20" value="" placeholder="개인통관고유부호" class="with-border ">
-                                            </div>
-                                        </div>
-                                        <div class="submit-field">
-                                            <div class="input-with-icon-left">
-                                                <i class="fas fa-phone"></i>
-                                                <input type="text" name="t_mobile" class="input-text with-border " maxlength="20" placeholder="휴대전화" value="${member_dto.getPhone()}">
                                             </div>
                                         </div>
                                     </div>
+                                </li>
+                            </c:if>
 
-                                    <div class="col-xl-6 col-common">
-                                        <div class="submit-field">
-                                            <!-- 주소 입력 필드 -->
-                                            <h5>주소</h5>
-                                            <input type="text" name="t_zip" maxlength="5" placeholder="우편번호" class="with-border wd100 fl margin-right-10 gray-read" value="" readonly>
-                                            <a href="javascript:jusoSearch()" data-animation="ripple" class="button gray ripple-effect fl">우편번호 검색</a>
-                                            <div class="clearfix"></div>
-                                            <input type="text" name="t_address_1" placeholder="주소" value="" class="with-border margin-top-10 gray-read" readonly>
-                                            <input type="text" name="t_address_2" class="with-border margin-top-10" value="" placeholder="상세주소입력">
+                            <c:if test="${not empty ckbase_dto}">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-common">
 
-                                            <!-- 설명란 -->
-                                            <div class="tip-text margin-top-10">
-                                                <span>*</span>
-                                                도로명 주소를 써주십시오.
-                                                <br>
-                                                지번 주소 기재 시 통관/세관에서 오류로 분류시켜 통관지연이 될 수 있습니다.
+                                            <div class="submit-field field-two">
+                                                <h5>받는 사람</h5>
+                                                <!-- 한글 이름 -->
+                                                <div class="field-block fl">
+                                                    <input type="text" name="t_kor_name" maxlength="80" placeholder="한글" value="${ckbase_dto.getCons_nm_kr()}" class="with-border ">
+                                                </div>
+                                                <!-- 영문 이름 -->
+                                                <div class="field-block fr">
+                                                    <input type="text" name="t_eng_name" maxlength="80" placeholder="영문" value="${ckbase_dto.getCons_nm_en()}" class="with-border ">
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="submit-field">
+                                                <div class="radio-area margin-bottom-10">
+                                                    <!-- 개인: 1, 사업자: 2 라디오버튼 : ctms_dvs -->
+                                                    <div class="radio">
+                                                        <input type="radio" name="ctms_dvs" id="CTMS_DVS_P" value="1" checked>
+                                                        <label for="CTMS_DVS_P">
+                                                            <span class="radio-label"></span>
+                                                            개인
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="ctms_dvs" id="CTMS_DVS_B" value="2">
+                                                        <label for="CTMS_DVS_B">
+                                                            <span class="radio-label"></span>
+                                                            사업자
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <!-- 개인통관보유부호 : person_ctms_no -->
+                                                    <input type="text" name="person_ctms_no" maxlength="20" value="${ckbase_dto.getPerson_ctms_no()}" placeholder="개인통관고유부호" class="with-border ">
+                                                </div>
+                                            </div>
+                                            <div class="submit-field">
+                                                <div class="input-with-icon-left">
+                                                    <i class="fas fa-phone"></i>
+                                                    <input type="text" name="t_mobile" class="input-text with-border " maxlength="20" placeholder="휴대전화" value="${ckbase_dto.getMob_no()}">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-common">
+                                            <div class="submit-field">
+                                                <!-- 주소 입력 필드 -->
+                                                <h5>주소</h5>
+                                                <input type="text" name="t_zip" maxlength="5" placeholder="우편번호" class="with-border wd100 fl margin-right-10 gray-read" value="${ckbase_dto.getCons_zip()}" readonly>
+                                                <a href="javascript:jusoSearch()" data-animation="ripple" class="button gray ripple-effect fl">우편번호 검색</a>
+                                                <div class="clearfix"></div>
+                                                <input type="text" name="t_address_1" placeholder="주소" value="${ckbase_dto.getCons_addr()}" class="with-border margin-top-10 gray-read" readonly>
+                                                <input type="text" name="t_address_2" class="with-border margin-top-10" value="${ckbase_dto.getCons_addr_det()}" placeholder="상세주소입력">
+
+                                                <!-- 설명란 -->
+                                                <div class="tip-text margin-top-10">
+                                                    <span>*</span>
+                                                    도로명 주소를 써주십시오.
+                                                    <br>
+                                                    지번 주소 기재 시 통관/세관에서 오류로 분류시켜 통관지연이 될 수 있습니다.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </c:if>
 
                             <li>
                                 <div class="row">
@@ -220,7 +295,8 @@
                         </h3>
                     </div>
                     <div class="content">
-                        <ul class="dashboard-box-list">
+                        <ul class="dashboard-box-list" id="vw_ProInf">
+
                             <li>
                                 <div class="row">
                                     <div class="col-xl-12 col-common">
@@ -235,17 +311,17 @@
                                                 <a href="javascript:void(0)" data-animation="ripple" onclick="fnPopWinCT('')" class="button ripple-effect charcoal margin-bottom-5">
                                                     주문자동등록
                                                 </a>
-                                                <a href="#small-dialog" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
+                                                <a href="#small-dialog" data-animation="ripple" onclick="fnPopup('StockProPop_S')" class="popup-with-zoom-anim button ripple-effect charcoal margin-bottom-5">
                                                     재고불러오기
                                                 </a>
 
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" onclick="fnClone()" title="복사" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-copy"></i>
                                                 </a>
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" title="추가" onclick="fnProAdd_S()" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-plus-square"></i>
                                                 </a>
-                                                <a href="javascript:void(0)" data-animation="ripple" class="button gray ripple-effect ico margin-bottom-5">
+                                                <a href="javascript:void(0)" data-animation="ripple" title="삭제" class="button gray ripple-effect ico margin-bottom-5">
                                                     <i class="far fa-trash-alt"></i>
                                                 </a>
                                             </div>
@@ -257,7 +333,7 @@
                                     <div class="col-auto col-common margin-top-2">
                                         <!-- 사진 업로드 -->
                                         <div class="avatar-wrapper">
-                                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic">
+                                            <img src="images/img-upload.png" onerror="this.src='images/img-upload.png'" alt class="file-pic ProImg">
                                         </div>
                                         <!-- 업로드 버튼 -->
                                         <div class="wrp-ImgUpBtn tc">
@@ -273,13 +349,13 @@
                                             <!-- 주문번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No.">
+                                                    <input type="text" name="t_shop_no" maxlength="40" class="with-border " placeholder="주문번호 Order No." title="쇼핑몰의 상품주문번호를 기입">
                                                 </div>
                                             </div>
                                             <!-- 트래킹번호 -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)">
+                                                    <input type="text" name="t_tracking_no" maxlength="40" class="with-border necessary " placeholder="트래킹번호(Tracking No)" title="트래킹넘버란? 중국 운송사의 운송장을 기입. 송장번호가 아직 없는경우 나중에 트래킹 번호가 부여 될시 마이페이지>마이홈> 주문정보에서 수정 합니다. ※ 정확한 트래킹 번호가 기재되지 않을시 오류 입고 되어 처리가 지연 될수 있습니다.">
                                                     <div class="tip-text margin-top-10">
                                                         <div>
                                                             <span>*</span>
@@ -300,12 +376,11 @@
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field point-border">
                                                     <div class="btn-group bootstrap-select with-border necessary">
-                                                        <!-- TODO 나중에 DB로 추가하세요~ -->
                                                         <select name="t_item_seq" class="btn">
                                                             <option value=""> = 통관품목 선택</option>
-                                                            <option value="">[목록통관] 가구/조명 - 커튼</option>
-                                                            <option value="">[목록통관] 디지털/공구 - 건전지</option>
-                                                            <option value="">[일반통관] 등등...</option>
+                                                            <c:forEach items="${clearance_list}" var="list">
+                                                                <option value="${list.getNo()}" data-enum="${list.getEng_name()}">[${list.getClearance()}] ${list.getClearance_category()} - ${list.getClearance_name()}</option>
+                                                            </c:forEach>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -313,7 +388,7 @@
                                             <!-- 상품명 (영문) -->
                                             <div class="col-xl-12 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="" maxlength="100" placeholder="상품명 영문" class="with-border necessary">
+                                                    <input type="text" name="t_item_eng_name" maxlength="100" placeholder="상품명 영문" class="with-border necessary" title="상품명(영문) 구입한 상품에 대한 정확한 영문 상품명을 입력. clothes (X) - > pants / t-shirt / jacket (O)        toy (X) - > toy doll / toy robot / toy car (O)         nike airmax (X) - > running shoes (O)       airpod (X) -> earphone (O)">
                                                     <div class="tip-text margin-top-10">
                                                         <span>*</span>
                                                         정확한 작성을 해주셔야 통관지연을 막을 수 있습니다. (특수문자, 한글 입력 금지)
@@ -369,13 +444,14 @@
                                             <!-- 이미지 URL -->
                                             <div class="col-xl-6 col-common">
                                                 <div class="submit-field">
-                                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary">
+                                                    <input type="text" name="t_img_url" placeholder="이미지URL" maxlength="500" class="with-border necessary" >
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -396,26 +472,27 @@
                     </div>
                     <div class="content">
                         <ul class="dashboard-box-list">
+
                             <li>
                                 <div class="row">
                                     <!-- 총 수량 -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_quantity" maxlength="8" value="1" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_QTY" maxlength="8" value="1" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 수량</span>
                                         </div>
                                     </div>
                                     <!-- 총 금액 ￥ -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_cost" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_COST" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 금액 ￥</span>
                                         </div>
                                     </div>
                                     <!-- 총 금액 $ -->
                                     <div class="col-xl-4 col-common">
                                         <div class="submit-field">
-                                            <input type="text" name="t_total_cost_usd" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
+                                            <input type="text" name="TOTAL_PRO_COST_USD" maxlength="12" value="0.00" class="with-border fc_red bold tr gray-read" readonly>
                                             <span class="stxt">총 금액 $</span>
                                         </div>
                                     </div>
@@ -445,6 +522,7 @@
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -629,10 +707,10 @@
                 </div>
             </div>
             <div class="col-xl-12 col-common tc margin-top-30">
-                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect dark big">
+                <a href="javascript:void(0)" onclick="setTimeout(function(){goReady()}, 150)" data-animation="ripple" class="button ripple-effect dark big">
                     접수대기
                 </a>
-                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect big">
+                <a href="javascript:void(0)" onclick="setTimeout(function(){goRequest()}, 150)" data-animation="ripple" class="button ripple-effect big">
                     접수신청
                 </a>
             </div>
@@ -647,6 +725,42 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="js/aromanize.js"></script>
+<script>
+    function goReady() {
+        alert("미지원입니다.");
+    }
+
+    function goRequest() {
+        if(checkValue(board.t_zip, "주소를 등록해주세요.")) return;
+        if(checkValue(board.t_address_2, "상세주소를 기입해주세요.")) return;
+        if(checkValue(board.t_kor_name, "성명을 기입해주세요.")) return;
+        if(checkValue(board.t_eng_name, "영문이름을 기입해주세요.")) return;
+        if(checkValue(board.person_ctms_no, "개인통관고유부호를 기입해주세요.")) return;
+        if(checkValue(board.t_mobile, "휴대전화번호를 기입해주세요.")) return;
+        if(onOnlyNum(board.t_mobile.value)) {
+            alert("숫자만 기입해주세요.");
+            board.t_mobile.focus();
+            return;
+        }
+
+        // 배송대행 신청은 주문번호를 받는다. 그리고 아래는 추후에 배열로 처리해야한다.
+        if(checkValue(board.t_shop_no, "주문번호를 입력해주세요.")) return;
+        if(checkValue(board.t_tracking_no, "트래킹번호를 입력해주세요.")) return;
+
+        if(checkValue(board.t_item_seq, "통관품목을 선택해주세요.")) return;
+        if(checkValue(board.t_item_eng_name, "상품명 영문을 입력해주세요.")) return;
+        if(checkValue(board.t_quantity, "상품수량을 입력해주세요.")) return;
+        if(checkValue(board.t_amount, "상품합계를 입력해주세요.")) return;
+        if(checkValue(board.t_color, "상품색상을 입력해주세요.")) return;
+        if(checkValue(board.t_size, "상품사이즈를 입력해주세요.")) return;
+        if(checkValue(board.t_shop_url, "상품 URL을 입력해주세요.")) return;
+        if(checkValue(board.t_img_url, "이미지 URL을 입력해주세요.")) return;
+
+        board.action = "DeliveryAgent";
+        board.separate.value = "request";
+        board.submit();
+    }
+</script>
 <script>
     $(document).ready(function () {
         $(".wrp-ImgUpBtn .img-up").click(function() {
@@ -679,116 +793,49 @@
             $("input[name=CONS_NM_EN]").val($(this).val().romanize().toUpperCase());
         });
 
+        // 이미지 URL
+        $(document).on("change", "input[name=t_img_url]", function(){
+            var idxNo = $(this).index(this);
 
-    });
-</script>
-<script>
-    function fnPopup(siteSrc) {
-        $.ajax({
-            type: "post",
-            url: siteSrc,
-            success: function (data) {
-                $("#small-dialog #dialog-cont").html(data);
+            $(".ProImg").eq(idxNo).attr("src", $(this).val());
+        });
+
+        // 상품 수량
+        $(document).on("change", "input[name=t_quantity]", function(){
+           var idxlength = $("input[name=t_quantity]").length;
+           var sum = 0;
+           for(var i=0; i<idxlength; i++) {
+               sum += Number($("input[name=t_quantity]").eq(i).val());
+           }
+           $("input[name=TOTAL_PRO_QTY]").val(sum);
+        });
+
+        // 상품 가격
+        $(document).on("change", "input[name=t_amount]", function(){
+            var idxlength = $("input[name=t_amount]").length;
+            var sum = 0;
+            for(var i=0; i<idxlength; i++) {
+                sum += Number($("input[name=t_amount]").eq(i).val());
+            }
+            $("input[name=TOTAL_PRO_COST]").val(sum.toFixed(2));
+            var won = (Number(sum.toFixed(2) * 189));
+            $("input[name=TOTAL_PRO_COST_USD]").val((won / 1210).toFixed(2));
+
+            if((won / 1210) > 150) {
+                $(".notification.error p").html('일반통관');
+            } else {
+                $(".notification.error p").html('목록통관');
             }
         });
-    }
 
-    // Daum 주소 찾기 API
-    function fnJusoSearch() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.roadAddress;
+        $(document).on("change", "select[name=t_item_seq]", function() {
+            for(var i=0; i<$(this).children().length; i++) {
+                if($(this).children().eq(i).val() == $(this).val()) {
+                    $(this).parent().parent().parent().parent().find('input[name=t_item_eng_name]').val($(this).children().eq(i).data('enum'))
                 }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    //document.getElementById("sample6_extraAddress").value = extraAddr;
-
-                } else {
-                    //document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                frmMemAddrS.CONS_ZIP.value = data.zonecode;
-                frmMemAddrS.CONS_ADDR.value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                frmMemAddrS.CONS_ADDR_DET.focus();
             }
-        }).open();
-    }
-
-    function jusoSearch() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.roadAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    //document.getElementById("sample6_extraAddress").value = extraAddr;
-
-                } else {
-                    //document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                board.t_zip.value = data.zonecode;
-                board.t_address_1.value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                board.t_address_2.focus();
-            }
-        }).open();
-    }
+        });
+    });
 </script>
 </body>
 </html>
