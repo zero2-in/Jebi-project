@@ -22,7 +22,6 @@ public class NodateDAO<NodateDTO> {
                 String  no = util.getRs().getString("no");
 
 
-                list.add(new NodateDTO(no));
             }
         } catch(SQLException e) {
             util.viewErr(debugMethod);

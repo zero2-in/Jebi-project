@@ -121,20 +121,83 @@
         <div class="btn-menu">
             <ul class="menu-main">
                 <li><a href="javascript:goSite('infouse')"      id="infoUse">이용안내</a>
-                    <ul>
-                        <li><a href="#">배송대행 이용방법</a></li>
-                        <li><a href="#">구매대행 이용방법</a></li>
+                    <ul class="menu-sub-main">
+                        <li><a href="#">배송대행 이용방법 <i class="far fa-caret-square-right"></i></a>
+                            <dl>
+                                <dt><a href="#">배송대행 서비스 안내 </a></dt>
+                                <dt><a href="#">배송대행 신청서 작성법 </a></dt>
+                            </dl>
+                        </li>
+                        <li><a href="#">구매대행 이용방법 <i class="far fa-caret-square-right"></i></a>
+                            <dl>
+                                <dt><a href="#">구매대행 서비스 안내 </a></dt>
+                                <dt><a href="#">구매대행 신청서 작성법 </a></dt>
+                            </dl>
+                        </li>
                         <li><a href="#">사업자 이용안내</a></li>
-                        <li><a href="#">타오바오 이용방법</a></li>
-                        <li><a href="#">이용팁</a></li>
+                        <li><a href="#">타오바오 이용방법 <i class="far fa-caret-square-right"></i></a>
+                            <dl>
+                                <dt><a href="#">가입방법</a></dt>
+                                <dt><a href="#">주소 설정하기</a></dt>
+                                <dt><a href="#">구매결제하기</a></dt>
+                                <dt><a href="#">반품/환불방법</a></dt>
+                                <dt><a href="#">송장번호 확인하기</a></dt>
+                                <dt><a href="#">주문자동등록방법</a></dt>
+                            </dl>
+                        </li>
+                        <li><a href="#">이용팁 <i class="far fa-caret-square-right"></i></a>
+                            <dl>
+                                <dt><a href="#">중국사이즈 조건표</a></dt>
+                                <dt><a href="#">중국내 배송조회</a></dt>
+                                <dt><a href="#">개인통관고유번호발급 방법</a></dt>
+                                <dt><a href="#">관/부가세 안내</a></dt>
+                                <dt><a href="#">수입금지품목</a></dt>
+                            </dl>
+                        </li>
                         <li><a href="#">노데이터 처리방법</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript:goSite('shipping')"     id="shipList">비용안내</a></li>
-                <li><a href="javascript:goSite('delivery')"     id="deliveryAgent">배송대행</a></li>
-                <li><a href="javascript:goSite('purchase')"     id="purchaseAgent">구매대행</a></li>
-                <li><a href="javascript:goSite('cs')"           id="csCenter">고객센터</a></li>
-                <li><a href="javascript:goSite('mypage')"       id="myPage">마이페이지</a></li>
+                <li><a href="javascript:goSite('shipping')"     id="shipList">비용안내</a>
+                    <ul>
+                        <li><a href="#">배송비</a></li>
+                        <li><a href="#">부가서비스</a></li>
+                        <li><a href="#">구매대행 수수료</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:goSite('delivery')"     id="deliveryAgent">배송대행</a>
+                    <ul>
+                        <li><a href="#">배송대행신청</a></li>
+                        <li><a href="#">엑셀대량등록</a></li>
+                        <li><a href="#">재고 신청</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:goSite('purchase')"     id="purchaseAgent">구매대행</a>
+                    <ul>
+                        <li><a href="#">구매대행신청</a></li>
+                        <li><a href="#">엑셀대량등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:goSite('cs')"           id="csCenter">고객센터</a>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주하는 질문</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                        <li><a href="#">이용후기</a></li>
+                        <li><a href="#">노데이터</a></li>
+                        <li><a href="#">통관조회</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:goSite('mypage')"       id="myPage">마이페이지</a>
+                    <ul>
+                        <li><a href="#">주문신청현황</a></li>
+                        <li><a href="#">결제관리</a></li>
+                        <li><a href="#">예치금 내역</a></li>
+                        <li><a href="#">포인트 내역</a></li>
+                        <li><a href="#">쿠폰 내역</a></li>
+                        <li><a href="#">받은 쪽지함</a></li>
+                        <li><a href="#">회원정보수정</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>   
     </div>
