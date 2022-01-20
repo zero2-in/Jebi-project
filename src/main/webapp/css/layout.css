@@ -271,12 +271,12 @@
 #header .btn-menu .menu-main {
     width: 1200px;
     height: 40px;
-
     padding-top: 20px;
     margin: 0 auto;
 }
 #header .btn-menu .menu-main li {
     display: inline-block;
+    height: 25px;
     text-align: center;
     padding: 0 26px;
     border-right: 1.2px solid #fff;
@@ -285,10 +285,12 @@
     border-right: none;
 }
 #header .btn-menu .menu-main li a {
+    display: inline-block;
+    height: 25px;
     transition: color 0.2s;
     font-size: 20px;
     color: #fff;
-    padding: 5px 10px;
+    padding: 2px 5px 15px 5px;
 }
 #header .btn-menu .menu-main li a:hover {
     transition: color 0.2s;
@@ -299,29 +301,26 @@
 }
 
 #header .btn-menu .menu-main li ul{
-    background: black;
+    background: #303030;
     display:none;
     height:auto;
-    margin-top: 18px;
+    padding-bottom: 17px;
     position:absolute;
     width:200px;
     border-radius: 5px 5px 5px 5px;
     z-index:200;
 }
-#header .btn-menu .menu-main:hover::after {
-    left: 19%;
-    top: 273px;
-    border-top: 0 solid transparent;
+#header .btn-menu .menu-main li:hover ::after a{
+    border-top: 10px solid transparent;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #303030;
     content: "";
 }
 #header .btn-menu .menu-main li:hover ul{
     display:block;
 }
 #header .btn-menu .menu-main li li {
-
     display:block;
     float:none;
     margin:0px;
@@ -333,20 +332,48 @@
 }
 #header .btn-menu .menu-main li ul a{
     display:block;
-    height:25px;
+    height:10px;
     font-size:14px;
-    color:#D8D8D8;
-    margin:0px;
-    padding:15px 10px 0px 15px;
+    color:#A4A4A4;
+    margin:10px;
+    padding:10px 10px 15px 15px;
     text-align:left;
 }
-#header .btn-menu .menu-main li ul a:hover, .btn-menu .menu-main li ul li:hover a{
+#header .btn-menu .menu-main li ul a:hover, #header .btn-menu .menu-main li ul li:hover a {
     color:#ffffff;
     text-decoration:none;
 }
 #header .btn-menu .menu-main p{
     clear:left;
 }
+#header .btn-menu .menu-main i{
+    float: right;
+    font-size: 17px;
+}
+#header .btn-menu .menu-main li ul a:hover i {
+    color:white;
+    background: #78148c;
+}
+
+#header .btn-menu .menu-main .menu-sub-main {
+    background: #303030;
+    display:none;
+    height:auto;
+    padding-bottom: 17px;
+    position:absolute;
+    width:200px;
+    border-radius: 5px 5px 5px 5px;
+    z-index:200;
+}
+#header .btn-menu .menu-main li ul li a:hover .menu-sub-main {
+    display:block;
+    background-color: #303030;
+}
+
+
+
+
+
 
 /* Index 메인 */
 #container {
