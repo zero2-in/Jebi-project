@@ -84,6 +84,8 @@ public class DeliveryDoRequest implements Command {
         String center_req = request.getParameter("center_req");
         if(center_req == null) center_req = "";
 
+        String agent_type = "배송대행";
+
         HttpSession session = request.getSession();
 
         String reg_id = (String)session.getAttribute("session_id");
@@ -91,7 +93,7 @@ public class DeliveryDoRequest implements Command {
 
         String table_no = dao.getMaxTable_no();
 
-        DlvrOrderInfoDTO infoDTO = new DlvrOrderInfoDTO(table_no, dlvr_way, kor_name, eng_name, zip, address, address_det, person_ctms_no, mobile, dlvr_req, total_pro_qty, total_pro_cost, total_pro_cost_usd, svc_dvs, detail_insp, default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance, island_mountain, insp_req, photo_req, center_req);
+        DlvrOrderInfoDTO infoDTO = new DlvrOrderInfoDTO(table_no, dlvr_way, kor_name, eng_name, zip, address, address_det, person_ctms_no, mobile, dlvr_req, total_pro_qty, total_pro_cost, total_pro_cost_usd, svc_dvs, detail_insp, default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance, island_mountain, insp_req, photo_req, center_req, agent_type);
         DlvrOrderItemDTO itemDTO = new DlvrOrderItemDTO(table_no, shop_no, "D2", tracking_no, clearance_code, item_eng_name, quantity, amount, color, size, option_more_info, brand, shop_url, img_url);
 
         int result = dao.doRequestDeliveryAgent(itemDTO, infoDTO, reg_id);

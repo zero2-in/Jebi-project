@@ -32,8 +32,16 @@ public class OrderStatusController {
                 pageLink = "mypage/order_status_view";
                 break;
             }
+
         }
 
         return pageLink;
+    }
+
+    // 주문 문의 등록
+    @RequestMapping(value = "OrderDoReply")
+    public void doReply(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command insert = new OrderReplyInsert();
+        insert.execute(request, response);
     }
 }

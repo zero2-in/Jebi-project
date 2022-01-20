@@ -1,9 +1,9 @@
 package com.jebi.dto;
 
 public class DlvrOrderInfoDTO {
-    private String table_no, dlvr_method, reg_kor_name, reg_eng_name, cons_zip, cons_addr, cons_addr_det, person_ctms_no, reg_mob_no, dlvr_req, total_quantity, total_money_yuan, total_money_dollor, svc_dvs, detail_insp, default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance, island_mountain, insp_req, photo_req, center_req;
+    private String table_no, dlvr_method, reg_kor_name, reg_eng_name, cons_zip, cons_addr, cons_addr_det, person_ctms_no, reg_mob_no, dlvr_req, total_quantity, total_money_yuan, total_money_dollor, svc_dvs, detail_insp, default_pic, add_pic, poly_bag, safety_bag, remove_box, simple_clearance, island_mountain, insp_req, photo_req, center_req, agent_type;
 
-    public DlvrOrderInfoDTO(String table_no, String dlvr_method, String reg_kor_name, String reg_eng_name, String cons_zip, String cons_addr, String cons_addr_det, String person_ctms_no, String reg_mob_no, String dlvr_req, String total_quantity, String total_money_yuan, String total_money_dollor, String svc_dvs, String detail_insp, String default_pic, String add_pic, String poly_bag, String safety_bag, String remove_box, String simple_clearance, String island_mountain, String insp_req, String photo_req, String center_req) {
+    public DlvrOrderInfoDTO(String table_no, String dlvr_method, String reg_kor_name, String reg_eng_name, String cons_zip, String cons_addr, String cons_addr_det, String person_ctms_no, String reg_mob_no, String dlvr_req, String total_quantity, String total_money_yuan, String total_money_dollor, String svc_dvs, String detail_insp, String default_pic, String add_pic, String poly_bag, String safety_bag, String remove_box, String simple_clearance, String island_mountain, String insp_req, String photo_req, String center_req, String agent_type) {
         this.table_no = table_no;
         this.dlvr_method = dlvr_method;
         this.reg_kor_name = reg_kor_name;
@@ -29,6 +29,7 @@ public class DlvrOrderInfoDTO {
         this.insp_req = insp_req;
         this.photo_req = photo_req;
         this.center_req = center_req;
+        this.agent_type = agent_type;
     }
 
     public String getTable_no() {
@@ -129,5 +130,9 @@ public class DlvrOrderInfoDTO {
 
     public String getCenter_req() {
         return center_req;
+    }
+
+    public String getAgent_type() {
+        return agent_type;
     }
 }

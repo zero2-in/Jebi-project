@@ -240,14 +240,14 @@
                                                 <div class="verified-badge">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </div>
-                                                <img src="${list.getItem_img_url()}" onerror="this.src='../images/img-upload.png'">
+                                                <img src="${list.getItem_img_url()}" onerror="this.src='images/img-upload.png'">
                                             </a>
                                         </div>
                                         <!-- Name -->
                                         <div class="project-name">
                                             <h4>
-                                                배송대행
-                                                <a href="javascript:goView()" title="주문정보 보기" target="_blank" class="num">${list.getOrder_no()}</a>
+                                                ${list.getAgent_type()}
+                                                <a href="javascript:goView('${list.getTable_no()}', '${list.getOrder_no()}')" title="주문정보 보기" class="num">${list.getOrder_no()}</a>
                                                 <img src="images/CN_flag.png" class="flag">
                                             </h4>
                                             <span class="company-not-rated margin-bottom-5">
@@ -284,7 +284,7 @@
                                             </li>
                                             <li>
                                                 처리일
-                                                <span>2022-01-02 03:48</span>
+                                                <span>${list.getProcessing_date()}</span>
                                             </li>
                                             <li>
                                                 등록일
@@ -296,7 +296,7 @@
                                             <a href="Clearance" target="_blank" data-animation="ripple" title="통관조회 하기" class="button gray ripple-effect">
                                                 <i class="fas fa-box-open"></i>
                                             </a>
-                                            <a href="javascript:goView()" target="_blank" data-animation="ripple" title="주문정보 보기" class="button gray ripple-effect">
+                                            <a href="javascript:goView('${list.getTable_no()}', '${list.getOrder_no()}')" data-animation="ripple" title="주문정보 보기" class="button gray ripple-effect">
                                                 <i class="far fa-eye"></i>
                                             </a>
                                             <a href="#small-dialog" title="실사 전체보기" data-animation="ripple" class="popup-with-zoom-anim button ripple-effect">
@@ -351,8 +351,10 @@
 
 <script src="js/btn_ripple_effect.js"></script>
 <script>
-    function goView() {
+    function goView(table_no, order_no) {
         urldirect.action = "OrderStatus";
+        urldirect.table_no.value = table_no;
+        urldirect.order_no.value = order_no;
         urldirect.separate.value = "view";
         urldirect.submit();
     }
