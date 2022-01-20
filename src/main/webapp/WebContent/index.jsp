@@ -21,6 +21,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <script src="js/jquery-3.6.0.min.js"></script><!-- js/jquery-3.6.0.min.js 위에 있어야 magnific-popup.min.js 보다-->
 <!-- 추가 2 끝-->
 <script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/slideShow.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
 
 <!-- 수정 1 시작-->
@@ -496,12 +497,10 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <p class="btn-notice"><a href ="javascript:goSite('cs')"><i class="fas fa-plus-square"></i></a>
             </div>
             <ul class="notice-content">
-                <li><a href="">주문서 작성시 유의사항<span>2021-12-14</span></a></li>
-                <li><a href="">2021년 중국 국경절 일정 안내<span>2021-09-27</span></a></li>
-                <li><a href="">9월 12일(일), 13일(월) 항공출고건 지연안내<span>2021-09-15</span></a></li>
-                <li><a href="">2021년 추석 일정 안내<span>2021-09-14</span></a></li>
-                <li><a href="">9월6일 항공 출고건 출항 지연안내<span>2021-09-07</span></a></li>
-                <li><a href="">8월9일~16일 항공 출고 관련 안내<span>2021-08-09</span></a></li>
+                <c:forEach items="${noticedtos}" var="list">
+                    <li><a href="">${list.getTitle()}<span>${list.getReg_date()}</span></a></li>
+
+                </c:forEach>
             </ul>
         </div>
         <!-- Notice End -->
@@ -525,6 +524,20 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
     <div class="content01">
         <form action="Member" method="post" onsubmit="return check();" name="login">
             <div class="login-box">
+                <c:if test="${not empty session_name}">
+                    <div class="member-grade">정상현(관리자)</div>
+                    <div class="member-grade-table-box">
+                        <ul>
+                            <li class="deposit"><a href="">예치금<strong>0원</strong></a></li>
+                            <li class="note"><a href="">쪽지<strong>0</strong></a></li>
+                            <li class="coupon"><a href="">쿠폰<strong>0</strong></a></li>
+                            <li class="waiting-for-payment"><a href="">결제대기<strong>0</strong></a></li>
+                            <li class="nodate"><a href="">노데이타<strong>0</strong></a></li>
+                        </ul>
+                    </div>
+                    <div class="index-logout">LOGOUT</div>
+                </c:if>
+                <c:if test="${empty session_name}">
                 <div class="id-password-box">
                     <input type="text"  name="id" class="input"  placeholder="&nbsp;&nbsp;아이디">
                     <button type="button" class="btn-log" data-animation="ripple"  onclick="setTimeout(function() {check();}, 100);">로그인</button>
@@ -543,6 +556,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                         <li><a href="javascript:void(0)"  class="talk" onclick="kakaoLogin()">카카오톡 계정으로 로그인</a></li>
                     </ul>
                 </div>
+                </c:if>
             </div>
         </form>
         <!-- Login End -->
@@ -583,7 +597,13 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <p class="review-title">이용후기</p>
             </div>
             <div class="review-content">
-                <a href="javascript:goSite('review')"><img src="images/review_img.png" height="150px"><span>김***님<br>2021.12.19<br>첫 후기ㅎㅎㅎ</span></a>
+                <ul class="slides">
+                <c:forEach items="${reviewdtos}" var="list">
+                        <li>
+                            <a href="javascript:goView('${list.getNo()}')"><label class="left"></label><img src="file_room/review/${list.getNo()}_${list.getAttach()}" height="150px"><span>${list.getKor_name()}님<br>${list.getReg_date()}<br>${list.getTitle()}</span><label class="right"></label></a>
+                        </li>
+                </c:forEach>
+                </ul>
             </div>
         </div>
     </div>
@@ -613,25 +633,25 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                             String day = "" ;
                             int dayNum = cal.get(Calendar.DAY_OF_WEEK) ;
                             switch(dayNum){
-                                case 2:
+                                case 1:
                                     day = "일";
                                     break ;
-                                case 3:
+                                case 2:
                                     day = "월";
                                     break ;
-                                case 4:
+                                case 3:
                                     day = "화";
                                     break ;
-                                case 5:
+                                case 4:
                                     day = "수";
                                     break ;
-                                case 6:
+                                case 5:
                                     day = "목";
                                     break ;
-                                case 7:
+                                case 6:
                                     day = "금";
                                     break ;
-                                case 1:
+                                case 7:
                                     day = "토";
                                     break ;
                             }
@@ -790,6 +810,12 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         function goCategory(arg) {
             category.t_category.value = arg;
             category.submit();
+        }
+        function goView(arg) {
+            urldirect.action = "Review";
+            urldirect.separate.value = "view";
+            urldirect.no.value = arg;
+            urldirect.submit();
         }
     </script>
 
