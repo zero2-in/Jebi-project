@@ -118,7 +118,16 @@
 
         <div class="btn-menu">
             <ul class="menu-main">
-                <li><a href="javascript:goSite('infouse')"      id="infoUse">이용안내</a></li>
+                <li><a href="javascript:goSite('infouse')"      id="infoUse">이용안내</a>
+                    <ul>
+                        <li><a href="#">배송대행 이용방법</a></li>
+                        <li><a href="#">구매대행 이용방법</a></li>
+                        <li><a href="#">사업자 이용안내</a></li>
+                        <li><a href="#">타오바오 이용방법</a></li>
+                        <li><a href="#">이용팁</a></li>
+                        <li><a href="#">노데이터 처리방법</a></li>
+                    </ul>
+                </li>
                 <li><a href="javascript:goSite('shipping')"     id="shipList">비용안내</a></li>
                 <li><a href="javascript:goSite('delivery')"     id="deliveryAgent">배송대행</a></li>
                 <li><a href="javascript:goSite('purchase')"     id="purchaseAgent">구매대행</a></li>

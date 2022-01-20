@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ include file="../common_header.jsp" %>
 <c:if test="${not empty session_name}">
@@ -47,7 +47,7 @@
                             <span class="icon-checkbox"></span> 아이디 저장
                         </label>
                     </div>
-                    
+
                     <!-- 로그인 버튼 -->
                     <button type="button" class="btn-submit ripple-effect" data-animation="ripple" onclick="setTimeout(function() {check();}, 100);">
                         <span class="text">로그인</span>
@@ -70,7 +70,7 @@
                     <div class="social-login-separator">
                         <span>or</span>
                     </div>
-                    
+
                     <div class="social-login-btn">
 
                         <button type="button" id="naverIdLogin_loginButton" class="naver-login ripple-effect" data-animation="ripple">
