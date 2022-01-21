@@ -31,7 +31,8 @@ public class IndexController {
 
 
 
-        String category = request.getParameter("t_category");
+        String category = request.getParameter("sep_cat");
+        if(category == null) category = "dlvr";
 
         Date time = new Date();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyyMM");
@@ -40,7 +41,7 @@ public class IndexController {
         ArrayList<DepartureDTO> dtos = new DepartureDAO().getDepartList(todayMonth);
 
         request.setAttribute("t_dtos", dtos);
-        request.setAttribute("category", category);
+        request.setAttribute("sep_cat", category);
         return "index";
     }
     // 출항스케줄 팝업창
