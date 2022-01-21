@@ -7,6 +7,20 @@
 #header {
     margin: 0 auto;
     box-sizing: border-box;
+    transition: background 0.3s ease 0s;
+    position: relative;
+    z-index: 990;
+    padding: 0;
+    box-shadow: rgb(0 0 0 / 12%) 0px 0px 18px 0px;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+}
+#header-container {
+    box-sizing: border-box;
+    display: block;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* 로그인 메뉴 */
@@ -314,6 +328,7 @@
     display: none;
 }
 #header .btn-menu .menu-main li a {
+    display: block;
     color: rgb(255, 255, 255);
     cursor: pointer;
     font-weight: 300;
@@ -325,41 +340,71 @@
 }
 
 #header .btn-menu .menu-main li ul{
-    background: #303030;
-    visibility: hidden;
+   opacity: 0;
+   visibility: hidden;
+   position: absolute;
+   top: 100%;
+   left: 9px;
+   padding: 0px;
+   z-index: 99999;
+}
+#header .btn-menu .menu-main ul {
+    margin: 0;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    height:auto;
-    position:absolute;
-    width:200px;
-    border-radius: 5px 5px 5px 5px;
-    z-index:200;
-    transition: all .3s;
+    background-color: #303030;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    width: 230px;
+    transition: all .25s ease 0s;
+    transform: translate3d(0px, 15px, 0px);
+    padding: 14px 0;
+    box-sizing: border-box;
     margin-top: 12px;
 }
-#header .btn-menu .menu-main li:hover ul{
+#header .btn-menu .menu-main ul li:first-child {
+    border-radius: 4px 4px 0px 0px;
+}
+#header .btn-menu .menu-main ul li {
+    margin: 0px;
+    padding: 0px 6px;
+    border-radius: 0px;
+    font-size: 15.7px;
+    width: 230px;
+    float: none;
+    position: relative;
+}
+#header .btn-menu .menu-main li:hover a {
+    transition: all 0.3s ease 0s;
+    color: rgb(170, 170, 170);
+}
+#header .btn-menu .menu-main li:hover > ul{
     visibility: visible;
     opacity: 1;
     pointer-events: all;
+    z-index: 20;
     transform: translate3d(0px, 0px, 0px);
+}
+#header .btn-menu .menu-main li:hover ul a, #header .btn-menu .menu-main ul a {
+    padding: 4px 40px 4px 15px !important;
+    line-height: 30px !important;
 }
 #header .btn-menu .menu-main li li {
     display:block;
     float:none;
     margin:0px;
     padding:0px;
-    width:200px;
+    width:240px;
 }
 #header .btn-menu .menu-main li:hover li a{
     background:none;
 }
 #header .btn-menu .menu-main li ul a{
     display:block;
-    height:10px;
-    font-size:14px;
+    padding: 4px 13px !important;
+    font-size:16px;
     color:#A4A4A4;
-    margin:10px;
-    padding:10px 10px 15px 15px;
     text-align:left;
 }
 #header .btn-menu .menu-main li ul a:hover, #header .btn-menu .menu-main li ul li:hover > a {
@@ -372,42 +417,56 @@
 #header .btn-menu .menu-main i{
     float: right;
     font-size: 17px;
+    position: relative;
+    top: 6px;
 }
 #header .btn-menu .menu-main li ul a:hover i {
     color:white;
     background: #78148c;
 }
-
-#header .btn-menu .menu-main .menu-sub-main li dl{
+#header .btn-menu .menu-main li ul {
+    padding: 15px 6px;
+}
+#header .btn-menu .menu-main ul ul {
+    transform: translate3d(15px, 0px, 0px);
+    box-sizing: border-box;
+    top: -12.5px;
+    left: 100%;
+    margin: 0px 0px 0px -10px;
+    pointer-events: none;
+}
+#header .btn-menu .menu-main .menu-sub-main a {
+    line-height: 26px;
+}
+#header .btn-menu .menu-main .menu-sub-main li li{
     background: #303030;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
     height:auto;
     top:0px;
-    margin-left:202px;
     position:absolute;
     width:200px;
     border-radius: 5px 5px 5px 5px;
     z-index:200;
     transition: all .3s;
 }
-#header .btn-menu .menu-main .menu-sub-main li:hover dl {
+#header .btn-menu .menu-main .menu-sub-main li:hover ul {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
 }
-#header .btn-menu .menu-main .menu-sub-main li dt{
+#header .btn-menu .menu-main .menu-sub-main li ul{
     display:block;
     float:none;
     margin:0px;
     padding:0px;
     width:207px;
 }
-#header .btn-menu .menu-main .menu-sub-main li:hover dt a{
+#header .btn-menu .menu-main .menu-sub-main li:hover li a{
     background:none;
 }
-#header .btn-menu .menu-main .menu-sub-main li dt a{
+#header .btn-menu .menu-main .menu-sub-main li li a{
     display:block;
     height:10px;
     font-size:14px;
@@ -416,14 +475,14 @@
     padding:10px 10px 15px 15px;
     text-align:left;
 }
-#header .btn-menu .menu-main .menu-sub-main li dl a:hover {
+#header .btn-menu .menu-main .menu-sub-main li li a:hover {
     color:#ffffff;
     text-decoration:none;
 }
 #header .btn-menu .menu-main .menu-sub-main p{
     clear:left;
 }
-#header .btn-menu .menu-main ul:before {
+#header .btn-menu .menu-main ul::before {
     content: ".";
     position: absolute;
     width: 100%;
@@ -434,7 +493,7 @@
     background: transparent;
 }
 
-#header .btn-menu .menu-main ul:after{
+#header .btn-menu .menu-main ul::after{
     content: "";
     position: absolute;
     left: 25px;
@@ -444,6 +503,17 @@
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid rgb(48, 48, 48);
+}
+#header .btn-menu .menu-main ul ul::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: -5px;
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
 }
 
 
@@ -4304,12 +4374,12 @@
     margin-right: -10px;
     margin-left: -10px;
 }
-.container-agent .row::before, .container-agent .row::after, .container-agent .clearfix::after, 
-.container-agent .clearfix::before {
+.container-agent .row::before, .container-agent .row::after, .clearfix::after, 
+.clearfix::before {
     content: " ";
     display: flex;
 }
-.container-agent .row::after, .container-agent .clearfix::after {
+.container-agent .row::after, .clearfix::after {
     clear: both;
 }
 

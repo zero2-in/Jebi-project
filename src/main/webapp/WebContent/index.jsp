@@ -22,8 +22,9 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <!-- 추가 2 끝-->
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/tabcontent.js"></script>
-<link rel="stylesheet" href="css/magnific-popup.css">
 <script src="js/slidetest.js"></script>
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <link rel="stylesheet" href="css/slidetest.css">
 
 <!-- 수정 1 시작-->
@@ -758,7 +759,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         <div class="tab">
             <ul class="tabnav">
                 <li><a href="#tab01"><b>배송대행 절차</b></a></li>
-                <li><a href="#tab02">구매대행 절차</a></li>
+                <li><a href="#tab02"><b>구매대행 절차</b></a></li>
             </ul>
             <div class="tabcontent">
 
@@ -789,13 +790,8 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
     </div>
     <!-- Departure-schedule End -->
 
-    <script src="js/slidetest.js"></script>
-    <link rel="stylesheet" href="css/slidetest.css">
-    <html>
-    <head>
-        <title>Title</title>
-    </head>
-    <body>
+
+
     <div id="container00">
         <div class="slide_wrap">
             <div class="slide_box">
@@ -831,8 +827,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
     </div>
     <!-- // .container -->
 
-    </body>
-    </html>
+
 
 </div>
 <form action="Member" method="post" name="kakaologin">

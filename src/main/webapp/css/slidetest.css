@@ -1,5 +1,5 @@
-html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; }
-.clearfix:after { content: ''; display: block; clear: both; float: none; }
+
+
 .title { margin-bottom: 0; text-align: center; font-size: 30px; color: #333; }
 .link, .link:visited { display: inline-block; margin: 20px 0; color: #555; text-decoration: none; font-weight: bold; }
 .link:hover, .link:focus { color: #9fd6c2; }
