@@ -54,7 +54,7 @@ public class MemberDAO {
         String name = "";
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "SELECT kor_name FROM jebi_member WHERE id = '"+id+"' AND password = '"+password+"'";
+        String query = "SELECT kor_name FROM jebi_member WHERE id = '"+id+"' AND password = '"+password+"' AND unreg = 'N'";
         util.runQuery(query, debugMethod, 0);
 
         try {
@@ -69,6 +69,27 @@ public class MemberDAO {
         }
 
         return name;
+    }
+
+    public boolean testLogin(String id, String password) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        boolean test = false;
+        String query = "SELECT kor_name cnt FROM jebi_member WHERE id = '"+id+"' AND password = '"+password+"'";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                test = true;
+            }
+        } catch(SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return true;
     }
 
     public boolean checkAdmin(String id) {
@@ -191,9 +212,9 @@ public class MemberDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "INSERT INTO jebi_member \r\n" +
-        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login) \r\n" +
         "VALUES('"+dto.getN_id()+"', 'naver', '"+dto.getN_name()+"', \r\n" +
-        "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N')";
+        "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N', 'NAVER')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
@@ -204,9 +225,9 @@ public class MemberDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "INSERT INTO jebi_member \r\n" +
-        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn) \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login) \r\n" +
         "VALUES('"+dto.getKid()+"', 'kakao', '"+dto.getKnickname()+"', \r\n" +
-        "'kakao', 'required', '"+dto.getKemail()+"', 'N', 'N')";
+        "'kakao', 'required', '"+dto.getKemail()+"', 'N', 'N', 'KAKAO')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
@@ -294,7 +315,7 @@ public class MemberDAO {
         String query = "SELECT kor_name, eng_name, phone, email, SMS_RCV_YN, EMAIL_RCV_YN, ADMINISTRATOR, \n" +
                 "to_char(REG_DATE, 'yyyy-MM-dd') AS reg_date, UNREG, to_char(UNREG_DATE, 'yyyy-MM-dd hh:mi') AS unreg_date, " +
                 "to_char(LAST_LOGIN_DATE, 'yyyy-MM-dd hh:mi') AS last_login_date, " +
-                "LOCKER FROM jebi_member \n" +
+                "LOCKER, social_login FROM jebi_member \n" +
                 "WHERE id = '"+id+"'";
 
         util.runQuery(query, debugMethod, 0);
@@ -313,8 +334,9 @@ public class MemberDAO {
                 String unreg_date = util.getRs().getString("unreg_date");
                 String last_login_date = util.getRs().getString("last_login_date");
                 String locker = util.getRs().getString("locker");
+                String social_login = util.getRs().getString("social_login");
 
-                dto = new MemberDTO(id, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker, unreg, unreg_date, last_login_date, administrator, reg_date);
+                dto = new MemberDTO(id, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker, unreg, unreg_date, last_login_date, administrator, reg_date, social_login);
             }
         } catch (SQLException e) {
             util.viewErr(debugMethod);
@@ -323,5 +345,30 @@ public class MemberDAO {
         }
 
         return dto;
+    }
+
+    public int changePassword(String id, String password) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "UPDATE jebi_member SET password = '"+password+"' WHERE id = '"+id+"'";
+
+        return util.runQuery(query, debugMethod, 1);
+    }
+
+    public int changeMyinfo(MemberDTO dto) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "UPDATE jebi_member SET ENG_NAME = '"+dto.getEng_name()+"', EMAIL = '"+dto.getEmail()+"', \n" +
+                "SMS_RCV_YN = '"+dto.getSms_rcv_yn()+"', EMAIL_RCV_YN = '"+dto.getEmail_rcv_yn()+"' WHERE id = '"+dto.getId()+"'";
+
+        return util.runQuery(query, debugMethod, 1);
+    }
+
+    public int setUnreg(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "UPDATE jebi_member SET unreg = 'Y', unreg_date = CURRENT_TIMESTAMP, LOCKER = '' WHERE id = '"+id+"'";
+
+        return util.runQuery(query, debugMethod, 1);
     }
 }
