@@ -1,7 +1,7 @@
 package com.jebi.dto;
 
 public class MemberDTO {
-    private String id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker, unreg, unreg_date, last_login_date, administrator, reg_date;
+    private String id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, locker, unreg, unreg_date, last_login_date, administrator, reg_date, social_login;
 
     // 회원가입 필드
     public MemberDTO(String id, String password, String kor_name, String eng_name, String phone, String email, String sms_rcv_yn, String email_rcv_yn, String locker) {
@@ -17,9 +17,7 @@ public class MemberDTO {
     }
 
     // 마이페이지 뷰
-
-
-    public MemberDTO(String id, String kor_name, String eng_name, String phone, String email, String sms_rcv_yn, String email_rcv_yn, String locker, String unreg, String unreg_date, String last_login_date, String administrator, String reg_date) {
+    public MemberDTO(String id, String kor_name, String eng_name, String phone, String email, String sms_rcv_yn, String email_rcv_yn, String locker, String unreg, String unreg_date, String last_login_date, String administrator, String reg_date, String social_login) {
         this.id = id;
         this.kor_name = kor_name;
         this.eng_name = eng_name;
@@ -33,6 +31,16 @@ public class MemberDTO {
         this.last_login_date = last_login_date;
         this.administrator = administrator;
         this.reg_date = reg_date;
+        this.social_login = social_login;
+    }
+
+    // 회원정보 수정필드
+    public MemberDTO(String id, String eng_name, String email, String sms_rcv_yn, String email_rcv_yn) {
+        this.id = id;
+        this.eng_name = eng_name;
+        this.email = email;
+        this.sms_rcv_yn = sms_rcv_yn;
+        this.email_rcv_yn = email_rcv_yn;
     }
 
     public String getId() {
@@ -121,5 +129,9 @@ public class MemberDTO {
 
     public String getReg_date() {
         return reg_date;
+    }
+
+    public String getSocial_login() {
+        return social_login;
     }
 }
