@@ -236,9 +236,15 @@ function goSite(arg) {
             break;
         }
         // 쪽지, 메일함
-        case "mail" : {
-            urldirect.action = "Mypage";
+        case "mailbox" : {
+            urldirect.action = "Mailbox";
             urldirect.separate.value = "mail";
+            urldirect.submit();
+            break;
+        }
+        // 내 정보
+        case "myinfo" : {
+            urldirect.action = "Myinfo";
             urldirect.submit();
             break;
         }
