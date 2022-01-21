@@ -23,11 +23,12 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/tabcontent.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
+<script src="js/slidetest.js"></script>
+<link rel="stylesheet" href="css/slidetest.css">
 
 <!-- 수정 1 시작-->
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
     <div class="schedule-form" id="dialog-cont">
-
         <script>
             function fnPopup(siteSrc) {
                 $.ajax({
@@ -760,10 +761,10 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <li><a href="#tab02">구매대행 절차</a></li>
             </ul>
             <div class="tabcontent">
-                <ul>
-                    <li><div id="tab01" ><img src="images/dlivery01_1_img.png" height="150px"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
-                    <li><div id="tab02"><img src="images/purchase02_01_img.png" height="150px"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
-                </ul>
+
+                    <div id="tab01"><img src="images/dlivery01_1_img.png" height="150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/dlivery01_2_img.png" height="150px"></div>
+                    <div id="tab02"><img src="images/purchase02_01_img.png" height="150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/dlivery01_2_img.png" height="150px"></div>
+
             </div>
         </div>
     </div>
@@ -787,6 +788,52 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         </div>
     </div>
     <!-- Departure-schedule End -->
+
+    <script src="js/slidetest.js"></script>
+    <link rel="stylesheet" href="css/slidetest.css">
+    <html>
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+    <div id="container00">
+        <div class="slide_wrap">
+            <div class="slide_box">
+                <div class="slide_list clearfix">
+                    <div class="slide_content slide01">
+                        <p>1</p>
+                    </div>
+                    <div class="slide_content slide02">
+                        <p>2</p>
+                    </div>
+                    <div class="slide_content slide03">
+                        <p>3</p>
+                    </div>
+                    <div class="slide_content slide04">
+                        <p>4</p>
+                    </div>
+                    <div class="slide_content slide05">
+                        <p>5</p>
+                    </div>
+                </div>
+                <!-- // .slide_list -->
+            </div>
+            <!-- // .slide_box -->
+            <div class="slide_btn_box">
+                <button type="button" class="slide_btn_prev">Prev</button>
+                <button type="button" class="slide_btn_next">Next</button>
+            </div>
+            <!-- // .slide_btn_box -->
+            <ul class="slide_pagination"></ul>
+            <!-- // .slide_pagination -->
+        </div>
+        <!-- // .slide_wrap -->
+    </div>
+    <!-- // .container -->
+
+    </body>
+    </html>
+
 </div>
 <form action="Member" method="post" name="kakaologin">
     <input type="hidden" name="separate" value="kakaoSave">

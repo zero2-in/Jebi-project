@@ -1,4 +1,4 @@
 #VSCode Settings Ignore
 .vscode/*
-target/m2e-wtp/*
+target/m2e-wtp/
 .idea/*
