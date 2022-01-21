@@ -18,7 +18,7 @@
         <li class="select-area">
             <button class="dropbtn"><span id="pageTitle"></span> <span class="bs-caret"><span class="caret"></span></span></button>
             <div class="dropdown-content">
-                <a href="javascript:goSite('order_status')"class="order_status">주문신청 현황<span class="check"></span></a>
+                <a href="javascript:goSite('mypage')"class="order_status">주문신청 현황<span class="check"></span></a>
                 <a href="javascript:goSite('purchase_manage')"class="purchase_manage">결제 관리              <span class="check"></span> </a>
                 <a href="javascript:goSite('deposit_history')"class="deposit_history">예치금 내역             <span class="check"></span> </a>
                 <a href="javascript:goSite('point_history')"class="point_history">포인트 내역             <span class="check"></span> </a>

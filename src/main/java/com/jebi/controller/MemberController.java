@@ -65,6 +65,13 @@ public class MemberController {
                 pageLink = "common_alert_page";
                 break;
             }
+            // 회원탈퇴
+            case "unreg" : {
+                Command unreg = new MemberUnregister();
+                unreg.execute(request, response);
+                pageLink = "common_alert_page";
+                break;
+            }
         } 
 
         return pageLink;
