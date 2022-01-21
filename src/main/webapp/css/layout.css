@@ -367,7 +367,7 @@
     float:none;
     margin:0px;
     padding:0px;
-    width:200px;
+    width:207px;
 }
 #header .btn-menu .menu-main .menu-sub-main li:hover dt a{
     background:none;
@@ -388,11 +388,6 @@
 #header .btn-menu .menu-main .menu-sub-main p{
     clear:left;
 }
-
-
-
-
-
 
 /* Index 메인 */
 #container {
@@ -1136,6 +1131,19 @@
     padding-top: 46px;
     float: right;  
 }
+
+/*tab css*/
+#container .tab{float:left; width:1198px; height:290px;}
+#container .tabnav{font-size:0; width:600px;}
+#container .tabnav li{display: inline-block;  height:46px; text-align:center; }
+#container .tabnav li a:before{content:""; position:absolute; left:0; top:0px; width:100%; height:3px; }
+#container .tabnav li a.active:before{background:#612C87;}
+#container .tabnav li a.active{border-bottom:1px solid #fff;}
+#container .tabnav li a{ position:relative; display:block;  color: #000; padding:0 30px; line-height:46px; text-decoration:none; font-size:16px;}
+#container .tabnav li a:hover,
+#container .tabnav li a.active{background:#fff; color:#612C87; }
+#container .tabcontent{padding: 20px; height:244px; }
+
 /* 즐겨찾는 서비스 */
 #container .favorites-service {
 	background-color: rgb(220, 220, 220);	

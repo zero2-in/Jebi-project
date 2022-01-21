@@ -21,7 +21,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <script src="js/jquery-3.6.0.min.js"></script><!-- js/jquery-3.6.0.min.js 위에 있어야 magnific-popup.min.js 보다-->
 <!-- 추가 2 끝-->
 <script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/slideShow.js"></script>
+<script src="js/tabcontent.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
 
 <!-- 수정 1 시작-->
@@ -754,16 +754,21 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 
     <!-- Dlivery-purchase Start -->
     <div class="content01">
-        <div class="dlivery-purchase-title"><a href=""><b>배송대행 절차 ㅣ</b>구매대행 절차</a></div>
-        <div class="dlivery-purchase-procedure">
-            <ul>
-                <li><div class="dlivery-procedure"><img src="images/dlivery01_1_img.png" height="150px"></div></li>
-                <li><div class="purchase-procedure"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
-
-
+        <div class="tab">
+            <ul class="tabnav">
+                <li><a href="#tab01"><b>배송대행 절차</b></a></li>
+                <li><a href="#tab02">구매대행 절차</a></li>
             </ul>
+            <div class="tabcontent">
+                <ul>
+                    <li><div id="tab01" ><img src="images/dlivery01_1_img.png" height="150px"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
+                    <li><div id="tab02"><img src="images/purchase02_01_img.png" height="150px"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
+                </ul>
+            </div>
         </div>
     </div>
+
+
     <!-- Dlivery-purchase end -->
 
     <!-- Departure-schedule Start -->
