@@ -21,13 +21,15 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <script src="js/jquery-3.6.0.min.js"></script><!-- js/jquery-3.6.0.min.js 위에 있어야 magnific-popup.min.js 보다-->
 <!-- 추가 2 끝-->
 <script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/slideShow.js"></script>
+<script src="js/tabcontent.js"></script>
+<script src="js/slidetest.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/slidetest.css">
 
 <!-- 수정 1 시작-->
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
     <div class="schedule-form" id="dialog-cont">
-
         <script>
             function fnPopup(siteSrc) {
                 $.ajax({
@@ -754,16 +756,21 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 
     <!-- Dlivery-purchase Start -->
     <div class="content01">
-        <div class="dlivery-purchase-title"><a href=""><b>배송대행 절차 ㅣ</b>구매대행 절차</a></div>
-        <div class="dlivery-purchase-procedure">
-            <ul>
-                <li><div class="dlivery-procedure"><img src="images/dlivery01_1_img.png" height="150px"></div></li>
-                <li><div class="purchase-procedure"><img src="images/dlivery01_2_img.png" height="150px"></div></li>
-
-
+        <div class="tab">
+            <ul class="tabnav">
+                <li><a href="#tab01"><b>배송대행 절차</b></a></li>
+                <li><a href="#tab02"><b>구매대행 절차</b></a></li>
             </ul>
+            <div class="tabcontent">
+
+                    <div id="tab01"><img src="images/dlivery01_1_img.png" height="150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/dlivery01_2_img.png" height="150px"></div>
+                    <div id="tab02"><img src="images/purchase02_01_img.png" height="150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/dlivery01_2_img.png" height="150px"></div>
+
+            </div>
         </div>
     </div>
+
+
     <!-- Dlivery-purchase end -->
 
     <!-- Departure-schedule Start -->
@@ -782,6 +789,46 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         </div>
     </div>
     <!-- Departure-schedule End -->
+
+
+
+    <div id="container00">
+        <div class="slide_wrap">
+            <div class="slide_box">
+                <div class="slide_list clearfix">
+                    <div class="slide_content slide01">
+                        <p>1</p>
+                    </div>
+                    <div class="slide_content slide02">
+                        <p>2</p>
+                    </div>
+                    <div class="slide_content slide03">
+                        <p>3</p>
+                    </div>
+                    <div class="slide_content slide04">
+                        <p>4</p>
+                    </div>
+                    <div class="slide_content slide05">
+                        <p>5</p>
+                    </div>
+                </div>
+                <!-- // .slide_list -->
+            </div>
+            <!-- // .slide_box -->
+            <div class="slide_btn_box">
+                <button type="button" class="slide_btn_prev">Prev</button>
+                <button type="button" class="slide_btn_next">Next</button>
+            </div>
+            <!-- // .slide_btn_box -->
+            <ul class="slide_pagination"></ul>
+            <!-- // .slide_pagination -->
+        </div>
+        <!-- // .slide_wrap -->
+    </div>
+    <!-- // .container -->
+
+
+
 </div>
 <form action="Member" method="post" name="kakaologin">
     <input type="hidden" name="separate" value="kakaoSave">
