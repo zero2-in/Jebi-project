@@ -1,7 +1,5 @@
 package com.jebi.controller;
 
-import com.jebi.command.nodate.NodateList;
-import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-public class NodateController {
-    @RequestMapping("Nodate")
-    public String nodate(HttpServletRequest request, HttpServletResponse response) throws IOException {
+public class NodataController {
+    @RequestMapping("Nodata")
+    public String nodata(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String separate = request.getParameter("separate");
         if (separate == null || separate.equals("")) separate = "list";
         String pageLink = "";
@@ -20,9 +18,7 @@ public class NodateController {
         switch (separate) {
             // 노데이터 리스트
             case "list": {
-                Command list = new NodateList();
-                list.execute(request, response);
-                pageLink = "nodate/nodate_list";
+                pageLink = "nodata/nodata_list";
                 break;
             }
         }

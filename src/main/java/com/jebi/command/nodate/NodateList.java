@@ -1,7 +1,7 @@
 package com.jebi.command.nodate;
 
 import com.jebi.common.Command;
-import com.jebi.dao.NoticeDAO;
+import com.jebi.dao.NodateDAO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
