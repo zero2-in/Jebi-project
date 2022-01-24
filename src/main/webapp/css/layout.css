@@ -5608,6 +5608,7 @@
 .container-agent .pagination ul {
     margin: 0;
     padding: 0;
+    font-size: 0;
 }
 .container-agent .pagination ul li {
     display: inline-block;
@@ -6182,6 +6183,23 @@
     opacity: 1;
     transition: .3s;
     /*box-shadow: 0 0 10px 15px #fff */
+}
+
+.container-agent .welcome-text {
+    display: block;
+    text-align: center;
+    color: gray;
+    margin-bottom: 33px;
+}
+.container-agent .welcome-text h4 {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    font-size: 18px;
+}
+.container-agent .welcome-text span {
+    display: block;
+    margin-top: 4px;
 }
 
 
