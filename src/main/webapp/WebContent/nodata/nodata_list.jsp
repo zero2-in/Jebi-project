@@ -77,7 +77,7 @@
 </div>
 <%@ include file="../common_footer.jsp" %>
 
-<script src="../js/btn_ripple_effect.js"></script>
+<script src="js/btn_ripple_effect.js"></script>
 
 </body>
 </html>

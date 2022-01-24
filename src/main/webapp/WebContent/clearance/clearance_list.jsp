@@ -621,6 +621,14 @@
 <%@ include file="../common_footer.jsp" %>
 
 <script src="js/btn_ripple_effect.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".accordion_02 .js_accordion_item").click(function () {
+            $(this).next(".accordion-body").slideToggle(200);
+            $(this).toggleClass("active");
+        });
+    });
+</script>
 
 </body>
 </html>
