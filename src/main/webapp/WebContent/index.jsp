@@ -22,10 +22,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <!-- 추가 2 끝-->
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/tabcontent.js"></script>
-<script src="js/slidetest.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
-
-<link rel="stylesheet" href="css/slidetest.css">
 
 <!-- 수정 1 시작-->
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
@@ -500,7 +497,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             </div>
             <ul class="notice-content">
                 <c:forEach items="${noticedtos}" var="list">
-                    <li><a href="">${list.getTitle()}<span>${list.getReg_date()}</span></a></li>
+                    <li><a href="javascript:goNoticeView('${list.getNo()}')">${list.getTitle()}<span>${list.getReg_date()}</span></a></li>
 
                 </c:forEach>
             </ul>
@@ -527,7 +524,14 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         <form action="Member" method="post" onsubmit="return check();" name="login">
             <div class="login-box">
                 <c:if test="${not empty session_name}">
-                    <div class="member-grade">정상현(관리자)</div>
+                    <div class="member-grade">
+                        <li>
+                            <a href="">${session_name}
+                                <c:if test="${session_level eq 'top'}"><span>(관리자)</span></c:if>
+                                <c:if test="${session_level ne 'top'}"><span>(일반)</span></c:if>
+                            </a>
+                        </li>
+                    </div>
                     <div class="member-grade-table-box">
                         <ul>
                             <li class="deposit"><a href="">예치금<strong>0원</strong></a></li>
@@ -602,7 +606,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <ul class="slides">
                 <c:forEach items="${reviewdtos}" var="list">
                         <li>
-                            <a href="javascript:goView('${list.getNo()}')"><label class="left"></label><img src="file_room/review/${list.getNo()}_${list.getAttach()}" height="150px"><span>${list.getKor_name()}님<br>${list.getReg_date()}<br>${list.getTitle()}</span><label class="right"></label></a>
+                            <a href="javascript:goReView('${list.getNo()}')"><label class="left"></label><img src="file_room/review/${list.getNo()}_${list.getAttach()}" height="150px"><span>${list.getKor_name()}님<br>${list.getReg_date()}<br>${list.getTitle()}</span><label class="right"></label></a>
                         </li>
                 </c:forEach>
                 </ul>
@@ -792,43 +796,6 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 
 
 
-    <div id="container00">
-        <div class="slide_wrap">
-            <div class="slide_box">
-                <div class="slide_list clearfix">
-                    <div class="slide_content slide01">
-                        <p>1</p>
-                    </div>
-                    <div class="slide_content slide02">
-                        <p>2</p>
-                    </div>
-                    <div class="slide_content slide03">
-                        <p>3</p>
-                    </div>
-                    <div class="slide_content slide04">
-                        <p>4</p>
-                    </div>
-                    <div class="slide_content slide05">
-                        <p>5</p>
-                    </div>
-                </div>
-                <!-- // .slide_list -->
-            </div>
-            <!-- // .slide_box -->
-            <div class="slide_btn_box">
-                <button type="button" class="slide_btn_prev">Prev</button>
-                <button type="button" class="slide_btn_next">Next</button>
-            </div>
-            <!-- // .slide_btn_box -->
-            <ul class="slide_pagination"></ul>
-            <!-- // .slide_pagination -->
-        </div>
-        <!-- // .slide_wrap -->
-    </div>
-    <!-- // .container -->
-
-
-
 </div>
 <form action="Member" method="post" name="kakaologin">
     <input type="hidden" name="separate" value="kakaoSave">
@@ -858,8 +825,14 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             category.t_category.value = arg;
             category.submit();
         }
-        function goView(arg) {
+        function goReView(arg) {
             urldirect.action = "Review";
+            urldirect.separate.value = "view";
+            urldirect.no.value = arg;
+            urldirect.submit();
+        }
+        function goNoticeView(arg) {
+            urldirect.action = "Notice";
             urldirect.separate.value = "view";
             urldirect.no.value = arg;
             urldirect.submit();

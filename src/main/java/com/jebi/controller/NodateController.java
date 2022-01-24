@@ -20,8 +20,6 @@ public class NodateController {
         switch (separate) {
             // 노데이터 리스트
             case "list": {
-                Command list = new NodateList();
-                list.execute(request, response);
                 pageLink = "nodate/nodate_list";
                 break;
             }
