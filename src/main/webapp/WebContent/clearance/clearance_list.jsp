@@ -60,7 +60,7 @@
                         <!-- 상품의 이미지 -->
                         <div class="order-img">
                             <a href="#" target="_blank">
-                                <img src="../../images/test_img.jpg" alt="주문정보 상세보기">
+                                <img src="images/test_img.jpg" alt="주문정보 상세보기">
                             </a>
                         </div>
                         <!-- 상품의 정보 -->
