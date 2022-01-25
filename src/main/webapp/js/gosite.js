@@ -249,6 +249,24 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 예치금 내역
+        case "deposit_history" : {
+            urldirect.action = "DepositHistory";
+            urldirect.submit();
+            break;
+        }
+        // 포인트 내역
+        case "point_history" : {
+            urldirect.action = "PointHistory";
+            urldirect.submit();
+            break;
+        }
+        // 쿠폰 내역
+        case "coupon_history" : {
+            urldirect.action = "CouponHistory";
+            urldirect.submit();
+            break;
+        }
         // 쪽지, 메일함
         case "mailbox" : {
             urldirect.action = "Mailbox";

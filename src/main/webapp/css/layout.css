@@ -281,6 +281,31 @@
     text-align: center;
     margin: 10px auto 35px auto;
 }
+#header .img-logo .jebi {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    opacity: 0;
+    background: url('../images/jebi.png') no-repeat center;
+    background-position-x: 25px;
+    background-size: contain;
+    transition: all .3s ease-in-out;
+    top: 70px;
+}
+#header .img-logo a {
+    display: block;
+}
+#header .img-logo:hover img {
+    content: url('../images/logo_hover.png');
+}
+#header .img-logo:hover .jebi {
+    transition-delay: 0.1s;
+    opacity: 1;
+    z-index: 10;
+    transform: scale(1.5);
+    top: 10px;
+}
+
 
 /* 메인메뉴 */
 #header *::after, #header *::before {
@@ -6305,6 +6330,26 @@
 .container-agent .welcome-text span {
     display: block;
     margin-top: 4px;
+}
+
+.container-agent .discounted-price-tag.pay-account {
+    position: relative;
+    top: -15px;
+}
+.container-agent .discounted-price-tag, .container-agent .regular-price-tag {
+    font-size: 14px;
+    background: #e0f5d7;
+    color: #449626;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 4px 10px;
+    flex-grow: 0;
+    flex: auto;
+    width: auto;
+    transition: .3s;
+    margin-top: 6px;
+    margin-right: 5px;
+    display: inline-block;
 }
 
 

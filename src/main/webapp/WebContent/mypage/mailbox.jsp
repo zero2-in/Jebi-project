@@ -228,7 +228,7 @@
                 data: {MAIL_NO: fnCkBoxVal(oNoteSeq)},
                 contentType: "application/json",
                 success: function() {
-                    top.location.reload();
+                    location.reload();
                 },
                 error: function(e) {
                     alert(e.responseText);

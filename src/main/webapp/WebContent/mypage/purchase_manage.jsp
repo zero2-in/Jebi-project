@@ -43,7 +43,7 @@
               주문 리스트
             </h3>
             <div class="headline-btn">
-              <a href="javascript:void(0)" data-animation="ripple" class="button blue-line ripple-effect">
+              <a href="javascript:void(0)" onclick="setTimeout(function(){goList()}, 150)" data-animation="ripple" class="button blue-line ripple-effect">
                 결제 내역
               </a>
             </div>
@@ -172,5 +172,12 @@
 <%@ include file="../common_footer.jsp" %>
 
 <script src="js/btn_ripple_effect.js"></script>
+<script>
+  function goList() {
+    urldirect.action = "PurchaseManagement";
+    urldirect.separate.value = "list";
+    urldirect.submit();
+  }
+</script>
 </body>
 </html>
