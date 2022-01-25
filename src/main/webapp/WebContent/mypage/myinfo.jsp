@@ -18,7 +18,13 @@
 
 <!-- Magnific popup css -->
 <link rel="stylesheet" href="css/magnific-popup.css">
-<%@ include file="common_myinfo.jsp" %>
+<script>
+    $(document).ready(function () {
+        $("#breadcrumbs #pageTitle").html("회원정보 수정");
+        $("#breadcrumbs .myinfo").addClass("selected");
+        $("#breadcrumbs .myinfo").attr("href", "javascript:void(0)");
+    });
+</script>
 <div class="container-agent">
     <div class="bar-title">
         <h2 class="title">회원정보 수정</h2>
