@@ -93,7 +93,7 @@ public class MailboxDAO {
     public int setReaddate(String no) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "UPDATE jebi_mailbox SET read_date = nvl((SELECT read_date FROM jebi_mailbox), CURRENT_TIMESTAMP) WHERE no = '"+no+"'";
+        String query = "UPDATE jebi_mailbox SET read_date = nvl((SELECT read_date FROM jebi_mailbox), CURRENT_TIMESTAMP), has_read = 'Y' WHERE no = '"+no+"'";
 
         return util.runQuery(query, debugMethod, 1);
     }

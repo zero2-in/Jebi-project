@@ -92,7 +92,9 @@
                         </c:if>
 
                         <c:if test="${not empty list}">
+                            <c:set var="i" value="1" />
                             <c:forEach items="${list}" var="list">
+                                <c:set var="i" value="${i+1}" />
                                 <li class="ntc-height">
                                     <!-- board-listing -->
                                     <div class="board-listing">
@@ -101,8 +103,8 @@
                                             <!-- Details -->
                                             <div class="board-listing-description">
                                                 <div class="checkbox">
-                                                    <input type="checkbox" name="ckNOTE_SEQ" id="chk1" value="${list.getNo()}">
-                                                    <label for="chk1">
+                                                    <input type="checkbox" name="ckNOTE_SEQ" id="chk${i}" value="${list.getNo()}">
+                                                    <label for="chk${i}">
                                                         <span class="checkbox-icon"></span>
                                                     </label>
                                                 </div>
@@ -220,15 +222,12 @@
         }
 
         if ( confirm('선택 쪽지 건을 삭제하시겠습니까?') ) {
-            var jsonst = {MAIL_NO: fnCkBoxVal(oNoteSeq)};
-
             $.ajax({
                 url: "MailboxDelete",
-                method: "POST",
-                data: JSON.stringify(jsonst),
-                dataType: "json",
+                method: "GET",
+                data: {MAIL_NO: fnCkBoxVal(oNoteSeq)},
                 contentType: "application/json",
-                success: function(data) {
+                success: function() {
                     top.location.reload();
                 },
                 error: function(e) {

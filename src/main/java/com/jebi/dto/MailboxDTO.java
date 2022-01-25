@@ -19,6 +19,14 @@ public class MailboxDTO {
         this.content = content;
     }
 
+    // 세션
+    public MailboxDTO(String no, String title, String reg_name, String reg_date) {
+        this.no = no;
+        this.title = title;
+        this.reg_name = reg_name;
+        this.reg_date = reg_date;
+    }
+
     public String getNo() {
         return no;
     }

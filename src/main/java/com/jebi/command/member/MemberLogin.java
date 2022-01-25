@@ -32,6 +32,7 @@ public class MemberLogin implements Command {
             HttpSession session = request.getSession();
             session.setAttribute("session_name", name);
             session.setAttribute("session_id", id);
+            session.setAttribute("session_mail", dao.getMailSession(id));
             if(dao.checkAdmin(id)) {
                 session.setAttribute("session_level", "top");
             } else {
