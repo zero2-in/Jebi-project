@@ -40,7 +40,7 @@
                         <i class="fas fa-angle-double-right"></i> 결제 내역
                     </h3>
                     <div class="headline-btn">
-                        <a href="javascript:void(0)" onclick="goBack()" data-animation="ripple" class="button blue-line ripple-effect">
+                        <a href="javascript:void(0)" onclick="setTimeout(function(){goBack()}, 150)" data-animation="ripple" class="button blue-line ripple-effect">
                             결제하기
                         </a>
                     </div>

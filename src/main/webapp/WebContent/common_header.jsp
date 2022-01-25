@@ -129,6 +129,7 @@
 
             <div class="img-logo">
                 <a href="/jebi">
+                    <span class="jebi"></span>
                     <img src="images/logo.png" height="100px">
                 </a>
             </div>
