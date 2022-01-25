@@ -200,7 +200,7 @@
                                 <li><a href="javascript:goSite('')">예치금 내역</a></li>
                                 <li><a href="javascript:goSite('')">포인트 내역</a></li>
                                 <li><a href="javascript:goSite('')">쿠폰 내역</a></li>
-                                <li><a href="javascript:goSite('')">받은 쪽지함</a></li>
+                                <li><a href="javascript:goSite('mailbox')">받은 쪽지함</a></li>
                                 <li><a href="javascript:goSite('myinfo')">회원정보수정</a></li>
                             </ul>
                         </li>
