@@ -111,6 +111,15 @@
     display: block;
     width: 100%;
 }
+#header .header-notifications-content .notification-msg-text {
+    display: inline-block;
+    line-height: 23px;
+    font-size: 14.7px;
+    margin: 4px 0px;
+}
+#header .header-notifications-content span.color {
+    color: #2a41e8;
+}
 #header .header-notifications-scroll {
     display: block;
     overflow: hidden;
