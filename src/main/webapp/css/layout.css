@@ -6882,3 +6882,163 @@ button.mfp-close, button.mfp-arrow {
     border: 1px solid rgb(220, 220, 220);
 }
 
+/*
+--------------------------------------------- id/password  / start -----------------------------------------------------
+*/
+/* 아이디 비밀번호 */
+.container-find-id-pw{
+    width: 1202px;
+    height: 418px;
+    margin: auto;
+}
+.bar-title{
+    width: 1200px;
+    height: 44px;
+    margin-top: 70px;
+}
+.content-find-id-pw{
+    width: 1200px;
+    height: 260px;
+    margin-top: 40px;
+}
+.tab01{
+    width: 1198px;
+    height: 52px;
+}
+.tabnavi{
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    border: 1px solid rgb(220, 220, 220);
+}
+.tab-find-id{
+    width: 248px;
+    height: 35px;
+    text-align: center;
+    padding-top: 17px;
+    float: left;
+    border-right: 1px solid rgb(220, 220, 220);
+}
+.tab-find-pw{
+    width: 248px;
+    height: 35px;
+    text-align: center;
+    padding-top: 17px;
+    float: left;
+}
+.tab-content{
+    width: 1200px;
+    height: 202px;
+    text-align: center;
+}
+.board-find-id-pw{
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    padding-top: 12px;
+}
+.text-box {
+    width: 100%;
+    height: 40px;
+    padding: 6px 0;
+}
+.input{
+    float: right;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 16px;
+    color: gray;
+    margin: 0;
+    max-width: 100%;
+    width: 460px;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 1;
+}
+.text-box i{
+    float: left;
+    color: #a0a0a0;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    background-color: #f8f8f8;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 4px 0 0 4px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+}
+.btn-fint-id {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #78148c;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 17px;
+    line-height: 40px;
+    margin-top: 6px;
+    letter-spacing: 0.8px;
+}
+.btn-fint-id .text {
+    position: relative;
+    left: 13px;
+    transition: all 0.2s ease-in-out;
+}
+.btn-fint-id .arrow-animate {
+    font-size: 15px;
+    opacity: 0;
+    position: relative;
+    left: -10px;
+    transition: all 0.2s ease-in-out;
+}
+.btn-fint-id:hover .arrow-animate {
+    position: relative;
+    left: 0;
+    opacity: 1;
+}
+.btn-fint-id:hover .text {
+    position: relative;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+--------------------------------------------- id/password  / end -----------------------------------------------------
+*/
