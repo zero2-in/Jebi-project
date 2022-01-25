@@ -5,9 +5,11 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.dto.KakaoDTO;
+import com.jebi.dto.MailboxDTO;
 import com.jebi.dto.MemberDTO;
 import com.jebi.dto.NaverDTO;
 
@@ -370,5 +372,32 @@ public class MemberDAO {
         String query = "UPDATE jebi_member SET unreg = 'Y', unreg_date = CURRENT_TIMESTAMP, LOCKER = '' WHERE id = '"+id+"'";
 
         return util.runQuery(query, debugMethod, 1);
+    }
+
+    // 메일함 가져오기
+    public ArrayList<MailboxDTO> getMailSession(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        ArrayList<MailboxDTO> list = new ArrayList<>();
+        String query = "SELECT a.no, a.title, b.kor_name AS reg_name FROM jebi_mailbox a, jebi_member b \n" +
+                "WHERE a.to_userid = '"+id+"' AND a.reg_id = b.id AND a.has_read = 'N' ORDER BY a.reg_date DESC";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String no = util.getRs().getString("no");
+                String title = util.getRs().getString("title");
+                String reg_name = util.getRs().getString("reg_name");
+
+                list.add(new MailboxDTO(no, title, reg_name, ""));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
     }
 }

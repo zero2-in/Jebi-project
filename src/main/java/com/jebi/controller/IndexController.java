@@ -22,7 +22,7 @@ public class IndexController {
     @RequestMapping(value={"/", "/jebi"})
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ReviewDAO dao = new ReviewDAO();
-        ArrayList<ReviewDTO> reviewdtos= dao.getReviewList("", 1, 1);
+        ArrayList<ReviewDTO> reviewdtos= dao.getReviewList("", 1, 10);
         request.setAttribute("reviewdtos", reviewdtos);
 
         NoticeDAO dao1 = new NoticeDAO();

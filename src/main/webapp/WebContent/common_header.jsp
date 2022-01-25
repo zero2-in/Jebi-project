@@ -61,7 +61,7 @@
                             <div class="header-notifications-trigger">
                                 <a href="javascript:void(0)">
                                     <i class="far fa-envelope"></i>
-                                    <span>0</span>
+                                    <span>${session_mail.size()}</span>
                                 </a>
                             </div>
                             <!-- Dropdown -->
@@ -80,20 +80,33 @@
                                         <div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;">
                                             <div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
                                                 <ul>
-                                                    <!-- Notification -->
-                                                    <li class="notifications-not-read">
-                                                        <div class="notification-text">
-                                                            <strong>쪽지가 없습니다.</strong>
-                                                            <p class="notification-msg-text"></p>
-                                                            <span class="color"></span>
-                                                        </div>
-                                                    </li>
+                                                    <c:if test="${empty session_mail}">
+                                                        <!-- Notification -->
+                                                        <li class="notifications-not-read">
+                                                            <div class="notification-text">
+                                                                <strong>쪽지가 없습니다.</strong>
+                                                                <p class="notification-msg-text"></p>
+                                                                <span class="color"></span>
+                                                            </div>
+                                                        </li>
+                                                    </c:if>
+                                                    <c:if test="${not empty session_mail}">
+                                                        <c:forEach items="${session_mail}" begin="0" end="4" var="list">
+                                                            <!-- Notification -->
+                                                            <li class="notifications-not-read">
+                                                                <div class="notification-text">
+                                                                    <p class="notification-msg-text">${list.getTitle()}</p>
+                                                                    <span class="color">${list.getReg_name()}</span>
+                                                                </div>
+                                                            </li>
+                                                        </c:forEach>
+                                                    </c:if>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="javascript:void(0)" onclick="setTimeout(function(){goSite('mail')}, 150)" data-animation="ripple" class="header-notifications-button ripple-effect button-sliding-icon">
+                                <a href="javascript:void(0)" onclick="setTimeout(function(){goSite('mailbox')}, 150)" data-animation="ripple" class="header-notifications-button ripple-effect button-sliding-icon">
                                     쪽지 전체 보기
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -187,7 +200,7 @@
                                 <li><a href="javascript:goSite('')">예치금 내역</a></li>
                                 <li><a href="javascript:goSite('')">포인트 내역</a></li>
                                 <li><a href="javascript:goSite('')">쿠폰 내역</a></li>
-                                <li><a href="javascript:goSite('')">받은 쪽지함</a></li>
+                                <li><a href="javascript:goSite('mailbox')">받은 쪽지함</a></li>
                                 <li><a href="javascript:goSite('myinfo')">회원정보수정</a></li>
                             </ul>
                         </li>

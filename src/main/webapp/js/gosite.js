@@ -235,10 +235,15 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 결제관리
+        case "purchase_manage" : {
+            urldirect.action = "PurchaseManagement";
+            urldirect.submit();
+            break;
+        }
         // 쪽지, 메일함
         case "mailbox" : {
             urldirect.action = "Mailbox";
-            urldirect.separate.value = "mail";
             urldirect.submit();
             break;
         }
