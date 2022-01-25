@@ -72,6 +72,11 @@ public class MemberController {
                 pageLink = "common_alert_page";
                 break;
             }
+            // 아이디/비밀번호 페이지
+            case "find_id_pw" : {
+                pageLink = "member/find_id_pw";
+                break;
+            }
         } 
 
         return pageLink;

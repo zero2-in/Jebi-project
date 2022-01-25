@@ -20,6 +20,14 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 아이디/비밀번호
+            case "find-id-pw" : {
+            urldirect.separate.value = "find_id_pw";
+            urldirect.action = "Member";
+            urldirect.submit();
+            break;
+        }
+
         // 고객센터
         case "cs" : {
             urldirect.action = "Notice";
