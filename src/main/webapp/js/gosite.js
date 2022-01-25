@@ -238,7 +238,6 @@ function goSite(arg) {
         // 쪽지, 메일함
         case "mailbox" : {
             urldirect.action = "Mailbox";
-            urldirect.separate.value = "mail";
             urldirect.submit();
             break;
         }
