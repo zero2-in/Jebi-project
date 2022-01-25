@@ -1,4 +1,5 @@
 @charset "utf-8";
+@charset "utf-8";
 
 /* 2554줄 부터 공통 css */
 
@@ -632,9 +633,13 @@
     margin-left: 192px;
     font-size:18px; 
     text-align: center;
-    color: #ffffff;  
+    color: #612C87;
     border: 1px solid rgb(205, 205, 205);
-    background-color: #612C87;	
+    background-color:  white;
+}
+#container .inquiry p:hover {
+    color: white;
+    background-color: #612C87;
 }
 #container .answer{
 	width:584px;
@@ -746,7 +751,6 @@
     text-align: center;
     border-radius: 3px 3px 3px 3px;
     background-color: rgb(220, 220, 220) ;
-    border: 1px solid rgb(205, 205, 205);
 }
 #container .member-grade-table-box {
     width: 548px;
@@ -831,14 +835,20 @@
     margin: 15px 0  0 20px;
     padding-top: 13px;
     text-align: center;
-    color: #612C87;
     border-radius: 3px 3px 3px 3px;
     border: 1px solid #612C87;
 }
+#container .index-logout a{
+    color: #612C87;
+}
 #container .index-logout:hover {
+    background-color: #612C87;
+}
+#container .index-logout:hover a{
     color: white;
     background-color: #612C87;
 }
+
 
 
 
@@ -867,6 +877,12 @@
     height: 198px;
 	padding: 20px 0 10px 20px;
 	font-size:15px;	
+}
+#container .china-address-content span{
+    color: #612C87;
+}
+#container .china-address-content .cntr-my{
+    color: red;
 }
 
 /* 배송/구매대행 신청 */
@@ -925,22 +941,102 @@
 	font-size: 20px;
     padding-top: 28px; 
 }
-#container .review-content{
-    height: 198px;
-	font-size:15px;
-    padding: 34px 0 0 110px;
+#container .main-reviewp {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
     position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 27px;
+}
+#container .default-slick-carousel.slick-initialized {
+    display: block;
+}
+#container .default-slick-carousel {
+    height: auto;
+    width: calc(100% + 30px);
+    left: -15px;
+}
+#container .review-content{
+    padding: 14px 23px;
+}
+#container .review-content a {
+    display: block;
     overflow: hidden;
 }
-#container .review-content img{
-    float:left;
-    height: 129px;
-    padding: 20px 0 0 0;
+#container .review-photo {
+    float: left;
 }
-#container .review-content a span{
-	float:right;
-	font-size:17px;
-    padding: 40px 100px 0 0;
+#container .review-photo img {
+    width: 197px;
+    height: 148px;
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+#container .review-txt {
+    float: right;
+    color: rgb(68, 68, 68);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    max-width: 50%;
+    padding: 33px 10px 10px 10px;
+    box-sizing: border-box;
+    line-height: 27px;
+}
+#container .slick-prev {
+    left: -30px;
+}
+#container .slick-next {
+    right: -30px;
+}
+#container .slick-next::before {
+    content: "\f054";
+    right: -1px;
+}
+#container .slick-prev::before {
+    content: "\f053";
+    left: -1px;
+}
+#container .slick-prev::before, #container .slick-next::before {
+    font-family: 'Font Awesome 6 Free';
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    color: rgb(94, 45, 145);
+}
+#container .slick-prev, #container .slick-next {
+    font-size: 0px;
+    line-height: 0;
+    position: absolute;
+    padding: 0px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgb(242, 242, 242);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: block;
+    top: calc(50% - 0px);
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+    z-index: 10;
+}
+#container .slick-prev:hover, #container .slick-next:hover {
+    color: transparent;
+    outline: none;
+    background: rgb(102, 103, 107);
+}
+#container .slick-track::before, #container .slick-track::after {
+    display: table;
+    content: "";
 }
 
 
