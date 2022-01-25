@@ -23,6 +23,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/tabcontent.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
 
 <!-- 수정 1 시작-->
 <div id="small-dialog" class="zoom-anim-dialog dialog-with-tabs mfp-hide">
@@ -57,6 +58,13 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                     midClick: true,
                     removalDelay: 300,
                     mainClass: 'my-mfp-zoom-in'
+                });
+
+                $('.review-content').slick({
+                    infinite: false,
+                    arrows: true,
+                    dots: false,
+                    settings: "unslick"
                 });
             });
         </script>
@@ -522,6 +530,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
     <!-- Login Start -->
     <div class="content01">
         <form action="Member" method="post" onsubmit="return check();" name="login">
+            <input type="hidden" name="separate" value="dologin">
             <div class="login-box">
                 <c:if test="${not empty session_name}">
                     <div class="member-grade">
@@ -535,13 +544,15 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                     <div class="member-grade-table-box">
                         <ul>
                             <li class="deposit"><a href="">예치금<strong>0원</strong></a></li>
-                            <li class="note"><a href="">쪽지<strong>0</strong></a></li>
+                            <li class="note"><a href="javascript:goSite('mailbox')">쪽지<strong>0</strong></a></li>
                             <li class="coupon"><a href="">쿠폰<strong>0</strong></a></li>
                             <li class="waiting-for-payment"><a href="">결제대기<strong>0</strong></a></li>
-                            <li class="nodate"><a href="">노데이타<strong>0</strong></a></li>
+                            <li class="nodate"><a href="javascript:goSite('nodata')">노데이타<strong>0</strong></a></li>
                         </ul>
                     </div>
-                    <div class="index-logout">LOGOUT</div>
+                    <div class="index-logout">
+                        <li><a href="javascript:goSite('logout')" <c:if test="${session_social eq 'naver'}">onclick="naverLogout()"</c:if> <c:if test="${session_social eq 'kakao'}">onclick="kakaoLogout()"</c:if>>로그아웃</a></li>
+                    </div>
                 </c:if>
                 <c:if test="${empty session_name}">
                 <div class="id-password-box">
@@ -572,10 +583,10 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <div class="china-address">
                 <p class="address-title">중국센터 주소안내</p>
             </div>
-            <p class="china-address-content"> 주소 : 山东省 威海市 环翠区 凤林街道<br><br>
-                상세주소 : 经区宋家洼凤鸣路燕喜堂东 黄色建筑物（仓库）6号, 나의 사서함번호<br><br>
-                우편번호 : 264205<br><br>
-                연 락 처 : 15066314676
+            <p class="china-address-content"><span>주소 :</span> 山东省 威海市 环翠区 凤林街道<br><br>
+                <span>상세주소 :</span> 经区宋家洼凤鸣路燕喜堂东 黄色建筑物（仓库）6号,<span class="cntr-my">나의 사서함번호</span><br><br>
+                <span>우편번호 :</span> 264205<br><br>
+                <span>연 락 처 :</span> 15066314676
             </p>
         </div>
     </div>
@@ -602,14 +613,26 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <div class="review">
                 <p class="review-title">이용후기</p>
             </div>
-            <div class="review-content">
-                <ul class="slides">
-                <c:forEach items="${reviewdtos}" var="list">
-                        <li>
-                            <a href="javascript:goReView('${list.getNo()}')"><label class="left"></label><img src="file_room/review/${list.getNo()}_${list.getAttach()}" height="150px"><span>${list.getKor_name()}님<br>${list.getReg_date()}<br>${list.getTitle()}</span><label class="right"></label></a>
-                        </li>
-                </c:forEach>
-                </ul>
+            <div class="main-reviewp">
+                <div class="default-slick-carousel review-content">
+                    <c:forEach items="${reviewdtos}" var="list">
+                        <div>
+                            <a href="javascript:goReviewView('${list.getNo()}')">
+                                <div class="review-photo">
+                                    <img src="file_room/review/${list.getNo()}_${list.getAttach()}" onerror="this.src='images/img-upload.png'">
+                                </div>
+                                <div class="review-txt">
+                                    <div class="review-user">
+                                        ${list.getKor_name()}
+                                        <br>
+                                        ${list.getReg_date()}
+                                    </div>
+                                        ${list.getTitle()}
+                                </div>
+                            </a>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </div>
     </div>
@@ -825,7 +848,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             category.t_category.value = arg;
             category.submit();
         }
-        function goReView(arg) {
+        function goReviewView(arg) {
             urldirect.action = "Review";
             urldirect.separate.value = "view";
             urldirect.no.value = arg;
@@ -842,7 +865,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
 
     <script src="js/naver_login.js"></script>
     <script src="js/kakao_login.js"></script>
-
+    <script src="js/slick.min.js"></script>
 </body>
 
 </html>
