@@ -38,8 +38,10 @@ public class MailboxController {
         return pageLink;
     }
 
-    @RequestMapping(value = "MailboxDelete", method = RequestMethod.POST)
+    @ResponseBody
+    @RequestMapping(value = "MailboxDelete", method = RequestMethod.GET, produces = "application/json")
     public void mailboxDelete(@RequestParam(value = "MAIL_NO") List<String> list, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println(list.get(0));
+        MailboxDelete delete = new MailboxDelete();
+        delete.execute(list, request, response);
     }
 }
