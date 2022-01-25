@@ -101,7 +101,7 @@
                                             <!-- Details -->
                                             <div class="board-listing-description">
                                                 <div class="checkbox">
-                                                    <input type="checkbox" name="" id="chk1" value="1">
+                                                    <input type="checkbox" name="ckNOTE_SEQ" id="chk1" value="${list.getNo()}">
                                                     <label for="chk1">
                                                         <span class="checkbox-icon"></span>
                                                     </label>
@@ -141,7 +141,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="javascript:void(0)" data-animation="ripple" class="button red ripple-effect ico">
+            <a href="javascript:void(0)" onclick="setTimeout(function(){fnDel_M()}, 150)" data-animation="ripple" class="button red ripple-effect ico">
                 <i class="far fa-trash-alt"></i>
             </a>
         </div>
@@ -208,6 +208,35 @@
     function goPage(arg) {
         search.action = "Mailbox?pageNum="+arg;
         search.submit();
+    }
+
+    // 쪽지 삭제
+    function fnDel_M() {
+        var oNoteSeq = $("input[name='ckNOTE_SEQ']");
+
+        if ( fnCkBoxVal(oNoteSeq) == '' )	{
+            alert('삭제할 쪽지를 선택하십시오.');
+            return;
+        }
+
+        if ( confirm('선택 쪽지 건을 삭제하시겠습니까?') ) {
+            var jsonst = {MAIL_NO: fnCkBoxVal(oNoteSeq)};
+
+            $.ajax({
+                url: "MailboxDelete",
+                method: "POST",
+                data: JSON.stringify(jsonst),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data) {
+                    top.location.reload();
+                },
+                error: function(e) {
+                    alert(e.responseText);
+                }
+            });
+        }
+
     }
 </script>
 <script>

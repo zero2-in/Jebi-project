@@ -97,4 +97,12 @@ public class MailboxDAO {
 
         return util.runQuery(query, debugMethod, 1);
     }
+
+    public int deleteMailbox(String id, String no) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "DELETE FROM jebi_mailbox WHERE no = '"+no+"' AND to_userid = '"+id+"'";
+
+        return util.runQuery(query, debugMethod, 1);
+    }
 }
