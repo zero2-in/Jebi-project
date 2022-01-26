@@ -245,7 +245,8 @@ public class OrderStatusDAO {
         ArrayList<OrderReplyDTO> list = new ArrayList<>();
         String query = "SELECT to_char(comment_reg_date, 'yyyy-MM-dd') AS reg_date, COUNT(comment_content) AS cnt FROM jebi_order_reply \n" +
                 "WHERE table_no = '"+table_no+"' \n" +
-                "GROUP BY to_char(comment_reg_date, 'yyyy-MM-dd')";
+                "GROUP BY to_char(comment_reg_date, 'yyyy-MM-dd') \n" +
+                "ORDER BY reg_date ASC";
         util.runQuery(query, debugMethod, 0);
 
         try {

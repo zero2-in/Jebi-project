@@ -103,4 +103,11 @@ public class MemberController {
     public String personalTerms() {
         return "member/personal_terms_form";
     }
+
+    // 아이디 찾기
+    @RequestMapping(value = "MemberFindId")
+    public void memberFindId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Command findId = new MemberFindId();
+        findId.execute(request, response);
+    }
 }

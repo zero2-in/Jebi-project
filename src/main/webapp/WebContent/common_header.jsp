@@ -197,14 +197,22 @@
                         <li><a href="javascript:goSite('mypage')"       id="myPage">마이페이지</a>
                             <ul class="dropdown-nav">
                                 <li><a href="javascript:goSite('mypage')">주문신청현황</a></li>
-                                <li><a href="javascript:goSite('')">결제관리</a></li>
-                                <li><a href="javascript:goSite('')">예치금 내역</a></li>
-                                <li><a href="javascript:goSite('')">포인트 내역</a></li>
-                                <li><a href="javascript:goSite('')">쿠폰 내역</a></li>
+                                <li><a href="javascript:goSite('purchase_manage')">결제관리</a></li>
+                                <li><a href="javascript:goSite('deposit_history')">예치금 내역</a></li>
+                                <li><a href="javascript:goSite('point_history')">포인트 내역</a></li>
+                                <li><a href="javascript:goSite('coupon_history')">쿠폰 내역</a></li>
                                 <li><a href="javascript:goSite('mailbox')">받은 쪽지함</a></li>
                                 <li><a href="javascript:goSite('myinfo')">회원정보수정</a></li>
                             </ul>
                         </li>
+                        <c:if test="${session_level eq 'top'}">
+                            <li><a href="Zeus" id="zeus">관리자</a>
+                                <ul class="dropdown-nav">
+                                    <li><a href="Zeus">주문현황 관리</a></li>
+                                    <li><a href="Zeus?separate=member">회원관리</a></li>
+                                </ul>
+                            </li>
+                        </c:if>
                     </ul>
                 </nav>
             </div>   

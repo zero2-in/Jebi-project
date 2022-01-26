@@ -400,4 +400,30 @@ public class MemberDAO {
 
         return list;
     }
+
+    // 아이디 찾기
+    public int findId(String kor_name, String mobile) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String id = "";
+        String query = "SELECT id FROM jebi_member WHERE kor_name = '"+kor_name+"' AND phone = '"+mobile+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                id = util.getRs().getString("id");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return sendEmail(id, "");
+    }
+
+    private int sendEmail(String id, String content) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+    }
 }
