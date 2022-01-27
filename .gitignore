@@ -3,3 +3,4 @@
 target/m2e-wtp/
 .idea/*
 target/m2e-wtp/web-resources/META-INF/maven/com.mycompany/jebi/pom.properties
+src/main/java/com/jebi/common/SecretInfo.java

@@ -115,8 +115,8 @@ public class CommonUtil {
         String fromUsername = "제비";
         String toEmail = email;
 
-        final String username = "wowin21";
-        final String password = "taytemgzgisijkth";
+        final String username = SecretInfo.emailUsername;
+        final String password = SecretInfo.emailPassword;
 
         StringBuffer buffer = new StringBuffer();
         buffer.append("<div style='border: 1px solid #dcdcdc; padding: 0px; margin: 0px; width: 600px; box-sizing: border-box;'>");
