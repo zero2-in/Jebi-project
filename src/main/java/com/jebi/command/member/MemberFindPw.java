@@ -8,17 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class MemberFindId implements Command {
+public class MemberFindPw implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("utf-8");
-        String kor_name = request.getParameter("kor_name");
-        String mobile = request.getParameter("mobile");
-
         MemberDAO dao = new MemberDAO();
+        String id = request.getParameter("id");
+        String mobile = request.getParameter("mobile");
+        String kor_name = request.getParameter("kor_name");
 
-        int result = dao.findId(kor_name, mobile);
-
+        int result = dao.findPw(id, kor_name, mobile);
         PrintWriter out = response.getWriter();
 
         if(result == 1) out.print("success");

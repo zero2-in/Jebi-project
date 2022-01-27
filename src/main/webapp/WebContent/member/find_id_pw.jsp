@@ -213,12 +213,29 @@
         if(checkValue(frmMemPwReg.MEM_ID, "아이디를 입력해주세요.")) return;
         if(checkValue(frmMemPwReg.MEM_NM, "성명을 입력해주세요.")) return;
         if(checkValue(frmMemPwReg.MOB_NO, "전화번호를 입력해주세요")) return;
-        if(onOnlyNum(frmMemIdReg.MOB_NO.value)) {
+        if(onOnlyNum(frmMemPwReg.MOB_NO.value)) {
             alert("-빼고 입력해주세요.");
             frmMemIdReg.MOB_NO.focus();
             return;
         }
-        frmMemPwReg.submit();
+
+        $.ajax({
+            type: "post",
+            async: false,
+            url: "MemberFindPw",
+            data: "kor_name=" + frmMemPwReg.MEM_NM.value + "&mobile=" + frmMemPwReg.MOB_NO.value + "&id=" + frmMemPwReg.MEM_ID.value,
+            success: function (data) {
+                if (data.trim() == 'success') {
+                    alert("가입하신 이메일로 임시 비밀번호가 발송되었습니다.");
+                    location.reload();
+                } else {
+                    alert("가입되지 않은 정보입니다.");
+                }
+            },
+            error: function (e) {
+                alert(e.responseText);
+            }
+        });
     }
 </script>
 </body>
