@@ -13,6 +13,7 @@
         });
     });
 </script>
+<%@ include file="common_cost_guide.jsp" %>
 
 <!-- Container Start -->
 <div id="container">

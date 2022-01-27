@@ -20,11 +20,13 @@ public class MyinfoEdit implements Command {
         if(sms_rcv_yn == null) sms_rcv_yn = "N";
         String email_rcv_yn = request.getParameter("email_rcv_yn");
         if(email_rcv_yn == null) email_rcv_yn = "N";
+        String mobile = request.getParameter("t_mobile");
+        if(mobile == null || mobile.equals("")) mobile = "required";
 
         HttpSession session = request.getSession();
 
         MemberDAO dao = new MemberDAO();
-        int result = dao.changeMyinfo(new MemberDTO((String)session.getAttribute("session_id"), eng_name, email, sms_rcv_yn, email_rcv_yn));
+        int result = dao.changeMyinfo(new MemberDTO((String)session.getAttribute("session_id"), eng_name, mobile, email, sms_rcv_yn, email_rcv_yn));
 
         String msg = result==1? "회원정보가 수정되었습니다." : "회원정보 수정에 실패했습니다.";
 

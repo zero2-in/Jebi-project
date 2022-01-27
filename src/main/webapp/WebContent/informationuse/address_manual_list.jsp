@@ -11,6 +11,7 @@
         });
     });
 </script>
+<%@ include file="common_informationuse.jsp" %>
 
 <!-- Container Start -->
 <div class="container-address-manual-list">

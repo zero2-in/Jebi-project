@@ -302,8 +302,8 @@
     transition-delay: 0.1s;
     opacity: 1;
     z-index: 10;
-    transform: scale(1.5);
-    top: 10px;
+    transform: scale(1.2) rotate(-20deg);
+    top: 30px;
 }
 
 
@@ -4531,6 +4531,10 @@
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
 }
+.container-agent .col-xl-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
 .container-agent .col-xl-6 {
     flex: 0 0 50%;
     max-width: 50%;
@@ -4553,6 +4557,15 @@
     -webkit-box-flex: 1;
     flex-grow: 1;
     max-width: 100%;
+}
+
+
+
+
+
+/* offset 속성 */
+.container-agent .offset-xl-3 {
+    margin-left: 25%;
 }
 
 
@@ -5707,6 +5720,18 @@
     position: relative;
     top: 5px;
 }
+.container-agent .search-con-inner3 {
+    display: table;
+    margin: 0 auto;
+}
+.container-agent .search-con-inner3 .submit-field {
+    width: 250px;
+}
+.container-agent .search-con-inner3 .search-btn2 {
+    float: left;
+    position: relative;
+    top: 5px;
+}
 
 .container-agent .project-details-list ul {
     list-style: none;
@@ -6352,6 +6377,124 @@
     display: inline-block;
 }
 
+.container-agent .tabs {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0;
+    /* overflow: hidden */
+}
+.container-agent .tabs ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.container-agent .tabs-header {
+    position: relative;
+    background: #eaeaea;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+}
+.container-agent .tabs-header ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 100px);
+    position: relative;
+    z-index: 100;
+}
+.container-agent .tabs-header li {
+    transition: .3s ease;
+    width: 50%;
+    float: left;
+    border-right: 1px solid #e0e0e0;
+}
+.container-agent .tabs-header a {
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    padding: 15px 0;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+.container-agent .tabs-header li.active a {
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.container-agent .tabs-header .tab-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    transition: .3s ease;
+    z-index: 90;
+    border-bottom: 5px solid #f7db3c;
+}
+.container-agent .tabs-header.menuTab {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.container-agent .tabs-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+    color: #fff;
+    user-select: none;
+    font-size: 19px;
+}
+.container-agent .tabs-nav i {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    z-index: 101;
+    margin-left: 5px;
+    transition: .3s;
+}
+.container-agent .tabs-nav i:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.container-agent .tabs-content {
+    position: relative;
+    transition: .3s ease;
+    /* overflow: hidden; */
+}
+.container-agent .tabs-content::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 20px 10px #fff;
+}
+.container-agent .tabs-content .tab.active {
+    display: block;
+}
+.container-agent .tabs-content .tab {
+    display: none;
+    padding: 15px 0;
+}
+
 
 
 /* Summernote 속성 우선순위 수정 */
@@ -6936,27 +7079,27 @@ button.mfp-close, button.mfp-arrow {
     height: 418px;
     margin: auto;
 }
-.bar-title{
+.container-find-id-pw .bar-title{
     width: 1200px;
     height: 44px;
     margin-top: 70px;
 }
-.content-find-id-pw{
+.container-find-id-pw .content-find-id-pw{
     width: 1200px;
     height: 260px;
     margin-top: 40px;
 }
-.tab01{
+.container-find-id-pw .tab01{
     width: 1198px;
     height: 52px;
 }
-.tabnavi{
+.container-find-id-pw .tabnavi{
     width: 500px;
     height: 50px;
     margin: auto;
     border: 1px solid rgb(220, 220, 220);
 }
-.tab-find-id{
+.container-find-id-pw .tab-find-id{
     width: 248px;
     height: 35px;
     text-align: center;
@@ -6964,30 +7107,30 @@ button.mfp-close, button.mfp-arrow {
     float: left;
     border-right: 1px solid rgb(220, 220, 220);
 }
-.tab-find-pw{
+.container-find-id-pw .tab-find-pw{
     width: 248px;
     height: 35px;
     text-align: center;
     padding-top: 17px;
     float: left;
 }
-.tab-content{
+.container-find-id-pw .tab-content{
     width: 1200px;
     height: 202px;
     text-align: center;
 }
-.board-find-id-pw{
+.container-find-id-pw .board-find-id-pw{
     width: 500px;
     height: 200px;
     margin: auto;
     padding-top: 12px;
 }
-.text-box {
+.container-find-id-pw .text-box {
     width: 100%;
     height: 40px;
     padding: 6px 0;
 }
-.input{
+.container-find-id-pw .input{
     float: right;
     border: 1px solid rgb(213, 213, 213);
     border-radius: 0 4px 4px 0;
@@ -7007,7 +7150,7 @@ button.mfp-close, button.mfp-arrow {
     font-weight: 500;
     opacity: 1;
 }
-.text-box i{
+.container-find-id-pw .text-box i{
     float: left;
     color: #a0a0a0;
     text-align: center;
@@ -7022,7 +7165,7 @@ button.mfp-close, button.mfp-arrow {
     border-radius: 4px 0 0 4px;
     box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
 }
-.btn-fint-id {
+.container-find-id-pw .btn-fint-id {
     width: 100%;
     height: 40px;
     cursor: pointer;
@@ -7036,24 +7179,24 @@ button.mfp-close, button.mfp-arrow {
     margin-top: 6px;
     letter-spacing: 0.8px;
 }
-.btn-fint-id .text {
+.container-find-id-pw .btn-fint-id .text {
     position: relative;
     left: 13px;
     transition: all 0.2s ease-in-out;
 }
-.btn-fint-id .arrow-animate {
+.container-find-id-pw .btn-fint-id .arrow-animate {
     font-size: 15px;
     opacity: 0;
     position: relative;
     left: -10px;
     transition: all 0.2s ease-in-out;
 }
-.btn-fint-id:hover .arrow-animate {
+.container-find-id-pw .btn-fint-id:hover .arrow-animate {
     position: relative;
     left: 0;
     opacity: 1;
 }
-.btn-fint-id:hover .text {
+.container-find-id-pw .btn-fint-id:hover .text {
     position: relative;
     left: 0;
 }
