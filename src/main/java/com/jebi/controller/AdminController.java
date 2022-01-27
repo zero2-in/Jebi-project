@@ -1,5 +1,7 @@
 package com.jebi.controller;
 
+import com.jebi.command.admin.OrderStatusRequest;
+import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +20,8 @@ public class AdminController {
         switch (separate) {
             // 대행신청 보기
             case "req" : {
+                Command req = new OrderStatusRequest();
+                req.execute(request, response);
                 pageLink = "admin/order_status";
                 break;
             }

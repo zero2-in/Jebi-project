@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @Controller
 public class OrderStatusController {
-    @RequestMapping(value = "OrderStatus", method = RequestMethod.POST)
+    @RequestMapping(value = "OrderStatus")
     public String orderStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String separate = request.getParameter("separate");
         if(separate == null || separate.equals("")) separate = "list";

@@ -508,4 +508,49 @@ public class OrderStatusDAO {
 
         return util.runQuery(query, debugMethod, 1);
     }
+
+    public ArrayList<AgentOrderDTO> getAgentList() {
+        ArrayList<AgentOrderDTO> list = new ArrayList<>();
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "SELECT a.table_no, a.order_no, to_char(a.reg_date, 'yyyy-MM-dd hh:mi') AS reg_date, \n" +
+                "to_char(a.processing_date, 'yyyy-MM-dd hh:mi') AS processing_date, \n" +
+                "stat.status_name, info.dlvr_method, info.svc_dvs, info.reg_kor_name, a.agent_type, \n" +
+                "item.quantity, to_char(item.money_yuan, 'FM999999999999990.00') AS money_yuan, item.tracking_no, item.item_img_url \n" +
+                "FROM jebi_order a, jebi_order_item item, jebi_order_info info, jebi_status_list stat \n" +
+                "WHERE a.table_no = item.table_no AND a.order_no = item.order_no \n" +
+                "AND a.table_no = info.table_no AND item.status_code = stat.status_code";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String table_no = util.getRs().getString("table_no");
+                String order_no = util.getRs().getString("order_no");
+                String reg_date = util.getRs().getString("reg_date");
+                String status_name = util.getRs().getString("status_name");
+                String dlvr_method = util.getRs().getString("dlvr_method");
+                if(dlvr_method.equals("plane")) dlvr_method = "항공";
+                else if(dlvr_method.equals("ship")) dlvr_method = "해운";
+                String svc_dvs = util.getRs().getString("svc_dvs");
+                if(svc_dvs.equals("manual")) svc_dvs = "수동결제";
+                else if(svc_dvs.equals("auto")) svc_dvs = "자동결제";
+                String reg_kor_name = util.getRs().getString("reg_kor_name");
+                String agent_type = util.getRs().getString("agent_type");
+                String quantity = util.getRs().getString("quantity");
+                String money_yuan = util.getRs().getString("money_yuan");
+                String tracking_no = util.getRs().getString("tracking_no");
+                String item_img_url = util.getRs().getString("item_img_url");
+                String processing_date = util.getRs().getString("processing_date");
+
+                list.add(new AgentOrderDTO(table_no, dlvr_method, reg_kor_name, svc_dvs, order_no, agent_type, status_name, tracking_no, quantity, money_yuan, item_img_url, reg_date, processing_date));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
+    }
 }
