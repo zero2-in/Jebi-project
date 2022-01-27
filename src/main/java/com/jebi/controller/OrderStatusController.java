@@ -4,6 +4,7 @@ import com.jebi.command.orderstatus.*;
 import com.jebi.common.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 @Controller
 public class OrderStatusController {
-    @RequestMapping("OrderStatus")
+    @RequestMapping(value = "OrderStatus", method = RequestMethod.POST)
     public String orderStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String separate = request.getParameter("separate");
         if(separate == null || separate.equals("")) separate = "list";

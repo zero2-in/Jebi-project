@@ -61,7 +61,12 @@
                             <div class="header-notifications-trigger">
                                 <a href="javascript:void(0)">
                                     <i class="far fa-envelope"></i>
-                                    <span>${session_mail.size()}</span>
+                                    <c:if test="${empty session_mail}">
+                                        <span>0</span>
+                                    </c:if>
+                                    <c:if test="${not empty session_mail}">
+                                        <span>${session_mail.size()}</span>
+                                    </c:if>
                                 </a>
                             </div>
                             <!-- Dropdown -->

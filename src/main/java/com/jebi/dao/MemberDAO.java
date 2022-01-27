@@ -360,7 +360,7 @@ public class MemberDAO {
     public int changeMyinfo(MemberDTO dto) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "UPDATE jebi_member SET ENG_NAME = '"+dto.getEng_name()+"', EMAIL = '"+dto.getEmail()+"', \n" +
+        String query = "UPDATE jebi_member SET ENG_NAME = '"+dto.getEng_name()+"', PHONE = '"+dto.getPhone()+"', EMAIL = '"+dto.getEmail()+"', \n" +
                 "SMS_RCV_YN = '"+dto.getSms_rcv_yn()+"', EMAIL_RCV_YN = '"+dto.getEmail_rcv_yn()+"' WHERE id = '"+dto.getId()+"'";
 
         return util.runQuery(query, debugMethod, 1);
