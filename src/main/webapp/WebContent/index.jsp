@@ -650,7 +650,12 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         <div class="content02">
             <div class="schedule">
                 <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
-                <p class="btn-departure-schedule"><a href="#0" onclick="fnPopup('DepartureSchedule')" class="btn10"><span>한달 스케줄 보기<i class="fas fa-plus-square"></i></span><div class="transition"></div></a>
+                <p class="btn-departure-schedule">
+                    <a href="#small-dialog" onclick="fnPopup('DepartureSchedule')" class="popup-with-zoom-anim">
+                        <span>한달 스케줄 보기<i class="fas fa-plus-square"></i></span><div class="transition"></div>
+
+                    </a>
+
             </div>
             <div class="oneweek-schedule">
                 <ul>

@@ -1132,7 +1132,7 @@
     font-size:17px;
 	color:rgb(7, 7, 7);
 }
-#container .btn-departure-schedule a{
+#container .popup-with-zoom-anim a{
     top: 40px;
     font-family: "proxima-nova", sans-serif;
     font-weight: 500;
