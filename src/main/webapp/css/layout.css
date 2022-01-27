@@ -609,6 +609,12 @@
 	font-size:25px;
 	color:gray;	
 }
+#container .btn-notice a i:hover{
+    color: white;
+    background-color: #612C87;
+    font-size: 30px;
+    transition-duration: 0.5s;
+}
 #container .notice-content{
 	padding : 10px 0 0 30px;
 }
@@ -717,9 +723,9 @@
     border: 1px solid rgb(205, 205, 205);
 }
 #container .checksave{
-    
+
     margin: 20px 0 10px 30px ;
-    
+
 }
 
 #container .btn-id-password{
@@ -784,7 +790,7 @@
     padding-top: 13px;
     text-align: center;
     border-radius: 3px 3px 3px 3px;
-    background-color: rgb(220, 220, 220) ;
+    background-color: rgb(230, 230, 230) ;
 }
 #container .member-grade-table-box {
     width: 548px;
@@ -883,9 +889,6 @@
     background-color: #612C87;
 }
 
-
-
-
 /* 중국센터주소 */
 #container .china-address-box {
     width: 588px;
@@ -909,7 +912,7 @@
 #container .china-address-content{
     width: 568px;
     height: 198px;
-	padding: 20px 0 10px 20px;
+	padding: 15px 0 10px 20px;
 	font-size:15px;	
 }
 #container .china-address-content span{
@@ -928,32 +931,28 @@
 }
 #container .dlivery {
 	width: 292px;
-    height: 300px;
+    height: 298px;
     float: left;
-    background:url("../images/dlivery_img.png") no-repeat;
-    background-position: center 50px;	
+}
+#container .dlivery-content {
+    width: 290px;
+    height: 245px;
+    padding-top: 45px;
+    text-align: center;
+    font-size: 25px;
 }
 #container .purchase {
 	width: 292px;
     height: 300px;
     float: right;
-	border-left: 1px solid rgb(205, 205, 205);	
-    background:url("../images/purchase_img.png") no-repeat;
-    background-position: center 50px;	
-}
-#container .dlivery .dlivery-content {
-    width: 290px;
-    height: 50px;
-    padding-top: 220px;
-    text-align: center;
-	font-size: 25px;
+	border-left: 1px solid rgb(205, 205, 205);
 }
 #container .purchase-content  {
     width: 290px;
-    height: 50px;
-    padding-top: 220px;
+    height: 245px;
+    padding-top: 45px;
     text-align: center;
-	font-size: 25px;
+    font-size: 25px;
 }
 /* 이용후기 */
 #container .review-box {
@@ -1008,6 +1007,7 @@
     max-width: 100%;
     vertical-align: middle;
     border-style: none;
+    border: 1px solid rgb(120, 120, 120);
 }
 #container .review-txt {
     float: right;
@@ -1017,9 +1017,24 @@
     white-space: nowrap;
     text-align: left;
     max-width: 50%;
-    padding: 33px 10px 10px 10px;
+    padding: 0 10px 10px 10px;
     box-sizing: border-box;
-    line-height: 27px;
+    line-height: 25px;
+}
+#container .review-content-index {
+    display: inline-block;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    line-height: 1.2;
+    height: 4.5em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 #container .slick-prev {
     left: -30px;
@@ -1111,11 +1126,36 @@
 	font-size:17px;
 }
 #container .btn-departure-schedule a{
+    width:100px;
+    height:30px;
+    padding: 6px 5px 5px 5px;
     font-size:17px;
 	color:rgb(7, 7, 7);
 }
+#container .btn-departure-schedule a{
+    top: 40px;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase!important;
+    letter-spacing: 2px;
+    color: #fff;
+    cursor: hand;
+    text-align: center;
+    text-transform: capitalize;
+    border: 1px solid #fff;
+    border-radius:50px;
+    position: relative;
+    overflow: hidden!important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background: transparent!important;
+    z-index:10;
+}
 #container .btn-departure-schedule a i{
-    font-size:17px;
+    font-size:18px;
     padding-left: 10px;
 }
 #container .oneweek-schedule {
@@ -6927,163 +6967,4 @@ button.mfp-close, button.mfp-arrow {
     border: 1px solid rgb(220, 220, 220);
 }
 
-/*
---------------------------------------------- id/password  / start -----------------------------------------------------
-*/
-/* 아이디 비밀번호 */
-.container-find-id-pw{
-    width: 1202px;
-    height: 418px;
-    margin: auto;
-}
-.bar-title{
-    width: 1200px;
-    height: 44px;
-    margin-top: 70px;
-}
-.content-find-id-pw{
-    width: 1200px;
-    height: 260px;
-    margin-top: 40px;
-}
-.tab01{
-    width: 1198px;
-    height: 52px;
-}
-.tabnavi{
-    width: 500px;
-    height: 50px;
-    margin: auto;
-    border: 1px solid rgb(220, 220, 220);
-}
-.tab-find-id{
-    width: 248px;
-    height: 35px;
-    text-align: center;
-    padding-top: 17px;
-    float: left;
-    border-right: 1px solid rgb(220, 220, 220);
-}
-.tab-find-pw{
-    width: 248px;
-    height: 35px;
-    text-align: center;
-    padding-top: 17px;
-    float: left;
-}
-.tab-content{
-    width: 1200px;
-    height: 202px;
-    text-align: center;
-}
-.board-find-id-pw{
-    width: 500px;
-    height: 200px;
-    margin: auto;
-    padding-top: 12px;
-}
-.text-box {
-    width: 100%;
-    height: 40px;
-    padding: 6px 0;
-}
-.input{
-    float: right;
-    border: 1px solid rgb(213, 213, 213);
-    border-radius: 0 4px 4px 0;
-    border-left: none;
-    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
-    height: 40px;
-    padding: 0 10px;
-    outline: none;
-    font-size: 16px;
-    color: gray;
-    margin: 0;
-    max-width: 100%;
-    width: 460px;
-    box-sizing: border-box;
-    display: block;
-    background-color: rgb(255, 255, 255);
-    font-weight: 500;
-    opacity: 1;
-}
-.text-box i{
-    float: left;
-    color: #a0a0a0;
-    text-align: center;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
-    font-size: 19px;
-    background-color: #f8f8f8;
-    border: 1px solid #d5d5d5;
-    box-sizing: border-box;
-    display: block;
-    border-radius: 4px 0 0 4px;
-    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
-}
-.btn-fint-id {
-    width: 100%;
-    height: 40px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background: #78148c;
-    transition: all 0.2s ease-in-out;
-    color: #fff;
-    font-size: 17px;
-    line-height: 40px;
-    margin-top: 6px;
-    letter-spacing: 0.8px;
-}
-.btn-fint-id .text {
-    position: relative;
-    left: 13px;
-    transition: all 0.2s ease-in-out;
-}
-.btn-fint-id .arrow-animate {
-    font-size: 15px;
-    opacity: 0;
-    position: relative;
-    left: -10px;
-    transition: all 0.2s ease-in-out;
-}
-.btn-fint-id:hover .arrow-animate {
-    position: relative;
-    left: 0;
-    opacity: 1;
-}
-.btn-fint-id:hover .text {
-    position: relative;
-    left: 0;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
---------------------------------------------- id/password  / end -----------------------------------------------------
-*/

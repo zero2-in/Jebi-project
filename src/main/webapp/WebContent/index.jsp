@@ -397,6 +397,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <div class="dialog-cont-right-title">
                 Departure Schedule
             </div>
+
             <div class="dialog-cont-right-title-day">
                 <span class="month_day_t">일 자 : </span><span class="month_day"></span>
             </div>
@@ -404,16 +405,17 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <p class="cont_tit">항공스케즐</p>
                 <div class="dis">
                     <p class="start_end"><i class="fas fa-calendar-alt"></i> 출발 : <span class="air_start">2022.01.12 12:00</span></p>
-                    <p><i class="far fa-calendar-alt"></i> 도착 : <span class="air_end">2022.01.12 19:30</span></p>
+                    <p><i class="far fa-calendar-alt"></i> 도착 : <span class="air_end">2022.01.13 01:00</span></p>
                 </div>
             </div>
             <div class="dialog-cont-right-cont-ship">
                 <p class="cont_tit">해운스케즐</p>
                 <div class="dis">
                     <p class="start_end"><i class="fas fa-calendar-alt"></i> 출발 : <span class="ship_start">2022.01.12 12:00</span></p>
-                    <p><i class="far fa-calendar-alt"></i> 도착 : <span class="ship_end">2022.01.12 19:30</span></p>
+                    <p><i class="far fa-calendar-alt"></i> 도착 : <span class="ship_end">2022.01.13 01:00</span></p>
                 </div>
             </div>
+
             <style>
                 /* 고객센터 */
                 .dialog-cont-right-cont-custom .customer-service-center{
@@ -479,7 +481,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                         <ul>
                             <li><div class="tel"><b>031-708-1120</b></div></li>
                             <li><div class="time">평일 오전 10시~오후 5시 <br>[점심시간 오후 12시~1시]<br>주말/공휴일 휴무</div></li>
-                            <li><div class="inquiry"><a href="qna/qna_list.html"><p>1:1문의</p></a></div></li>
+                            <li><div class="inquiry"><a href="javascript:goSite('qna')"><p>1:1문의</p></a></div></li>
                             <li><div class="answer">궁금한 점이 있으신가요?<br>1:1문의에 남겨주시면 친절히 답변 드리겠습니다.</div></li>
                         </ul>
                     </div>
@@ -506,7 +508,6 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <ul class="notice-content">
                 <c:forEach items="${noticedtos}" var="list">
                     <li><a href="javascript:goNoticeView('${list.getNo()}')">${list.getTitle()}<span>${list.getReg_date()}</span></a></li>
-
                 </c:forEach>
             </ul>
         </div>
@@ -535,10 +536,10 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                 <c:if test="${not empty session_name}">
                     <div class="member-grade">
                         <li>
-                            <a href="">${session_name}
-                                <c:if test="${session_level eq 'top'}"><span>(관리자)</span></c:if>
+                            ${session_name}
+                            <c:if test="${session_level eq 'top'}"><span>(관리자)</span></c:if>
                                 <c:if test="${session_level ne 'top'}"><span>(일반)</span></c:if>
-                            </a>
+
                         </li>
                     </div>
                     <div class="member-grade-table-box">
@@ -586,7 +587,9 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <p class="china-address-content"><span>주소 :</span> 山东省 威海市 环翠区 凤林街道<br><br>
                 <span>상세주소 :</span> 经区宋家洼凤鸣路燕喜堂东 黄色建筑物（仓库）6号,<span class="cntr-my">나의 사서함번호</span><br><br>
                 <span>우편번호 :</span> 264205<br><br>
-                <span>연 락 처 :</span> 15066314676
+                <span>연 락 처 :</span> 15066314676<br><br>
+                <span>팩스 :</span> (86-28) 8652-1573<br><br>
+                <span>이메일 :</span> jshbak@kotra.or.kr
             </p>
         </div>
     </div>
@@ -597,12 +600,12 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         <div class="dlivery-purchase-box">
             <div class="dlivery">
                 <p class="dlivery-content">
-                    <a href="javascript:goSite('delivery')"><span>배송대행 신청</span></a>
+                    <a href="javascript:goSite('delivery')"><img src="images/dlivery_img.png" height="130px"><br><br><span>배송대행 신청</span></a>
                 </p>
             </div>
             <div class="purchase">
                 <p class="purchase-content">
-                    <a href="javascript:goSite('purchase')"><span>구매대행 신청</span></a>
+                    <a href="javascript:goSite('purchase')"><img src="images/purchase_img.png" height="130px"><br><br><span>구매대행 신청</span></a>
                 </p>
             </div>
         </div>
@@ -628,6 +631,9 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
                                         ${list.getReg_date()}
                                     </div>
                                         ${list.getTitle()}
+                                    <div class="review-content-index">
+                                        ${list.getContent()}
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -644,7 +650,7 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
         <div class="content02">
             <div class="schedule">
                 <p class="departure-schedule-title">출항 한주 스케줄<span> &nbsp;&nbsp;&nbsp; 당일 출항 결제 마감 남은시간&nbsp;:&nbsp;<b>마감되었습니다. 11시까지 결제완료 기준으로 출항이 진행됩니다.</b></span></p>
-                <p class="btn-departure-schedule"><a href="#small-dialog" onclick="fnPopup('DepartureSchedule')" class="popup-with-zoom-anim">한달 스케줄 보기<i class="fas fa-plus-square"></i></a>
+                <p class="btn-departure-schedule"><a href="#0" onclick="fnPopup('DepartureSchedule')" class="btn10"><span>한달 스케줄 보기<i class="fas fa-plus-square"></i></span><div class="transition"></div></a>
             </div>
             <div class="oneweek-schedule">
                 <ul>
@@ -748,11 +754,11 @@ CONSTRAINT pk_departure_schedule primary key(cday,gubun));
             <ul>
                 <li>
                     <div class="taobao"><a href="https://www.taobao.com/"><img src="images/taobao_img.jpg" height="60px"></a></div>
-                    <div class="taobao-site"><a href=""><b>타오바오</b><span> 바로가기</span></a></div>
+                    <div class="taobao-site"><a href="https://www.taobao.com/"><b>타오바오</b><span> 바로가기</span></a></div>
                 </li>
                 <li>
                     <div class="alibaba"><a href="https://www.1688.com/"><img src="images/alibaba_img.jpg" height="65px"></a></div>
-                    <div class="alibaba-site"><a href=""><b>알리바바</b><span> 바로가기</span></a></div>
+                    <div class="alibaba-site"><a href="https://www.1688.com/"><b>알리바바</b><span> 바로가기</span></a></div>
                 </li>
             </ul>
         </div>

@@ -36,13 +36,13 @@
 
         <div class="category-tab-area">
             <div class="category-tab">
-                <div class="category-tab-link <c:if test="${empty category}">active</c:if>">
-                    <a href="javascript:void(0)" onclick="findCategory('')">
+                <div class="category-tab-link <c:if test="${category eq 'N'}">active</c:if>">
+                    <a href="javascript:void(0)" onclick="findCategory('N')">
                         진행중인 이벤트
                     </a>
                 </div>
-                <div class="category-tab-link <c:if test="${category eq 'expire'}">active</c:if>">
-                    <a href="javascript:void(0)" onclick="findCategory('expire')">
+                <div class="category-tab-link <c:if test="${category eq 'Y'}">active</c:if>">
+                    <a href="javascript:void(0)" onclick="findCategory('Y')">
                         종료된 이벤트
                     </a>
                 </div>
@@ -52,7 +52,14 @@
         <div class="content with-padding padding-bottom-0">
             <div class="content-row">
                 <div class="col-full">
-
+                    <c:if test="${empty list}">
+                        <!-- List Block -->
+                        <div class="event-box">
+                            <div class="content-row">
+                                데이터가 없습니다.
+                            </div>
+                        </div>
+                    </c:if>
                     <c:forEach items="${list}" var="list">
                         <div class="event-box">
                             <div class="content-row">
@@ -82,7 +89,6 @@
                             </div>
                         </div>
                     </c:forEach>
-
                 </div>
             </div>
         </div>
