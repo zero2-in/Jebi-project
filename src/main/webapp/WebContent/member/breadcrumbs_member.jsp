@@ -18,7 +18,7 @@
             <div class="dropdown-content">
                 <a href="javascript:goSite('join')" class="join">회원가입<span class="check"></span></a>
                 <a href="javascript:goSite('login')" class="login">로그인<span class="check"></span></a>
-                <a href="#">아이디/비번찾기</a>
+                <a href="javascript:goSite('findidpw')" class="findidpw">아이디/비번찾기<span class="check"></span></a>
             </div>
         </li>
         <div class="clearfix"></div>

@@ -61,7 +61,12 @@
                             <div class="header-notifications-trigger">
                                 <a href="javascript:void(0)">
                                     <i class="far fa-envelope"></i>
-                                    <span>0</span>
+                                    <c:if test="${empty session_mail}">
+                                        <span>0</span>
+                                    </c:if>
+                                    <c:if test="${not empty session_mail}">
+                                        <span>${session_mail.size()}</span>
+                                    </c:if>
                                 </a>
                             </div>
                             <!-- Dropdown -->
@@ -80,20 +85,33 @@
                                         <div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;">
                                             <div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
                                                 <ul>
-                                                    <!-- Notification -->
-                                                    <li class="notifications-not-read">
-                                                        <div class="notification-text">
-                                                            <strong>쪽지가 없습니다.</strong>
-                                                            <p class="notification-msg-text"></p>
-                                                            <span class="color"></span>
-                                                        </div>
-                                                    </li>
+                                                    <c:if test="${empty session_mail}">
+                                                        <!-- Notification -->
+                                                        <li class="notifications-not-read">
+                                                            <div class="notification-text">
+                                                                <strong>쪽지가 없습니다.</strong>
+                                                                <p class="notification-msg-text"></p>
+                                                                <span class="color"></span>
+                                                            </div>
+                                                        </li>
+                                                    </c:if>
+                                                    <c:if test="${not empty session_mail}">
+                                                        <c:forEach items="${session_mail}" begin="0" end="4" var="list">
+                                                            <!-- Notification -->
+                                                            <li class="notifications-not-read">
+                                                                <div class="notification-text">
+                                                                    <p class="notification-msg-text">${list.getTitle()}</p>
+                                                                    <span class="color">${list.getReg_name()}</span>
+                                                                </div>
+                                                            </li>
+                                                        </c:forEach>
+                                                    </c:if>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="javascript:void(0)" onclick="setTimeout(function(){goSite('mail')}, 150)" data-animation="ripple" class="header-notifications-button ripple-effect button-sliding-icon">
+                                <a href="javascript:void(0)" onclick="setTimeout(function(){goSite('mailbox')}, 150)" data-animation="ripple" class="header-notifications-button ripple-effect button-sliding-icon">
                                     쪽지 전체 보기
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -116,6 +134,7 @@
 
             <div class="img-logo">
                 <a href="/jebi">
+                    <span class="jebi"></span>
                     <img src="images/logo.png" height="100px">
                 </a>
             </div>
@@ -183,14 +202,22 @@
                         <li><a href="javascript:goSite('mypage')"       id="myPage">마이페이지</a>
                             <ul class="dropdown-nav">
                                 <li><a href="javascript:goSite('mypage')">주문신청현황</a></li>
-                                <li><a href="javascript:goSite('')">결제관리</a></li>
-                                <li><a href="javascript:goSite('')">예치금 내역</a></li>
-                                <li><a href="javascript:goSite('')">포인트 내역</a></li>
-                                <li><a href="javascript:goSite('')">쿠폰 내역</a></li>
+                                <li><a href="javascript:goSite('purchase_manage')">결제관리</a></li>
+                                <li><a href="javascript:goSite('deposit_history')">예치금 내역</a></li>
+                                <li><a href="javascript:goSite('point_history')">포인트 내역</a></li>
+                                <li><a href="javascript:goSite('coupon_history')">쿠폰 내역</a></li>
                                 <li><a href="javascript:goSite('mailbox')">받은 쪽지함</a></li>
                                 <li><a href="javascript:goSite('myinfo')">회원정보수정</a></li>
                             </ul>
                         </li>
+                        <c:if test="${session_level eq 'top'}">
+                            <li><a href="Zeus" id="zeus">관리자</a>
+                                <ul class="dropdown-nav">
+                                    <li><a href="Zeus">주문현황 관리</a></li>
+                                    <li><a href="Zeus?separate=member">회원관리</a></li>
+                                </ul>
+                            </li>
+                        </c:if>
                     </ul>
                 </nav>
             </div>   

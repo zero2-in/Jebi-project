@@ -20,6 +20,14 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 아이디/비밀번호
+            case "findidpw" : {
+            urldirect.separate.value = "find_id_pw";
+            urldirect.action = "Member";
+            urldirect.submit();
+            break;
+        }
+
         // 고객센터
         case "cs" : {
             urldirect.action = "Notice";
@@ -235,10 +243,33 @@ function goSite(arg) {
             urldirect.submit();
             break;
         }
+        // 결제관리
+        case "purchase_manage" : {
+            urldirect.action = "PurchaseManagement";
+            urldirect.submit();
+            break;
+        }
+        // 예치금 내역
+        case "deposit_history" : {
+            urldirect.action = "DepositHistory";
+            urldirect.submit();
+            break;
+        }
+        // 포인트 내역
+        case "point_history" : {
+            urldirect.action = "PointHistory";
+            urldirect.submit();
+            break;
+        }
+        // 쿠폰 내역
+        case "coupon_history" : {
+            urldirect.action = "CouponHistory";
+            urldirect.submit();
+            break;
+        }
         // 쪽지, 메일함
         case "mailbox" : {
             urldirect.action = "Mailbox";
-            urldirect.separate.value = "mail";
             urldirect.submit();
             break;
         }

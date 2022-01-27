@@ -32,6 +32,7 @@ public class MemberLogin implements Command {
             HttpSession session = request.getSession();
             session.setAttribute("session_name", name);
             session.setAttribute("session_id", id);
+            session.setAttribute("session_mail", dao.getMailSession(id));
             if(dao.checkAdmin(id)) {
                 session.setAttribute("session_level", "top");
             } else {
@@ -39,8 +40,14 @@ public class MemberLogin implements Command {
             }
             session.setMaxInactiveInterval(60 * 60 * 6);
 
-            msg = name + "님 로그인되었습니다";
-            url = "OrderStatus";
+            boolean isTempLogin = dao.testLogin(id).equals("Y");
+            msg = name + "님 로그인되었습니다.";
+            if(isTempLogin) {
+                url = "Myinfo";
+            }
+            else {
+                url = "OrderStatus";
+            }
         } 
         else {
             msg = "로그인 정보가 없습니다. 아이디와 비밀번호를 확인해주세요.";

@@ -112,6 +112,15 @@
     display: block;
     width: 100%;
 }
+#header .header-notifications-content .notification-msg-text {
+    display: inline-block;
+    line-height: 23px;
+    font-size: 14.7px;
+    margin: 4px 0px;
+}
+#header .header-notifications-content span.color {
+    color: #2a41e8;
+}
 #header .header-notifications-scroll {
     display: block;
     overflow: hidden;
@@ -272,6 +281,31 @@
     text-align: center;
     margin: 10px auto 35px auto;
 }
+#header .img-logo .jebi {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    opacity: 0;
+    background: url('../images/jebi.png') no-repeat center;
+    background-position-x: 25px;
+    background-size: contain;
+    transition: all .3s ease-in-out;
+    top: 70px;
+}
+#header .img-logo a {
+    display: block;
+}
+#header .img-logo:hover img {
+    content: url('../images/logo_hover.png');
+}
+#header .img-logo:hover .jebi {
+    transition-delay: 0.1s;
+    opacity: 1;
+    z-index: 10;
+    transform: scale(1.2) rotate(-20deg);
+    top: 30px;
+}
+
 
 /* 메인메뉴 */
 #header *::after, #header *::before {
@@ -4497,6 +4531,10 @@
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
 }
+.container-agent .col-xl-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
 .container-agent .col-xl-6 {
     flex: 0 0 50%;
     max-width: 50%;
@@ -4519,6 +4557,15 @@
     -webkit-box-flex: 1;
     flex-grow: 1;
     max-width: 100%;
+}
+
+
+
+
+
+/* offset 속성 */
+.container-agent .offset-xl-3 {
+    margin-left: 25%;
 }
 
 
@@ -5673,6 +5720,18 @@
     position: relative;
     top: 5px;
 }
+.container-agent .search-con-inner3 {
+    display: table;
+    margin: 0 auto;
+}
+.container-agent .search-con-inner3 .submit-field {
+    width: 250px;
+}
+.container-agent .search-con-inner3 .search-btn2 {
+    float: left;
+    position: relative;
+    top: 5px;
+}
 
 .container-agent .project-details-list ul {
     list-style: none;
@@ -5704,6 +5763,7 @@
 .container-agent .pagination ul {
     margin: 0;
     padding: 0;
+    font-size: 0;
 }
 .container-agent .pagination ul li {
     display: inline-block;
@@ -6278,6 +6338,161 @@
     opacity: 1;
     transition: .3s;
     /*box-shadow: 0 0 10px 15px #fff */
+}
+
+.container-agent .welcome-text {
+    display: block;
+    text-align: center;
+    color: gray;
+    margin-bottom: 33px;
+}
+.container-agent .welcome-text h4 {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    font-size: 18px;
+}
+.container-agent .welcome-text span {
+    display: block;
+    margin-top: 4px;
+}
+
+.container-agent .discounted-price-tag.pay-account {
+    position: relative;
+    top: -15px;
+}
+.container-agent .discounted-price-tag, .container-agent .regular-price-tag {
+    font-size: 14px;
+    background: #e0f5d7;
+    color: #449626;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 4px 10px;
+    flex-grow: 0;
+    flex: auto;
+    width: auto;
+    transition: .3s;
+    margin-top: 6px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.container-agent .tabs {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0;
+    /* overflow: hidden */
+}
+.container-agent .tabs ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.container-agent .tabs-header {
+    position: relative;
+    background: #eaeaea;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+}
+.container-agent .tabs-header ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 100px);
+    position: relative;
+    z-index: 100;
+}
+.container-agent .tabs-header li {
+    transition: .3s ease;
+    width: 50%;
+    float: left;
+    border-right: 1px solid #e0e0e0;
+}
+.container-agent .tabs-header a {
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    padding: 15px 0;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+.container-agent .tabs-header li.active a {
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.container-agent .tabs-header .tab-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    transition: .3s ease;
+    z-index: 90;
+    border-bottom: 5px solid #f7db3c;
+}
+.container-agent .tabs-header.menuTab {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.container-agent .tabs-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+    color: #fff;
+    user-select: none;
+    font-size: 19px;
+}
+.container-agent .tabs-nav i {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    z-index: 101;
+    margin-left: 5px;
+    transition: .3s;
+}
+.container-agent .tabs-nav i:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.container-agent .tabs-content {
+    position: relative;
+    transition: .3s ease;
+    /* overflow: hidden; */
+}
+.container-agent .tabs-content::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 20px 10px #fff;
+}
+.container-agent .tabs-content .tab.active {
+    display: block;
+}
+.container-agent .tabs-content .tab {
+    display: none;
+    padding: 15px 0;
 }
 
 
@@ -6855,3 +7070,163 @@ button.mfp-close, button.mfp-arrow {
     border: 1px solid rgb(220, 220, 220);
 }
 
+/*
+--------------------------------------------- id/password  / start -----------------------------------------------------
+*/
+/* 아이디 비밀번호 */
+.container-find-id-pw{
+    width: 1202px;
+    height: 418px;
+    margin: auto;
+}
+.container-find-id-pw .bar-title{
+    width: 1200px;
+    height: 44px;
+    margin-top: 70px;
+}
+.container-find-id-pw .content-find-id-pw{
+    width: 1200px;
+    height: 260px;
+    margin-top: 40px;
+}
+.container-find-id-pw .tab01{
+    width: 1198px;
+    height: 52px;
+}
+.container-find-id-pw .tabnavi{
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    border: 1px solid rgb(220, 220, 220);
+}
+.container-find-id-pw .tab-find-id{
+    width: 248px;
+    height: 35px;
+    text-align: center;
+    padding-top: 17px;
+    float: left;
+    border-right: 1px solid rgb(220, 220, 220);
+}
+.container-find-id-pw .tab-find-pw{
+    width: 248px;
+    height: 35px;
+    text-align: center;
+    padding-top: 17px;
+    float: left;
+}
+.container-find-id-pw .tab-content{
+    width: 1200px;
+    height: 202px;
+    text-align: center;
+}
+.container-find-id-pw .board-find-id-pw{
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    padding-top: 12px;
+}
+.container-find-id-pw .text-box {
+    width: 100%;
+    height: 40px;
+    padding: 6px 0;
+}
+.container-find-id-pw .input{
+    float: right;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 16px;
+    color: gray;
+    margin: 0;
+    max-width: 100%;
+    width: 460px;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 1;
+}
+.container-find-id-pw .text-box i{
+    float: left;
+    color: #a0a0a0;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    background-color: #f8f8f8;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 4px 0 0 4px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 4px 0;
+}
+.container-find-id-pw .btn-fint-id {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #78148c;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 17px;
+    line-height: 40px;
+    margin-top: 6px;
+    letter-spacing: 0.8px;
+}
+.container-find-id-pw .btn-fint-id .text {
+    position: relative;
+    left: 13px;
+    transition: all 0.2s ease-in-out;
+}
+.container-find-id-pw .btn-fint-id .arrow-animate {
+    font-size: 15px;
+    opacity: 0;
+    position: relative;
+    left: -10px;
+    transition: all 0.2s ease-in-out;
+}
+.container-find-id-pw .btn-fint-id:hover .arrow-animate {
+    position: relative;
+    left: 0;
+    opacity: 1;
+}
+.container-find-id-pw .btn-fint-id:hover .text {
+    position: relative;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+--------------------------------------------- id/password  / end -----------------------------------------------------
+*/

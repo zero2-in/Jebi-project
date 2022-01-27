@@ -5,9 +5,11 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import com.jebi.common.CommonUtil;
 import com.jebi.dto.KakaoDTO;
+import com.jebi.dto.MailboxDTO;
 import com.jebi.dto.MemberDTO;
 import com.jebi.dto.NaverDTO;
 
@@ -350,7 +352,7 @@ public class MemberDAO {
     public int changePassword(String id, String password) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "UPDATE jebi_member SET password = '"+password+"' WHERE id = '"+id+"'";
+        String query = "UPDATE jebi_member SET password = '"+password+"', required_reset_password = 'N' WHERE id = '"+id+"'";
 
         return util.runQuery(query, debugMethod, 1);
     }
@@ -358,7 +360,7 @@ public class MemberDAO {
     public int changeMyinfo(MemberDTO dto) {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
-        String query = "UPDATE jebi_member SET ENG_NAME = '"+dto.getEng_name()+"', EMAIL = '"+dto.getEmail()+"', \n" +
+        String query = "UPDATE jebi_member SET ENG_NAME = '"+dto.getEng_name()+"', PHONE = '"+dto.getPhone()+"', EMAIL = '"+dto.getEmail()+"', \n" +
                 "SMS_RCV_YN = '"+dto.getSms_rcv_yn()+"', EMAIL_RCV_YN = '"+dto.getEmail_rcv_yn()+"' WHERE id = '"+dto.getId()+"'";
 
         return util.runQuery(query, debugMethod, 1);
@@ -370,5 +372,132 @@ public class MemberDAO {
         String query = "UPDATE jebi_member SET unreg = 'Y', unreg_date = CURRENT_TIMESTAMP, LOCKER = '' WHERE id = '"+id+"'";
 
         return util.runQuery(query, debugMethod, 1);
+    }
+
+    // 메일함 가져오기
+    public ArrayList<MailboxDTO> getMailSession(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        ArrayList<MailboxDTO> list = new ArrayList<>();
+        String query = "SELECT a.no, a.title, b.kor_name AS reg_name FROM jebi_mailbox a, jebi_member b \n" +
+                "WHERE a.to_userid = '"+id+"' AND a.reg_id = b.id AND a.has_read = 'N' ORDER BY a.reg_date DESC";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String no = util.getRs().getString("no");
+                String title = util.getRs().getString("title");
+                String reg_name = util.getRs().getString("reg_name");
+
+                list.add(new MailboxDTO(no, title, reg_name, ""));
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
+    }
+
+    // 아이디 찾기
+    public int findId(String kor_name, String mobile) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String id = "";
+        String query = "SELECT id FROM jebi_member WHERE kor_name = '"+kor_name+"' AND phone = '"+mobile+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                id = util.getRs().getString("id");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        if(id.equals("")) return 0;
+        else return sendEmail(id, 0);
+    }
+
+    // 비밀번호 찾기
+    public int findPw(String id, String kor_name, String mobile) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        int result = 0;
+        String query = "SELECT * FROM jebi_member WHERE id = '"+id+"' AND kor_name = '"+kor_name+"' AND phone = '"+mobile+"'";
+
+        util.runQuery(query, debugMethod, 0);
+        try {
+            if (util.getRs().next()) {
+                result = 1;
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+        if(result == 1) return sendEmail(id, 1);
+        else return 0;
+    }
+
+    // type[0] : findId, type[1] : findPw
+    private int sendEmail(String id, int type) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String query = "SELECT email FROM jebi_member WHERE id = '"+id+"'";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                if(type == 0) {
+                    util.sendMail(util.getRs().getString("email"), id, "", type);
+                } else {
+                    String randomPassword = util.getRandomPassword();
+                    String email = util.getRs().getString("email");
+                    try {
+                        query = "UPDATE jebi_member SET password = '"+encryptSHA256(randomPassword)+"', required_reset_password = 'Y' WHERE id = '"+id+"'";
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
+
+                    int result = util.runQuery(query, debugMethod, 1);
+
+                    if(result == 1) util.sendMail(email, id, randomPassword, type);
+                    else return 0;
+                }
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return 1;
+    }
+
+    // 임시 비밀번호로 로그인했는지 테스트
+    public String testLogin(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        String result = "";
+        String query = "SELECT REQUIRED_RESET_PASSWORD FROM JEBI_MEMBER WHERE id = '"+id+"'";
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            if(util.getRs().next()) {
+                result = util.getRs().getString("required_reset_password");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return result;
     }
 }

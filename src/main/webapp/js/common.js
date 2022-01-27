@@ -195,3 +195,18 @@ function fnMyAddrGet(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
 	board.person_ctms_no.value = arg6;
 	$.magnificPopup.close();
 }
+
+//------------------------------------------------------------------------------
+// 체크박스 값 가져오기
+//------------------------------------------------------------------------------
+function fnCkBoxVal( Obj ) {
+	var fChkVal = "";
+
+	Obj.each( function() {
+		if ( $(this).is(":checked") ) {
+			fChkVal += fChkVal != '' ? "," + $(this).val() : $(this).val();
+		}
+	});
+
+	return fChkVal;
+}
