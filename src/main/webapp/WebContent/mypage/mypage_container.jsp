@@ -22,7 +22,7 @@
         <div class="my-page grade">
             <h3>예치금(￦)</h3>
             <div class="my-page-label">
-                <a href="">
+                <a href="DepositHistory">
                     <strong>0</strong>
                 </a>
             </div>
@@ -31,7 +31,7 @@
         <div class="my-page grade">
             <h3>포인트(P)</h3>
             <div class="my-page-label">
-                <a href="">
+                <a href="PointHistory">
                     <strong>0</strong>
                 </a>
             </div>
@@ -40,7 +40,7 @@
         <div class="my-page grade">
             <h3>쿠폰</h3>
             <div class="my-page-label">
-                <a href="">
+                <a href="CouponHistory">
                     <strong>0</strong>
                 </a>
             </div>
@@ -49,7 +49,7 @@
         <div class="my-page grade">
             <h3>미결제</h3>
             <div class="my-page-label">
-                <a href="">
+                <a href="PurchaseManagement">
                     <strong>0</strong>
                 </a>
             </div>
