@@ -13,6 +13,7 @@
         });
     });
 </script>
+<%@ include file="common_informationuse.jsp" %>
 
 <!-- Container Start -->
 <div id="container">

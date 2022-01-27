@@ -1,7 +1,7 @@
 var naverLogin = new naver.LoginWithNaverId(
     {
         clientId: "h7lrKULKMeSh_QPm3QPL", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-        callbackUrl: "http://192.168.0.34:8090/jebi/NaverLogin", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+        callbackUrl: "http://192.168.0.25:8080/jebi/NaverLogin", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
         isPopup: true,
         callbackHandle: true
     }

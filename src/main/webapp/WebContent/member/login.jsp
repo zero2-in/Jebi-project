@@ -61,7 +61,7 @@
                             <i class="fas fa-user-plus"></i>&nbsp;&nbsp;회원가입
                         </button>
 
-                        <button type="button" class="idpw-find ripple-effect" data-animation="ripple" onclick="setTimeout(function() {goSite('find-id-pw');}, 150);">
+                        <button type="button" class="idpw-find ripple-effect" data-animation="ripple" onclick="setTimeout(function() {goSite('findidpw');}, 150);">
                             <i class="fas fa-search"></i>&nbsp;&nbsp;ID/PW 찾기
                         </button>
 

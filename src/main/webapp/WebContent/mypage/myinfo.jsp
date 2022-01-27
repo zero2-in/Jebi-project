@@ -74,7 +74,21 @@
                                     </a>
                                 </td>
                                 <td class="title">휴대폰</td>
-                                <td> ${dto.getPhone()} </td>
+                                <c:choose>
+                                    <c:when test="${dto.getPhone() eq 'required'}">
+                                        <td>
+                                            <div class="submit-field">
+                                                <div class="input-with-icon-left">
+                                                    <i class="fas fa-phone"></i>
+                                                    <input type="text" name="t_mobile" maxlength="20" class="input-text with-border" placeholder="휴대전화" title="-빼고 입력하세요.">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <td> ${dto.getPhone()} </td>
+                                    </c:otherwise>
+                                </c:choose>
                             </tr>
                             <tr>
                                 <td class="title">이메일</td>

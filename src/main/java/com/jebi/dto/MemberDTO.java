@@ -35,9 +35,10 @@ public class MemberDTO {
     }
 
     // 회원정보 수정필드
-    public MemberDTO(String id, String eng_name, String email, String sms_rcv_yn, String email_rcv_yn) {
+    public MemberDTO(String id, String eng_name, String phone, String email, String sms_rcv_yn, String email_rcv_yn) {
         this.id = id;
         this.eng_name = eng_name;
+        this.phone = phone;
         this.email = email;
         this.sms_rcv_yn = sms_rcv_yn;
         this.email_rcv_yn = email_rcv_yn;

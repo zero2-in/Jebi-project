@@ -21,7 +21,7 @@ function goSite(arg) {
             break;
         }
         // 아이디/비밀번호
-            case "find-id-pw" : {
+            case "findidpw" : {
             urldirect.separate.value = "find_id_pw";
             urldirect.action = "Member";
             urldirect.submit();
