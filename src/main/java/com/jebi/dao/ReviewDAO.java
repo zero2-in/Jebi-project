@@ -18,7 +18,7 @@ public class ReviewDAO {
         String query = "select * from \n" +
                 "(\n" +
                 "    select \n" +
-                "    a.no, a.title, a.reg_id, b.kor_name,\n" +
+                "    a.no, a.title, a.reg_id, b.kor_name, a.content,\n" +
                 "    to_char(a.reg_date,'yyyy-mm-dd') reg_date, a.attach, \n" +
                 "    a.hit,\n" +
                 "    row_number() \n" +
@@ -35,11 +35,12 @@ public class ReviewDAO {
                 String no = util.getRs().getString("no");
                 String title = util.getRs().getString("title");
                 String kor_name = util.getRs().getString("kor_name");
+                String content = util.getRs().getString("content");
                 String reg_date = util.getRs().getString("reg_date");
                 String attach = util.getRs().getString("attach");
                 int hit = util.getRs().getInt("hit");
 
-                list.add(new ReviewDTO(no, title, reg_date, kor_name, attach, hit));
+                list.add(new ReviewDTO(no, title, reg_date, kor_name, content, attach, hit));
             }
         } catch(SQLException e) {
             util.viewErr(debugMethod);

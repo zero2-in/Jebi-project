@@ -11,18 +11,22 @@ public class EventDAO {
     CommonUtil util = new CommonUtil();
     ArrayList<EventDTO> list = null;
 
-    public ArrayList<EventDTO> getEventList(String search, int start, int end) {
+    public ArrayList<EventDTO> getEventList(String search, String gubun, int start, int end) {
         list = new ArrayList<>();
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        if(gubun.equals("Y")) gubun = ">";
+        else gubun = "<";
 
         String query = "select * from \n" +
                 "(\n" +
                 "    select \n" +
-                "    no, title, sub_title, attach, start_date, end_date, \n" +
-                "    row_number() \n" +
-                "    over(order by no desc) as rnum \n" +
+                "    no, title, sub_title, attach, to_char(start_date,'yyyy-mm-dd')as start_date, to_char(end_date,'yyyy-mm-dd')as end_date, \n" +
+                "    row_number()\n" +
+                "    over( order by end_date asc) as rnum \n" +
                 "    from jebi_event\n" +
-                "    where title like '%"+search+"%'\n" +
+                "    where to_char(CURRENT_date,'yyyy-mm-dd') "+gubun+" end_date\n" +
+                "    and title like '%"+search+"%'\n" +
                 ") \n" +
                 "where rnum>="+start+" and rnum <="+end+"";
         util.runQuery(query, debugMethod, 0);
