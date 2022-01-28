@@ -44,11 +44,4 @@ public class IndexController {
         request.setAttribute("sep_cat", category);
         return "index";
     }
-    // 출항스케줄 팝업창
-    @RequestMapping("DepartureSchedule")
-    public String DepartureSchedule() {
-        return "departure_schedule";
-    }
-
-
 }

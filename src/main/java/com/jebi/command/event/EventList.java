@@ -15,7 +15,7 @@ public class EventList implements Command {
         String search = request.getParameter("s");
         String category = request.getParameter("category");
         if(search == null) search = "";
-        if(category == null) category = "";
+        if(category == null) category = "N";
 
         EventDAO dao = new EventDAO();
 
@@ -42,7 +42,7 @@ public class EventList implements Command {
         int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;
         int endPage = startPage + pageBlock - 1;
 
-        request.setAttribute("list", dao.getEventList(search, startRow, endRow));
+        request.setAttribute("list", dao.getEventList(search, category, startRow, endRow));
         request.setAttribute("s", search);
         request.setAttribute("pageSize", pageSize);
         request.setAttribute("pageNum", pageNum);

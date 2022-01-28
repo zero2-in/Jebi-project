@@ -27,11 +27,12 @@ public class ReviewDTO {
     }
 
     // 리스트
-    public ReviewDTO(String no, String title, String reg_date, String kor_name, String attach, int hit) {
+    public ReviewDTO(String no, String title, String reg_date, String kor_name, String content, String attach, int hit) {
         this.no = no;
         this.title = title;
         this.reg_date = reg_date;
         this.kor_name = kor_name;
+        this.content = content;
         this.attach = attach;
         this.hit = hit;
     }
