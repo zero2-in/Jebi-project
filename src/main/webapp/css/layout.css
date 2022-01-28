@@ -677,7 +677,7 @@
     border: 1px solid rgb(205, 205, 205);
     background-color:  white;
 }
-#container .inquiry p:hover {
+#container .inquiry a p:hover{
     color: white;
     background-color: #612C87;
 }
@@ -1131,28 +1131,6 @@
     padding: 6px 5px 5px 5px;
     font-size:17px;
 	color:rgb(7, 7, 7);
-}
-#container .popup-with-zoom-anim a{
-    top: 40px;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 500;
-    font-size: 13px;
-    text-transform: uppercase!important;
-    letter-spacing: 2px;
-    color: #fff;
-    cursor: hand;
-    text-align: center;
-    text-transform: capitalize;
-    border: 1px solid #fff;
-    border-radius:50px;
-    position: relative;
-    overflow: hidden!important;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    background: transparent!important;
-    z-index:10;
 }
 #container .btn-departure-schedule a i{
     font-size:18px;
