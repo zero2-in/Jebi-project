@@ -19,10 +19,5 @@ public class DepartureDTO {
     public String getDepart() {
         return depart;
     }
-    public String getArrival() {
-        return arrival;
-    }
-
-
-
+    public String getArrival() { return arrival; }
 }
