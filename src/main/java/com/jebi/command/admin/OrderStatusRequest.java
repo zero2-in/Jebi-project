@@ -12,5 +12,6 @@ public class OrderStatusRequest implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         OrderStatusDAO dao = new OrderStatusDAO();
         request.setAttribute("agent_list", dao.getAgentList());
+        request.setAttribute("status_list", dao.getOrderStatusList());
     }
 }

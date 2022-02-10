@@ -160,6 +160,8 @@
     }
 
     function fnMemPw_M() {
+        if(checkValue(frmPw.PRE_MEM_PW, "기존 비밀번호를 입력하세요.")) return;
+        if(checkValue(frmPw.MEM_PW, "설정하실 비밀번호를 입력하세요.")) return;
         if(frmPw.MEM_PW_RE.value != frmPw.MEM_PW.value) {
             alert("일치하지 않습니다. 비밀번호를 재확인 해주세요.");
             frmPw.MEM_PW_RE.focus();

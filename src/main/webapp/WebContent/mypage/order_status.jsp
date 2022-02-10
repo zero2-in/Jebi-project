@@ -30,14 +30,19 @@
             <div class="stamp_txt">5번의 주문건이 출고되면 쿠폰이 발급됩니다.</div>
         </div>
         <div class="stamp_img">
-            <ul>
-                <li class="cp coupon02">back</li>
-                <li class="cp coupon01">back</li>
-                <li class="cp coupon01">back</li>
-                <li class="cp coupon01">back</li>
-                <li class="cp coupon01">back</li>
+            <ul>        <!-- 01: 꺼짐, 02: 켜짐 -->
+                <li class="cp coupon0<c:if test='${order_count >= 1}'>2</c:if><c:if test='${order_count < 1}'>1</c:if>">back</li>
+                <li class="cp coupon0<c:if test='${order_count >= 2}'>2</c:if><c:if test='${order_count < 2}'>1</c:if>">back</li>
+                <li class="cp coupon0<c:if test='${order_count >= 3}'>2</c:if><c:if test='${order_count < 3}'>1</c:if>">back</li>
+                <li class="cp coupon0<c:if test='${order_count >= 4}'>2</c:if><c:if test='${order_count < 4}'>1</c:if>">back</li>
+                <li class="cp coupon0<c:if test='${order_count >= 5}'>2</c:if><c:if test='${order_count < 5}'>1</c:if>">back</li>
                 <li class="equals">=</li>
-                <li class="cp02 coupon03">back</li>
+                <c:if test="${order_count >= 5}">
+                    <li class="cp02 coupon04">back</li>
+                </c:if>
+                <c:if test="${order_count < 5}">
+                    <li class="cp02 coupon03">back</li>
+                </c:if>
             </ul>
         </div>
     </div>
@@ -85,30 +90,30 @@
     <div class="container-agent">
         <div class="row">
             <div class="col-xl-12 col-common">
-                <form action="" name="search" method="get">
+                <form action="OrderStatus" name="search" method="POST">
                     <!-- search-con -->
                     <div class="search-con">
                         <div class="search-con-inner">
                             <div class="submit-field">
                                 <div class="btn-group bootstrap-select with-border">
-                                    <select name="" class="btn bs-placeholder btn-default">
+                                    <select name="AGENT_TYPE" class="btn bs-placeholder btn-default">
                                         <option value=""> = 신청구분</option>
-                                        <option value="1">배송대행</option>
-                                        <option value="2">구매대행</option>
-                                        <option value="3">반품대행</option>
-                                        <option value="4">쇼핑몰</option>
+                                        <option value="배송대행" <c:if test="${s_dto.getAgentType() eq '배송대행'}">selected</c:if>>배송대행</option>
+                                        <option value="구매대행" <c:if test="${s_dto.getAgentType() eq '구매대행'}">selected</c:if>>구매대행</option>
+                                        <option value="반품대행" <c:if test="${s_dto.getAgentType() eq '반품대행'}">selected</c:if>>반품대행</option>
+                                        <option value="쇼핑몰" <c:if test="${s_dto.getAgentType() eq '쇼핑몰'}">selected</c:if>>쇼핑몰</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="submit-field">
                                 <div class="btn-group bootstrap-select with-border">
-                                    <select name="" class="btn bs-placeholder btn-default">
+                                    <select name="STATUS_CODE" class="btn bs-placeholder btn-default">
                                         <option value=""> = 주문상태</option>
 
                                         <c:forEach items="${status_list}" var="list">
                                             <optgroup label="[${list.getCategory()}]">
                                                 <c:forEach items="${list.getStatus_list()}" var="map">
-                                                    <option value="${map.key}">${map.value}</option>
+                                                    <option value="${map.key}" <c:if test="${s_dto.getStatusCode() eq map.key}">selected</c:if>>${map.value}</option>
                                                 </c:forEach>
                                             </optgroup>
                                         </c:forEach>
@@ -118,10 +123,10 @@
                             </div>
                             <div class="submit-field">
                                 <div class="btn-group bootstrap-select with-border">
-                                    <select name="" class="btn bs-placeholder btn-default">
+                                    <select name="SVC_DVS" class="btn bs-placeholder btn-default">
                                         <option value=""> = 출고구분</option>
-                                        <option value="1">자동결제</option>
-                                        <option value="2">수동결제</option>
+                                        <option value="auto" <c:if test="${s_dto.getSvc_dvs() eq 'auto'}">selected</c:if>>자동결제</option>
+                                        <option value="manual" <c:if test="${s_dto.getSvc_dvs() eq 'manual'}">selected</c:if>>수동결제</option>
                                     </select>
                                 </div>
                             </div>
@@ -138,26 +143,26 @@
                                 </div>
                             </div>
                             <div class="submit-field">
-                                <input type="text" class="with-border" maxlength="8" placeholder="주문번호">
+                                <input type="text" class="with-border" maxlength="20" placeholder="주문번호" name="ORDER_NO" value="${s_dto.getOrderNo()}">
                             </div>
                             <div class="submit-field">
-                                <input type="text" maxlength="40" placeholder="트래킹번호" class="with-border">
+                                <input type="text" maxlength="40" placeholder="트래킹번호" class="with-border" name="TRACKING_NO" value="${s_dto.getTrackingNo()}">
                             </div>
                             <div class="submit-field">
-                                <input type="text" maxlength="40" placeholder="수취인명" class="with-border">
+                                <input type="text" maxlength="40" placeholder="수취인명" class="with-border" name="REG_KOR_NAME" value="${s_dto.getReg_kor_name()}">
                             </div>
                             <div class="submit-field">
-                                <input type="text" name="" maxlength="40" placeholder="상품명" class="with-border">
+                                <input type="text" maxlength="40" placeholder="상품명" class="with-border" name="ITEM_ENG_NAME" value="${s_dto.getItem_eng_name()}">
                             </div>
                             <div class="submit-field">
-                                <input type="text" name="" maxlength="40" placeholder="운송장번호" class="with-border">
+                                <input type="text" name="DLVR_NO" maxlength="40" placeholder="운송장번호" class="with-border">
                             </div>
                             <div class="search-btn">
                                 <a href="javascript:void(0)" data-animation="ripple" class="button green ripple-effect">
                                     다운로드
                                     <i></i>
                                 </a>
-                                <a href="javascript:void(0)" data-animation="ripple" class="button ripple-effect">
+                                <a href="javascript:void(0)" onclick="setTimeout(function(){goSearch()}, 150)" data-animation="ripple" class="button ripple-effect">
                                     검색
                                     <i class="fas fa-search"></i>
                                 </a>
@@ -300,6 +305,10 @@
         urldirect.order_no.value = order_no;
         urldirect.separate.value = "view";
         urldirect.submit();
+    }
+
+    function goSearch() {
+        search.submit();
     }
 </script>
 

@@ -214,9 +214,9 @@ public class MemberDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "INSERT INTO jebi_member \r\n" +
-        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login) \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login, locker) \r\n" +
         "VALUES('"+dto.getN_id()+"', 'naver', '"+dto.getN_name()+"', \r\n" +
-        "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N', 'NAVER')";
+        "'naver', '"+dto.getN_mobile()+"', '"+dto.getN_email()+"', 'N', 'N', 'NAVER', '"+getMaxLockerNum()+"')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
@@ -227,9 +227,9 @@ public class MemberDAO {
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
         String query = "INSERT INTO jebi_member \r\n" +
-        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login) \r\n" +
+        "(id, password, kor_name, eng_name, phone, email, sms_rcv_yn, email_rcv_yn, social_login, locker) \r\n" +
         "VALUES('"+dto.getKid()+"', 'kakao', '"+dto.getKnickname()+"', \r\n" +
-        "'kakao', 'required', '"+dto.getKemail()+"', 'N', 'N', 'KAKAO')";
+        "'kakao', 'required', '"+dto.getKemail()+"', 'N', 'N', 'KAKAO', '"+getMaxLockerNum()+"')";
 
         util.runQuery(query, debugMethod, 1);
         util.closeDB();
