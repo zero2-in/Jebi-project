@@ -4,6 +4,7 @@ import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.jebi.common.CommonUtil;
@@ -82,7 +83,7 @@ public class OrderStatusDAO {
         return count;
     }
 
-    public ArrayList<AgentOrderDTO> getAgentList(String id) {
+    public ArrayList<AgentOrderDTO> getAgentList(String id, OrderStatusSearchDTO dto) {
         ArrayList<AgentOrderDTO> list = new ArrayList<>();
         String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
 
@@ -92,7 +93,11 @@ public class OrderStatusDAO {
                 "item.quantity, to_char(item.money_yuan, 'FM999999999999990.00') AS money_yuan, item.tracking_no, item.item_img_url \n" +
                 "FROM jebi_order a, jebi_order_item item, jebi_order_info info, jebi_status_list stat \n" +
                 "WHERE a.reg_id = '"+id+"' AND a.table_no = item.table_no AND a.order_no = item.order_no \n" +
-                "AND a.table_no = info.table_no AND item.status_code = stat.status_code";
+                "AND a.table_no = info.table_no AND item.status_code = stat.status_code \n" +
+                "AND a.agent_type LIKE '%"+dto.getAgentType()+"%' AND item.status_code LIKE '%"+dto.getStatusCode()+"%' \n" +
+                "AND info.svc_dvs LIKE '%"+dto.getSvc_dvs()+"%' AND item.order_no LIKE '%"+dto.getOrderNo()+"%' \n" +
+                "AND item.tracking_no LIKE '%"+dto.getTrackingNo()+"%' AND info.reg_kor_name LIKE '%"+dto.getReg_kor_name()+"%' \n" +
+                "AND item.item_eng_name LIKE '%"+dto.getItem_eng_name()+"%'";
 
         util.runQuery(query, debugMethod, 0);
 
@@ -546,6 +551,54 @@ public class OrderStatusDAO {
                 list.add(new AgentOrderDTO(table_no, dlvr_method, reg_kor_name, svc_dvs, order_no, agent_type, status_name, tracking_no, quantity, money_yuan, item_img_url, reg_date, processing_date));
             }
         } catch (SQLException e) {
+            util.viewErr(debugMethod);
+        } finally {
+            util.closeDB();
+        }
+
+        return list;
+    }
+
+    // 주문출고 횟수 조회
+    public int getOrderCount(String id) {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();  // 현재 실행되는 메소드명 조회
+
+        int count = 0;  // 카운트 초기화
+        String query = "SELECT COUNT(a.table_no) AS cnt FROM jebi_order a, jebi_order_item item \n" +
+                "WHERE a.reg_id = '"+id+"' AND item.TABLE_NO = a.TABLE_NO AND item.STATUS_CODE = 'A6'";    //쿼리
+        util.runQuery(query, debugMethod, 0);   // DB 연결 및 쿼리 실행
+
+        try {
+            if(util.getRs().next()) {       // ResultSet next()
+                count = util.getRs().getInt("cnt");
+            }
+        } catch (SQLException e) {
+            util.viewErr(debugMethod);      // 에러문구 출력
+        } finally {
+            util.closeDB();                 // DB 닫기
+        }
+
+        return count;
+    }
+
+    // 주문 상태 불러오기
+    public List<OrderStatusDTO> getOrderStatusList() {
+        String debugMethod = new Object(){}.getClass().getEnclosingMethod().getName();
+
+        List<OrderStatusDTO> list = new ArrayList<>();
+        String query = "SELECT status_code, status_name FROM JEBI_STATUS_LIST \n" +
+        "ORDER BY status_code ASC";
+
+        util.runQuery(query, debugMethod, 0);
+
+        try {
+            while(util.getRs().next()) {
+                String status_code = util.getRs().getString("status_code");
+                String status_name = util.getRs().getString("status_name");
+
+                list.add(new OrderStatusDTO(status_code, status_name));
+            }
+        } catch(SQLException e) {
             util.viewErr(debugMethod);
         } finally {
             util.closeDB();

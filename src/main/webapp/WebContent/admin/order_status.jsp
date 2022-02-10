@@ -174,6 +174,17 @@
                                 <div class="project-details-list">
                                     <ul>
                                         <li>
+                                            상태변경
+                                            <div class="bootstrap-select with-border">
+                                                <select class="btn" name="t_status">
+                                                    <c:forEach items="${status_list}" var="list">
+                                                        <option value="${list.getStatus_code()}">${list.getStatus_name()}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                            <button type="button" ></button>
+                                        </li>
+                                        <li>
                                             입고상태
                                             <span>입고대기</span>
                                         </li>

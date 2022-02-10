@@ -102,7 +102,7 @@ public class CommonUtil {
     }
 
     public static String getFile_dir(String directoryName) {
-        return "C:/Users/fushi/Desktop/work-jsh/java_project/jebi-project/src/main/webapp/file_room/"+directoryName+"/";
+        return "C:/Users/fushi/Desktop/work-kyi/java_project/jebi-project/src/main/webapp/file_room/"+directoryName+"/";
     }
 
     public void sendMail(String email, String id, String temp_password, int type) {
